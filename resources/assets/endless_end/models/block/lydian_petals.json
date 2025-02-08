@@ -1,0 +1,11 @@
+{
+  "parent": "endless_end:custom/lydianpetals1",
+  "textures": {
+    "all": "endless_end:block/lydianpetalsmiddle2",
+    "particle": "endless_end:block/lydianpetalsmiddle2",
+    "5": "endless_end:block/lydianpetalstop1",
+    "7": "endless_end:block/lydianpetalstem",
+    "8": "endless_end:block/lydianpetalsmiddle1"
+  },
+  "render_type": "cutout_mipped"
+}

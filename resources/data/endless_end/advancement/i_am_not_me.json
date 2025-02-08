@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "endless_end:blue_rose"
+    },
+    "title": {
+      "translate": "advancements.i_am_not_me.title"
+    },
+    "description": {
+      "translate": "advancements.i_am_not_me.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "i_am_not_me_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 42
+  },
+  "parent": "endless_end:null_ouroboros"
+}

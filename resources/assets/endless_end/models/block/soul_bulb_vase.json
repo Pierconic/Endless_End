@@ -1,0 +1,10 @@
+{
+  "parent": "endless_end:custom/soulbulbvase",
+  "textures": {
+    "all": "endless_end:block/soul_bulb_3",
+    "particle": "endless_end:block/porcelain_plain",
+    "0": "endless_end:block/flower_vase_sculk",
+    "1": "endless_end:block/soul_bulb_active"
+  },
+  "render_type": "cutout"
+}

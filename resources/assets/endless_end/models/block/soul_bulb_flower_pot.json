@@ -1,0 +1,11 @@
+{
+  "parent": "endless_end:custom/soul_bulb_pot",
+  "textures": {
+    "all": "endless_end:block/flower_pot",
+    "particle": "endless_end:block/flower_pot",
+    "0": "endless_end:block/flower_pot",
+    "1": "endless_end:block/eye_1",
+    "2": "endless_end:block/soul_bulb_active"
+  },
+  "render_type": "cutout_mipped"
+}

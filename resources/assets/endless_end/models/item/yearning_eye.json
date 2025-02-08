@@ -1,0 +1,362 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "endless_end:item/closed_eye"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 0,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_0"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 1,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_1"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 2,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_2"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 3,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_3"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 4,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_4"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 5,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_5"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 6,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_6"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 7,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_7"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 8,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_8"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 9,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_9"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 10,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_10"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 11,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_11"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 12,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_12"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 13,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_13"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 14,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_14"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 15,
+        "endless_end:yearning_eye_proximity": 1
+      },
+      "model": "endless_end:item/yearning_eye_15"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 0,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_16"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 1,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_17"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 2,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_18"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 3,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_19"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 4,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_20"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 5,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_21"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 6,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_22"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 7,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_23"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 8,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_24"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 9,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_25"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 10,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_26"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 11,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_27"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 12,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_28"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 13,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_29"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 14,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_30"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 15,
+        "endless_end:yearning_eye_proximity": 2
+      },
+      "model": "endless_end:item/yearning_eye_31"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 0,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_32"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 1,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_33"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 2,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_34"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 3,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_35"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 4,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_36"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 5,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_37"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 6,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_38"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 7,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_39"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 8,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_40"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 9,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_41"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 10,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_42"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 11,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_43"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 12,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_44"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 13,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_45"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 14,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_46"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_direction": 15,
+        "endless_end:yearning_eye_proximity": 3
+      },
+      "model": "endless_end:item/yearning_eye_47"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_proximity": 4
+      },
+      "model": "endless_end:item/yearning_eye_48"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_proximity": 5
+      },
+      "model": "endless_end:item/yearning_eye_49"
+    },
+    {
+      "predicate": {
+        "endless_end:yearning_eye_proximity": 6
+      },
+      "model": "endless_end:item/yearning_eye_50"
+    }
+  ]
+}

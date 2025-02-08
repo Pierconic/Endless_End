@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "bamboo_jungle",
+    "plains",
+    "dark_forest",
+    "deep_lukewarm_ocean",
+    "deep_ocean",
+    "flower_forest",
+    "forest",
+    "jungle",
+    "lukewarm_ocean",
+    "lush_caves",
+    "mangrove_swamp",
+    "ocean",
+    "old_growth_birch_forest",
+    "old_growth_pine_taiga",
+    "old_growth_spruce_taiga",
+    "river",
+    "sparse_jungle",
+    "sunflower_plains",
+    "swamp",
+    "taiga",
+    "warm_ocean"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/chiseledendstone",
+    "particle": "endless_end:block/chiseledendstone"
+  },
+  "render_type": "solid"
+}

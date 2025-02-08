@@ -1,0 +1,10 @@
+{
+  "parent": "endless_end:custom/bluerosevase",
+  "textures": {
+    "all": "endless_end:block/blue_rose",
+    "particle": "endless_end:block/porcelain_plain",
+    "0": "endless_end:block/flower_vase_sculk",
+    "1": "endless_end:block/blue_rose"
+  },
+  "render_type": "cutout"
+}

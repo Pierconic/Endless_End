@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dark_forest",
+    "plains",
+    "mangrove_swamp",
+    "swamp"
+  ]
+}

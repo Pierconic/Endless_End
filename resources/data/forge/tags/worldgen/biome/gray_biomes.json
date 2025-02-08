@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "stony_peaks",
+    "stony_shore",
+    "jagged_peaks",
+    "frozen_peaks",
+    "plains",
+    "windswept_gravelly_hills"
+  ]
+}

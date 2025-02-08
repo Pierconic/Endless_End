@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "beach",
+    "desert",
+    "plains",
+    "savanna",
+    "savanna_plateau",
+    "windswept_savanna",
+    "sunflower_plains"
+  ]
+}

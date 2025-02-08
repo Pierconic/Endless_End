@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:transceiver",
+    "endless_end:transceiver_sending_off",
+    "endless_end:transceiver_sending_on",
+    "endless_end:transceiver_recieving_on"
+  ]
+}

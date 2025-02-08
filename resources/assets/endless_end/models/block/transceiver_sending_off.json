@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/transceiversendingoff",
+  "textures": {
+    "all": "endless_end:block/transceiveroff",
+    "particle": "endless_end:block/copper_block",
+    "missing": "endless_end:block/transceiveroff"
+  },
+  "render_type": "solid"
+}

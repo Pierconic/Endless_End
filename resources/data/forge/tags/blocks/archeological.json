@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:dirt",
+    "minecraft:sand",
+    "minecraft:stone",
+    "minecraft:deepslate",
+    "minecraft:netherrack",
+    "minecraft:gravel",
+    "minecraft:blackstone",
+    "minecraft:end_stone"
+  ]
+}

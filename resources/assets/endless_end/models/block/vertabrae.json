@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/sculk_catalyst_bottom",
+    "up": "endless_end:block/sculk_catalyst_bottom",
+    "north": "endless_end:block/vertabrae",
+    "east": "endless_end:block/vertabrae",
+    "south": "endless_end:block/vertabrae",
+    "west": "endless_end:block/vertabrae",
+    "particle": "endless_end:block/sculk_catalyst_bottom"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.endless_end.intro.desc"
+  },
+  "length_in_seconds": 280,
+  "sound_event": "endless_end:intro"
+}

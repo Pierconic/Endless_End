@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:blue_rose"
+    }
+  },
+  "result": {
+    "id": "minecraft:lapis_lazuli",
+    "count": 1
+  }
+}

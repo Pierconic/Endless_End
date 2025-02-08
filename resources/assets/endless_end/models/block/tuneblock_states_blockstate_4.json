@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/tune_block_side",
+    "up": "endless_end:block/tune_block_side",
+    "north": "endless_end:block/tune_block_front",
+    "east": "endless_end:block/tune_block-6.png",
+    "south": "endless_end:block/tune_block_side",
+    "west": "endless_end:block/tune_block-6.png",
+    "particle": "endless_end:block/tune_block_side"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "endless_end:tether"
+    },
+    "title": {
+      "translate": "advancements.ethereal_flight.title"
+    },
+    "description": {
+      "translate": "advancements.ethereal_flight.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "ethereal_flight_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minecraft:end/levitate"
+}

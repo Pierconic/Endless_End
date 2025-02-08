@@ -1,0 +1,196 @@
+{
+  "variants": {
+    "blockstate=0": {
+      "model": "endless_end:block/iconoclast"
+    },
+    "blockstate=1": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_0"
+    },
+    "blockstate=2": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_1"
+    },
+    "blockstate=3": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_2"
+    },
+    "blockstate=4": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_3"
+    },
+    "blockstate=5": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_4"
+    },
+    "blockstate=6": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_5"
+    },
+    "blockstate=7": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_6"
+    },
+    "blockstate=8": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_7"
+    },
+    "blockstate=9": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_8"
+    },
+    "blockstate=10": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_9"
+    },
+    "blockstate=11": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_10"
+    },
+    "blockstate=12": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_11"
+    },
+    "blockstate=13": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_12"
+    },
+    "blockstate=14": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_13"
+    },
+    "blockstate=15": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_14"
+    },
+    "blockstate=16": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_15"
+    },
+    "blockstate=17": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_16"
+    },
+    "blockstate=18": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_17"
+    },
+    "blockstate=19": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_18"
+    },
+    "blockstate=20": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_19"
+    },
+    "blockstate=21": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_20"
+    },
+    "blockstate=22": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_21"
+    },
+    "blockstate=23": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_22"
+    },
+    "blockstate=24": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_23"
+    },
+    "blockstate=25": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_24"
+    },
+    "blockstate=26": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_25"
+    },
+    "blockstate=27": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_26"
+    },
+    "blockstate=28": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_27"
+    },
+    "blockstate=29": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_28"
+    },
+    "blockstate=30": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_29"
+    },
+    "blockstate=31": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_30"
+    },
+    "blockstate=32": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_31"
+    },
+    "blockstate=33": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_32"
+    },
+    "blockstate=34": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_33"
+    },
+    "blockstate=35": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_34"
+    },
+    "blockstate=36": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_35"
+    },
+    "blockstate=37": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_36"
+    },
+    "blockstate=38": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_37"
+    },
+    "blockstate=39": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_38"
+    },
+    "blockstate=40": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_39"
+    },
+    "blockstate=41": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_40"
+    },
+    "blockstate=42": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_41"
+    },
+    "blockstate=43": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_42"
+    },
+    "blockstate=44": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_43"
+    },
+    "blockstate=45": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_44"
+    },
+    "blockstate=46": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_45"
+    },
+    "blockstate=47": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_46"
+    },
+    "blockstate=48": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_47"
+    },
+    "blockstate=49": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_48"
+    },
+    "blockstate=50": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_49"
+    },
+    "blockstate=51": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_50"
+    },
+    "blockstate=52": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_51"
+    },
+    "blockstate=53": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_52"
+    },
+    "blockstate=54": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_53"
+    },
+    "blockstate=55": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_54"
+    },
+    "blockstate=56": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_55"
+    },
+    "blockstate=57": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_56"
+    },
+    "blockstate=58": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_57"
+    },
+    "blockstate=59": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_58"
+    },
+    "blockstate=60": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_59"
+    },
+    "blockstate=61": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_60"
+    },
+    "blockstate=62": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_61"
+    },
+    "blockstate=63": {
+      "model": "endless_end:block/amnesoclast_states_blockstate_62"
+    }
+  }
+}

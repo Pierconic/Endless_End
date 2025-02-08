@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sculk_sensor",
+    "minecraft:sculk",
+    "minecraft:sculk_catalyst",
+    "minecraft:sculk_shrieker",
+    "endless_end:warding_eyes",
+    "endless_end:burrowing_thorns",
+    "endless_end:spiteful_eye"
+  ]
+}

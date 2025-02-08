@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "endless_end:block/blue_rose",
+    "particle": "endless_end:block/eye_1"
+  },
+  "render_type": "cutout_mipped"
+}

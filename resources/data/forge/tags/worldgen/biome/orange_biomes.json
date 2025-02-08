@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "badlands",
+    "plains",
+    "eroded_badlands",
+    "wooded_badlands"
+  ]
+}

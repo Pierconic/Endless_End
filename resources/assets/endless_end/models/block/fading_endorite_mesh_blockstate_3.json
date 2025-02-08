@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "superiorstructures:block/fading_mesh_4",
+    "particle": "superiorstructures:block/endoritemesh"
+  },
+  "render_type": "translucent"
+}

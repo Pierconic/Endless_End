@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/iconoclast_r",
+    "particle": "endless_end:block/iconoclast"
+  },
+  "render_type": "solid"
+}

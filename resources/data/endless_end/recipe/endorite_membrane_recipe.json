@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "abc",
+    "adc",
+    "abc"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:raw_endorite"
+    },
+    "b": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "c": {
+      "item": "endless_end:endorite_ingot"
+    },
+    "d": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "id": "endless_end:endorite_membrane",
+    "count": 4
+  }
+}

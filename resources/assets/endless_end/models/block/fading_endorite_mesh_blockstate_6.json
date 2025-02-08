@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "superiorstructures:block/fading_mesh_7",
+    "up": "superiorstructures:block/fading_mesh_7",
+    "north": "superiorstructures:block/fading_mesh_7",
+    "east": "superiorstructures:block/fading_mesh_7",
+    "south": "superiorstructures:block/fading_mesh_7",
+    "west": "superiorstructures:block/fading_mesh_7",
+    "particle": "superiorstructures:block/endoritemesh"
+  },
+  "render_type": "translucent"
+}

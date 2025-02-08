@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/endoritecore",
+    "particle": "endless_end:block/endoritecore"
+  },
+  "render_type": "solid"
+}

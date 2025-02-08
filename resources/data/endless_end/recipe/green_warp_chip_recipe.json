@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "dyed_warp_chips",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:green_dye"
+    },
+    {
+      "item": "endless_end:warp_chip_white"
+    }
+  ],
+  "result": {
+    "id": "endless_end:warp_chip_green",
+    "count": 1
+  }
+}

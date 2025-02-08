@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:clone_wand",
+    "endless_end:void_wand",
+    "endless_end:fill_wand"
+  ]
+}

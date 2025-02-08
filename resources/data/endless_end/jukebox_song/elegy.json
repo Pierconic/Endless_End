@@ -1,0 +1,8 @@
+{
+  "comparator_output": 1,
+  "description": {
+    "translate": "item.endless_end.elegy.desc"
+  },
+  "length_in_seconds": 153,
+  "sound_event": "endless_end:disc.elegy"
+}

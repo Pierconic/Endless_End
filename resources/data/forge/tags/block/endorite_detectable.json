@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:endorite_ore",
+    "endless_end:endorite_block",
+    "endless_end:dissipating_endorite",
+    "endless_end:endorite_mesh",
+    "endless_end:fading_endorite_mesh",
+    "endless_end:phased_endorite_mesh",
+    "endless_end:endorite_core",
+    "endless_end:sensing_endorite_core",
+    "endless_end:transceiver_sending_off",
+    "endless_end:transceiver_sending_on",
+    "endless_end:enderporter_white",
+    "endless_end:enderporter_red",
+    "endless_end:enderporter_orange",
+    "endless_end:enderporter_yellow",
+    "endless_end:enderporter_lime",
+    "endless_end:enderporter_green",
+    "endless_end:enderporter_cyan",
+    "endless_end:enderporter_light_blue",
+    "endless_end:enderporter_blue",
+    "endless_end:enderporter_purple",
+    "endless_end:enderporter_magenta",
+    "endless_end:enderporter_pink",
+    "endless_end:enderporter_brown",
+    "endless_end:enderporter_light_gray",
+    "endless_end:enderporter_dark_gray",
+    "endless_end:enderporter_black",
+    "minecraft:ender_chest"
+  ]
+}

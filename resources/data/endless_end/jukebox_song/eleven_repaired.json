@@ -1,0 +1,8 @@
+{
+  "comparator_output": 11,
+  "description": {
+    "translate": "item.endless_end.eleven_repaired.desc"
+  },
+  "length_in_seconds": 70,
+  "sound_event": "endless_end:eleven_repaired"
+}

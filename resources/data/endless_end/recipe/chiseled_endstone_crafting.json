@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:end_stone_brick_slab"
+    }
+  },
+  "result": {
+    "id": "endless_end:chiseled_endstone",
+    "count": 1
+  }
+}

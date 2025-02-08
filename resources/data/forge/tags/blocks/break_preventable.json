@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:tripwire_hook",
+    "minecraft:tripwire",
+    "minecraft:redstone_wire",
+    "minecraft:redstone_torch",
+    "minecraft:redstone_wall_torch",
+    "minecraft:observer",
+    "minecraft:dropper",
+    "minecraft:dispenser",
+    "minecraft:pink_stained_glass",
+    "minecraft:orange_stained_glass",
+    "minecraft:tnt",
+    "minecraft:water",
+    "minecraft:lava",
+    "minecraft:iron_bars",
+    "minecraft:slime_block",
+    "minecraft:honey_block",
+    "minecraft:piston",
+    "minecraft:sticky_piston",
+    "minecraft:soul_torch",
+    "minecraft:soul_wall_torch",
+    "minecraft:repeater",
+    "minecraft:comparator"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:raw_endorite"
+    },
+    "b": {
+      "item": "minecraft:chorus_fruit"
+    }
+  },
+  "result": {
+    "id": "minecraft:ender_pearl",
+    "count": 4
+  }
+}

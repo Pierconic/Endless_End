@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:spiteful_eye",
+    "endless_end:burrowing_thorns",
+    "endless_end:warding_eyes",
+    "endless_end:tunerod_stem",
+    "endless_end:vertabrae",
+    "endless_end:blooming_canticle",
+    "endless_end:rotting_end_stone",
+    "endless_end:canticle",
+    "endless_end:phased_endorite_tiles",
+    "endless_end:endorite_tiles",
+    "endless_end:sensing_endorite_core",
+    "endless_end:endorite_core",
+    "endless_end:phased_endorite_mesh",
+    "endless_end:endorite_mesh",
+    "endless_end:dissipating_endorite",
+    "endless_end:endorite_block",
+    "endless_end:cracked_end_stone_bricks",
+    "endless_end:chiseled_endstone"
+  ]
+}

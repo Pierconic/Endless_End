@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "blockstate=0": {
+      "model": "endless_end:block/spiraling_sand"
+    },
+    "blockstate=1": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_0"
+    },
+    "blockstate=2": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_1"
+    },
+    "blockstate=3": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_2"
+    },
+    "blockstate=4": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_3"
+    },
+    "blockstate=5": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_4"
+    },
+    "blockstate=6": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_5"
+    },
+    "blockstate=7": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_6"
+    },
+    "blockstate=8": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_7"
+    },
+    "blockstate=9": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_8"
+    },
+    "blockstate=10": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_9"
+    },
+    "blockstate=11": {
+      "model": "endless_end:block/spiraling_sand_states_blockstate_10"
+    }
+  }
+}

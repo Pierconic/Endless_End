@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/teeth_1",
+    "up": "endless_end:block/teeth_1",
+    "north": "endless_end:block/teeth_1",
+    "east": "endless_end:block/teeth_1",
+    "south": "endless_end:block/teeth_1",
+    "west": "endless_end:block/teeth_1",
+    "particle": "endless_end:block/teeth_1"
+  },
+  "render_type": "solid"
+}

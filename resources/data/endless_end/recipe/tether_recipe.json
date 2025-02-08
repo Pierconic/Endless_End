@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "ada"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:elytron_shard"
+    },
+    "b": {
+      "item": "minecraft:shulker_shell"
+    },
+    "c": {
+      "item": "minecraft:nether_star"
+    },
+    "d": {
+      "item": "endless_end:moon_jelly"
+    }
+  },
+  "result": {
+    "id": "endless_end:tether",
+    "count": 1
+  }
+}

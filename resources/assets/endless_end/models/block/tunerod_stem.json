@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/tunerod_base",
+  "textures": {
+    "all": "endless_end:block/tuneroot",
+    "particle": "endless_end:block/tuneroot_particles",
+    "0": "endless_end:block/tuneroot"
+  },
+  "render_type": "cutout_mipped"
+}

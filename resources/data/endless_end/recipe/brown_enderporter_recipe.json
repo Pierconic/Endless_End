@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "dyed_enderporters",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "item": "endless_end:enderporter_white"
+    }
+  ],
+  "result": {
+    "id": "endless_end:enderporter_brown",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "endless_end:block/tooth_4",
+    "particle": "endless_end:block/tooth_1"
+  },
+  "render_type": "cutout_mipped"
+}

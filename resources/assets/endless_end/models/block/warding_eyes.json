@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/watcher_eyes",
+    "up": "endless_end:block/watcher_eyes",
+    "north": "endless_end:block/watcher_eyes",
+    "east": "endless_end:block/watcher_eyes",
+    "south": "endless_end:block/watcher_eyes",
+    "west": "endless_end:block/watcher_eyes",
+    "particle": "endless_end:block/watcher_eyes"
+  },
+  "render_type": "solid"
+}

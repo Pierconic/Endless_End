@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:blue_orchid",
+    "minecraft:lily_of_the_valley",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "minecraft:fern",
+    "minecraft:grass",
+    "minecraft:azure_bluet"
+  ]
+}

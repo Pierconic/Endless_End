@@ -1,0 +1,10 @@
+{
+  "parent": "endless_end:custom/spiraling_sand_topper",
+  "textures": {
+    "all": "endless_end:block/singing_sand_5",
+    "particle": "endless_end:block/singing_sand_5",
+    "1": "endless_end:block/singing_sand_5",
+    "2": "endless_end:block/spiraling_sand_5"
+  },
+  "render_type": "cutout_mipped"
+}

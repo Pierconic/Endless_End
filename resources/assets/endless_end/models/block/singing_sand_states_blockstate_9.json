@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/singing_sand_10",
+    "particle": "endless_end:block/singing_sand_10"
+  },
+  "render_type": "solid"
+}

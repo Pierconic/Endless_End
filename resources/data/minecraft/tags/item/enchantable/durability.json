@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:magic_whistle",
+    "endless_end:warp_chip_black",
+    "endless_end:warp_chip_dark_gray",
+    "endless_end:warp_chip_gray",
+    "endless_end:warp_chip_brown",
+    "endless_end:warp_chip_pink",
+    "endless_end:warp_chip_magenta",
+    "endless_end:warp_chip_purple",
+    "endless_end:warp_chip_blue",
+    "endless_end:warp_chip_light_blue",
+    "endless_end:warp_chip_cyan",
+    "endless_end:warp_chip_green",
+    "endless_end:warp_chip_lime",
+    "endless_end:warp_chip_yellow",
+    "endless_end:warp_chip_orange",
+    "endless_end:warp_chip_red",
+    "endless_end:warp_chip_white"
+  ]
+}

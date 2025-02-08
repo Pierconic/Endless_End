@@ -1,0 +1,14 @@
+{
+  "parent": "endless_end:custom/flavor_block",
+  "textures": {
+    "all": "endless_end:block/flavor_block_front",
+    "particle": "endless_end:block/flavor_block_front",
+    "0": "endless_end:block/flavor_block_top",
+    "1": "endless_end:block/flavor_block_side",
+    "2": "endless_end:block/flavor_block_lense",
+    "3": "endless_end:block/flavor_block_front",
+    "4": "endless_end:block/flavor_block_bottom",
+    "5": "endless_end:block/flavor_block_back"
+  },
+  "render_type": "cutout_mipped"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/enderporterblack",
+  "textures": {
+    "all": "endless_end:block/enderporter_black",
+    "particle": "endless_end:block/glass",
+    "0": "endless_end:block/enderporter_black"
+  },
+  "render_type": "translucent"
+}

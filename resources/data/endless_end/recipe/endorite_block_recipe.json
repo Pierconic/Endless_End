@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:raw_endorite"
+    }
+  },
+  "result": {
+    "id": "endless_end:endorite_block",
+    "count": 3
+  }
+}
