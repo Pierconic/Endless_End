@@ -29,7 +29,6 @@ import net.mcreator.endless_end.block.entity.SingingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SculkTeethBlockEntity;
 import net.mcreator.endless_end.block.entity.PhasedEndoriteTilesBlockEntity;
 import net.mcreator.endless_end.block.entity.IconoclastBlockEntity;
-import net.mcreator.endless_end.block.entity.FlavorblockBlockEntity;
 import net.mcreator.endless_end.block.entity.BurrowingThornsBlockEntity;
 import net.mcreator.endless_end.EndlessEndMod;
 
@@ -44,7 +43,6 @@ public class EndlessEndModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TETHER = register("tether", EndlessEndModBlocks.TETHER, TetherTileEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TUNEROD_STEM = register("tunerod_stem", EndlessEndModBlocks.TUNEROD_STEM, TunerodStemBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TUNE_BLOCK = register("tune_block", EndlessEndModBlocks.TUNE_BLOCK, TuneBlockBlockEntity::new);
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> FLAVORBLOCK = register("flavorblock", EndlessEndModBlocks.FLAVORBLOCK, FlavorblockBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> WARDING_EYES = register("warding_eyes", EndlessEndModBlocks.WARDING_EYES, WardingEyesBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BURROWING_THORNS = register("burrowing_thorns", EndlessEndModBlocks.BURROWING_THORNS, BurrowingThornsBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SCULK_TEETH = register("sculk_teeth", EndlessEndModBlocks.SCULK_TEETH, SculkTeethBlockEntity::new);
@@ -68,7 +66,6 @@ public class EndlessEndModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, PHASED_ENDORITE_TILES.get(), (blockEntity, side) -> ((PhasedEndoriteTilesBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TUNEROD_STEM.get(), (blockEntity, side) -> ((TunerodStemBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TUNE_BLOCK.get(), (blockEntity, side) -> ((TuneBlockBlockEntity) blockEntity).getItemHandler());
-		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FLAVORBLOCK.get(), (blockEntity, side) -> ((FlavorblockBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WARDING_EYES.get(), (blockEntity, side) -> ((WardingEyesBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BURROWING_THORNS.get(), (blockEntity, side) -> ((BurrowingThornsBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SCULK_TEETH.get(), (blockEntity, side) -> ((SculkTeethBlockEntity) blockEntity).getItemHandler());

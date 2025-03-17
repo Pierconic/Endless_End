@@ -154,7 +154,6 @@ public class EndlessEndModVariables {
 				clone.radiance = original.radiance;
 				clone.shock_frames = original.shock_frames;
 				clone.CorruptedHearts = original.CorruptedHearts;
-				clone.Corruption = original.Corruption;
 				clone.CurseType = original.CurseType;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
@@ -401,7 +400,6 @@ public class EndlessEndModVariables {
 		public double EyeballDirection = 0;
 		public double Eyeball_Agitation = 0;
 		public double CorruptedHearts = 0;
-		public double Corruption = 0;
 		public double CurseType = 0;
 		public double singing_sand_cooldown = 0;
 
@@ -494,7 +492,6 @@ public class EndlessEndModVariables {
 			nbt.putDouble("EyeballDirection", EyeballDirection);
 			nbt.putDouble("Eyeball_Agitation", Eyeball_Agitation);
 			nbt.putDouble("CorruptedHearts", CorruptedHearts);
-			nbt.putDouble("Corruption", Corruption);
 			nbt.putDouble("CurseType", CurseType);
 			nbt.putDouble("singing_sand_cooldown", singing_sand_cooldown);
 			return nbt;
@@ -588,7 +585,6 @@ public class EndlessEndModVariables {
 			EyeballDirection = nbt.getDouble("EyeballDirection");
 			Eyeball_Agitation = nbt.getDouble("Eyeball_Agitation");
 			CorruptedHearts = nbt.getDouble("CorruptedHearts");
-			Corruption = nbt.getDouble("Corruption");
 			CurseType = nbt.getDouble("CurseType");
 			singing_sand_cooldown = nbt.getDouble("singing_sand_cooldown");
 		}

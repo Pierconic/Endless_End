@@ -1,0 +1,49 @@
+{
+  "criteria": {
+    "endorite_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:raw_endorite"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:endorite_ingot_recipe",
+      "endless_end:endorite_block_recipe",
+      "endless_end:endorite_mesh_recipe",
+      "endless_end:endorite_core_recipe",
+      "endless_end:endorite_tiles_recipe",
+      "endless_end:endorite_membrane_recipe",
+      "endless_end:ender_pearl_recipe",
+      "endless_end:warp_chip_recipe",
+      "endless_end:red_warp_chip_recipe",
+      "endless_end:orange_warp_chip_recipe",
+      "endless_end:yellow_warp_chip_recipe",
+      "endless_end:lime_warp_chip_recipe",
+      "endless_end:green_warp_chip_recipe",
+      "endless_end:cyan_warp_chip_recipe",
+      "endless_end:blue_warp_chip_recipe",
+      "endless_end:light_blue_warp_chip_recipe",
+      "endless_end:purple_warp_chip_recipe",
+      "endless_end:magenta_warp_chip_recipe",
+      "endless_end:pink_warp_chip_recipe",
+      "endless_end:brown_warp_chip_recipe",
+      "endless_end:gray_warp_chip_recipe",
+      "endless_end:dark_gray_warp_chip_recipe",
+      "endless_end:black_warp_chip_recipe",
+      "endless_end:shulker_shell_recipe"
+    ]
+  }
+}

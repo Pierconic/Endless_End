@@ -39,7 +39,6 @@ import net.mcreator.endless_end.item.WarpChipCyanItem;
 import net.mcreator.endless_end.item.WarpChipBrownItem;
 import net.mcreator.endless_end.item.WarpChipBlueItem;
 import net.mcreator.endless_end.item.WarpChipBlackItem;
-import net.mcreator.endless_end.item.VoidWandItem;
 import net.mcreator.endless_end.item.TransponderItem;
 import net.mcreator.endless_end.item.StarFragmentItem;
 import net.mcreator.endless_end.item.SendingTransponderItem;
@@ -49,7 +48,6 @@ import net.mcreator.endless_end.item.MoonJellyItem;
 import net.mcreator.endless_end.item.MagicWhistleItem;
 import net.mcreator.endless_end.item.IntroItem;
 import net.mcreator.endless_end.item.InsectFleshItem;
-import net.mcreator.endless_end.item.FillWandItem;
 import net.mcreator.endless_end.item.EssenceItem;
 import net.mcreator.endless_end.item.EndoriteIngotItem;
 import net.mcreator.endless_end.item.EmptyEyeItem;
@@ -58,7 +56,6 @@ import net.mcreator.endless_end.item.ElevenRepairedItem;
 import net.mcreator.endless_end.item.ElegyItem;
 import net.mcreator.endless_end.item.DiscFragmentIntroItem;
 import net.mcreator.endless_end.item.DiscFragmentElegyItem;
-import net.mcreator.endless_end.item.CloneWandItem;
 import net.mcreator.endless_end.item.BrittleCarapaceItem;
 import net.mcreator.endless_end.item.BottledStarlightItem;
 import net.mcreator.endless_end.block.display.TetherDisplayItem;
@@ -140,13 +137,9 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> ESSENCE_BUCKET = REGISTRY.register("essence_bucket", EssenceItem::new);
 	public static final DeferredItem<Item> TUNEROD_STEM = block(EndlessEndModBlocks.TUNEROD_STEM);
 	public static final DeferredItem<Item> TUNE_BLOCK = block(EndlessEndModBlocks.TUNE_BLOCK);
-	public static final DeferredItem<Item> FILL_WAND = REGISTRY.register("fill_wand", FillWandItem::new);
-	public static final DeferredItem<Item> VOID_WAND = REGISTRY.register("void_wand", VoidWandItem::new);
-	public static final DeferredItem<Item> CLONE_WAND = REGISTRY.register("clone_wand", CloneWandItem::new);
 	public static final DeferredItem<Item> MAGIC_WHISTLE = REGISTRY.register("magic_whistle", MagicWhistleItem::new);
 	public static final DeferredItem<Item> DISC_FRAGMENT_ELEGY = REGISTRY.register("disc_fragment_elegy", DiscFragmentElegyItem::new);
 	public static final DeferredItem<Item> ELEGY = REGISTRY.register("elegy", ElegyItem::new);
-	public static final DeferredItem<Item> FLAVORBLOCK = block(EndlessEndModBlocks.FLAVORBLOCK);
 	public static final DeferredItem<Item> YEARNING_EYE = REGISTRY.register("yearning_eye", YearningEyeItem::new);
 	public static final DeferredItem<Item> EMPTY_EYE = REGISTRY.register("empty_eye", EmptyEyeItem::new);
 	public static final DeferredItem<Item> HOLLOW_SPAWN_EGG = REGISTRY.register("hollow_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.HOLLOW, -15525329, -15709365, new Item.Properties()));
@@ -166,6 +159,10 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> ICONOCLAST = block(EndlessEndModBlocks.ICONOCLAST);
 	public static final DeferredItem<Item> DORMANT_ICONOCLAST = block(EndlessEndModBlocks.DORMANT_ICONOCLAST);
 	public static final DeferredItem<Item> ELEVEN_REPAIRED = REGISTRY.register("eleven_repaired", ElevenRepairedItem::new);
+	public static final DeferredItem<Item> END_AMETHYST = block(EndlessEndModBlocks.END_AMETHYST);
+	public static final DeferredItem<Item> REFUSE = block(EndlessEndModBlocks.REFUSE);
+	public static final DeferredItem<Item> COBBLED_ENDSTONE = block(EndlessEndModBlocks.COBBLED_ENDSTONE);
+	public static final DeferredItem<Item> END_DIAMONDS = block(EndlessEndModBlocks.END_DIAMONDS);
 
 	// Start of user code block custom items
 	// End of user code block custom items

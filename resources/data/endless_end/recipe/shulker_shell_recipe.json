@@ -2,12 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "aaa",
-    "aaa",
-    "a a"
+    "aba",
+    "bbb",
+    "b b"
   ],
   "key": {
     "a": {
+      "item": "endless_end:endorite_ingot"
+    },
+    "b": {
       "item": "endless_end:brittle_carapace"
     }
   },

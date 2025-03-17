@@ -25,6 +25,7 @@ import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.world.inventory.TransceiverInterfaceMenu;
@@ -57,6 +58,11 @@ public class TransceiverSendingOnBlock extends Block implements EntityBlock {
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return box(0, 0, 0, 16, 2, 16);
+	}
+
+	@Override
+	public boolean canConnectRedstone(BlockState state, BlockGetter world, BlockPos pos, Direction side) {
+		return true;
 	}
 
 	@Override

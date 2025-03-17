@@ -26,7 +26,6 @@ import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.AdvancementHolder;
 
-import net.mcreator.endless_end.network.EndlessEndModVariables;
 import net.mcreator.endless_end.init.EndlessEndModMobEffects;
 
 import javax.annotation.Nullable;
@@ -94,11 +93,6 @@ public class CorruptionClearProcedure {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"attribute @p minecraft:generic.max_health base set 20");
-				{
-					EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
-					_vars.Corruption = 0;
-					_vars.syncPlayerVariables(entity);
-				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.setAbsorptionAmount(0);
 				if (entity instanceof LivingEntity _entity)

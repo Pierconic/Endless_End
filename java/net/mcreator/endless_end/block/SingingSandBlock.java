@@ -7,7 +7,6 @@ import net.neoforged.neoforge.common.util.DeferredSoundType;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -23,15 +22,12 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.SingingStepProcedure;
 import net.mcreator.endless_end.procedures.SingingSandSpreadProcedure;
-import net.mcreator.endless_end.procedures.SingingSandDrainProcedure;
 import net.mcreator.endless_end.procedures.SingingSandBrokenProcedure;
 import net.mcreator.endless_end.block.entity.SingingSandBlockEntity;
 
@@ -105,20 +101,6 @@ public class SingingSandBlock extends Block implements EntityBlock {
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
 		SingingStepProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-	}
-
-	@Override
-	public InteractionResult useWithoutItem(BlockState blockstate, Level world, BlockPos pos, Player entity, BlockHitResult hit) {
-		super.useWithoutItem(blockstate, world, pos, entity, hit);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		double hitX = hit.getLocation().x;
-		double hitY = hit.getLocation().y;
-		double hitZ = hit.getLocation().z;
-		Direction direction = hit.getDirection();
-		SingingSandDrainProcedure.execute(world, x, y, z, entity);
-		return InteractionResult.SUCCESS;
 	}
 
 	@Override

@@ -12,11 +12,9 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.endless_end.world.inventory.TransceiverInterfaceMenu;
-import net.mcreator.endless_end.world.inventory.FlavorInterfaceMenu;
 import net.mcreator.endless_end.EndlessEndMod;
 
 public class EndlessEndModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU, EndlessEndMod.MODID);
 	public static final DeferredHolder<MenuType<?>, MenuType<TransceiverInterfaceMenu>> TRANSCEIVER_INTERFACE = REGISTRY.register("transceiver_interface", () -> IMenuTypeExtension.create(TransceiverInterfaceMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<FlavorInterfaceMenu>> FLAVOR_INTERFACE = REGISTRY.register("flavor_interface", () -> IMenuTypeExtension.create(FlavorInterfaceMenu::new));
 }

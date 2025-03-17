@@ -117,4 +117,8 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMNESOCLAST_MEMORY = REGISTRY.register("amnesoclast.memory", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "amnesoclast.memory")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMNESOCLAST_SHIFT = REGISTRY.register("amnesoclast.shift", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "amnesoclast.shift")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> YEARNING_EYE_CHARGE = REGISTRY.register("yearning_eye.charge", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "yearning_eye.charge")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> REFUSE_STEP = REGISTRY.register("refuse_step", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "refuse_step")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> REFUSE_SNAP = REGISTRY.register("refuse_snap", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "refuse_snap")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> REFUSE_PLACE = REGISTRY.register("refuse_place", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "refuse_place")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> REFUSE_HIT = REGISTRY.register("refuse_hit", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "refuse_hit")));
 }

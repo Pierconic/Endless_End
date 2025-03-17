@@ -3,54 +3,92 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.tether",
-				"texture_width": 128,
-				"texture_height": 128,
+				"identifier": "geometry.tether - Converted",
+				"texture_width": 64,
+				"texture_height": 64,
 				"visible_bounds_width": 3,
 				"visible_bounds_height": 2.5,
 				"visible_bounds_offset": [0, 0.75, 0]
 			},
 			"bones": [
 				{
-					"name": "shell2",
+					"name": "tether",
+					"pivot": [0, 8, 0]
+				},
+				{
+					"name": "ring",
+					"parent": "tether",
 					"pivot": [0, 8, 0],
 					"cubes": [
-						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]}
+						{
+							"origin": [-11, 8, -11],
+							"size": [22, 0, 22],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [22, 0]},
+								"east": {"uv": [0, 0], "uv_size": [22, 0]},
+								"south": {"uv": [0, 0], "uv_size": [22, 0]},
+								"west": {"uv": [0, 0], "uv_size": [22, 0]},
+								"up": {"uv": [0, 0], "uv_size": [22, 22]},
+								"down": {"uv": [0, 44], "uv_size": [22, -22]}
+							}
+						}
 					]
 				},
 				{
 					"name": "shell",
+					"parent": "tether",
 					"pivot": [0, 8, 0],
 					"cubes": [
-						{"origin": [-4.5, 3.5, -4.5], "size": [9, 9, 9], "uv": [0, 32]}
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 16, 16],
+							"uv": {
+								"north": {"uv": [22, 0], "uv_size": [16, 16]},
+								"east": {"uv": [22, 16], "uv_size": [16, 16]},
+								"south": {"uv": [22, 32], "uv_size": [16, 16]},
+								"west": {"uv": [38, 0], "uv_size": [16, 16]},
+								"up": {"uv": [38, 16], "uv_size": [16, 16]},
+								"down": {"uv": [38, 48], "uv_size": [16, -16]}
+							}
+						}
 					]
 				},
 				{
 					"name": "core",
+					"parent": "tether",
 					"pivot": [0, 8, 0],
 					"cubes": [
-						{"origin": [-2.5, 5.5, -2.5], "size": [5, 5, 5], "uv": [36, 32]}
+						{
+							"origin": [-2, 6, -2],
+							"size": [4, 4, 4],
+							"uv": {
+								"north": {"uv": [0, 44], "uv_size": [4, 4]},
+								"east": {"uv": [4, 44], "uv_size": [4, 4]},
+								"south": {"uv": [8, 44], "uv_size": [4, 4]},
+								"west": {"uv": [12, 44], "uv_size": [4, 4]},
+								"up": {"uv": [16, 44], "uv_size": [4, 4]},
+								"down": {"uv": [0, 52], "uv_size": [4, -4]}
+							}
+						}
 					]
 				},
 				{
-					"name": "ring1",
-					"pivot": [0, 0, 0],
+					"name": "mantle",
+					"parent": "tether",
+					"pivot": [0, 8, 0],
 					"cubes": [
-						{"origin": [-9, 2, -9], "size": [18, 1, 18], "uv": [38, 32]}
-					]
-				},
-				{
-					"name": "ring2",
-					"pivot": [0, 0, 0],
-					"cubes": [
-						{"origin": [-9, -8.5, -9], "size": [18, 1, 18], "pivot": [0, 0, 0], "rotation": [0, 0, -180], "uv": [38, 32]}
-					]
-				},
-				{
-					"name": "ring3",
-					"pivot": [0, 0, 0],
-					"cubes": [
-						{"origin": [-9, 13, -9], "size": [18, 1, 18], "uv": [38, 32]}
+						{
+							"origin": [-3, 5, -3],
+							"size": [6, 6, 6],
+							"uv": {
+								"north": {"uv": [34, 48], "uv_size": [6, 6]},
+								"east": {"uv": [28, 48], "uv_size": [6, 6]},
+								"south": {"uv": [22, 48], "uv_size": [6, 6]},
+								"west": {"uv": [16, 48], "uv_size": [6, 6]},
+								"up": {"uv": [16, 54], "uv_size": [-6, -6]},
+								"down": {"uv": [10, 54], "uv_size": [-6, -6]}
+							}
+						}
 					]
 				}
 			]

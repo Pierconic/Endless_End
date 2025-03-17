@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "elytron_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:elytron_shard"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:tether_recipe",
+      "endless_end:elytra_recipe"
+    ]
+  }
+}

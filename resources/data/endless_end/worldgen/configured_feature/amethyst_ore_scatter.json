@@ -1,0 +1,27 @@
+{
+  "type": "endless_end:amethyst_ore_scatter",
+  "config": {
+    "size": 12,
+    "discard_chance_on_air_exposure": 0,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "block_match",
+          "block": "minecraft:end_stone"
+        },
+        "state": {
+          "Name": "endless_end:end_amethyst"
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "block_match",
+          "block": "endless_end:cobbled_endstone"
+        },
+        "state": {
+          "Name": "endless_end:end_amethyst"
+        }
+      }
+    ]
+  }
+}

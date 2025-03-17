@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "endstone_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:end_stone"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:chiseled_endstone_crafting",
+      "endless_end:chiseled_endstone_cutting",
+      "endless_end:cracked_endstone_brick_recipe"
+    ]
+  }
+}

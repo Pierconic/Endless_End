@@ -23,6 +23,7 @@ public class EndlessEndModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 
+			tabData.accept(EndlessEndModBlocks.CHISELED_ENDSTONE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get().asItem());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
@@ -46,10 +47,6 @@ public class EndlessEndModTabs {
 		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 
 			tabData.accept(EndlessEndModItems.GRAZER_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.FILL_WAND.get());
-			tabData.accept(EndlessEndModItems.VOID_WAND.get());
-			tabData.accept(EndlessEndModItems.CLONE_WAND.get());
-			tabData.accept(EndlessEndModBlocks.FLAVORBLOCK.get().asItem());
 			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
@@ -87,6 +84,10 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.BLUE_ROSE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.AMNESOCLAST.get().asItem());
 			tabData.accept(EndlessEndModBlocks.DORMANT_ICONOCLAST.get().asItem());
+			tabData.accept(EndlessEndModBlocks.END_AMETHYST.get().asItem());
+			tabData.accept(EndlessEndModBlocks.REFUSE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.COBBLED_ENDSTONE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.END_DIAMONDS.get().asItem());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
 

@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "superiorstructures:block/endorite_tiles1",
-    "particle": "superiorstructures:block/endorite_tiles"
+    "all": "endless_end:block/endorite_tiles1",
+    "particle": "endless_end:block/endorite_tiles"
   },
   "render_type": "translucent"
 }

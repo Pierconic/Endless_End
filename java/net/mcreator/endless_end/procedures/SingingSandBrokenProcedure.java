@@ -21,7 +21,7 @@ public class SingingSandBrokenProcedure {
 			return;
 		if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip1 ? blockstate.getValue(_getip1) : -1) > 0) {
 			if (entity instanceof Player _player)
-				_player.giveExperienceLevels((int) ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip3 ? blockstate.getValue(_getip3) : -1) - 1));
+				_player.giveExperienceLevels((int) (Math.round((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip3 ? blockstate.getValue(_getip3) : -1) * 0.5) - 1));
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.evoker.cast_spell")), SoundSource.NEUTRAL, 1, 1);
@@ -38,7 +38,7 @@ public class SingingSandBrokenProcedure {
 					}
 				}
 			}
-			for (int index0 = 0; index0 < (int) ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip10 ? blockstate.getValue(_getip10) : -1) + 2); index0++) {
+			for (int index0 = 0; index0 < (int) ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip10 ? blockstate.getValue(_getip10) : -1) - 2); index0++) {
 				if (world instanceof ServerLevel _level)
 					_level.addFreshEntity(new ExperienceOrb(_level, (x + 0.5 + Mth.nextDouble(RandomSource.create(), 0.6, 0.6)), (y + 0.5 + Mth.nextDouble(RandomSource.create(), 0.6, 0.6)), (z + 0.5 + Mth.nextDouble(RandomSource.create(), 0.6, 0.6)),
 							Mth.nextInt(RandomSource.create(), 1, 2)));

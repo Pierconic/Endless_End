@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "endless_end:end_diamonds",
+    "endless_end:refuse",
+    "endless_end:end_amethyst",
     "endless_end:enderporter_black",
     "endless_end:enderporter_dark_gray",
     "endless_end:enderporter_light_gray",

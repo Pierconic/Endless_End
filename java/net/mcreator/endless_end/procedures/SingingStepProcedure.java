@@ -166,9 +166,9 @@ public class SingingStepProcedure {
 					}.compareDistOf(x, y, z)).findFirst().orElse(null)));
 				}
 				{
-					int _value = (int) (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip51
+					int _value = (int) Math.min(((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip51
 							? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip51)
-							: -1) + 1);
+							: -1) + 2, 11);
 					BlockPos _pos = BlockPos.containing(x, y, z);
 					BlockState _bs = world.getBlockState(_pos);
 					if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))

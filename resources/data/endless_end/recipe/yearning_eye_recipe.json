@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:ender_pearl"
+    },
+    "b": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "c": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "result": {
+    "id": "endless_end:yearning_eye",
+    "count": 1
+  }
+}

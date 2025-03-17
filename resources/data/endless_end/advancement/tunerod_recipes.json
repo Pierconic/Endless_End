@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "tunerod_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:tunerod_stem"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:tuneblock_recipe",
+      "endless_end:tunerod_stick",
+      "endless_end:magic_whistle_recipe"
+    ]
+  }
+}

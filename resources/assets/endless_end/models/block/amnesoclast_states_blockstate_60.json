@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "endless_end:block/shifting_iconoclast_-1",
+    "all": "endless_end:block/amnesoclast_final_1",
     "particle": "endless_end:block/iconoclast"
   },
   "render_type": "solid"

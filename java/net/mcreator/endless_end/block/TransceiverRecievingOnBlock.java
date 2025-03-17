@@ -73,6 +73,11 @@ public class TransceiverRecievingOnBlock extends Block implements EntityBlock {
 	}
 
 	@Override
+	public boolean canConnectRedstone(BlockState state, BlockGetter world, BlockPos pos, Direction side) {
+		return true;
+	}
+
+	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
 		world.scheduleTick(pos, this, 1);

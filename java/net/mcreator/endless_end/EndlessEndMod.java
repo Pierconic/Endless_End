@@ -26,6 +26,7 @@ import net.mcreator.endless_end.init.EndlessEndModMenus;
 import net.mcreator.endless_end.init.EndlessEndModItems;
 import net.mcreator.endless_end.init.EndlessEndModFluids;
 import net.mcreator.endless_end.init.EndlessEndModFluidTypes;
+import net.mcreator.endless_end.init.EndlessEndModFeatures;
 import net.mcreator.endless_end.init.EndlessEndModEntities;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 import net.mcreator.endless_end.init.EndlessEndModBlockEntities;
@@ -54,6 +55,7 @@ public class EndlessEndMod {
 		EndlessEndModEntities.REGISTRY.register(modEventBus);
 		EndlessEndModTabs.REGISTRY.register(modEventBus);
 		EndlessEndModVariables.ATTACHMENT_TYPES.register(modEventBus);
+		EndlessEndModFeatures.REGISTRY.register(modEventBus);
 
 		EndlessEndModMobEffects.REGISTRY.register(modEventBus);
 		EndlessEndModMenus.REGISTRY.register(modEventBus);

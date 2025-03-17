@@ -10,13 +10,11 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
 import net.mcreator.endless_end.client.gui.TransceiverInterfaceScreen;
-import net.mcreator.endless_end.client.gui.FlavorInterfaceScreen;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EndlessEndModScreens {
 	@SubscribeEvent
 	public static void clientLoad(RegisterMenuScreensEvent event) {
 		event.register(EndlessEndModMenus.TRANSCEIVER_INTERFACE.get(), TransceiverInterfaceScreen::new);
-		event.register(EndlessEndModMenus.FLAVOR_INTERFACE.get(), FlavorInterfaceScreen::new);
 	}
 }

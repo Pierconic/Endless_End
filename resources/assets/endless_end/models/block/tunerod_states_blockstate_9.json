@@ -2,7 +2,8 @@
   "parent": "endless_end:custom/tunerod_split",
   "textures": {
     "all": "endless_end:block/tunerod_animated",
-    "particle": "endless_end:block/tuneroot_particles"
+    "particle": "endless_end:block/tuneroot_particles",
+    "0": "endless_end:block/tunerod_animated"
   },
   "render_type": "cutout_mipped"
 }

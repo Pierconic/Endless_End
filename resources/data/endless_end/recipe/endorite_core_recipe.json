@@ -2,18 +2,21 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "pattern": [
-    "aaa",
-    "bcb",
-    "aaa"
+    "aba",
+    "cdc",
+    "aba"
   ],
   "key": {
     "a": {
       "item": "endless_end:endorite_ingot"
     },
     "b": {
-      "item": "minecraft:redstone"
+      "item": "minecraft:quartz"
     },
     "c": {
+      "item": "minecraft:redstone"
+    },
+    "d": {
       "item": "minecraft:ender_eye"
     }
   },

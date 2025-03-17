@@ -1,5 +1,6 @@
+
 {
-  "parent": "endless_end:displaysettings/tether.item",
+  "parent": "endless_end:displaysettings/tether.animation",
   "textures": {
     "particle": "endless_end:block/tether"
   }

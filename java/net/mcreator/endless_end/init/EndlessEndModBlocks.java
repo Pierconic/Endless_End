@@ -32,11 +32,11 @@ import net.mcreator.endless_end.block.SingingSandBlock;
 import net.mcreator.endless_end.block.SensingEndoriteCoreBlock;
 import net.mcreator.endless_end.block.SculkTeethBlock;
 import net.mcreator.endless_end.block.RottingEndStoneBlock;
+import net.mcreator.endless_end.block.RefuseBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteTilesBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteMeshBlock;
 import net.mcreator.endless_end.block.LydianPetalsBlock;
 import net.mcreator.endless_end.block.IconoclastBlock;
-import net.mcreator.endless_end.block.FlavorblockBlock;
 import net.mcreator.endless_end.block.EssenceBlock;
 import net.mcreator.endless_end.block.EndoriteTilesBlock;
 import net.mcreator.endless_end.block.EndoriteOreBlock;
@@ -61,9 +61,12 @@ import net.mcreator.endless_end.block.EnderporterBrownBlock;
 import net.mcreator.endless_end.block.EnderporterBlueBlock;
 import net.mcreator.endless_end.block.EnderporterBlackBlock;
 import net.mcreator.endless_end.block.EndIronBlock;
+import net.mcreator.endless_end.block.EndDiamondsBlock;
+import net.mcreator.endless_end.block.EndAmethystBlock;
 import net.mcreator.endless_end.block.DormantIconoclastBlock;
 import net.mcreator.endless_end.block.DissipatingEndoriteBlock;
 import net.mcreator.endless_end.block.CrackedEndStoneBricksBlock;
+import net.mcreator.endless_end.block.CobbledEndstoneBlock;
 import net.mcreator.endless_end.block.ChiseledEndstoneBlock;
 import net.mcreator.endless_end.block.CanticleBlock;
 import net.mcreator.endless_end.block.BurrowingThornsBlock;
@@ -121,7 +124,6 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> ESSENCE = REGISTRY.register("essence", EssenceBlock::new);
 	public static final DeferredBlock<Block> TUNEROD_STEM = REGISTRY.register("tunerod_stem", TunerodStemBlock::new);
 	public static final DeferredBlock<Block> TUNE_BLOCK = REGISTRY.register("tune_block", TuneBlockBlock::new);
-	public static final DeferredBlock<Block> FLAVORBLOCK = REGISTRY.register("flavorblock", FlavorblockBlock::new);
 	public static final DeferredBlock<Block> WARDING_EYES = REGISTRY.register("warding_eyes", WardingEyesBlock::new);
 	public static final DeferredBlock<Block> BURROWING_THORNS = REGISTRY.register("burrowing_thorns", BurrowingThornsBlock::new);
 	public static final DeferredBlock<Block> SCULK_TEETH = REGISTRY.register("sculk_teeth", SculkTeethBlock::new);
@@ -137,6 +139,10 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> AMNESOCLAST = REGISTRY.register("amnesoclast", AmnesoclastBlock::new);
 	public static final DeferredBlock<Block> ICONOCLAST = REGISTRY.register("iconoclast", IconoclastBlock::new);
 	public static final DeferredBlock<Block> DORMANT_ICONOCLAST = REGISTRY.register("dormant_iconoclast", DormantIconoclastBlock::new);
+	public static final DeferredBlock<Block> END_AMETHYST = REGISTRY.register("end_amethyst", EndAmethystBlock::new);
+	public static final DeferredBlock<Block> REFUSE = REGISTRY.register("refuse", RefuseBlock::new);
+	public static final DeferredBlock<Block> COBBLED_ENDSTONE = REGISTRY.register("cobbled_endstone", CobbledEndstoneBlock::new);
+	public static final DeferredBlock<Block> END_DIAMONDS = REGISTRY.register("end_diamonds", EndDiamondsBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

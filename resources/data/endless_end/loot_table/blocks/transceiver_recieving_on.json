@@ -12,7 +12,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "endless_end:transceiver_recieving_on"
+          "name": "endless_end:transceiver"
         }
       ]
     }

@@ -5,12 +5,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
-import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -20,7 +15,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.endless_end.network.EndlessEndModVariables;
 import net.mcreator.endless_end.init.EndlessEndModMobEffects;
 
 import javax.annotation.Nullable;
@@ -42,32 +36,9 @@ public class CorruptionUpdateProcedure {
 		if (entity instanceof LivingEntity && !entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("forge:corrupt")))) {
 			if (world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("deep_dark")) || world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("deep_dark"))
 					|| (entity.getBlockStateOn()).is(BlockTags.create(ResourceLocation.parse("forge:corruptable")))) {
-				{
-					EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
-					_vars.Corruption = (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) + 2;
-					_vars.syncPlayerVariables(entity);
-				}
-			}
-			if (entity instanceof Player) {
-				if (entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).Corruption > (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION)
-						? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration()
-						: 0)) {
-					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.MILK_BUCKET
-							|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.MILK_BUCKET) {
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.CORRUPTION, (int) entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).Corruption, 0, false, true));
-					} else if (world.canSeeSkyFromBelowWater(BlockPos.containing(x, y + 1, z)) && world instanceof Level _lvl16 && _lvl16.isDay() && !world.getLevelData().isRaining()
-							&& (world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-						{
-							EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
-							_vars.Corruption = entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0;
-							_vars.syncPlayerVariables(entity);
-						}
-					} else {
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.CORRUPTION, (int) entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).Corruption, 0, false, true));
-					}
-				}
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.CORRUPTION,
+							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) + 2), 0, false, false));
 			}
 		}
 	}

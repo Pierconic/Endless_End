@@ -18,7 +18,6 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.endless_end.entity.HollowEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
-import net.mcreator.endless_end.entity.FlavorNodeEntity;
 import net.mcreator.endless_end.EndlessEndMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -28,8 +27,6 @@ public class EndlessEndModEntities {
 			EntityType.Builder.<GrazerEntity>of(GrazerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.sized(0.7f, 0.8f));
-	public static final DeferredHolder<EntityType<?>, EntityType<FlavorNodeEntity>> FLAVOR_NODE = register("flavor_node",
-			EntityType.Builder.<FlavorNodeEntity>of(FlavorNodeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1024).setUpdateInterval(3).fireImmune().sized(0.3f, 0.3f));
 	public static final DeferredHolder<EntityType<?>, EntityType<HollowEntity>> HOLLOW = register("hollow",
 			EntityType.Builder.<HollowEntity>of(HollowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(96).setUpdateInterval(3)
 
@@ -44,14 +41,12 @@ public class EndlessEndModEntities {
 	@SubscribeEvent
 	public static void init(RegisterSpawnPlacementsEvent event) {
 		GrazerEntity.init(event);
-		FlavorNodeEntity.init(event);
 		HollowEntity.init(event);
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(GRAZER.get(), GrazerEntity.createAttributes().build());
-		event.put(FLAVOR_NODE.get(), FlavorNodeEntity.createAttributes().build());
 		event.put(HOLLOW.get(), HollowEntity.createAttributes().build());
 	}
 }

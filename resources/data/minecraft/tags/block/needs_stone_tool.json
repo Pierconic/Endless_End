@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "endless_end:cobbled_endstone",
     "endless_end:spiteful_eye",
     "endless_end:burrowing_thorns",
     "endless_end:warding_eyes",

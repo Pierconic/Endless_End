@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "star_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:star_fragment"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:bottled_starlight_recipe",
+      "endless_end:nether_star_recipe",
+      "endless_end:tether_recipe"
+    ]
+  }
+}

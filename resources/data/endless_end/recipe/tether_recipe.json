@@ -3,21 +3,24 @@
   "category": "misc",
   "pattern": [
     "aba",
-    "bcb",
-    "ada"
+    "cdc",
+    "ebe"
   ],
   "key": {
     "a": {
-      "item": "endless_end:elytron_shard"
+      "item": "endless_end:moon_jelly"
     },
     "b": {
       "item": "minecraft:shulker_shell"
     },
     "c": {
-      "item": "minecraft:nether_star"
+      "item": "endless_end:elytron_shard"
     },
     "d": {
-      "item": "endless_end:moon_jelly"
+      "item": "endless_end:star_fragment"
+    },
+    "e": {
+      "item": "endless_end:endorite_ingot"
     }
   },
   "result": {

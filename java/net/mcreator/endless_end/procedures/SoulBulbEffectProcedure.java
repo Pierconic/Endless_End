@@ -10,24 +10,21 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.endless_end.network.EndlessEndModVariables;
+import net.mcreator.endless_end.init.EndlessEndModMobEffects;
 
 public class SoulBulbEffectProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof Player && entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).Corruption < 100) {
-			{
-				EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
-				_vars.Corruption = 100;
-				_vars.syncPlayerVariables(entity);
-			}
+		if (entity instanceof Player && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) < 100) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.CORRUPTION, 100, 0, false, false));
 		}
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 80, 0, false, false));
-		if (Math.random() < 0.1 && (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip3 ? blockstate.getValue(_getip3) : -1) < 3) {
+		if (Math.random() < 0.1 && (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip5 ? blockstate.getValue(_getip5) : -1) < 3) {
 			{
-				int _value = (int) ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip5 ? blockstate.getValue(_getip5) : -1) + 1);
+				int _value = (int) ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip7 ? blockstate.getValue(_getip7) : -1) + 1);
 				BlockPos _pos = BlockPos.containing(x, y, z);
 				BlockState _bs = world.getBlockState(_pos);
 				if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))

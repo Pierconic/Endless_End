@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "endless_end:item/stick-1.png"
-  }
-}
