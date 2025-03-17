@@ -83,12 +83,24 @@ public class TransceiverInterfaceMenu extends AbstractContainerMenu implements S
 			}
 		}
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 25, 34) {
+			private final int slot = 0;
+			private int x = TransceiverInterfaceMenu.this.x;
+			private int y = TransceiverInterfaceMenu.this.y;
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 61, 34) {
+			private final int slot = 1;
+			private int x = TransceiverInterfaceMenu.this.x;
+			private int y = TransceiverInterfaceMenu.this.y;
 		}));
 		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 97, 34) {
+			private final int slot = 2;
+			private int x = TransceiverInterfaceMenu.this.x;
+			private int y = TransceiverInterfaceMenu.this.y;
 		}));
 		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 133, 34) {
+			private final int slot = 3;
+			private int x = TransceiverInterfaceMenu.this.x;
+			private int y = TransceiverInterfaceMenu.this.y;
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)

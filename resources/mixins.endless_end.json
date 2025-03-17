@@ -2,7 +2,14 @@
   "required": true,
   "package": "net.mcreator.endless_end.mixins",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "BiomeSourceMixin",
+    "TheEndBiomeSourceMixin",
+    "ClimateSamplerMixin",
+    "NoiseConfigMixin",
+    "ChunkNoiseSamplerMixin",
+    "NoiseGeneratorSettingsAccess"
+  ],
   "client": [],
   "minVersion": "0.8"
 }

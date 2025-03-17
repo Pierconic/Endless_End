@@ -35,8 +35,8 @@ public class TransponderSignalsProcedure {
 		if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EndlessEndModItems.PULSING_TRANSPONDER.get()
 				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EndlessEndModItems.TRANSPONDER.get()
 				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EndlessEndModItems.SENDING_TRANSPONDER.get())) {
-			newtransponder = new ItemStack(EndlessEndModItems.PULSING_TRANSPONDER.get());
-			handtransponder = new ItemStack(EndlessEndModItems.SENDING_TRANSPONDER.get());
+			newtransponder = new ItemStack(EndlessEndModItems.PULSING_TRANSPONDER.get()).copy();
+			handtransponder = new ItemStack(EndlessEndModItems.SENDING_TRANSPONDER.get()).copy();
 			newtransponder.set(DataComponents.CUSTOM_NAME, Component.literal((((itemstack.getDisplayName().getString()).replace("]", "")).replace("[", ""))));
 			handtransponder.set(DataComponents.CUSTOM_NAME, Component.literal((((itemstack.getDisplayName().getString()).replace("]", "")).replace("[", ""))));
 			if (entity instanceof LivingEntity _entity) {

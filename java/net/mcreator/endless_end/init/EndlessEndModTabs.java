@@ -21,36 +21,7 @@ public class EndlessEndModTabs {
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-		if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-
-			tabData.accept(EndlessEndModBlocks.CHISELED_ENDSTONE.get().asItem());
-			tabData.accept(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get().asItem());
-
-		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
-
-			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
-			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());
-			tabData.accept(EndlessEndModBlocks.ENDORITE_CORE.get().asItem());
-			tabData.accept(EndlessEndModBlocks.TRANSCEIVER.get().asItem());
-			tabData.accept(EndlessEndModItems.TRANSPONDER.get());
-			tabData.accept(EndlessEndModBlocks.ENDORITE_TILES.get().asItem());
-			tabData.accept(EndlessEndModBlocks.ENDORITE_MEMBRANE.get().asItem());
-			tabData.accept(EndlessEndModBlocks.TUNE_BLOCK.get().asItem());
-
-		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-
-			tabData.accept(EndlessEndModBlocks.ENDERPORTER_WHITE.get().asItem());
-			tabData.accept(EndlessEndModItems.WARP_CHIP_WHITE.get());
-			tabData.accept(EndlessEndModBlocks.TETHER.get().asItem());
-			tabData.accept(EndlessEndModBlocks.SINGING_SAND.get().asItem());
-
-		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-
-			tabData.accept(EndlessEndModItems.GRAZER_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
-
-		} else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-
+		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 			tabData.accept(EndlessEndModItems.DISC_FRAGMENT_INTRO.get());
 			tabData.accept(EndlessEndModItems.RAW_ENDORITE.get());
 			tabData.accept(EndlessEndModItems.ENDORITE_INGOT.get());
@@ -59,19 +30,10 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.STAR_FRAGMENT.get());
 			tabData.accept(EndlessEndModItems.MOON_JELLY.get());
 			tabData.accept(EndlessEndModItems.DISC_FRAGMENT_ELEGY.get());
-
-		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-
-			tabData.accept(EndlessEndModItems.INTRO.get());
-			tabData.accept(EndlessEndModItems.ESSENCE_BUCKET.get());
-			tabData.accept(EndlessEndModItems.MAGIC_WHISTLE.get());
-			tabData.accept(EndlessEndModItems.ELEGY.get());
-			tabData.accept(EndlessEndModItems.YEARNING_EYE.get());
-			tabData.accept(EndlessEndModItems.EMPTY_EYE.get());
-			tabData.accept(EndlessEndModItems.ELEVEN_REPAIRED.get());
-
+		} else if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+			tabData.accept(EndlessEndModBlocks.CHISELED_ENDSTONE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-
 			tabData.accept(EndlessEndModBlocks.ENDORITE_ORE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.END_IRON.get().asItem());
 			tabData.accept(EndlessEndModBlocks.CANTICLE.get().asItem());
@@ -88,12 +50,33 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.REFUSE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.COBBLED_ENDSTONE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.END_DIAMONDS.get().asItem());
-
+		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
+			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
+			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());
+			tabData.accept(EndlessEndModBlocks.ENDORITE_CORE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.TRANSCEIVER.get().asItem());
+			tabData.accept(EndlessEndModItems.TRANSPONDER.get());
+			tabData.accept(EndlessEndModBlocks.ENDORITE_TILES.get().asItem());
+			tabData.accept(EndlessEndModBlocks.TUNE_BLOCK.get().asItem());
+		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+			tabData.accept(EndlessEndModBlocks.ENDERPORTER_WHITE.get().asItem());
+			tabData.accept(EndlessEndModItems.WARP_CHIP_WHITE.get());
+			tabData.accept(EndlessEndModBlocks.TETHER.get().asItem());
+			tabData.accept(EndlessEndModBlocks.SINGING_SAND.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-
 			tabData.accept(EndlessEndModItems.INSECT_FLESH.get());
 			tabData.accept(EndlessEndModItems.BOTTLED_STARLIGHT.get());
-
+		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+			tabData.accept(EndlessEndModItems.GRAZER_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
+		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+			tabData.accept(EndlessEndModItems.ESSENCE_BUCKET.get());
+			tabData.accept(EndlessEndModItems.MAGIC_WHISTLE.get());
+			tabData.accept(EndlessEndModItems.YEARNING_EYE.get());
+			tabData.accept(EndlessEndModItems.EMPTY_EYE.get());
+			tabData.accept(EndlessEndModItems.INTRO.get());
+			tabData.accept(EndlessEndModItems.ELEGY.get());
+			tabData.accept(EndlessEndModItems.ELEVEN_REPAIRED.get());
 		}
 	}
 }

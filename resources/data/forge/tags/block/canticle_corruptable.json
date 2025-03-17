@@ -5,6 +5,7 @@
     "endless_end:cracked_end_stone_bricks",
     "endless_end:end_iron",
     "minecraft:end_stone",
-    "minecraft:end_stone_bricks"
+    "minecraft:end_stone_bricks",
+    "endless_end:cobbled_endstone"
   ]
 }

@@ -26,7 +26,8 @@ public class EssenceFluidType extends FluidType {
 	@SubscribeEvent
 	public static void registerFluidTypeExtensions(RegisterClientExtensionsEvent event) {
 		event.registerFluidType(new IClientFluidTypeExtensions() {
-			private static final ResourceLocation STILL_TEXTURE = ResourceLocation.parse("endless_end:block/essence_still"), FLOWING_TEXTURE = ResourceLocation.parse("endless_end:block/essence_flow");
+			private static final ResourceLocation STILL_TEXTURE = ResourceLocation.parse("endless_end:block/essence_still");
+			private static final ResourceLocation FLOWING_TEXTURE = ResourceLocation.parse("endless_end:block/essence_flow");
 
 			@Override
 			public ResourceLocation getStillTexture() {

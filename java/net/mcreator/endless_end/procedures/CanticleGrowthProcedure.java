@@ -574,13 +574,6 @@ public class CanticleGrowthProcedure {
 			CanticleRetractProcedure.execute(world, x, y, z);
 		}
 		if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:canticle_corruptable")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1, false);
-				}
-			}
 			{
 				BlockPos _bp = BlockPos.containing(x, y + 1, z);
 				BlockState _bs = EndlessEndModBlocks.ROTTING_END_STONE.get().defaultBlockState();
@@ -597,13 +590,6 @@ public class CanticleGrowthProcedure {
 			}
 		}
 		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:canticle_corruptable")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1, false);
-				}
-			}
 			{
 				BlockPos _bp = BlockPos.containing(x, y - 1, z);
 				BlockState _bs = EndlessEndModBlocks.ROTTING_END_STONE.get().defaultBlockState();
@@ -620,13 +606,6 @@ public class CanticleGrowthProcedure {
 			}
 		}
 		if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:canticle_corruptable")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1, false);
-				}
-			}
 			{
 				BlockPos _bp = BlockPos.containing(x - 1, y, z);
 				BlockState _bs = EndlessEndModBlocks.ROTTING_END_STONE.get().defaultBlockState();
@@ -643,13 +622,6 @@ public class CanticleGrowthProcedure {
 			}
 		}
 		if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:canticle_corruptable")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1, false);
-				}
-			}
 			{
 				BlockPos _bp = BlockPos.containing(x + 1, y, z);
 				BlockState _bs = EndlessEndModBlocks.ROTTING_END_STONE.get().defaultBlockState();
@@ -666,13 +638,6 @@ public class CanticleGrowthProcedure {
 			}
 		}
 		if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).is(BlockTags.create(ResourceLocation.parse("forge:canticle_corruptable")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1, false);
-				}
-			}
 			{
 				BlockPos _bp = BlockPos.containing(x, y, z + 1);
 				BlockState _bs = EndlessEndModBlocks.ROTTING_END_STONE.get().defaultBlockState();
@@ -689,13 +654,6 @@ public class CanticleGrowthProcedure {
 			}
 		}
 		if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).is(BlockTags.create(ResourceLocation.parse("forge:canticle_corruptable")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lydian.tunnel")), SoundSource.NEUTRAL, (float) 0.6, 1, false);
-				}
-			}
 			{
 				BlockPos _bp = BlockPos.containing(x, y, z - 1);
 				BlockState _bs = EndlessEndModBlocks.ROTTING_END_STONE.get().defaultBlockState();

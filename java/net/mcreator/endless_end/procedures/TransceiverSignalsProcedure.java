@@ -42,7 +42,7 @@ public class TransceiverSignalsProcedure {
 				return ItemStack.EMPTY;
 			}
 		}.getItemStack(world, BlockPos.containing(x, y, z), 0)).getItem() == EndlessEndModItems.TRANSPONDER.get()) {
-			newtransponder = new ItemStack(EndlessEndModItems.PULSING_TRANSPONDER.get());
+			newtransponder = new ItemStack(EndlessEndModItems.PULSING_TRANSPONDER.get()).copy();
 			newtransponder.set(DataComponents.CUSTOM_NAME, Component.literal(((((new Object() {
 				public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
 					if (world instanceof ILevelExtension _ext) {

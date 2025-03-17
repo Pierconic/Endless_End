@@ -23,7 +23,7 @@ public class TransponderDeactivateProcedure {
 		ItemStack newtransponder = ItemStack.EMPTY;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EndlessEndModItems.PULSING_TRANSPONDER.get()
 				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EndlessEndModItems.SENDING_TRANSPONDER.get()) {
-			newtransponder = new ItemStack(EndlessEndModItems.TRANSPONDER.get());
+			newtransponder = new ItemStack(EndlessEndModItems.TRANSPONDER.get()).copy();
 			newtransponder.set(DataComponents.CUSTOM_NAME, Component.literal((((itemstack.getDisplayName().getString()).replace("]", "")).replace("[", ""))));
 			if (entity instanceof LivingEntity _entity) {
 				ItemStack _setstack = newtransponder.copy();

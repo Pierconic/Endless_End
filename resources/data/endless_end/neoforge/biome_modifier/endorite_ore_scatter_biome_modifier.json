@@ -5,7 +5,11 @@
     "end_highlands",
     "end_midlands",
     "small_end_islands",
-    "the_end"
+    "the_end",
+    "endless_end:chorus_orchard",
+    "endless_end:inverted_orchard",
+    "endless_end:soul_arbor",
+    "endless_end:whispering_delta"
   ],
   "features": "endless_end:endorite_ore_scatter",
   "step": "underground_decoration"
