@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "endless_end:block/stripped_violet_sepal_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "endless_end:block/stripped_violet_sepal_wood"
+    },
+    "axis=z": {
+      "model": "endless_end:block/stripped_violet_sepal_wood",
+      "x": 90
+    }
+  }
+}

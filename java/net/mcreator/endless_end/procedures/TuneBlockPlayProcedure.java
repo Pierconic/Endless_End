@@ -1,20 +1,32 @@
 package net.mcreator.endless_end.procedures;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.AdvancementHolder;
+
+import java.util.List;
+import java.util.Comparator;
 
 public class TuneBlockPlayProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
@@ -24,49 +36,7 @@ public class TuneBlockPlayProcedure {
 		double sz = 0;
 		double sy = 0;
 		double volume = 0;
-		if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip1 ? blockstate.getValue(_getip1) : -1) == 0
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip3 ? blockstate.getValue(_getip3) : -1) == 13) {
-			level = 1;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip5 ? blockstate.getValue(_getip5) : -1) == 1
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip7 ? blockstate.getValue(_getip7) : -1) == 14) {
-			level = 1.0595;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip9 ? blockstate.getValue(_getip9) : -1) == 2
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip11 ? blockstate.getValue(_getip11) : -1) == 15) {
-			level = 1.12246;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip13 ? blockstate.getValue(_getip13) : -1) == 3
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip15 ? blockstate.getValue(_getip15) : -1) == 16) {
-			level = 1.18921;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip17 ? blockstate.getValue(_getip17) : -1) == 4
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip19 ? blockstate.getValue(_getip19) : -1) == 17) {
-			level = 1.25992;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip21 ? blockstate.getValue(_getip21) : -1) == 5
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip23 ? blockstate.getValue(_getip23) : -1) == 18) {
-			level = 1.33485;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip25 ? blockstate.getValue(_getip25) : -1) == 6
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip27 ? blockstate.getValue(_getip27) : -1) == 19) {
-			level = 1.41421;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip29 ? blockstate.getValue(_getip29) : -1) == 7
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip31 ? blockstate.getValue(_getip31) : -1) == 20) {
-			level = 1.49831;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip33 ? blockstate.getValue(_getip33) : -1) == 8
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip35 ? blockstate.getValue(_getip35) : -1) == 21) {
-			level = 1.5874;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip37 ? blockstate.getValue(_getip37) : -1) == 9
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip39 ? blockstate.getValue(_getip39) : -1) == 22) {
-			level = 1.68179;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip41 ? blockstate.getValue(_getip41) : -1) == 10
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip43 ? blockstate.getValue(_getip43) : -1) == 23) {
-			level = 1.7818;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip45 ? blockstate.getValue(_getip45) : -1) == 11
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip47 ? blockstate.getValue(_getip47) : -1) == 24) {
-			level = 1.88775;
-		} else if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip49 ? blockstate.getValue(_getip49) : -1) == 12
-				|| (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip51 ? blockstate.getValue(_getip51) : -1) == 25) {
-			level = 2;
-		}
-		sx = 0;
-		sy = 0;
-		sz = 0;
+		double status = 0;
 		if ((new Object() {
 			public Direction getDirection(BlockState _bs) {
 				Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty("facing");
@@ -143,196 +113,743 @@ public class TuneBlockPlayProcedure {
 		volume = 1;
 		if ((world.getBlockState(BlockPos.containing(x + 1, y + 0, z + 0))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
 			volume = volume - 0.25;
+		} else if ((world.getBlockState(BlockPos.containing(x + 1, y + 0, z + 0))).getBlock() == Blocks.AMETHYST_BLOCK) {
+			volume = volume + 1.5;
 		}
 		if ((world.getBlockState(BlockPos.containing(x - 1, y + 0, z + 0))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
 			volume = volume - 0.25;
+		} else if ((world.getBlockState(BlockPos.containing(x - 1, y + 0, z + 0))).getBlock() == Blocks.AMETHYST_BLOCK) {
+			volume = volume + 1.5;
 		}
 		if ((world.getBlockState(BlockPos.containing(x - 0, y + 0, z + 1))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
 			volume = volume - 0.25;
+		} else if ((world.getBlockState(BlockPos.containing(x - 0, y + 0, z + 1))).getBlock() == Blocks.AMETHYST_BLOCK) {
+			volume = volume + 1.5;
 		}
 		if ((world.getBlockState(BlockPos.containing(x - 0, y + 0, z - 1))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
 			volume = volume - 0.25;
+		} else if ((world.getBlockState(BlockPos.containing(x - 0, y + 0, z - 1))).getBlock() == Blocks.AMETHYST_BLOCK) {
+			volume = volume + 1.5;
 		}
-		if ((world.getBlockState(BlockPos.containing(x - 0, y + 1, z - 1))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
+		if ((world.getBlockState(BlockPos.containing(x - 0, y + 1, z - 0))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
 			volume = volume - 0.25;
+		} else if ((world.getBlockState(BlockPos.containing(x - 0, y + 1, z - 0))).getBlock() == Blocks.AMETHYST_BLOCK) {
+			volume = volume + 1.5;
 		}
-		if ((world.getBlockState(BlockPos.containing(x - 0, y - 1, z - 1))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
+		if ((world.getBlockState(BlockPos.containing(x - 0, y - 1, z - 0))).is(BlockTags.create(ResourceLocation.parse("minecraft:dampens_vibrations")))) {
 			volume = volume - 0.25;
+		} else if ((world.getBlockState(BlockPos.containing(x - 0, y - 1, z - 0))).getBlock() == Blocks.AMETHYST_BLOCK) {
+			volume = volume + 1.5;
 		}
-		if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_bamboo")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.bamboo")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.bamboo")), SoundSource.RECORDS, (float) volume, (float) level, false);
+		if (volume >= 3) {
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(18 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof Player) {
+						if (entityiterator instanceof ServerPlayer _player) {
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("endless_end:public_nuisance"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
+							}
+						}
+					}
 				}
 			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_wooden")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.wood")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.wood")), SoundSource.RECORDS, (float) volume, (float) level, false);
+		}
+		status = ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip52 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip52) : -1) % 13;
+		if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_wooden")))) {
+			if (new Object() {
+				public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getPersistentData().getBoolean(tag);
+					return false;
 				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_ghost")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.ghost")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.ghost")), SoundSource.RECORDS, (float) volume, (float) level, false);
+			}.getValue(world, BlockPos.containing(x, y, z), "lead")) {
+				if (status == 0) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_1")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_1")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 1) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_2")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_2")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 2) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_3")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_3")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 3) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_4")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_4")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 4) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_5")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_5")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 5) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_6")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_6")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 6) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_7")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_7")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 7) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_8")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_8")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 8) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_9")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_9")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 9) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_10")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_10")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 10) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_11")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_11")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 11) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_12")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_12")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 12) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_13")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_13")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
 				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_ice")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.ice")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.ice")), SoundSource.RECORDS, (float) volume, (float) level, false);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null)
+						_blockEntity.getPersistentData().putBoolean("lead", false);
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_terracotta")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.terracotta")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.terracotta")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_glazed")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.glazed_terracotta")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.glazed_terracotta")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_end")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.glazed_terracotta")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.glazed_terracotta")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_prism")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.prism")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.prism")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_dark")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.dark_prism")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.dark_prism")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_magma")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.magma")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.magma")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_copper")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.copper")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.copper")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_iron")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.iron")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.iron")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_gold")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.gold")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.gold")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_emerald")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.emerald")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.emerald")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_lapis")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.lapis")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.lapis")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_amethyst")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.amethyst")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.amethyst")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_obsidian")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.obsidian")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.obsidian")), SoundSource.RECORDS, (float) volume, (float) level, false);
-				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_adamant")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.adamant")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.adamant")), SoundSource.RECORDS, (float) volume, (float) level, false);
+			} else {
+				if (status == 0) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_1")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_1")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 1) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_2")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_2")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 2) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_3")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_3")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 3) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_4")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_4")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 4) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_5")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_5")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 5) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_6")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_6")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 6) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_7")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_7")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 7) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_8")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_8")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 8) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_9")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_9")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 9) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_10")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_10")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 10) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_11")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_11")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 11) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_12")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_12")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 12) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_13")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_13")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
 				}
 			}
 		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_stone")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.stone")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.stone")), SoundSource.RECORDS, (float) volume, (float) level, false);
+			if (new Object() {
+				public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getPersistentData().getBoolean(tag);
+					return false;
 				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_deepslate")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.deepslate")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.deepslate")), SoundSource.RECORDS, (float) volume, (float) level, false);
+			}.getValue(world, BlockPos.containing(x, y, z), "lead")) {
+				if (status == 0) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_1")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_1")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 1) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_2")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_2")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 2) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_3")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_3")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 3) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_4")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_4")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 4) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_5")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_5")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 5) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_6")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_6")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 6) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_7")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_7")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 7) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_8")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_8")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 8) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_9")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_9")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 9) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_10")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_10")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 10) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_11")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_11")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 11) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_12")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_12")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 12) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_13")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_stone_13")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
 				}
-			}
-		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_netherite")))) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.netherite")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.netherite")), SoundSource.RECORDS, (float) volume, (float) level, false);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null)
+						_blockEntity.getPersistentData().putBoolean("lead", false);
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
+			} else {
+				if (status == 0) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_1")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_1")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 1) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_2")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_2")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 2) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_3")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_3")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 3) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_4")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_4")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 4) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_5")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_5")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 5) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_6")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_6")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 6) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_7")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_7")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 7) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_8")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_8")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 8) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_9")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_9")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 9) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_10")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_10")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 10) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_11")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_11")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 11) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_12")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_12")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 12) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_13")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_stone_13")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
 				}
 			}
 		} else {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.flute")), SoundSource.RECORDS, (float) volume, (float) level);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:tune.flute")), SoundSource.RECORDS, (float) volume, (float) level, false);
+			if (new Object() {
+				public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getPersistentData().getBoolean(tag);
+					return false;
+				}
+			}.getValue(world, BlockPos.containing(x, y, z), "lead")) {
+				if (status == 0) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_1")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_1")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 1) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_2")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_2")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 2) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_3")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_3")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 3) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_4")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_4")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 4) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_5")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_5")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 5) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_6")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_6")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 6) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_7")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_7")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 7) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_8")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_8")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 8) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_9")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_9")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 9) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_10")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_10")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 10) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_11")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_11")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 11) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_12")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_12")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 12) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_13")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:lead_wood_13")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				}
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null)
+						_blockEntity.getPersistentData().putBoolean("lead", false);
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
+			} else {
+				if (status == 0) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_1")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_1")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 1) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_2")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_2")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 2) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_3")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_3")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 3) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_4")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_4")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 4) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_5")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_5")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 5) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_6")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_6")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 6) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_7")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_7")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 7) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_8")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_8")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 8) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_9")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_9")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 9) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_10")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_10")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 10) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_11")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_11")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 11) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_12")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_12")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
+				} else if (status == 12) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_13")), SoundSource.BLOCKS, (float) volume, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loop_wood_13")), SoundSource.BLOCKS, (float) volume, 1, false);
+						}
+					}
 				}
 			}
 		}

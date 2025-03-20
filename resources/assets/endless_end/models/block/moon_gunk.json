@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/moon_gunk",
+  "textures": {
+    "all": "endless_end:block/moon_gunk",
+    "particle": "endless_end:block/moon_jelly",
+    "0": "endless_end:block/moon_gunk"
+  },
+  "render_type": "translucent"
+}

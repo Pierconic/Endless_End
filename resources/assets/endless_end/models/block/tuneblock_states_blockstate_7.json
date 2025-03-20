@@ -5,7 +5,7 @@
     "up": "endless_end:block/tune_block_side",
     "north": "endless_end:block/tune_block_front",
     "east": "endless_end:block/tune_block-9.png",
-    "south": "endless_end:block/tune_block_side",
+    "south": "endless_end:block/tune_block_back",
     "west": "endless_end:block/tune_block-9.png",
     "particle": "endless_end:block/tune_block_side"
   },

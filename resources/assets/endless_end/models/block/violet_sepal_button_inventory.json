@@ -1,0 +1,8 @@
+{
+  "parent": "block/button_inventory",
+  "textures": {
+    "particle": "endless_end:block/violet_planks",
+    "texture": "endless_end:block/violet_planks"
+  },
+  "render_type": "solid"
+}

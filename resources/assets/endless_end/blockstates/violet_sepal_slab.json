@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endless_end:block/violet_sepal_slab"
+    },
+    "type=top": {
+      "model": "endless_end:block/violet_sepal_slab_top"
+    },
+    "type=double": {
+      "model": "endless_end:block/violet_sepal_slab_full"
+    }
+  }
+}

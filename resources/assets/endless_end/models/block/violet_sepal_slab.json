@@ -1,0 +1,10 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "particle": "endless_end:block/violet_planks",
+    "bottom": "endless_end:block/violet_planks",
+    "top": "endless_end:block/violet_planks",
+    "side": "endless_end:block/violet_planks"
+  },
+  "render_type": "solid"
+}

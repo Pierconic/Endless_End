@@ -33,6 +33,16 @@ public class EndlessEndModTabs {
 		} else if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.CHISELED_ENDSTONE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_WOOD.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_LOG.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_PLANKS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_STAIRS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_SLAB.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_FENCE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_FENCE_GATE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_PRESSURE_PLATE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.STRIPPED_VIOLET_SEPAL_LOG.get().asItem());
+			tabData.accept(EndlessEndModBlocks.STRIPPED_VIOLET_SEPAL_WOOD.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_ORE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.END_IRON.get().asItem());
@@ -50,6 +60,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.REFUSE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.COBBLED_ENDSTONE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.END_DIAMONDS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_LEAVES.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());
@@ -58,11 +69,13 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.TRANSPONDER.get());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_TILES.get().asItem());
 			tabData.accept(EndlessEndModBlocks.TUNE_BLOCK.get().asItem());
+			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_BUTTON.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDERPORTER_WHITE.get().asItem());
 			tabData.accept(EndlessEndModItems.WARP_CHIP_WHITE.get());
 			tabData.accept(EndlessEndModBlocks.TETHER.get().asItem());
 			tabData.accept(EndlessEndModBlocks.SINGING_SAND.get().asItem());
+			tabData.accept(EndlessEndModBlocks.MOON_JELLY_BLOCK.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
 			tabData.accept(EndlessEndModItems.INSECT_FLESH.get());
 			tabData.accept(EndlessEndModItems.BOTTLED_STARLIGHT.get());

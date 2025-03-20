@@ -19,11 +19,6 @@ public class HollowUpdateTickProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof HollowEntity _datEntI ? _datEntI.getEntityData().get(HollowEntity.DATA_burrow_progress) : 0) > 0) {
-			if ((entity instanceof HollowEntity _datEntI ? _datEntI.getEntityData().get(HollowEntity.DATA_burrow_progress) : 0) == 80) {
-				if (entity instanceof HollowEntity) {
-					((HollowEntity) entity).setAnimation("burrow");
-				}
-			}
 			if (entity instanceof HollowEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(HollowEntity.DATA_burrow_progress, (int) ((entity instanceof HollowEntity _datEntI ? _datEntI.getEntityData().get(HollowEntity.DATA_burrow_progress) : 0) - 1));
 			if (world instanceof ServerLevel _level)

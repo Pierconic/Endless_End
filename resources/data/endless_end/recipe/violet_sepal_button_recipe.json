@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "endless_end:violet_sepal_planks"
+    }
+  ],
+  "result": {
+    "id": "endless_end:violet_sepal_button",
+    "count": 1
+  }
+}

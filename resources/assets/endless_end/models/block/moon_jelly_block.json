@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/moon_jelly",
+    "particle": "endless_end:block/moon_jelly"
+  },
+  "render_type": "translucent"
+}

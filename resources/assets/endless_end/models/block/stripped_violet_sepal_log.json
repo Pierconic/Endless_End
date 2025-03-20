@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/violet_log_top_stripped",
+    "up": "endless_end:block/violet_log_top_stripped",
+    "north": "endless_end:block/stripped_violet_sepal",
+    "east": "endless_end:block/stripped_violet_sepal",
+    "south": "endless_end:block/stripped_violet_sepal",
+    "west": "endless_end:block/stripped_violet_sepal",
+    "particle": "endless_end:block/violet_log_top_stripped"
+  },
+  "render_type": "solid"
+}

@@ -14,6 +14,16 @@ import net.neoforged.api.distmarker.Dist;
 import net.minecraft.world.level.block.Block;
 
 import net.mcreator.endless_end.block.WardingEyesBlock;
+import net.mcreator.endless_end.block.VioletSepalWoodBlock;
+import net.mcreator.endless_end.block.VioletSepalStairsBlock;
+import net.mcreator.endless_end.block.VioletSepalSlabBlock;
+import net.mcreator.endless_end.block.VioletSepalPressurePlateBlock;
+import net.mcreator.endless_end.block.VioletSepalPlanksBlock;
+import net.mcreator.endless_end.block.VioletSepalLogBlock;
+import net.mcreator.endless_end.block.VioletSepalLeavesBlock;
+import net.mcreator.endless_end.block.VioletSepalFenceGateBlock;
+import net.mcreator.endless_end.block.VioletSepalFenceBlock;
+import net.mcreator.endless_end.block.VioletSepalButtonBlock;
 import net.mcreator.endless_end.block.VertabraeBlock;
 import net.mcreator.endless_end.block.TunerodStemBlock;
 import net.mcreator.endless_end.block.TuneBlockBlock;
@@ -22,6 +32,8 @@ import net.mcreator.endless_end.block.TransceiverSendingOffBlock;
 import net.mcreator.endless_end.block.TransceiverRecievingOnBlock;
 import net.mcreator.endless_end.block.TransceiverBlock;
 import net.mcreator.endless_end.block.TetherBlock;
+import net.mcreator.endless_end.block.StrippedVioletSepalWoodBlock;
+import net.mcreator.endless_end.block.StrippedVioletSepalLogBlock;
 import net.mcreator.endless_end.block.SpitefulEyeBlock;
 import net.mcreator.endless_end.block.SpiralingSandBlock;
 import net.mcreator.endless_end.block.SoulBulbVaseBlock;
@@ -34,6 +46,8 @@ import net.mcreator.endless_end.block.RottingEndStoneBlock;
 import net.mcreator.endless_end.block.RefuseBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteTilesBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteMeshBlock;
+import net.mcreator.endless_end.block.MoonJellyBlockBlock;
+import net.mcreator.endless_end.block.MoonGunkBlock;
 import net.mcreator.endless_end.block.LydianPetalsBlock;
 import net.mcreator.endless_end.block.IconoclastBlock;
 import net.mcreator.endless_end.block.EssenceBlock;
@@ -139,6 +153,20 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> REFUSE = REGISTRY.register("refuse", RefuseBlock::new);
 	public static final DeferredBlock<Block> COBBLED_ENDSTONE = REGISTRY.register("cobbled_endstone", CobbledEndstoneBlock::new);
 	public static final DeferredBlock<Block> END_DIAMONDS = REGISTRY.register("end_diamonds", EndDiamondsBlock::new);
+	public static final DeferredBlock<Block> MOON_JELLY_BLOCK = REGISTRY.register("moon_jelly_block", MoonJellyBlockBlock::new);
+	public static final DeferredBlock<Block> MOON_GUNK = REGISTRY.register("moon_gunk", MoonGunkBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_WOOD = REGISTRY.register("violet_sepal_wood", VioletSepalWoodBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_LOG = REGISTRY.register("violet_sepal_log", VioletSepalLogBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_PLANKS = REGISTRY.register("violet_sepal_planks", VioletSepalPlanksBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_LEAVES = REGISTRY.register("violet_sepal_leaves", VioletSepalLeavesBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_STAIRS = REGISTRY.register("violet_sepal_stairs", VioletSepalStairsBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_SLAB = REGISTRY.register("violet_sepal_slab", VioletSepalSlabBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_FENCE = REGISTRY.register("violet_sepal_fence", VioletSepalFenceBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_FENCE_GATE = REGISTRY.register("violet_sepal_fence_gate", VioletSepalFenceGateBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_PRESSURE_PLATE = REGISTRY.register("violet_sepal_pressure_plate", VioletSepalPressurePlateBlock::new);
+	public static final DeferredBlock<Block> VIOLET_SEPAL_BUTTON = REGISTRY.register("violet_sepal_button", VioletSepalButtonBlock::new);
+	public static final DeferredBlock<Block> STRIPPED_VIOLET_SEPAL_LOG = REGISTRY.register("stripped_violet_sepal_log", StrippedVioletSepalLogBlock::new);
+	public static final DeferredBlock<Block> STRIPPED_VIOLET_SEPAL_WOOD = REGISTRY.register("stripped_violet_sepal_wood", StrippedVioletSepalWoodBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

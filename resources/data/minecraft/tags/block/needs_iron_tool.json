@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "endless_end:rotting_end_stone",
     "endless_end:end_diamonds",
     "endless_end:refuse",
     "endless_end:end_amethyst",

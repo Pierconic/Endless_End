@@ -88,7 +88,7 @@ public class WardingEyesBlockEntity extends RandomizableContainerBlockEntity imp
 
 	@Override
 	public Component getDisplayName() {
-		return Component.literal("Vertabrae");
+		return Component.literal("Warding Eyes");
 	}
 
 	@Override

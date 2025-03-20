@@ -7,14 +7,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.endless_end.entity.HollowEntity;
-import net.mcreator.endless_end.EndlessEndMod;
 
 import java.util.Comparator;
 
@@ -46,13 +44,8 @@ public class HollowBurrowProcedure {
 				}
 			}.compareDistOf(x, y, z)).findFirst().orElse(null)).getZ())));
 		}
-		EndlessEndMod.queueServerWork(10, () -> {
-			{
-				Entity _ent = entity;
-				_ent.teleportTo(x, (y + 2.5), z);
-				if (_ent instanceof ServerPlayer _serverPlayer)
-					_serverPlayer.connection.teleport(x, (y + 2.5), z, _ent.getYRot(), _ent.getXRot());
-			}
-		});
+		if (entity instanceof HollowEntity) {
+			((HollowEntity) entity).setAnimation("burrow");
+		}
 	}
 }

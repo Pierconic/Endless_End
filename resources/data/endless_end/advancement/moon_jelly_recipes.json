@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "moon_jelly_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:moon_jelly"
+            ],
+            "count": {
+              "min": 1,
+              "max": 16
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:moon_jelly_block_recipe"
+    ]
+  }
+}

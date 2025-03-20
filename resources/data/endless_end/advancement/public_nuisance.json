@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "endless_end:tune_block"
+    },
+    "title": {
+      "translate": "advancements.public_nuisance.title"
+    },
+    "description": {
+      "translate": "advancements.public_nuisance.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "public_nuisance_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minecraft:end/enter_end_gateway"
+}

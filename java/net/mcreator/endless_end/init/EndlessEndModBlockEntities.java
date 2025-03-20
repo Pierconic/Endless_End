@@ -28,6 +28,7 @@ import net.mcreator.endless_end.block.entity.SpiralingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SingingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SculkTeethBlockEntity;
 import net.mcreator.endless_end.block.entity.PhasedEndoriteTilesBlockEntity;
+import net.mcreator.endless_end.block.entity.MoonGunkBlockEntity;
 import net.mcreator.endless_end.block.entity.IconoclastBlockEntity;
 import net.mcreator.endless_end.block.entity.BurrowingThornsBlockEntity;
 import net.mcreator.endless_end.EndlessEndMod;
@@ -50,6 +51,7 @@ public class EndlessEndModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SINGING_SAND = register("singing_sand", EndlessEndModBlocks.SINGING_SAND, SingingSandBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SPIRALING_SAND = register("spiraling_sand", EndlessEndModBlocks.SPIRALING_SAND, SpiralingSandBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ICONOCLAST = register("iconoclast", EndlessEndModBlocks.ICONOCLAST, IconoclastBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> MOON_GUNK = register("moon_gunk", EndlessEndModBlocks.MOON_GUNK, MoonGunkBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -73,5 +75,6 @@ public class EndlessEndModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SINGING_SAND.get(), (blockEntity, side) -> ((SingingSandBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SPIRALING_SAND.get(), (blockEntity, side) -> ((SpiralingSandBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ICONOCLAST.get(), (blockEntity, side) -> ((IconoclastBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, MOON_GUNK.get(), (blockEntity, side) -> ((MoonGunkBlockEntity) blockEntity).getItemHandler());
 	}
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "endless_end:block/violet_planks",
+    "particle": "endless_end:block/violet_planks"
+  },
+  "render_type": "solid"
+}

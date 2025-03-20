@@ -16,6 +16,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.registries.Registries;
 
+import net.mcreator.endless_end.entity.MoonJellyBallEntity;
 import net.mcreator.endless_end.entity.HollowEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
 import net.mcreator.endless_end.EndlessEndMod;
@@ -31,6 +32,8 @@ public class EndlessEndModEntities {
 			EntityType.Builder.<HollowEntity>of(HollowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(96).setUpdateInterval(3)
 
 					.sized(0.6f, 2.4f));
+	public static final DeferredHolder<EntityType<?>, EntityType<MoonJellyBallEntity>> MOON_JELLY_BALL = register("moon_jelly_ball",
+			EntityType.Builder.<MoonJellyBallEntity>of(MoonJellyBallEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

@@ -22,7 +22,8 @@
     "recipes": [
       "endless_end:bottled_starlight_recipe",
       "endless_end:nether_star_recipe",
-      "endless_end:tether_recipe"
+      "endless_end:tether_recipe",
+      "endless_end:intro_recipe"
     ]
   }
 }
