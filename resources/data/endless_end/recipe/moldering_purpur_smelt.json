@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "experience": 1,
+  "cookingtime": 280,
+  "ingredient": {
+    "item": "endless_end:moldering_purpur"
+  },
+  "result": {
+    "id": "minecraft:purpur_block"
+  }
+}

@@ -11,13 +11,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 
-import net.minecraft.world.level.saveddata.SavedData;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.protocol.PacketFlow;
@@ -38,7 +33,6 @@ public class EndlessEndModVariables {
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
-		EndlessEndMod.addNetworkMessage(SavedDataSyncMessage.TYPE, SavedDataSyncMessage.STREAM_CODEC, SavedDataSyncMessage::handleData);
 		EndlessEndMod.addNetworkMessage(PlayerVariablesSyncMessage.TYPE, PlayerVariablesSyncMessage.STREAM_CODEC, PlayerVariablesSyncMessage::handleData);
 	}
 
@@ -142,6 +136,10 @@ public class EndlessEndModVariables {
 			clone.EyeballDirection = original.EyeballDirection;
 			clone.Eyeball_Agitation = original.Eyeball_Agitation;
 			clone.singing_sand_cooldown = original.singing_sand_cooldown;
+			clone.PulseCooldown = original.PulseCooldown;
+			clone.ProximityPower = original.ProximityPower;
+			clone.Stronghold_X = original.Stronghold_X;
+			clone.Stronghold_Z = original.Stronghold_Z;
 			if (!event.isWasDeath()) {
 				clone.fowards_polarity = original.fowards_polarity;
 				clone.upwards_polarity = original.upwards_polarity;
@@ -157,159 +155,6 @@ public class EndlessEndModVariables {
 				clone.CurseType = original.CurseType;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
-		}
-
-		@SubscribeEvent
-		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-			if (event.getEntity() instanceof ServerPlayer player) {
-				SavedData mapdata = MapVariables.get(event.getEntity().level());
-				SavedData worlddata = WorldVariables.get(event.getEntity().level());
-				if (mapdata != null)
-					PacketDistributor.sendToPlayer(player, new SavedDataSyncMessage(0, mapdata));
-				if (worlddata != null)
-					PacketDistributor.sendToPlayer(player, new SavedDataSyncMessage(1, worlddata));
-			}
-		}
-
-		@SubscribeEvent
-		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (event.getEntity() instanceof ServerPlayer player) {
-				SavedData worlddata = WorldVariables.get(event.getEntity().level());
-				if (worlddata != null)
-					PacketDistributor.sendToPlayer(player, new SavedDataSyncMessage(1, worlddata));
-			}
-		}
-	}
-
-	public static class WorldVariables extends SavedData {
-		public static final String DATA_NAME = "endless_end_worldvars";
-
-		public static WorldVariables load(CompoundTag tag, HolderLookup.Provider lookupProvider) {
-			WorldVariables data = new WorldVariables();
-			data.read(tag, lookupProvider);
-			return data;
-		}
-
-		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
-		}
-
-		@Override
-		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
-			return nbt;
-		}
-
-		public void syncData(LevelAccessor world) {
-			this.setDirty();
-			if (world instanceof ServerLevel level)
-				PacketDistributor.sendToPlayersInDimension(level, new SavedDataSyncMessage(1, this));
-		}
-
-		static WorldVariables clientSide = new WorldVariables();
-
-		public static WorldVariables get(LevelAccessor world) {
-			if (world instanceof ServerLevel level) {
-				return level.getDataStorage().computeIfAbsent(new SavedData.Factory<>(WorldVariables::new, WorldVariables::load), DATA_NAME);
-			} else {
-				return clientSide;
-			}
-		}
-	}
-
-	public static class MapVariables extends SavedData {
-		public static final String DATA_NAME = "endless_end_mapvars";
-		public double StrongholdAlphaX = 0;
-		public double StrongholdAlphaZ = 0;
-		public double StrongholdBetaX = 0;
-		public double StrongholdBetaZ = 0;
-		public double StrongholdGammaX = 0;
-		public double StrongholdGammaZ = 0;
-		public double StrongholdEpsilonX = 0;
-		public double StrongholdEpsilonZ = 0;
-
-		public static MapVariables load(CompoundTag tag, HolderLookup.Provider lookupProvider) {
-			MapVariables data = new MapVariables();
-			data.read(tag, lookupProvider);
-			return data;
-		}
-
-		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
-			StrongholdAlphaX = nbt.getDouble("StrongholdAlphaX");
-			StrongholdAlphaZ = nbt.getDouble("StrongholdAlphaZ");
-			StrongholdBetaX = nbt.getDouble("StrongholdBetaX");
-			StrongholdBetaZ = nbt.getDouble("StrongholdBetaZ");
-			StrongholdGammaX = nbt.getDouble("StrongholdGammaX");
-			StrongholdGammaZ = nbt.getDouble("StrongholdGammaZ");
-			StrongholdEpsilonX = nbt.getDouble("StrongholdEpsilonX");
-			StrongholdEpsilonZ = nbt.getDouble("StrongholdEpsilonZ");
-		}
-
-		@Override
-		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
-			nbt.putDouble("StrongholdAlphaX", StrongholdAlphaX);
-			nbt.putDouble("StrongholdAlphaZ", StrongholdAlphaZ);
-			nbt.putDouble("StrongholdBetaX", StrongholdBetaX);
-			nbt.putDouble("StrongholdBetaZ", StrongholdBetaZ);
-			nbt.putDouble("StrongholdGammaX", StrongholdGammaX);
-			nbt.putDouble("StrongholdGammaZ", StrongholdGammaZ);
-			nbt.putDouble("StrongholdEpsilonX", StrongholdEpsilonX);
-			nbt.putDouble("StrongholdEpsilonZ", StrongholdEpsilonZ);
-			return nbt;
-		}
-
-		public void syncData(LevelAccessor world) {
-			this.setDirty();
-			if (world instanceof Level && !world.isClientSide())
-				PacketDistributor.sendToAllPlayers(new SavedDataSyncMessage(0, this));
-		}
-
-		static MapVariables clientSide = new MapVariables();
-
-		public static MapVariables get(LevelAccessor world) {
-			if (world instanceof ServerLevelAccessor serverLevelAcc) {
-				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(new SavedData.Factory<>(MapVariables::new, MapVariables::load), DATA_NAME);
-			} else {
-				return clientSide;
-			}
-		}
-	}
-
-	public record SavedDataSyncMessage(int dataType, SavedData data) implements CustomPacketPayload {
-		public static final Type<SavedDataSyncMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(EndlessEndMod.MODID, "saved_data_sync"));
-		public static final StreamCodec<RegistryFriendlyByteBuf, SavedDataSyncMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, SavedDataSyncMessage message) -> {
-			buffer.writeInt(message.dataType);
-			if (message.data != null)
-				buffer.writeNbt(message.data.save(new CompoundTag(), buffer.registryAccess()));
-		}, (RegistryFriendlyByteBuf buffer) -> {
-			int dataType = buffer.readInt();
-			CompoundTag nbt = buffer.readNbt();
-			SavedData data = null;
-			if (nbt != null) {
-				data = dataType == 0 ? new MapVariables() : new WorldVariables();
-				if (data instanceof MapVariables mapVariables)
-					mapVariables.read(nbt, buffer.registryAccess());
-				else if (data instanceof WorldVariables worldVariables)
-					worldVariables.read(nbt, buffer.registryAccess());
-			}
-			return new SavedDataSyncMessage(dataType, data);
-		});
-
-		@Override
-		public Type<SavedDataSyncMessage> type() {
-			return TYPE;
-		}
-
-		public static void handleData(final SavedDataSyncMessage message, final IPayloadContext context) {
-			if (context.flow() == PacketFlow.CLIENTBOUND && message.data != null) {
-				context.enqueueWork(() -> {
-					if (message.dataType == 0)
-						MapVariables.clientSide.read(message.data.save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
-					else
-						WorldVariables.clientSide.read(message.data.save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
-				}).exceptionally(e -> {
-					context.connection().disconnect(Component.literal(e.getMessage()));
-					return null;
-				});
-			}
 		}
 	}
 
@@ -402,6 +247,10 @@ public class EndlessEndModVariables {
 		public double CorruptedHearts = 0;
 		public double CurseType = 0;
 		public double singing_sand_cooldown = 0;
+		public double PulseCooldown = 0;
+		public double ProximityPower = 0;
+		public double Stronghold_X = 0;
+		public double Stronghold_Z = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -494,6 +343,10 @@ public class EndlessEndModVariables {
 			nbt.putDouble("CorruptedHearts", CorruptedHearts);
 			nbt.putDouble("CurseType", CurseType);
 			nbt.putDouble("singing_sand_cooldown", singing_sand_cooldown);
+			nbt.putDouble("PulseCooldown", PulseCooldown);
+			nbt.putDouble("ProximityPower", ProximityPower);
+			nbt.putDouble("Stronghold_X", Stronghold_X);
+			nbt.putDouble("Stronghold_Z", Stronghold_Z);
 			return nbt;
 		}
 
@@ -587,6 +440,10 @@ public class EndlessEndModVariables {
 			CorruptedHearts = nbt.getDouble("CorruptedHearts");
 			CurseType = nbt.getDouble("CurseType");
 			singing_sand_cooldown = nbt.getDouble("singing_sand_cooldown");
+			PulseCooldown = nbt.getDouble("PulseCooldown");
+			ProximityPower = nbt.getDouble("ProximityPower");
+			Stronghold_X = nbt.getDouble("Stronghold_X");
+			Stronghold_Z = nbt.getDouble("Stronghold_Z");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

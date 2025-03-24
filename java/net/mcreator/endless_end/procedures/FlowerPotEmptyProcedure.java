@@ -1,5 +1,10 @@
 package net.mcreator.endless_end.procedures;
 
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
+
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
@@ -18,8 +23,22 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
+import javax.annotation.Nullable;
+
+@EventBusSubscriber
 public class FlowerPotEmptyProcedure {
+	@SubscribeEvent
+	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+		if (event.getHand() != event.getEntity().getUsedItemHand())
+			return;
+		execute(event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getLevel().getBlockState(event.getPos()), event.getEntity());
+	}
+
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
+		execute(null, world, x, y, z, blockstate, entity);
+	}
+
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
 		if (entity == null)
 			return;
 		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EndlessEndModBlocks.SOUL_BULB_FLOWER_POT.get()) {
@@ -72,13 +91,6 @@ public class FlowerPotEmptyProcedure {
 						}
 				}
 				world.setBlock(_bp, _bs, 3);
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.item.pickup")), SoundSource.NEUTRAL, 1, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.item.pickup")), SoundSource.NEUTRAL, 1, 1, false);
-				}
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
@@ -141,13 +153,6 @@ public class FlowerPotEmptyProcedure {
 						}
 				}
 				world.setBlock(_bp, _bs, 3);
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.item.pickup")), SoundSource.NEUTRAL, 1, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.item.pickup")), SoundSource.NEUTRAL, 1, 1, false);
-				}
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {

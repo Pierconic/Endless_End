@@ -20,12 +20,23 @@ public class GrazerEntityIsHurtProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false) && !(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(MobEffects.MOVEMENT_SPEED))
-				&& !(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(MobEffects.LUCK))) {
+		if (entity instanceof Mob _mob ? _mob.isAggressive() : false) {
+			if (Math.pow(x - (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX(), 2) + Math.pow(z - (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ(), 2) > 16) {
+				if (entity instanceof Mob) {
+					try {
+						((Mob) entity).setTarget(null);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false) && !(entity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(MobEffects.MOVEMENT_SPEED))
+				&& !(entity instanceof LivingEntity _livEnt8 && _livEnt8.hasEffect(MobEffects.LUCK))) {
 			if (entity instanceof GrazerEntity) {
 				((GrazerEntity) entity).setAnimation("warp");
 			}
-			if (!(entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(MobEffects.UNLUCK))) {
+			if (!(entity instanceof LivingEntity _livEnt10 && _livEnt10.hasEffect(MobEffects.UNLUCK))) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.UNLUCK, 20, 1, false, false));
 			}
@@ -36,13 +47,11 @@ public class GrazerEntityIsHurtProcedure {
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ())));
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof GrazerEntity && !(entityiterator instanceof LivingEntity _livEnt13 && _livEnt13.hasEffect(MobEffects.UNLUCK))) {
+					if (entityiterator instanceof GrazerEntity && !(entityiterator instanceof LivingEntity _livEnt19 && _livEnt19.hasEffect(MobEffects.UNLUCK))) {
 						if (entityiterator instanceof Mob _entity && sourceentity instanceof LivingEntity _ent)
 							_entity.setTarget(_ent);
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 3, false, true));
 					}
 				}
 			}

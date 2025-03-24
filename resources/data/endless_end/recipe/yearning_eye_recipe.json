@@ -4,17 +4,20 @@
   "pattern": [
     "aba",
     "bcb",
-    "aba"
+    "dbd"
   ],
   "key": {
     "a": {
-      "item": "minecraft:ender_pearl"
+      "item": "minecraft:gold_ingot"
     },
     "b": {
       "item": "minecraft:netherite_scrap"
     },
     "c": {
       "item": "minecraft:ender_eye"
+    },
+    "d": {
+      "item": "minecraft:ender_pearl"
     }
   },
   "result": {

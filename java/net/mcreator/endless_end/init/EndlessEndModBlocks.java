@@ -48,6 +48,7 @@ import net.mcreator.endless_end.block.PhasedEndoriteTilesBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteMeshBlock;
 import net.mcreator.endless_end.block.MoonJellyBlockBlock;
 import net.mcreator.endless_end.block.MoonGunkBlock;
+import net.mcreator.endless_end.block.MolderingPurpurBlock;
 import net.mcreator.endless_end.block.LydianPetalsBlock;
 import net.mcreator.endless_end.block.IconoclastBlock;
 import net.mcreator.endless_end.block.EssenceBlock;
@@ -79,6 +80,7 @@ import net.mcreator.endless_end.block.DormantIconoclastBlock;
 import net.mcreator.endless_end.block.DissipatingEndoriteBlock;
 import net.mcreator.endless_end.block.CrackedEndStoneBricksBlock;
 import net.mcreator.endless_end.block.CobbledEndstoneBlock;
+import net.mcreator.endless_end.block.ChorusSproutsBlock;
 import net.mcreator.endless_end.block.ChiseledEndstoneBlock;
 import net.mcreator.endless_end.block.CanticleBlock;
 import net.mcreator.endless_end.block.BurrowingThornsBlock;
@@ -167,6 +169,8 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> VIOLET_SEPAL_BUTTON = REGISTRY.register("violet_sepal_button", VioletSepalButtonBlock::new);
 	public static final DeferredBlock<Block> STRIPPED_VIOLET_SEPAL_LOG = REGISTRY.register("stripped_violet_sepal_log", StrippedVioletSepalLogBlock::new);
 	public static final DeferredBlock<Block> STRIPPED_VIOLET_SEPAL_WOOD = REGISTRY.register("stripped_violet_sepal_wood", StrippedVioletSepalWoodBlock::new);
+	public static final DeferredBlock<Block> CHORUS_SPROUTS = REGISTRY.register("chorus_sprouts", ChorusSproutsBlock::new);
+	public static final DeferredBlock<Block> MOLDERING_PURPUR = REGISTRY.register("moldering_purpur", MolderingPurpurBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

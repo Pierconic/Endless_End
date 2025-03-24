@@ -175,6 +175,8 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> VIOLET_SEPAL_BUTTON = block(EndlessEndModBlocks.VIOLET_SEPAL_BUTTON);
 	public static final DeferredItem<Item> STRIPPED_VIOLET_SEPAL_LOG = block(EndlessEndModBlocks.STRIPPED_VIOLET_SEPAL_LOG);
 	public static final DeferredItem<Item> STRIPPED_VIOLET_SEPAL_WOOD = block(EndlessEndModBlocks.STRIPPED_VIOLET_SEPAL_WOOD);
+	public static final DeferredItem<Item> CHORUS_SPROUTS = block(EndlessEndModBlocks.CHORUS_SPROUTS);
+	public static final DeferredItem<Item> MOLDERING_PURPUR = block(EndlessEndModBlocks.MOLDERING_PURPUR);
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -189,8 +191,7 @@ public class EndlessEndModItems {
 		public static void clientLoad(FMLClientSetupEvent event) {
 			event.enqueueWork(() -> {
 				ItemProperties.register(YEARNING_EYE.get(), ResourceLocation.parse("endless_end:yearning_eye_direction"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) EyeballProviderProcedure.execute(entity));
-				ItemProperties.register(YEARNING_EYE.get(), ResourceLocation.parse("endless_end:yearning_eye_proximity"),
-						(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) EyeProximityProviderProcedure.execute(entity, itemStackToRender));
+				ItemProperties.register(YEARNING_EYE.get(), ResourceLocation.parse("endless_end:yearning_eye_proximity"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) EyeProximityProviderProcedure.execute(entity));
 			});
 		}
 	}

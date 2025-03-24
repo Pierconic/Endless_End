@@ -40,7 +40,7 @@ import net.mcreator.endless_end.procedures.TuneRodGrowthProcedure;
 import net.mcreator.endless_end.block.entity.TunerodStemBlockEntity;
 
 public class TunerodStemBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
-	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 10);
+	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 11);
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
@@ -66,6 +66,8 @@ public class TunerodStemBlock extends Block implements SimpleWaterloggedBlock, E
 				if (s.getValue(BLOCKSTATE) == 9)
 					return 0;
 				if (s.getValue(BLOCKSTATE) == 10)
+					return 0;
+				if (s.getValue(BLOCKSTATE) == 11)
 					return 0;
 				return 0;
 			}
@@ -175,6 +177,14 @@ public class TunerodStemBlock extends Block implements SimpleWaterloggedBlock, E
 				case WEST -> Shapes.or(box(6.5, 0, 6.5, 9.5, 5, 9.5), box(6, 5, 6, 10, 9, 10), box(7, 6, 2.5, 9, 8, 13.5), box(7, 8, 11.5, 9, 19, 13.5), box(7, 8, 2.5, 9, 19, 4.5));
 			};
 		}
+		if (state.getValue(BLOCKSTATE) == 11) {
+			return switch (state.getValue(FACING)) {
+				default -> box(5, 0, 5, 11, 16, 11);
+				case NORTH -> box(5, 0, 5, 11, 16, 11);
+				case EAST -> box(5, 0, 5, 11, 16, 11);
+				case WEST -> box(5, 0, 5, 11, 16, 11);
+			};
+		}
 		return switch (state.getValue(FACING)) {
 			default -> box(5, 0, 5, 11, 16, 11);
 			case NORTH -> box(5, 0, 5, 11, 16, 11);
@@ -214,6 +224,12 @@ public class TunerodStemBlock extends Block implements SimpleWaterloggedBlock, E
 			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
 		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
+	}
+
+	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		TunerodNeighborBreakProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
 	}
 
 	@Override

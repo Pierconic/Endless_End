@@ -14,8 +14,8 @@ public class EyeDirectionProviderProcedure {
 		double theta = 0;
 		double hypotenuse = 0;
 		double player_yaw = 0;
-		dx = 0.5;
-		dz = 0.5;
+		dx = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).Stronghold_X;
+		dz = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).Stronghold_Z;
 		hypotenuse = Math.sqrt(Math.pow(entity.getX() - dx, 2) + Math.pow(entity.getZ() - dz, 2));
 		theta = Math.asin((entity.getX() - dx) / hypotenuse) * 57.2957795;
 		if (entity.getYRot() < 0) {

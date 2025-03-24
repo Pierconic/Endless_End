@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:grazer",
+    "endless_end:hollow",
+    "warden",
+    "enderman",
+    "endermite"
+  ]
+}

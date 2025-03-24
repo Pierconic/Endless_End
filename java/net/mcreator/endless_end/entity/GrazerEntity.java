@@ -12,6 +12,7 @@ import software.bernie.geckolib.animatable.GeoEntity;
 
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -22,6 +23,7 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.Mob;
@@ -41,6 +43,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.mcreator.endless_end.procedures.GrazerTeleportProcedure;
 import net.mcreator.endless_end.procedures.GrazerEntityIsHurtProcedure;
 import net.mcreator.endless_end.procedures.GrazerEntityDiesProcedure;
+import net.mcreator.endless_end.procedures.GrazerConditionProcedure;
+import net.mcreator.endless_end.init.EndlessEndModEntities;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class GrazerEntity extends PathfinderMob implements GeoEntity {
@@ -157,6 +161,12 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	}
 
 	public static void init(RegisterSpawnPlacementsEvent event) {
+		event.register(EndlessEndModEntities.GRAZER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return GrazerConditionProcedure.execute(world, x, y, z);
+		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

@@ -3,6 +3,17 @@
   "temperature": 0,
   "downfall": 0.5,
   "effects": {
+    "ambient_sound": "endless_end:chorus_orchard_ambient",
+    "mood_sound": {
+      "sound": "endless_end:chorus_mood",
+      "tick_delay": 3600,
+      "offset": 8,
+      "block_search_extent": 2
+    },
+    "additions_sound": {
+      "sound": "endless_end:chorus_additions",
+      "tick_chance": 0.0111
+    },
     "particle": {
       "options": {
         "type": "white_ash"
@@ -21,8 +32,8 @@
       {
         "type": "endless_end:grazer",
         "weight": 20,
-        "minCount": 1,
-        "maxCount": 2
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "creature": [],
@@ -43,7 +54,9 @@
   },
   "features": [
     [],
-    [],
+    [
+      "minecraft:lake_lava_underground"
+    ],
     [],
     [],
     [],

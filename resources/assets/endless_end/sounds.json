@@ -416,102 +416,6 @@
       }
     ]
   },
-  "adamant.step": {
-    "subtitle": "subtitles.adamant.step",
-    "sounds": [
-      {
-        "name": "endless_end:adamant.step5",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.step4",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.step3",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.step2",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.step1",
-        "stream": false
-      }
-    ]
-  },
-  "adamant.break": {
-    "subtitle": "subtitles.adamant.break",
-    "sounds": [
-      {
-        "name": "endless_end:adamant.break4",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.break3",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.break2",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.break1",
-        "stream": false
-      }
-    ]
-  },
-  "adamant.place": {
-    "subtitle": "subtitles.adamant.place",
-    "sounds": [
-      {
-        "name": "endless_end:adamant.place4",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.place3",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.place2",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.place",
-        "stream": false
-      }
-    ]
-  },
-  "adamant.hit": {
-    "subtitle": "subtitles.adamant.hit",
-    "sounds": [
-      {
-        "name": "endless_end:adamant.hit.6",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.hit.5",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.hit.4",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.hit.3",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.hit.2",
-        "stream": false
-      },
-      {
-        "name": "endless_end:adamant.hit.1",
-        "stream": false
-      }
-    ]
-  },
   "ascension": {
     "subtitle": "subtitles.ascension",
     "sounds": [
@@ -1804,6 +1708,273 @@
     "sounds": [
       {
         "name": "endless_end:stone_loop_10",
+        "stream": false
+      }
+    ]
+  },
+  "adamant.hit": {
+    "subtitle": "subtitles.adamant.hit",
+    "sounds": [
+      {
+        "name": "endless_end:adamant_hit_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_hit_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_hit_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_hit_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_hit_5",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_hit_6",
+        "stream": false
+      }
+    ]
+  },
+  "adamant.break": {
+    "subtitle": "subtitles.adamant.break",
+    "sounds": [
+      {
+        "name": "endless_end:adamant_break_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_break_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_break_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_break_4",
+        "stream": false
+      }
+    ]
+  },
+  "adamant.step": {
+    "subtitle": "subtitles.adamant.step",
+    "sounds": [
+      {
+        "name": "endless_end:adamant_step_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_step_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_step_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_step_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_step_5",
+        "stream": false
+      }
+    ]
+  },
+  "adamant.place": {
+    "subtitle": "subtitles.adamant.place",
+    "sounds": [
+      {
+        "name": "endless_end:adamant_place_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_place_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_place_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_place_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:adamant_place_5",
+        "stream": false
+      }
+    ]
+  },
+  "moon_jump": {
+    "subtitle": "subtitles.moon_jump",
+    "sounds": [
+      {
+        "name": "endless_end:moonjump_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:moonjump_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:moonjump_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:moonjump_4",
+        "stream": false
+      }
+    ]
+  },
+  "moon_bounce": {
+    "subtitle": "subtitles.moon_bounce",
+    "sounds": [
+      {
+        "name": "endless_end:moonbounce_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:moonbounce_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:moonbounce_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:moonbounce_4",
+        "stream": false
+      }
+    ]
+  },
+  "eye_strike": {
+    "subtitle": "subtitles.eye_strike",
+    "sounds": [
+      {
+        "name": "endless_end:eye_strike",
+        "stream": false
+      }
+    ]
+  },
+  "chorus_orchard_ambient": {
+    "sounds": [
+      {
+        "name": "endless_end:chorus_orchard_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "chorus_mood": {
+    "sounds": [
+      {
+        "name": "endless_end:chorus_mood_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_5",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_6",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_7",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_8",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_mood_9",
+        "stream": false
+      }
+    ]
+  },
+  "chorus_additions": {
+    "sounds": [
+      {
+        "name": "endless_end:chorus_add_1",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_5",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_6",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_7",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_8",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_9",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_10",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_11",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_12",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_13",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_14",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_15",
+        "stream": false
+      },
+      {
+        "name": "endless_end:chorus_add_16",
         "stream": false
       }
     ]

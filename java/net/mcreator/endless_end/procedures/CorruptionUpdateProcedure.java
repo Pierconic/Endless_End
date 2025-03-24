@@ -34,8 +34,8 @@ public class CorruptionUpdateProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof LivingEntity && !entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("forge:corrupt")))) {
-			if (world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("deep_dark")) || world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("deep_dark"))
-					|| (world.getBlockState(BlockPos.containing(x, y - 0.1, z))).is(BlockTags.create(ResourceLocation.parse("forge:corruptable")))) {
+			if ((world.getBlockState(BlockPos.containing(x, y - 0.1, z))).is(BlockTags.create(ResourceLocation.parse("forge:corruptable")))
+					&& (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) < 24000) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.CORRUPTION,
 							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) + 2), 0, false, false));

@@ -25,25 +25,25 @@ public class CorruptionSpreadProcedure {
 		boolean ward_eyes = false;
 		boolean evil_eyes = false;
 		boolean spires = false;
-		if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 38400) {
+		if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 20000) {
 			chance_modifier = 3.5;
 			time_modifier = 3;
 			spires = true;
 			evil_eyes = true;
 			teeth = true;
 			ward_eyes = true;
-		} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 28800) {
+		} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 12000) {
 			chance_modifier = 2.3;
 			time_modifier = 3;
 			evil_eyes = true;
 			teeth = true;
 			ward_eyes = true;
-		} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 19200) {
+		} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 8400) {
 			chance_modifier = 1.6;
 			time_modifier = 2;
 			teeth = true;
 			ward_eyes = true;
-		} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 8400) {
+		} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 4800) {
 			chance_modifier = 1;
 			time_modifier = 1;
 			ward_eyes = true;

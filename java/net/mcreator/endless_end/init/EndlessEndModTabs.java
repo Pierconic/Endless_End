@@ -61,6 +61,8 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.COBBLED_ENDSTONE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.END_DIAMONDS.get().asItem());
 			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_LEAVES.get().asItem());
+			tabData.accept(EndlessEndModBlocks.CHORUS_SPROUTS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.MOLDERING_PURPUR.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());

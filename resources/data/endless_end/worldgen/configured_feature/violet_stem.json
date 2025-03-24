@@ -1,0 +1,11 @@
+{
+  "type": "endless_end:violet_stem",
+  "config": {
+    "to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "endless_end:violet_sepal_log"
+      }
+    }
+  }
+}

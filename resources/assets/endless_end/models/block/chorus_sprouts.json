@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "endless_end:block/chorus_sprouts",
+    "particle": "endless_end:block/chorus_sprouts"
+  },
+  "render_type": "cutout"
+}

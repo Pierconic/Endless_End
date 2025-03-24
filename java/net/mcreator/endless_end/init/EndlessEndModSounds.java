@@ -50,10 +50,6 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> MEMBRANE_POWER = REGISTRY.register("membrane.power", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "membrane.power")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> MEMBRANE_DEPOWER = REGISTRY.register("membrane.depower", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "membrane.depower")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> MEMBRANE_PULSE = REGISTRY.register("membrane.pulse", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "membrane.pulse")));
-	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_STEP = REGISTRY.register("adamant.step", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.step")));
-	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_BREAK = REGISTRY.register("adamant.break", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.break")));
-	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_PLACE = REGISTRY.register("adamant.place", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.place")));
-	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_HIT = REGISTRY.register("adamant.hit", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.hit")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> ASCENSION = REGISTRY.register("ascension", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "ascension")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> ETHER_FREEZE = REGISTRY.register("ether.freeze", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "ether.freeze")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> ETHER_SOLIDIFY = REGISTRY.register("ether.solidify", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "ether.solidify")));
@@ -150,4 +146,15 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> LOOP_STONE_12 = REGISTRY.register("loop_stone_12", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "loop_stone_12")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> LOOP_STONE_13 = REGISTRY.register("loop_stone_13", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "loop_stone_13")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> LOOP_STONE_10 = REGISTRY.register("loop_stone_10", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "loop_stone_10")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_HIT = REGISTRY.register("adamant.hit", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.hit")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_BREAK = REGISTRY.register("adamant.break", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.break")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_STEP = REGISTRY.register("adamant.step", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.step")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> ADAMANT_PLACE = REGISTRY.register("adamant.place", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "adamant.place")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> MOON_JUMP = REGISTRY.register("moon_jump", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "moon_jump")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> MOON_BOUNCE = REGISTRY.register("moon_bounce", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "moon_bounce")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> EYE_STRIKE = REGISTRY.register("eye_strike", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "eye_strike")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> CHORUS_ORCHARD_AMBIENT = REGISTRY.register("chorus_orchard_ambient",
+			() -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "chorus_orchard_ambient")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> CHORUS_MOOD = REGISTRY.register("chorus_mood", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "chorus_mood")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> CHORUS_ADDITIONS = REGISTRY.register("chorus_additions", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "chorus_additions")));
 }

@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class CorruptionMobEffect extends MobEffect {
 	public CorruptionMobEffect() {
-		super(MobEffectCategory.HARMFUL, -16777216);
+		super(MobEffectCategory.HARMFUL, -15653572);
 	}
 
 	@Override

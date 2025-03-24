@@ -43,7 +43,23 @@
       "endless_end:gray_warp_chip_recipe",
       "endless_end:dark_gray_warp_chip_recipe",
       "endless_end:black_warp_chip_recipe",
-      "endless_end:shulker_shell_recipe"
+      "endless_end:shulker_shell_recipe",
+      "endless_end:enderporter_recipe",
+      "endless_end:red_enderporter_recipe",
+      "endless_end:orange_enderporter_recipe",
+      "endless_end:yellow_enderporter_recipe",
+      "endless_end:lime_enderporter_recipe",
+      "endless_end:green_enderporter_recipe",
+      "endless_end:cyan_enderporter_recipe",
+      "endless_end:light_blue_enderporter_recipe",
+      "endless_end:blue_enderporter_recipe",
+      "endless_end:purple_enderporter_recipe",
+      "endless_end:magenta_enderporter_recipe",
+      "endless_end:pink_enderporter_recipe",
+      "endless_end:brown_enderporter_recipe",
+      "endless_end:gray_enderporter_recipe",
+      "endless_end:dark_gray_enderporter_recipe",
+      "endless_end:black_enderporter_recipe"
     ]
   }
 }

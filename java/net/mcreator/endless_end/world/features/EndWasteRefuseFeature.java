@@ -18,7 +18,7 @@ public class EndWasteRefuseFeature extends SimpleBlockFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!RefusePatchFeatureProcedure.execute(world, x, z))
+		if (!RefusePatchFeatureProcedure.execute(world, x, y, z))
 			return false;
 		return super.place(context);
 	}

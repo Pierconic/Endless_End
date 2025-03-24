@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    },
+    {
+      "item": "endless_end:tunerod_stem"
+    }
+  ],
+  "result": {
+    "id": "endless_end:violet_sepal_planks",
+    "count": 1
+  }
+}

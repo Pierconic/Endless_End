@@ -21,6 +21,8 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.mcreator.endless_end.network.EndlessEndModVariables;
 import net.mcreator.endless_end.init.EndlessEndModTabs;
 import net.mcreator.endless_end.init.EndlessEndModSounds;
+import net.mcreator.endless_end.init.EndlessEndModPotions;
+import net.mcreator.endless_end.init.EndlessEndModParticleTypes;
 import net.mcreator.endless_end.init.EndlessEndModMobEffects;
 import net.mcreator.endless_end.init.EndlessEndModMenus;
 import net.mcreator.endless_end.init.EndlessEndModItems;
@@ -57,8 +59,10 @@ public class EndlessEndMod {
 		EndlessEndModVariables.ATTACHMENT_TYPES.register(modEventBus);
 		EndlessEndModFeatures.REGISTRY.register(modEventBus);
 
+		EndlessEndModPotions.REGISTRY.register(modEventBus);
 		EndlessEndModMobEffects.REGISTRY.register(modEventBus);
 		EndlessEndModMenus.REGISTRY.register(modEventBus);
+		EndlessEndModParticleTypes.REGISTRY.register(modEventBus);
 
 		EndlessEndModFluids.REGISTRY.register(modEventBus);
 		EndlessEndModFluidTypes.REGISTRY.register(modEventBus);

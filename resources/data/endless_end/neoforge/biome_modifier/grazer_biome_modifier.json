@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "endless_end:chorus_orchard",
+    "end_highlands"
+  ],
+  "spawners": {
+    "type": "endless_end:grazer",
+    "weight": 15,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}

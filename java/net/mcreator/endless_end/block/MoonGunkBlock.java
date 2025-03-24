@@ -36,7 +36,7 @@ public class MoonGunkBlock extends Block implements SimpleWaterloggedBlock, Enti
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public MoonGunkBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).instabreak().lightLevel(s -> 3).noCollission().friction(0.5f).jumpFactor(3f).noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).instabreak().lightLevel(s -> 3).noCollission().friction(0.5f).noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
 				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
 	}
@@ -68,7 +68,7 @@ public class MoonGunkBlock extends Block implements SimpleWaterloggedBlock, Enti
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return box(0, 0, 0, 16, 2, 16);
+		return box(0, 0, 0, 16, 4, 16);
 	}
 
 	@Override
@@ -105,7 +105,7 @@ public class MoonGunkBlock extends Block implements SimpleWaterloggedBlock, Enti
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		MoonGunkLaunchProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		MoonGunkLaunchProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
 	}
 
 	@Override

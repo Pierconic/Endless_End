@@ -10,7 +10,10 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.core.registries.Registries;
 
+import net.mcreator.endless_end.world.features.VioletStemFeature;
 import net.mcreator.endless_end.world.features.EndWasteRefuseFeature;
+import net.mcreator.endless_end.world.features.ChorusBlobFeature;
+import net.mcreator.endless_end.world.features.CanticlePatchFeature;
 import net.mcreator.endless_end.world.features.AmethystOreScatterFeature;
 import net.mcreator.endless_end.EndlessEndMod;
 
@@ -18,4 +21,7 @@ public class EndlessEndModFeatures {
 	public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create(Registries.FEATURE, EndlessEndMod.MODID);
 	public static final DeferredHolder<Feature<?>, Feature<?>> AMETHYST_ORE_SCATTER = REGISTRY.register("amethyst_ore_scatter", AmethystOreScatterFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> END_WASTE_REFUSE = REGISTRY.register("end_waste_refuse", EndWasteRefuseFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> CANTICLE_PATCH = REGISTRY.register("canticle_patch", CanticlePatchFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> VIOLET_STEM = REGISTRY.register("violet_stem", VioletStemFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> CHORUS_BLOB = REGISTRY.register("chorus_blob", ChorusBlobFeature::new);
 }

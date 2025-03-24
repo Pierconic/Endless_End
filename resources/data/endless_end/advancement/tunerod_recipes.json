@@ -22,7 +22,8 @@
     "recipes": [
       "endless_end:tuneblock_recipe",
       "endless_end:tunerod_stick",
-      "endless_end:magic_whistle_recipe"
+      "endless_end:magic_whistle_recipe",
+      "endless_end:violet_planks_alt_recipe"
     ]
   }
 }

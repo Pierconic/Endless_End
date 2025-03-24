@@ -164,6 +164,21 @@
     "facing=west,blockstate=10": {
       "model": "endless_end:block/tunerod_states_blockstate_9",
       "y": 270
+    },
+    "facing=north,blockstate=11": {
+      "model": "endless_end:block/tunerod_states_blockstate_10"
+    },
+    "facing=east,blockstate=11": {
+      "model": "endless_end:block/tunerod_states_blockstate_10",
+      "y": 90
+    },
+    "facing=south,blockstate=11": {
+      "model": "endless_end:block/tunerod_states_blockstate_10",
+      "y": 180
+    },
+    "facing=west,blockstate=11": {
+      "model": "endless_end:block/tunerod_states_blockstate_10",
+      "y": 270
     }
   }
 }

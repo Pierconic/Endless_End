@@ -1,0 +1,11 @@
+{
+  "type": "endless_end:chorus_blob",
+  "config": {
+    "to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:end_stone"
+      }
+    }
+  }
+}

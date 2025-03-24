@@ -24,8 +24,8 @@ public class AdamantBlock extends Block {
 		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM)
 				.sound(new DeferredSoundType(1.0f, 1.0f, () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:adamant.break")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:adamant.step")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:adamant.place")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:adamant.hit")),
-						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:adamant.hit"))))
-				.strength(65f, 10f).lightLevel(s -> 6).requiresCorrectToolForDrops().speedFactor(1.2f).jumpFactor(1.2f).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
+						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:adamant.step"))))
+				.strength(75f, 16000f).lightLevel(s -> 6).requiresCorrectToolForDrops().speedFactor(1.2f).jumpFactor(1.2f).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
 	}
 
 	@Override

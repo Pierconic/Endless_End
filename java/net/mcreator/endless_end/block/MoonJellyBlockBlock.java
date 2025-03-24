@@ -11,18 +11,17 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.BlockAndTintGetter;
-import net.minecraft.core.Direction;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.core.BlockPos;
 
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.phys.Vec3;
+import net.mcreator.endless_end.procedures.MoonGunkLaunchProcedure;
 
 public class MoonJellyBlockBlock extends Block {
 	public MoonJellyBlockBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_PURPLE).sound(SoundType.SLIME_BLOCK).instabreak().lightLevel(s -> 3).requiresCorrectToolForDrops().jumpFactor(3f)
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_PURPLE).sound(SoundType.SLIME_BLOCK).strength(0.1f).lightLevel(s -> 3).noCollission().speedFactor(0.6f).pushReaction(PushReaction.PUSH_ONLY)
 				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
 	}
 
@@ -32,29 +31,13 @@ public class MoonJellyBlockBlock extends Block {
 	}
 
 	@Override
-	public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
-		return adjacentBlockState.getBlock() == this ? true : super.skipRendering(state, adjacentBlockState, side);
-	}
-
-	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 6;
 	}
 
 	@Override
-    public void updateEntityAfterFallOn(BlockGetter worldIn, Entity entity) {
-        if (entity.isSuppressingBounce()) {
-            super.updateEntityAfterFallOn(worldIn, entity);
-        } else {
-            this.bounceUp(entity);
-        }
-    }
-
-    private void bounceUp(Entity entity) {
-        Vec3 vec3 = entity.getDeltaMovement();
-        if (vec3.y < 0.0) {
-            double d0 = entity instanceof LivingEntity ? 1.0 : 2.0;
-            entity.setDeltaMovement(vec3.x, -vec3.y * d0, vec3.z);
-        }
-    }
+	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
+		super.entityInside(blockstate, world, pos, entity);
+		MoonGunkLaunchProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
+	}
 }

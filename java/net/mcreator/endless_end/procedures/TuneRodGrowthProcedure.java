@@ -15,6 +15,13 @@ public class TuneRodGrowthProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EndlessEndModBlocks.TUNEROD_STEM.get()) {
 			if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip3 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip3) : -1) == 0) {
+				{
+					int _value = 11;
+					BlockPos _pos = BlockPos.containing(x, y, z);
+					BlockState _bs = world.getBlockState(_pos);
+					if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+				}
 				if (world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
 					world.setBlock(BlockPos.containing(x, y + 1, z), (new Object() {
 						public BlockState with(BlockState _bs, String _property, int _newValue) {
@@ -23,8 +30,8 @@ public class TuneRodGrowthProcedure {
 						}
 					}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 1)), 3);
 				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip8
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip8)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip9
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip9)
 					: -1) == 1) {
 				if (world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
 					world.setBlock(BlockPos.containing(x, y + 1, z), (new Object() {
@@ -34,12 +41,12 @@ public class TuneRodGrowthProcedure {
 						}
 					}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 2)), 3);
 				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip13
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip13)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip14
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip14)
 					: -1) == 2) {
 				if (world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
-					if (Math.random() < 0.3 || ((world.getBlockState(BlockPos.containing(x, y - 3, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip16
-							? (world.getBlockState(BlockPos.containing(x, y - 3, z))).getValue(_getip16)
+					if (Math.random() < 0.3 || ((world.getBlockState(BlockPos.containing(x, y - 3, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip17
+							? (world.getBlockState(BlockPos.containing(x, y - 3, z))).getValue(_getip17)
 							: -1) == 4) {
 						world.setBlock(BlockPos.containing(x, y + 1, z), (new Object() {
 							public BlockState with(BlockState _bs, String _property, int _newValue) {
@@ -70,8 +77,8 @@ public class TuneRodGrowthProcedure {
 						}
 					}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 3)), 3);
 				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip26
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip26)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip27
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip27)
 					: -1) == 3) {
 				world.setBlock(BlockPos.containing(x, y, z), (new Object() {
 					public BlockState with(BlockState _bs, String _property, int _newValue) {
@@ -79,8 +86,8 @@ public class TuneRodGrowthProcedure {
 						return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 					}
 				}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 2)), 3);
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip30
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip30)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip31
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip31)
 					: -1) == 5) {
 				if (Math.random() < 0.5) {
 					if (world.isEmptyBlock(BlockPos.containing(x + 1, y + 0, z)) && world.isEmptyBlock(BlockPos.containing(x - 1, y + 0, z))) {
@@ -173,8 +180,8 @@ public class TuneRodGrowthProcedure {
 						}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), Direction.NORTH)), "blockstate", 4)), 3);
 					}
 				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip54
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip54)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip55
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip55)
 					: -1) == 4) {
 				if (world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
 					world.setBlock(BlockPos.containing(x, y + 1, z), (new Object() {
@@ -184,15 +191,15 @@ public class TuneRodGrowthProcedure {
 						}
 					}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 2)), 3);
 				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip59
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip59)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip60
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip60)
 					: -1) == 7) {
 				if (world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
-					if (Math.random() < 0.3 || ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip62
-							? (world.getBlockState(BlockPos.containing(x, y - 1, z))).getValue(_getip62)
+					if (Math.random() < 0.3 || ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip63
+							? (world.getBlockState(BlockPos.containing(x, y - 1, z))).getValue(_getip63)
 							: -1) <= 3
-							&& ((world.getBlockState(BlockPos.containing(x, y - 2, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip64
-									? (world.getBlockState(BlockPos.containing(x, y - 2, z))).getValue(_getip64)
+							&& ((world.getBlockState(BlockPos.containing(x, y - 2, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip65
+									? (world.getBlockState(BlockPos.containing(x, y - 2, z))).getValue(_getip65)
 									: -1) <= 3) {
 						world.setBlock(BlockPos.containing(x, y + 1, z), (new Object() {
 							public BlockState with(BlockState _bs, String _property, int _newValue) {
@@ -216,8 +223,8 @@ public class TuneRodGrowthProcedure {
 						}
 					}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 8)), 3);
 				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip72
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip72)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip73
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip73)
 					: -1) == 8) {
 				world.setBlock(BlockPos.containing(x, y, z), (new Object() {
 					public BlockState with(BlockState _bs, String _property, int _newValue) {
@@ -225,8 +232,8 @@ public class TuneRodGrowthProcedure {
 						return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 					}
 				}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 7)), 3);
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip76
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip76)
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip77
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip77)
 					: -1) == 9) {
 				if (Math.random() < 0.5) {
 					world.setBlock(BlockPos.containing(x, y, z), (new Object() {

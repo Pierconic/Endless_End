@@ -30,9 +30,12 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.endless_end.procedures.LydianPetalsTickProcedure;
 import net.mcreator.endless_end.procedures.LydianPetalsClickProcedure;
 import net.mcreator.endless_end.procedures.LydianDropProcedure;
 import net.mcreator.endless_end.procedures.LydianBreakageProcedure;
@@ -53,7 +56,7 @@ public class LydianPetalsBlock extends Block {
 					return 4;
 				return 1;
 			}
-		}.getLightLevel())).noCollission().jumpFactor(1.2f).noOcclusion().pushReaction(PushReaction.DESTROY).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
+		}.getLightLevel())).noCollission().jumpFactor(1.2f).noOcclusion().pushReaction(PushReaction.DESTROY).isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(FACE, AttachFace.WALL));
 	}
 
@@ -197,9 +200,21 @@ public class LydianPetalsBlock extends Block {
 	}
 
 	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		LydianBreakageProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
 		LydianBreakageProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+		super.tick(blockstate, world, pos, random);
+		LydianPetalsTickProcedure.execute();
 	}
 
 	@Override

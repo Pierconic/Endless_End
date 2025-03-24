@@ -3,7 +3,12 @@
   "biomes": [
     "end_barrens",
     "end_highlands",
-    "end_midlands"
+    "end_midlands",
+    "endless_end:chorus_orchard",
+    "endless_end:inverted_orchard",
+    "endless_end:soul_arbor",
+    "endless_end:whispering_delta",
+    "the_end"
   ],
   "features": "endless_end:end_waste_refuse",
   "step": "surface_structures"
