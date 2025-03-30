@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "endless_end:strong_stone"
+  },
+  "result": {
+    "id": "minecraft:end_stone_bricks",
+    "count": 1
+  }
+}

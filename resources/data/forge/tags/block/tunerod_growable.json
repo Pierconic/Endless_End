@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:chiseled_endstone",
+    "endless_end:cracked_end_stone_bricks",
+    "endless_end:endorite_ore",
+    "endless_end:end_iron",
+    "endless_end:rotting_end_stone",
+    "endless_end:end_amethyst",
+    "endless_end:cobbled_endstone",
+    "endless_end:end_diamonds",
+    "endless_end:rooted_endstone",
+    "minecraft:end_stone",
+    "minecraft:end_stone_bricks",
+    "endless_end:canticle",
+    "endless_end:blooming_canticle",
+    "endless_end:violet_sepal_wood",
+    "endless_end:violet_sepal_log",
+    "endless_end:violet_sepal_planks",
+    "endless_end:stripped_violet_sepal_log",
+    "endless_end:stripped_violet_sepal_wood"
+  ]
+}

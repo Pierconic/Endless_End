@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "azure_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:azure_sepal_log"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:azure_sepal_wood_recipe",
+      "endless_end:azure_sepal_planks_recipe",
+      "endless_end:azure_sepal_planks_wood_recipe",
+      "endless_end:azure_sepal_stairs_recipe",
+      "endless_end:azure_sepal_slab_recipe",
+      "endless_end:azure_sepal_fence_recipe",
+      "endless_end:azure_sepal_fence_gate_recipe",
+      "endless_end:azure_sepal_pressure_plate_recipe",
+      "endless_end:azure_sepal_button_recipe"
+    ]
+  }
+}

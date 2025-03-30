@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/amnesic_boards",
+    "up": "endless_end:block/amnesic_polish",
+    "north": "endless_end:block/amnesic_table",
+    "east": "endless_end:block/amnesic_table",
+    "south": "endless_end:block/amnesic_table",
+    "west": "endless_end:block/amnesic_table",
+    "particle": "endless_end:block/amnesic_stone"
+  },
+  "render_type": "solid"
+}

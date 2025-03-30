@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "endless_end:block/violet_roots",
+    "particle": "endless_end:block/violet_roots"
+  },
+  "render_type": "cutout"
+}

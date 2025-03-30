@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "endless_end:azure_sepal_fence",
     "endless_end:violet_sepal_fence"
   ]
 }

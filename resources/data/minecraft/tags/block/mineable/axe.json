@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
+    "endless_end:stripped_azure_sepal_wood",
+    "endless_end:stripped_azure_sepal_log",
+    "endless_end:azure_sepal_fence_gate",
+    "endless_end:azure_sepal_fence",
+    "endless_end:azure_sepal_stairs",
+    "endless_end:azure_sepal_planks",
+    "endless_end:azure_sepal_wood",
+    "endless_end:azure_sepal_log",
     "endless_end:stripped_violet_sepal_wood",
     "endless_end:stripped_violet_sepal_log",
     "endless_end:violet_sepal_fence_gate",
@@ -10,6 +18,7 @@
     "endless_end:violet_sepal_log",
     "endless_end:violet_sepal_wood",
     "endless_end:tune_block",
+    "endless_end:tunerod_stem",
     "endless_end:vertabrae"
   ]
 }

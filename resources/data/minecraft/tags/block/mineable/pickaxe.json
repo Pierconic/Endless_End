@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "endless_end:rooted_endstone",
+    "endless_end:strong_stone",
     "endless_end:moon_jelly_block",
     "endless_end:end_diamonds",
     "endless_end:cobbled_endstone",

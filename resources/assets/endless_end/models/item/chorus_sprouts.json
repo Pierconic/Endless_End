@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "endless_end:block/chorus_sprouts"
+    "layer0": "endless_end:block/violet_sprouts"
   }
 }

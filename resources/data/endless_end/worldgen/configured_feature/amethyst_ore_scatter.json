@@ -21,6 +21,15 @@
         "state": {
           "Name": "endless_end:end_amethyst"
         }
+      },
+      {
+        "target": {
+          "predicate_type": "block_match",
+          "block": "endless_end:strong_stone"
+        },
+        "state": {
+          "Name": "endless_end:end_amethyst"
+        }
       }
     ]
   }

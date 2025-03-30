@@ -30,7 +30,7 @@ public abstract class ChorusPlantBlockMixin extends Block {
 	@Inject(method = "canSurvive", at = @At("HEAD"), cancellable = true)
 	private void canSurvive(BlockState state, LevelReader world, BlockPos pos, CallbackInfoReturnable<Boolean> info) {
 		BlockState blockstate = world.getBlockState(pos.below());
-		if (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(Blocks.END_STONE)) {
+		if (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(EndlessEndModBlocks.STRONG_STONE.get()) || blockstate.is(Blocks.END_STONE)) {
 			info.setReturnValue(true);
 		}
 	}
@@ -39,7 +39,7 @@ public abstract class ChorusPlantBlockMixin extends Block {
 	private void updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor world, BlockPos pos, BlockPos posFrom, CallbackInfoReturnable<BlockState> info) {
 		BlockState plant = info.getReturnValue();
 		BlockState blockstate = world.getBlockState(pos.below());
-		if (plant.is(Blocks.CHORUS_PLANT) && (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(Blocks.END_STONE))) {
+		if (plant.is(Blocks.CHORUS_PLANT) && (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(EndlessEndModBlocks.STRONG_STONE.get()) || blockstate.is(Blocks.END_STONE))) {
 			plant = plant.setValue(BlockStateProperties.DOWN, true);
 			info.setReturnValue(plant);
 		}
@@ -51,7 +51,7 @@ public abstract class ChorusPlantBlockMixin extends Block {
 		Level world = ctx.getLevel();
 		BlockState plant = info.getReturnValue();
 		BlockState blockstate = world.getBlockState(pos.below());
-		if (ctx.canPlace() && plant.is(Blocks.CHORUS_PLANT) && (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(Blocks.END_STONE))) {
+		if (ctx.canPlace() && plant.is(Blocks.CHORUS_PLANT) && (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(EndlessEndModBlocks.STRONG_STONE.get()) || blockstate.is(Blocks.END_STONE))) {
 			info.setReturnValue(plant.setValue(BlockStateProperties.DOWN, true));
 		}
 	}
@@ -61,7 +61,7 @@ public abstract class ChorusPlantBlockMixin extends Block {
 	private void getStateForPlacement(BlockGetter blockGetter, BlockPos blockPos, CallbackInfoReturnable<BlockState> info) {
 		BlockState plant = info.getReturnValue();
 		BlockState blockstate = blockGetter.getBlockState(blockPos.below());
-		if (plant.is(Blocks.CHORUS_PLANT) && (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(Blocks.END_STONE))) {
+		if (plant.is(Blocks.CHORUS_PLANT) && (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(EndlessEndModBlocks.STRONG_STONE.get()) || blockstate.is(Blocks.END_STONE))) {
 			info.setReturnValue(plant.setValue(BlockStateProperties.DOWN, true));
 		}
 	}

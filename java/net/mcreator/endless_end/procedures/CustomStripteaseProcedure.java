@@ -127,6 +127,94 @@ public class CustomStripteaseProcedure {
 					}
 				}
 			}
+		} else if (blockstate.getBlock() == EndlessEndModBlocks.AZURE_SEPAL_LOG.get() || blockstate.getBlock() == EndlessEndModBlocks.AZURE_SEPAL_WOOD.get()) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).isCorrectToolForDrops(blockstate)) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.swing(InteractionHand.MAIN_HAND, true);
+				if (blockstate.getBlock() == EndlessEndModBlocks.AZURE_SEPAL_WOOD.get()) {
+					if (world instanceof ServerLevel _level) {
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).hurtAndBreak(2, _level, null, _stkprov -> {
+						});
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					world.setBlock(BlockPos.containing(x, y, z), EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_WOOD.get().defaultBlockState(), 3);
+				} else if (blockstate.getBlock() == EndlessEndModBlocks.AZURE_SEPAL_LOG.get()) {
+					if (world instanceof ServerLevel _level) {
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).hurtAndBreak(2, _level, null, _stkprov -> {
+						});
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					{
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockState _bs = EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_LOG.get().defaultBlockState();
+						BlockState _bso = world.getBlockState(_bp);
+						for (Property<?> _propertyOld : _bso.getProperties()) {
+							Property _propertyNew = _bs.getBlock().getStateDefinition().getProperty(_propertyOld.getName());
+							if (_propertyNew != null && _bs.getValue(_propertyNew) != null)
+								try {
+									_bs = _bs.setValue(_propertyNew, _bso.getValue(_propertyOld));
+								} catch (Exception e) {
+								}
+						}
+						world.setBlock(_bp, _bs, 3);
+					}
+				}
+			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).isCorrectToolForDrops(blockstate)) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.swing(InteractionHand.OFF_HAND, true);
+				if (blockstate.getBlock() == EndlessEndModBlocks.AZURE_SEPAL_LOG.get()) {
+					if (world instanceof ServerLevel _level) {
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).hurtAndBreak(2, _level, null, _stkprov -> {
+						});
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					world.setBlock(BlockPos.containing(x, y, z), EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_LOG.get().defaultBlockState(), 3);
+				} else if (blockstate.getBlock() == EndlessEndModBlocks.AZURE_SEPAL_WOOD.get()) {
+					if (world instanceof ServerLevel _level) {
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).hurtAndBreak(2, _level, null, _stkprov -> {
+						});
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.axe.strip")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					{
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockState _bs = EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_WOOD.get().defaultBlockState();
+						BlockState _bso = world.getBlockState(_bp);
+						for (Property<?> _propertyOld : _bso.getProperties()) {
+							Property _propertyNew = _bs.getBlock().getStateDefinition().getProperty(_propertyOld.getName());
+							if (_propertyNew != null && _bs.getValue(_propertyNew) != null)
+								try {
+									_bs = _bs.setValue(_propertyNew, _bso.getValue(_propertyOld));
+								} catch (Exception e) {
+								}
+						}
+						world.setBlock(_bp, _bs, 3);
+					}
+				}
+			}
 		}
 	}
 }

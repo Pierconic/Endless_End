@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "endless_end:block/azure_sepal_pressure_plate"
+    },
+    "powered=true": {
+      "model": "endless_end:block/azure_sepal_pressure_plate_down"
+    }
+  }
+}

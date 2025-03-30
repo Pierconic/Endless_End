@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:strong_stone"
+    }
+  },
+  "result": {
+    "id": "minecraft:end_stone_bricks",
+    "count": 4
+  }
+}

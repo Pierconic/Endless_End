@@ -11,5 +11,5 @@
     "the_end"
   ],
   "features": "endless_end:end_waste_refuse",
-  "step": "surface_structures"
+  "step": "top_layer_modification"
 }

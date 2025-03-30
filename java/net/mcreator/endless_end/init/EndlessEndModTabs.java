@@ -43,6 +43,16 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_PRESSURE_PLATE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.STRIPPED_VIOLET_SEPAL_LOG.get().asItem());
 			tabData.accept(EndlessEndModBlocks.STRIPPED_VIOLET_SEPAL_WOOD.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_LOG.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_WOOD.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_PLANKS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_STAIRS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_SLAB.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_FENCE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_FENCE_GATE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_PRESSURE_PLATE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_LOG.get().asItem());
+			tabData.accept(EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_WOOD.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_ORE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.END_IRON.get().asItem());
@@ -51,7 +61,6 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.LYDIAN_PETALS.get().asItem());
 			tabData.accept(EndlessEndModBlocks.VERTABRAE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ADAMANT.get().asItem());
-			tabData.accept(EndlessEndModBlocks.TUNEROD_STEM.get().asItem());
 			tabData.accept(EndlessEndModBlocks.SOUL_BULB.get().asItem());
 			tabData.accept(EndlessEndModBlocks.BLUE_ROSE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.AMNESOCLAST.get().asItem());
@@ -63,6 +72,10 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_LEAVES.get().asItem());
 			tabData.accept(EndlessEndModBlocks.CHORUS_SPROUTS.get().asItem());
 			tabData.accept(EndlessEndModBlocks.MOLDERING_PURPUR.get().asItem());
+			tabData.accept(EndlessEndModBlocks.STRONG_STONE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.ROOTED_ENDSTONE.get().asItem());
+			tabData.accept(EndlessEndModItems.TUNE_ROD.get());
+			tabData.accept(EndlessEndModBlocks.CHORUS_ROOTS.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());
@@ -72,6 +85,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_TILES.get().asItem());
 			tabData.accept(EndlessEndModBlocks.TUNE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.VIOLET_SEPAL_BUTTON.get().asItem());
+			tabData.accept(EndlessEndModBlocks.AZURE_SEPAL_BUTTON.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDERPORTER_WHITE.get().asItem());
 			tabData.accept(EndlessEndModItems.WARP_CHIP_WHITE.get());

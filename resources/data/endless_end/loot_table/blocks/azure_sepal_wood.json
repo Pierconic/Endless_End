@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "endless_end:blocks/azure_sepal_wood",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "endless_end:azure_sepal_wood"
+        }
+      ]
+    }
+  ]
+}

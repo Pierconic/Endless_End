@@ -1,8 +1,8 @@
 {
   "parent": "block/pressure_plate_down",
   "textures": {
-    "particle": "endless_end:block/violet_planks",
-    "texture": "endless_end:block/violet_planks"
+    "particle": "endless_end:block/violet_log_top_stripped",
+    "texture": "endless_end:block/violet_log_top_stripped"
   },
   "render_type": "solid"
 }

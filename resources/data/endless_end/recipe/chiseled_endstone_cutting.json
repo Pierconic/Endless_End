@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "minecraft:end_stone"
+    "item": "endless_end:strong_stone"
   },
   "result": {
     "id": "endless_end:chiseled_endstone",

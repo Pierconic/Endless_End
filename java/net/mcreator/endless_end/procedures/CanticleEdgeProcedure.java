@@ -95,7 +95,7 @@ public class CanticleEdgeProcedure {
 					} else if (Math.random() < 0.005) {
 						{
 							BlockPos _bp = BlockPos.containing(x + sx, world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) (x + sx), (int) (z + sz)) - 0, z + sz);
-							BlockState _bs = EndlessEndModBlocks.CHORUS_SPROUTS.get().defaultBlockState();
+							BlockState _bs = EndlessEndModBlocks.CHORUS_ROOTS.get().defaultBlockState();
 							BlockState _bso = world.getBlockState(_bp);
 							for (Property<?> _propertyOld : _bso.getProperties()) {
 								Property _propertyNew = _bs.getBlock().getStateDefinition().getProperty(_propertyOld.getName());

@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "strong_stone_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:strong_stone"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:chiseled_endstone_crafting",
+      "minecraft:end_stone_bricks",
+      "minecraft:end_stone_bricks_from_end_stone_stonecutting"
+    ]
+  }
+}

@@ -39,6 +39,7 @@ import net.mcreator.endless_end.item.WarpChipCyanItem;
 import net.mcreator.endless_end.item.WarpChipBrownItem;
 import net.mcreator.endless_end.item.WarpChipBlueItem;
 import net.mcreator.endless_end.item.WarpChipBlackItem;
+import net.mcreator.endless_end.item.TuneRodItem;
 import net.mcreator.endless_end.item.TransponderItem;
 import net.mcreator.endless_end.item.StarFragmentItem;
 import net.mcreator.endless_end.item.SendingTransponderItem;
@@ -177,6 +178,22 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> STRIPPED_VIOLET_SEPAL_WOOD = block(EndlessEndModBlocks.STRIPPED_VIOLET_SEPAL_WOOD);
 	public static final DeferredItem<Item> CHORUS_SPROUTS = block(EndlessEndModBlocks.CHORUS_SPROUTS);
 	public static final DeferredItem<Item> MOLDERING_PURPUR = block(EndlessEndModBlocks.MOLDERING_PURPUR);
+	public static final DeferredItem<Item> AZURE_SEPAL_LOG = block(EndlessEndModBlocks.AZURE_SEPAL_LOG);
+	public static final DeferredItem<Item> AZURE_SEPAL_WOOD = block(EndlessEndModBlocks.AZURE_SEPAL_WOOD);
+	public static final DeferredItem<Item> AZURE_SEPAL_PLANKS = block(EndlessEndModBlocks.AZURE_SEPAL_PLANKS);
+	public static final DeferredItem<Item> AZURE_SEPAL_STAIRS = block(EndlessEndModBlocks.AZURE_SEPAL_STAIRS);
+	public static final DeferredItem<Item> AZURE_SEPAL_SLAB = block(EndlessEndModBlocks.AZURE_SEPAL_SLAB);
+	public static final DeferredItem<Item> AZURE_SEPAL_FENCE = block(EndlessEndModBlocks.AZURE_SEPAL_FENCE);
+	public static final DeferredItem<Item> AZURE_SEPAL_FENCE_GATE = block(EndlessEndModBlocks.AZURE_SEPAL_FENCE_GATE);
+	public static final DeferredItem<Item> AZURE_SEPAL_PRESSURE_PLATE = block(EndlessEndModBlocks.AZURE_SEPAL_PRESSURE_PLATE);
+	public static final DeferredItem<Item> AZURE_SEPAL_BUTTON = block(EndlessEndModBlocks.AZURE_SEPAL_BUTTON);
+	public static final DeferredItem<Item> STRIPPED_AZURE_SEPAL_LOG = block(EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_LOG);
+	public static final DeferredItem<Item> STRIPPED_AZURE_SEPAL_WOOD = block(EndlessEndModBlocks.STRIPPED_AZURE_SEPAL_WOOD);
+	public static final DeferredItem<Item> STRONG_STONE = block(EndlessEndModBlocks.STRONG_STONE);
+	public static final DeferredItem<Item> ROOTED_ENDSTONE = block(EndlessEndModBlocks.ROOTED_ENDSTONE);
+	public static final DeferredItem<Item> TUNE_ROD = REGISTRY.register("tune_rod", TuneRodItem::new);
+	public static final DeferredItem<Item> CHORUS_ROOTS = block(EndlessEndModBlocks.CHORUS_ROOTS);
+	public static final DeferredItem<Item> CONVERTED_AMNESOCLAST = block(EndlessEndModBlocks.CONVERTED_AMNESOCLAST);
 
 	// Start of user code block custom items
 	// End of user code block custom items

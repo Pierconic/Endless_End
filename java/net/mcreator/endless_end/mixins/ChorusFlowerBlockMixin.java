@@ -23,7 +23,7 @@ public abstract class ChorusFlowerBlockMixin extends Block {
 	@Inject(method = "canSurvive", at = @At("HEAD"), cancellable = true)
 	private void canSurvive(BlockState state, LevelReader world, BlockPos pos, CallbackInfoReturnable<Boolean> info) {
 		BlockState blockstate = world.getBlockState(pos.below());
-		if (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get())) {
+		if (blockstate.is(EndlessEndModBlocks.MOLDERING_PURPUR.get()) || blockstate.is(EndlessEndModBlocks.STRONG_STONE.get())) {
 			info.setReturnValue(true);
 			info.cancel();
 		}

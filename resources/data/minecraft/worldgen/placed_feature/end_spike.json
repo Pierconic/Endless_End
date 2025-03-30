@@ -1,0 +1,13 @@
+{
+  "feature": "minecraft:end_spike",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 0,
+        "min_inclusive": 0
+      }
+    }
+  ]
+}

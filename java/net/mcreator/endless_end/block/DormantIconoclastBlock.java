@@ -14,12 +14,15 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.IconoclastTransmissionProcedure;
+import net.mcreator.endless_end.procedures.AmnesicSpreadProcedure;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class DormantIconoclastBlock extends Block {
@@ -28,7 +31,7 @@ public class DormantIconoclastBlock extends Block {
 				.sound(new DeferredSoundType(1.0f, 1.0f, () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:silence")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:block.amnesoclast.step")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:block.amnesoclast.place")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:block.amnesoclast.dig")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:block.amnesoclast.step"))))
-				.strength(6f, 7f));
+				.strength(6f, 7f).randomTicks());
 	}
 
 	@Override
@@ -39,6 +42,12 @@ public class DormantIconoclastBlock extends Block {
 	@Override
 	public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
 		return new ItemStack(EndlessEndModBlocks.ICONOCLAST.get());
+	}
+
+	@Override
+	public void randomTick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+		super.randomTick(blockstate, world, pos, random);
+		AmnesicSpreadProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

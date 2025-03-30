@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:netherrack_replace_blobs",
+  "config": {
+    "target": {
+      "Name": "minecraft:end_stone"
+    },
+    "state": {
+      "Name": "endless_end:strong_stone"
+    },
+    "radius": {
+      "type": "uniform",
+      "min_inclusive": 4,
+      "max_inclusive": 9
+    }
+  }
+}

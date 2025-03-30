@@ -5,6 +5,7 @@
     "minecraft:soul_soil",
     "minecraft:sculk",
     "minecraft:sculk_catalyst",
-    "endless_end:singing_sand"
+    "endless_end:singing_sand",
+    "minecraft:bedrock"
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "purpur_recipe_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:moldering_purpur"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:moldering_purpur_smelt"
+    ]
+  }
+}

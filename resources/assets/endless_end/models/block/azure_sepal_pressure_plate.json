@@ -1,0 +1,8 @@
+{
+  "parent": "block/pressure_plate_up",
+  "textures": {
+    "particle": "endless_end:block/stripped_azure_log_top",
+    "texture": "endless_end:block/stripped_azure_log_top"
+  },
+  "render_type": "solid"
+}
