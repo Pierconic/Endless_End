@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "item/handheld",
   "textures": {
-    "layer0": "endless_end:item/warpchipgray"
+    "layer0": "endless_end:item/warp_whistle_light_gray"
   }
 }

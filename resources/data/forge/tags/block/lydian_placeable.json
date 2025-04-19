@@ -18,6 +18,12 @@
     "minecraft:sand",
     "minecraft:red_sand",
     "endless_end:canticle",
-    "endless_end:blooming_canticle"
+    "endless_end:blooming_canticle",
+    "endless_end:moldering_purpur",
+    "endless_end:violet_sepal_wood",
+    "endless_end:violet_sepal_log",
+    "endless_end:violet_sepal_planks",
+    "endless_end:stripped_violet_sepal_log",
+    "endless_end:stripped_violet_sepal_wood"
   ]
 }

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "endless_end:blossoming_golden_sepal_leaves",
+    "endless_end:golden_sepal_leaves",
+    "endless_end:swirling_vines",
     "endless_end:violet_sepal_leaves",
     "endless_end:blue_rose",
     "endless_end:soul_bulb",

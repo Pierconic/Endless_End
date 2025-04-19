@@ -28,7 +28,11 @@ public class EndlessEndModSurfaceRules {
 			if (chunkGenerator instanceof NoiseBasedChunkGenerator generator) {
 				NoiseGeneratorSettings noiseGeneratorSettings = generator.settings.value();
 				registerSurfaceRules(ResourceLocation.parse("endless_end:chorus_orchard"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:chorus_midlands"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:chorus_barrens"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:inverted_orchard"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:inverted_midlands"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:inverted_barrens"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:whispering_delta"), noiseGeneratorSettings, Blocks.CALCITE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:soul_arbor"), noiseGeneratorSettings, Blocks.SCULK.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 			}

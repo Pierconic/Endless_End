@@ -4,14 +4,14 @@
   "category": "equipment",
   "ingredients": [
     {
-      "item": "minecraft:purple_dye"
+      "item": "minecraft:white_dye"
     },
     {
-      "item": "endless_end:enderporter_white"
+      "tag": "forge:enderporters"
     }
   ],
   "result": {
-    "id": "endless_end:enderporter_purple",
+    "id": "endless_end:enderporter_white",
     "count": 1
   }
 }

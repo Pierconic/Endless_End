@@ -6,16 +6,17 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.endless_end.init.EndlessEndModParticleTypes;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class CanticleRetractProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		double randy = 0;
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.FIREWORK, (x + 0.5), (y + 0.5), (z + 0.5), 15, 0.3, 0.3, 0.3, 0.1);
+			_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.CANTICLE_SPORE.get()), (x + 0.5), (y + 0.5), (z + 0.5), 15, 0.2, 0.2, 0.2, 0.1);
 		if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == EndlessEndModBlocks.LYDIAN_PETALS.get()
 				&& ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock().getStateDefinition().getProperty("face") instanceof EnumProperty _getep4
 						? (world.getBlockState(BlockPos.containing(x, y + 1, z))).getValue(_getep4).toString()

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "blockstate=0": {
+      "model": "endless_end:block/blossoming_golden_sepal_leaves"
+    },
+    "blockstate=1": {
+      "model": "endless_end:block/blooming_azure_growth_blockstate_0"
+    },
+    "blockstate=2": {
+      "model": "endless_end:block/blooming_azure_growth_blockstate_1"
+    },
+    "blockstate=3": {
+      "model": "endless_end:block/blooming_azure_growth_blockstate_2"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+
+{
+  "parent": "endless_end:displaysettings/enderporter.animation",
+  "textures": {
+    "particle": "endless_end:block/endorite_tiles"
+  }
+}

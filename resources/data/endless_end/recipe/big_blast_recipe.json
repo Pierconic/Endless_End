@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:blast_berries_1"
+    },
+    "b": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "id": "endless_end:blast_berries_2",
+    "count": 1
+  }
+}

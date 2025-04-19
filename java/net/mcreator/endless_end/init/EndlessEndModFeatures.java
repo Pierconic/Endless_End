@@ -12,6 +12,8 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.endless_end.world.features.VioletStemFeature;
 import net.mcreator.endless_end.world.features.SubterraChorusBlobFeature;
+import net.mcreator.endless_end.world.features.SmallVioletStemFeature;
+import net.mcreator.endless_end.world.features.PoppedChorusBlobFeature;
 import net.mcreator.endless_end.world.features.EndWasteRefuseFeature;
 import net.mcreator.endless_end.world.features.ChorusBlobFeature;
 import net.mcreator.endless_end.world.features.CanticlePatchFeature;
@@ -26,4 +28,6 @@ public class EndlessEndModFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<?>> VIOLET_STEM = REGISTRY.register("violet_stem", VioletStemFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> CHORUS_BLOB = REGISTRY.register("chorus_blob", ChorusBlobFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> SUBTERRA_CHORUS_BLOB = REGISTRY.register("subterra_chorus_blob", SubterraChorusBlobFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> SMALL_VIOLET_STEM = REGISTRY.register("small_violet_stem", SmallVioletStemFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> POPPED_CHORUS_BLOB = REGISTRY.register("popped_chorus_blob", PoppedChorusBlobFeature::new);
 }

@@ -21,7 +21,7 @@ public class GrazerEntityDiesProcedure {
 		if (sourceentity instanceof LivingEntity) {
 			modifier = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING));
 		}
-		for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 0, (int) (2 + modifier)); index0++) {
+		for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 0, (int) (1 + modifier)); index0++) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EndlessEndModItems.BRITTLE_CARAPACE.get()));
 				entityToSpawn.setPickUpDelay(10);

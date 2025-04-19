@@ -2,6 +2,5 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "endless_end:item/enderporteritempink"
-  },
-  "render_type": "translucent"
+  }
 }

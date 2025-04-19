@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "music_disc_break",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:chorus"
+    }
+  },
+  "result": {
+    "id": "endless_end:disc_fragment_chorus",
+    "count": 8
+  }
+}

@@ -159,14 +159,14 @@ public class GrowSmallVioletProcedure {
 				trunk_1 = trunk_1 + 1;
 				if (trunk_1_x_axis) {
 					world.setBlock(BlockPos.containing(x + trunk_2, y + trunk_1, z), EndlessEndModBlocks.VIOLET_SEPAL_LOG.get().defaultBlockState(), 3);
-					SimpleTuneshootProcedure.execute(world,x + trunk_2, y + trunk_1 + 1, z);
+					SimpleTuneshootProcedure.execute(world,x + trunk_2, y + trunk_1 + 1, z,true);
 					world.setBlock(BlockPos.containing(x - trunk_2, y + trunk_1, z), EndlessEndModBlocks.VIOLET_SEPAL_LOG.get().defaultBlockState(), 3);
-					SimpleTuneshootProcedure.execute(world,x - trunk_2, y + trunk_1 + 1, z);
+					SimpleTuneshootProcedure.execute(world,x - trunk_2, y + trunk_1 + 1, z,true);
 				} else {
 					world.setBlock(BlockPos.containing(x, y + trunk_1, z + trunk_2), EndlessEndModBlocks.VIOLET_SEPAL_LOG.get().defaultBlockState(), 3);
-					SimpleTuneshootProcedure.execute(world,x, y + trunk_1 + 1, z+ trunk_2);
+					SimpleTuneshootProcedure.execute(world,x, y + trunk_1 + 1, z+ trunk_2,true);
 					world.setBlock(BlockPos.containing(x, y + trunk_1, z - trunk_2), EndlessEndModBlocks.VIOLET_SEPAL_LOG.get().defaultBlockState(), 3);
-					SimpleTuneshootProcedure.execute(world,x, y + trunk_1 + 1, z -trunk_2);
+					SimpleTuneshootProcedure.execute(world,x, y + trunk_1 + 1, z -trunk_2,true);
 				}
 			}
 		} else {

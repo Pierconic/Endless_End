@@ -1,32 +1,16 @@
 package net.mcreator.endless_end.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
-
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 
 import net.mcreator.endless_end.network.EndlessEndModVariables;
+import net.mcreator.endless_end.init.EndlessEndModParticleTypes;
 import net.mcreator.endless_end.init.EndlessEndModMobEffects;
 
-import javax.annotation.Nullable;
-
-@EventBusSubscriber
 public class AscensionParticlesProcedure {
-	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
-	}
-
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		execute(null, world, x, y, z, entity);
-	}
-
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		double radius = 0;
@@ -34,7 +18,9 @@ public class AscensionParticlesProcedure {
 		double sz = 0;
 		double drag = 0;
 		double theta = 0;
+		double chance = 0;
 		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(EndlessEndModMobEffects.ASCENSION)) {
+			chance = entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.ASCENSION) ? _livEnt.getEffect(EndlessEndModMobEffects.ASCENSION).getDuration() : 0;
 			if (entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).ascension_timer == 0) {
 				{
 					EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
@@ -52,14 +38,18 @@ public class AscensionParticlesProcedure {
 			radius = 3.5;
 			sx = radius * Math.sin(theta);
 			sz = radius * Math.cos(theta);
-			world.addParticle(ParticleTypes.FIREWORK, (x + sx), (y - 0.3), (z + sz), (entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
+			if (Math.random() * 300 < chance) {
+				world.addParticle((SimpleParticleType) (EndlessEndModParticleTypes.STAR_SPARKLE.get()), (x + sx), (y - 0.3), (z + sz), (entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
+			}
+			radius = 2.5;
 			sx = radius * Math.sin(theta) * (-1);
 			sz = radius * Math.cos(theta) * (-1);
-			world.addParticle(ParticleTypes.FIREWORK, (x + sx), (y - 0.3), (z + sz), (entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
-			radius = 1.4;
-			sx = radius * Math.sin(theta);
-			sz = radius * Math.cos(theta);
-			world.addParticle(ParticleTypes.FIREWORK, (x + sx), (y - 1), (z + sz), (entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
+			if (Math.random() * 300 < chance) {
+				world.addParticle((SimpleParticleType) (EndlessEndModParticleTypes.STAR_SPARKLE.get()), (x + sx), (y - 0.3), (z + sz), (entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
+			}
+			if (chance % 8 == 0) {
+				world.addParticle((SimpleParticleType) (EndlessEndModParticleTypes.STAR_SWIRL.get()), x, (y - 0.2), z, (entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
+			}
 		}
 	}
 }

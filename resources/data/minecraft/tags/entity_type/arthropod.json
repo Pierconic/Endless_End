@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "endless_end:trawler",
     "endless_end:grazer"
   ]
 }

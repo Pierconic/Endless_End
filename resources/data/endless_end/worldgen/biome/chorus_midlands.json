@@ -1,0 +1,61 @@
+{
+  "has_precipitation": false,
+  "temperature": 0,
+  "downfall": 0.5,
+  "effects": {
+    "ambient_sound": "endless_end:chorus_orchard_ambient",
+    "mood_sound": {
+      "sound": "endless_end:chorus_mood",
+      "tick_delay": 3600,
+      "offset": 8,
+      "block_search_extent": 2
+    },
+    "additions_sound": {
+      "sound": "endless_end:chorus_additions",
+      "tick_chance": 0.0111
+    },
+    "particle": {
+      "options": {
+        "type": "white_ash"
+      },
+      "probability": 0.005
+    },
+    "foliage_color": -10092442,
+    "grass_color": -10092442,
+    "sky_color": -10092442,
+    "fog_color": -3368449,
+    "water_color": -3368449,
+    "water_fog_color": -3368449
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

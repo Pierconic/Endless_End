@@ -15,8 +15,8 @@ public class SubterraBubbleProcedure {
 				&& world.getBlockState(BlockPos.containing(x - 6, y, z)).isFaceSturdy(world, BlockPos.containing(x - 6, y, z), Direction.UP)
 				&& world.getBlockState(BlockPos.containing(x, y, z + 6)).isFaceSturdy(world, BlockPos.containing(x, y, z + 6), Direction.UP)
 				&& world.getBlockState(BlockPos.containing(x, y, z - 6)).isFaceSturdy(world, BlockPos.containing(x, y, z - 6), Direction.UP)
-				&& world.getBlockState(BlockPos.containing(x, y + 6, z)).isFaceSturdy(world, BlockPos.containing(x, y + 6, z), Direction.UP)) {
-			bubble_rad = Mth.nextInt(RandomSource.create(), 5, 11);
+				&& world.getBlockState(BlockPos.containing(x, y + 9, z)).isFaceSturdy(world, BlockPos.containing(x, y + 9, z), Direction.UP)) {
+			bubble_rad = Mth.nextInt(RandomSource.create(), 5, 9);
 			for (int index0 = 0; index0 < (int) bubble_rad; index0++) {
 				ChorusCoreProcedure.execute(world, x, y, z, core_rad, 1, 1, 1);
 				core_rad = core_rad - 1;

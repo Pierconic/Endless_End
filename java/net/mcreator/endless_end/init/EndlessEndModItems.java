@@ -46,7 +46,7 @@ import net.mcreator.endless_end.item.SendingTransponderItem;
 import net.mcreator.endless_end.item.RawEndoriteItem;
 import net.mcreator.endless_end.item.PulsingTransponderItem;
 import net.mcreator.endless_end.item.MoonJellyItem;
-import net.mcreator.endless_end.item.MagicWhistleItem;
+import net.mcreator.endless_end.item.MagicWandItem;
 import net.mcreator.endless_end.item.IntroItem;
 import net.mcreator.endless_end.item.InsectFleshItem;
 import net.mcreator.endless_end.item.EssenceItem;
@@ -57,9 +57,30 @@ import net.mcreator.endless_end.item.ElevenRepairedItem;
 import net.mcreator.endless_end.item.ElegyItem;
 import net.mcreator.endless_end.item.DiscFragmentIntroItem;
 import net.mcreator.endless_end.item.DiscFragmentElegyItem;
+import net.mcreator.endless_end.item.DiscFragmentChorusItem;
+import net.mcreator.endless_end.item.ChorusItem;
 import net.mcreator.endless_end.item.BrittleCarapaceItem;
 import net.mcreator.endless_end.item.BottledStarlightItem;
+import net.mcreator.endless_end.item.BlastBerries3Item;
+import net.mcreator.endless_end.item.BlastBerries2Item;
+import net.mcreator.endless_end.item.BlastBerries1Item;
 import net.mcreator.endless_end.block.display.TetherDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterYellowDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterWhiteDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterRedDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterPurpleDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterPinkDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterOrangeDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterMagentaDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterLimeDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterLightGrayDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterLightBlueDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterGreenDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterDarkGrayDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterCyanDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterBrownDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterBlueDisplayItem;
+import net.mcreator.endless_end.block.display.EnderporterBlackDisplayItem;
 import net.mcreator.endless_end.EndlessEndMod;
 
 public class EndlessEndModItems {
@@ -84,7 +105,6 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> TRANSCEIVER_RECIEVING_ON = block(EndlessEndModBlocks.TRANSCEIVER_RECIEVING_ON);
 	public static final DeferredItem<Item> TRANSPONDER = REGISTRY.register("transponder", TransponderItem::new);
 	public static final DeferredItem<Item> PULSING_TRANSPONDER = REGISTRY.register("pulsing_transponder", PulsingTransponderItem::new);
-	public static final DeferredItem<Item> ENDERPORTER_WHITE = block(EndlessEndModBlocks.ENDERPORTER_WHITE);
 	public static final DeferredItem<Item> WARP_CHIP_WHITE = REGISTRY.register("warp_chip_white", WarpChipWhiteItem::new);
 	public static final DeferredItem<Item> WARP_CHIP_RED = REGISTRY.register("warp_chip_red", WarpChipRedItem::new);
 	public static final DeferredItem<Item> WARP_CHIP_ORANGE = REGISTRY.register("warp_chip_orange", WarpChipOrangeItem::new);
@@ -101,21 +121,6 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> WARP_CHIP_GRAY = REGISTRY.register("warp_chip_gray", WarpChipGrayItem::new);
 	public static final DeferredItem<Item> WARP_CHIP_DARK_GRAY = REGISTRY.register("warp_chip_dark_gray", WarpChipDarkGrayItem::new);
 	public static final DeferredItem<Item> WARP_CHIP_BLACK = REGISTRY.register("warp_chip_black", WarpChipBlackItem::new);
-	public static final DeferredItem<Item> ENDERPORTER_RED = block(EndlessEndModBlocks.ENDERPORTER_RED);
-	public static final DeferredItem<Item> ENDERPORTER_ORANGE = block(EndlessEndModBlocks.ENDERPORTER_ORANGE);
-	public static final DeferredItem<Item> ENDERPORTER_YELLOW = block(EndlessEndModBlocks.ENDERPORTER_YELLOW);
-	public static final DeferredItem<Item> ENDERPORTER_LIME = block(EndlessEndModBlocks.ENDERPORTER_LIME);
-	public static final DeferredItem<Item> ENDERPORTER_GREEN = block(EndlessEndModBlocks.ENDERPORTER_GREEN);
-	public static final DeferredItem<Item> ENDERPORTER_CYAN = block(EndlessEndModBlocks.ENDERPORTER_CYAN);
-	public static final DeferredItem<Item> ENDERPORTER_LIGHT_BLUE = block(EndlessEndModBlocks.ENDERPORTER_LIGHT_BLUE);
-	public static final DeferredItem<Item> ENDERPORTER_BLUE = block(EndlessEndModBlocks.ENDERPORTER_BLUE);
-	public static final DeferredItem<Item> ENDERPORTER_PURPLE = block(EndlessEndModBlocks.ENDERPORTER_PURPLE);
-	public static final DeferredItem<Item> ENDERPORTER_MAGENTA = block(EndlessEndModBlocks.ENDERPORTER_MAGENTA);
-	public static final DeferredItem<Item> ENDERPORTER_PINK = block(EndlessEndModBlocks.ENDERPORTER_PINK);
-	public static final DeferredItem<Item> ENDERPORTER_BROWN = block(EndlessEndModBlocks.ENDERPORTER_BROWN);
-	public static final DeferredItem<Item> ENDERPORTER_LIGHT_GRAY = block(EndlessEndModBlocks.ENDERPORTER_LIGHT_GRAY);
-	public static final DeferredItem<Item> ENDERPORTER_DARK_GRAY = block(EndlessEndModBlocks.ENDERPORTER_DARK_GRAY);
-	public static final DeferredItem<Item> ENDERPORTER_BLACK = block(EndlessEndModBlocks.ENDERPORTER_BLACK);
 	public static final DeferredItem<Item> SENDING_TRANSPONDER = REGISTRY.register("sending_transponder", SendingTransponderItem::new);
 	public static final DeferredItem<Item> ENDORITE_TILES = block(EndlessEndModBlocks.ENDORITE_TILES);
 	public static final DeferredItem<Item> PHASED_ENDORITE_TILES = block(EndlessEndModBlocks.PHASED_ENDORITE_TILES);
@@ -126,7 +131,7 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> VERTABRAE = block(EndlessEndModBlocks.VERTABRAE);
 	public static final DeferredItem<Item> BRITTLE_CARAPACE = REGISTRY.register("brittle_carapace", BrittleCarapaceItem::new);
 	public static final DeferredItem<Item> INSECT_FLESH = REGISTRY.register("insect_flesh", InsectFleshItem::new);
-	public static final DeferredItem<Item> GRAZER_SPAWN_EGG = REGISTRY.register("grazer_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.GRAZER, -13434829, -6711040, new Item.Properties()));
+	public static final DeferredItem<Item> GRAZER_SPAWN_EGG = REGISTRY.register("grazer_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.GRAZER, -6750055, -3368449, new Item.Properties()));
 	public static final DeferredItem<Item> ADAMANT = block(EndlessEndModBlocks.ADAMANT);
 	public static final DeferredItem<Item> STAR_FRAGMENT = REGISTRY.register("star_fragment", StarFragmentItem::new);
 	public static final DeferredItem<Item> BOTTLED_STARLIGHT = REGISTRY.register("bottled_starlight", BottledStarlightItem::new);
@@ -135,7 +140,6 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> ESSENCE_BUCKET = REGISTRY.register("essence_bucket", EssenceItem::new);
 	public static final DeferredItem<Item> TUNEROD_STEM = block(EndlessEndModBlocks.TUNEROD_STEM);
 	public static final DeferredItem<Item> TUNE_BLOCK = block(EndlessEndModBlocks.TUNE_BLOCK);
-	public static final DeferredItem<Item> MAGIC_WHISTLE = REGISTRY.register("magic_whistle", MagicWhistleItem::new);
 	public static final DeferredItem<Item> DISC_FRAGMENT_ELEGY = REGISTRY.register("disc_fragment_elegy", DiscFragmentElegyItem::new);
 	public static final DeferredItem<Item> YEARNING_EYE = REGISTRY.register("yearning_eye", YearningEyeItem::new);
 	public static final DeferredItem<Item> EMPTY_EYE = REGISTRY.register("empty_eye", EmptyEyeItem::new);
@@ -194,6 +198,41 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> TUNE_ROD = REGISTRY.register("tune_rod", TuneRodItem::new);
 	public static final DeferredItem<Item> CHORUS_ROOTS = block(EndlessEndModBlocks.CHORUS_ROOTS);
 	public static final DeferredItem<Item> CONVERTED_AMNESOCLAST = block(EndlessEndModBlocks.CONVERTED_AMNESOCLAST);
+	public static final DeferredItem<Item> TUNE_ROD_VASE = block(EndlessEndModBlocks.TUNE_ROD_VASE);
+	public static final DeferredItem<Item> TUNEROD_FLOWER_POT = block(EndlessEndModBlocks.TUNEROD_FLOWER_POT);
+	public static final DeferredItem<Item> STRANGE_EGGS = block(EndlessEndModBlocks.STRANGE_EGGS);
+	public static final DeferredItem<Item> TRAWLER_SPAWN_EGG = REGISTRY.register("trawler_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.TRAWLER, -10092442, -3368449, new Item.Properties()));
+	public static final DeferredItem<Item> CHORUS = REGISTRY.register("chorus", ChorusItem::new);
+	public static final DeferredItem<Item> DISC_FRAGMENT_CHORUS = REGISTRY.register("disc_fragment_chorus", DiscFragmentChorusItem::new);
+	public static final DeferredItem<Item> ENDERPORTER_WHITE = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_WHITE.getId().getPath(), () -> new EnderporterWhiteDisplayItem(EndlessEndModBlocks.ENDERPORTER_WHITE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_RED = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_RED.getId().getPath(), () -> new EnderporterRedDisplayItem(EndlessEndModBlocks.ENDERPORTER_RED.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_ORANGE = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_ORANGE.getId().getPath(), () -> new EnderporterOrangeDisplayItem(EndlessEndModBlocks.ENDERPORTER_ORANGE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_YELLOW = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_YELLOW.getId().getPath(), () -> new EnderporterYellowDisplayItem(EndlessEndModBlocks.ENDERPORTER_YELLOW.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_LIME = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_LIME.getId().getPath(), () -> new EnderporterLimeDisplayItem(EndlessEndModBlocks.ENDERPORTER_LIME.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_GREEN = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_GREEN.getId().getPath(), () -> new EnderporterGreenDisplayItem(EndlessEndModBlocks.ENDERPORTER_GREEN.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_CYAN = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_CYAN.getId().getPath(), () -> new EnderporterCyanDisplayItem(EndlessEndModBlocks.ENDERPORTER_CYAN.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_LIGHT_BLUE = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_LIGHT_BLUE.getId().getPath(),
+			() -> new EnderporterLightBlueDisplayItem(EndlessEndModBlocks.ENDERPORTER_LIGHT_BLUE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_BLUE = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_BLUE.getId().getPath(), () -> new EnderporterBlueDisplayItem(EndlessEndModBlocks.ENDERPORTER_BLUE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_PURPLE = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_PURPLE.getId().getPath(), () -> new EnderporterPurpleDisplayItem(EndlessEndModBlocks.ENDERPORTER_PURPLE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_MAGENTA = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_MAGENTA.getId().getPath(),
+			() -> new EnderporterMagentaDisplayItem(EndlessEndModBlocks.ENDERPORTER_MAGENTA.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_PINK = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_PINK.getId().getPath(), () -> new EnderporterPinkDisplayItem(EndlessEndModBlocks.ENDERPORTER_PINK.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_BROWN = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_BROWN.getId().getPath(), () -> new EnderporterBrownDisplayItem(EndlessEndModBlocks.ENDERPORTER_BROWN.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_LIGHT_GRAY = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_LIGHT_GRAY.getId().getPath(),
+			() -> new EnderporterLightGrayDisplayItem(EndlessEndModBlocks.ENDERPORTER_LIGHT_GRAY.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_DARK_GRAY = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_DARK_GRAY.getId().getPath(),
+			() -> new EnderporterDarkGrayDisplayItem(EndlessEndModBlocks.ENDERPORTER_DARK_GRAY.get(), new Item.Properties()));
+	public static final DeferredItem<Item> ENDERPORTER_BLACK = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_BLACK.getId().getPath(), () -> new EnderporterBlackDisplayItem(EndlessEndModBlocks.ENDERPORTER_BLACK.get(), new Item.Properties()));
+	public static final DeferredItem<Item> MAGIC_WAND = REGISTRY.register("magic_wand", MagicWandItem::new);
+	public static final DeferredItem<Item> SWIRLING_VINES = block(EndlessEndModBlocks.SWIRLING_VINES);
+	public static final DeferredItem<Item> GOLDEN_SEPAL_LEAVES = block(EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES);
+	public static final DeferredItem<Item> BLOSSOMING_GOLDEN_SEPAL_LEAVES = block(EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES);
+	public static final DeferredItem<Item> BLAST_BERRIES_1 = REGISTRY.register("blast_berries_1", BlastBerries1Item::new);
+	public static final DeferredItem<Item> BLAST_BERRIES_2 = REGISTRY.register("blast_berries_2", BlastBerries2Item::new);
+	public static final DeferredItem<Item> BLAST_BERRIES_3 = REGISTRY.register("blast_berries_3", BlastBerries3Item::new);
+	public static final DeferredItem<Item> VIOLET_POLYP_SPAWN_EGG = REGISTRY.register("violet_polyp_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.VIOLET_POLYP, -6750055, -16724788, new Item.Properties()));
+	public static final DeferredItem<Item> TREBLE_BLOOM = block(EndlessEndModBlocks.TREBLE_BLOOM);
 
 	// Start of user code block custom items
 	// End of user code block custom items

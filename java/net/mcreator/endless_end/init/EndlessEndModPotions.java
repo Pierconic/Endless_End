@@ -16,4 +16,6 @@ import net.mcreator.endless_end.EndlessEndMod;
 public class EndlessEndModPotions {
 	public static final DeferredRegister<Potion> REGISTRY = DeferredRegister.create(Registries.POTION, EndlessEndMod.MODID);
 	public static final DeferredHolder<Potion, Potion> CORRUPTION_EFFECT = REGISTRY.register("corruption_effect", () -> new Potion(new MobEffectInstance(EndlessEndModMobEffects.CORRUPTION, 3600, 0, false, true)));
+	public static final DeferredHolder<Potion, Potion> ODOR_PHEREMONE = REGISTRY.register("odor_pheremone", () -> new Potion(new MobEffectInstance(EndlessEndModMobEffects.ODOR, 3600, 0, false, true)));
+	public static final DeferredHolder<Potion, Potion> FRAGRANCE_PHEREMONE = REGISTRY.register("fragrance_pheremone", () -> new Potion(new MobEffectInstance(EndlessEndModMobEffects.FRAGRANCE, 3600, 0, false, true)));
 }

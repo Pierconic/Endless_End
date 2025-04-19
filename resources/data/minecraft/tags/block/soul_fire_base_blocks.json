@@ -6,6 +6,9 @@
     "minecraft:sculk",
     "minecraft:sculk_catalyst",
     "endless_end:singing_sand",
-    "minecraft:bedrock"
+    "minecraft:bedrock",
+    "minecraft:spawner",
+    "minecraft:trial_spawner",
+    "endless_end:adamant"
   ]
 }

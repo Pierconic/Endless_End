@@ -11,6 +11,9 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
+import net.mcreator.endless_end.client.renderer.VioletPolypRenderer;
+import net.mcreator.endless_end.client.renderer.TrawlerRenderer;
+import net.mcreator.endless_end.client.renderer.MagicWardRenderer;
 import net.mcreator.endless_end.client.renderer.HollowRenderer;
 import net.mcreator.endless_end.client.renderer.GrazerRenderer;
 
@@ -21,5 +24,8 @@ public class EndlessEndModEntityRenderers {
 		event.registerEntityRenderer(EndlessEndModEntities.GRAZER.get(), GrazerRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.HOLLOW.get(), HollowRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.MOON_JELLY_BALL.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.TRAWLER.get(), TrawlerRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.MAGIC_WARD.get(), MagicWardRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.VIOLET_POLYP.get(), VioletPolypRenderer::new);
 	}
 }

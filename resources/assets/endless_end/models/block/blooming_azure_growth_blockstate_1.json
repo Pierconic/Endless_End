@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/blooming_azure_2",
+    "particle": "endless_end:block/blooming_azure_leaves"
+  },
+  "render_type": "cutout"
+}

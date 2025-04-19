@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "music_discs",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:disc_fragment_chorus"
+    },
+    "b": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "id": "endless_end:chorus",
+    "count": 1
+  }
+}

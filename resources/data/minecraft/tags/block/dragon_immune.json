@@ -10,6 +10,7 @@
     "minecraft:end_stone_brick_stairs",
     "minecraft:end_stone_brick_slab",
     "minecraft:end_stone_brick_wall",
-    "minecraft:end_rod"
+    "minecraft:end_rod",
+    "minecraft:spawner"
   ]
 }

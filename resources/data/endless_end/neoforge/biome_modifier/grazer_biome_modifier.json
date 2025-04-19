@@ -6,8 +6,8 @@
   ],
   "spawners": {
     "type": "endless_end:grazer",
-    "weight": 15,
+    "weight": 12,
     "minCount": 2,
-    "maxCount": 4
+    "maxCount": 3
   }
 }

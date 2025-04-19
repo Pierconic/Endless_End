@@ -146,6 +146,9 @@ public class EndlessEndModVariables {
 			clone.ProximityPower = original.ProximityPower;
 			clone.Stronghold_X = original.Stronghold_X;
 			clone.Stronghold_Z = original.Stronghold_Z;
+			clone.blast_x = original.blast_x;
+			clone.blast_y = original.blast_y;
+			clone.blast_z = original.blast_z;
 			if (!event.isWasDeath()) {
 				clone.fowards_polarity = original.fowards_polarity;
 				clone.upwards_polarity = original.upwards_polarity;
@@ -395,6 +398,9 @@ public class EndlessEndModVariables {
 		public double ProximityPower = 0;
 		public double Stronghold_X = 0;
 		public double Stronghold_Z = 0;
+		public double blast_x = 0;
+		public double blast_y = 0;
+		public double blast_z = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -491,6 +497,9 @@ public class EndlessEndModVariables {
 			nbt.putDouble("ProximityPower", ProximityPower);
 			nbt.putDouble("Stronghold_X", Stronghold_X);
 			nbt.putDouble("Stronghold_Z", Stronghold_Z);
+			nbt.putDouble("blast_x", blast_x);
+			nbt.putDouble("blast_y", blast_y);
+			nbt.putDouble("blast_z", blast_z);
 			return nbt;
 		}
 
@@ -588,6 +597,9 @@ public class EndlessEndModVariables {
 			ProximityPower = nbt.getDouble("ProximityPower");
 			Stronghold_X = nbt.getDouble("Stronghold_X");
 			Stronghold_Z = nbt.getDouble("Stronghold_Z");
+			blast_x = nbt.getDouble("blast_x");
+			blast_y = nbt.getDouble("blast_y");
+			blast_z = nbt.getDouble("blast_z");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

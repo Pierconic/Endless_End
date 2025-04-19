@@ -14,10 +14,11 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.endless_end.init.EndlessEndModParticleTypes;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class CanticleGrowthProcedure {
@@ -258,7 +259,7 @@ public class CanticleGrowthProcedure {
 						}
 					}
 					if (world instanceof ServerLevel _level)
-						_level.sendParticles(ParticleTypes.FIREWORK, (x + 0.5), (y + 0.5), (z + 0.5), 15, 0.3, 0.3, 0.3, 0.1);
+						_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.CANTICLE_SPORE.get()), (x + 0.5), (y + 0.5), (z + 0.5), 15, 0.3, 0.3, 0.3, 0.1);
 					if (world.isEmptyBlock(BlockPos.containing(x + 0, y + 1, z + 0))) {
 						{
 							BlockPos _bp = BlockPos.containing(x + 0, y + 1, z + 0);

@@ -1,16 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": [
-    "end_barrens",
-    "end_highlands",
-    "end_midlands",
-    "small_end_islands",
-    "the_end",
-    "endless_end:chorus_orchard",
-    "endless_end:inverted_orchard",
-    "endless_end:whispering_delta",
-    "endless_end:soul_arbor"
-  ],
+  "biomes": "#forge:endless_end",
   "features": "endless_end:deep_strong_stone",
   "step": "underground_decoration"
 }

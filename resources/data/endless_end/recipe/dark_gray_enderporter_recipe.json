@@ -7,7 +7,7 @@
       "item": "minecraft:gray_dye"
     },
     {
-      "item": "endless_end:enderporter_white"
+      "tag": "forge:enderporters"
     }
   ],
   "result": {

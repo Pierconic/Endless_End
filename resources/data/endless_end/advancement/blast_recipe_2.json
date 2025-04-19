@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "blast_recipe_2_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:blast_berries_3"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:giant_blast_recipe"
+    ]
+  }
+}

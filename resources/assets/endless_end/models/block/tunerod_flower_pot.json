@@ -1,0 +1,11 @@
+{
+  "parent": "endless_end:custom/tunerod_pot",
+  "textures": {
+    "all": "endless_end:block/flower_pot",
+    "particle": "endless_end:block/flower_pot",
+    "1": "endless_end:block/canticle",
+    "2": "endless_end:block/tunerod_animated",
+    "3": "endless_end:block/flower_pot"
+  },
+  "render_type": "cutout_mipped"
+}

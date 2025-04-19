@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "endless_end:block/enderporter_black"
+      "model": "endless_end:custom/enderporter_black_particle"
     }
   }
 }

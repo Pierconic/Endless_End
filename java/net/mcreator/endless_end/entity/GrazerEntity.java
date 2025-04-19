@@ -15,7 +15,7 @@ import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
@@ -44,13 +44,18 @@ import net.mcreator.endless_end.procedures.GrazerTeleportProcedure;
 import net.mcreator.endless_end.procedures.GrazerEntityIsHurtProcedure;
 import net.mcreator.endless_end.procedures.GrazerEntityDiesProcedure;
 import net.mcreator.endless_end.procedures.GrazerConditionProcedure;
+import net.mcreator.endless_end.procedures.ElytronPacifiedProcedure;
 import net.mcreator.endless_end.init.EndlessEndModEntities;
-import net.mcreator.endless_end.init.EndlessEndModBlocks;
+
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 
 public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_moss = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.INT);
+	 private static final EntityDataAccessor<Byte> DATA_climbing = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.BYTE);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -63,12 +68,27 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 		setNoAi(false);
 	}
 
+	 @Override
+    protected PathNavigation createNavigation(Level world) {
+        return new WallClimberNavigation(this, world);
+    }
+
+     @Override
+    public void tick() {
+        super.tick();
+        if (!this.level().isClientSide) {
+            this.setClimbing(this.horizontalCollision);
+        }
+    }
+
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
 		builder.define(SHOOT, false);
 		builder.define(ANIMATION, "undefined");
 		builder.define(TEXTURE, "grazer_shell");
+		builder.define(DATA_moss, 0);
+        builder.define(DATA_climbing, (byte)0);
 	}
 
 	public void setTexture(String texture) {
@@ -80,6 +100,26 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	}
 
 	@Override
+    public boolean onClimbable() {
+        return this.isClimbing();
+    }
+
+    public boolean isClimbing() {
+        return (this.entityData.get(DATA_climbing) & 1) != 0;
+    }
+
+    public void setClimbing(boolean world) {
+        byte b0 = this.entityData.get(DATA_climbing);
+        if (world) {
+            b0 = (byte)(b0 | 1);
+        } else {
+            b0 = (byte)(b0 & -2);
+        }
+
+        this.entityData.set(DATA_climbing, b0);
+    }
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false) {
@@ -87,8 +127,17 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 			protected boolean canPerformAttack(LivingEntity entity) {
 				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
 			}
-		});
-		this.targetSelector.addGoal(2, new HurtByTargetGoal(this) {
+
+			@Override
+			public boolean canUse() {
+				double x = GrazerEntity.this.getX();
+				double y = GrazerEntity.this.getY();
+				double z = GrazerEntity.this.getZ();
+				Entity entity = GrazerEntity.this;
+				Level world = GrazerEntity.this.level();
+				return super.canUse() && ElytronPacifiedProcedure.execute(entity);
+			}
+
 			@Override
 			public boolean canContinueToUse() {
 				double x = GrazerEntity.this.getX();
@@ -96,30 +145,50 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 				double z = GrazerEntity.this.getZ();
 				Entity entity = GrazerEntity.this;
 				Level world = GrazerEntity.this.level();
-				return super.canContinueToUse() && true;
+				return super.canContinueToUse() && ElytronPacifiedProcedure.execute(entity);
+			}
+
+		});
+		this.targetSelector.addGoal(2, new HurtByTargetGoal(this) {
+			@Override
+			public boolean canUse() {
+				double x = GrazerEntity.this.getX();
+				double y = GrazerEntity.this.getY();
+				double z = GrazerEntity.this.getZ();
+				Entity entity = GrazerEntity.this;
+				Level world = GrazerEntity.this.level();
+				return super.canUse() && ElytronPacifiedProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = GrazerEntity.this.getX();
+				double y = GrazerEntity.this.getY();
+				double z = GrazerEntity.this.getZ();
+				Entity entity = GrazerEntity.this;
+				Level world = GrazerEntity.this.level();
+				return super.canContinueToUse() && ElytronPacifiedProcedure.execute(entity);
 			}
 		});
-		this.goalSelector.addGoal(3, new TemptGoal(this, 1.5, Ingredient.of(EndlessEndModBlocks.LYDIAN_PETALS.get().asItem()), false));
+		this.goalSelector.addGoal(3, new TemptGoal(this, 1.5, Ingredient.of(Items.CHORUS_FRUIT), false));
 		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
 		this.goalSelector.addGoal(5, new FloatGoal(this));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.hurt"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:grazer_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.death"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:grazer_death"));
 	}
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		GrazerEntityIsHurtProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
 		Entity immediatesourceentity = source.getDirectEntity();
-		if (source.getDirectEntity() instanceof AbstractArrow)
-			return false;
 		return super.hurt(source, amount);
 	}
 
@@ -133,6 +202,7 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datamoss", this.entityData.get(DATA_moss));
 	}
 
 	@Override
@@ -140,6 +210,8 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datamoss"))
+			this.entityData.set(DATA_moss, compound.getInt("Datamoss"));
 	}
 
 	@Override
@@ -172,9 +244,9 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.15);
-		builder = builder.add(Attributes.MAX_HEALTH, 26);
+		builder = builder.add(Attributes.MAX_HEALTH, 40);
 		builder = builder.add(Attributes.ARMOR, 3);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 2);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 24);
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.2);

@@ -15,7 +15,8 @@ public class RefusePatchFeatureProcedure {
 		double size = 0;
 		double mult = 0;
 		mult = 0;
-		if (world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("end_highlands")) || world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("the_end"))) {
+		if (world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("end_midlands")) || world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("end_highlands"))
+				|| world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("the_end"))) {
 			mult = 1;
 		} else if (world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("endless_end:inverted_orchard"))) {
 			mult = 0.5;

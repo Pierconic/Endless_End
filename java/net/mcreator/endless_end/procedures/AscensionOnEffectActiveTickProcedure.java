@@ -1,13 +1,14 @@
 package net.mcreator.endless_end.procedures;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.endless_end.network.EndlessEndModVariables;
 
 public class AscensionOnEffectActiveTickProcedure {
-	public static void execute(Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		double h_strength = 0;
@@ -93,5 +94,6 @@ public class AscensionOnEffectActiveTickProcedure {
 				}
 			}
 		}
+		AscensionParticlesProcedure.execute(world, x, y, z, entity);
 	}
 }

@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "endless_end:chorus_orchard",
+    "end_highlands"
+  ],
+  "spawners": {
+    "type": "endless_end:trawler",
+    "weight": 8,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

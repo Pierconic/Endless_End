@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/rot_cross",
+  "textures": {
+    "all": "endless_end:block/swirling_vines",
+    "particle": "endless_end:block/swirling_vines",
+    "0": "endless_end:block/swirling_vines"
+  },
+  "render_type": "cutout_mipped"
+}

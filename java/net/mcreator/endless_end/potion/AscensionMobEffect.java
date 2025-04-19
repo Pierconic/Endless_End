@@ -19,7 +19,7 @@ public class AscensionMobEffect extends MobEffect {
 
 	@Override
 	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-		AscensionOnEffectActiveTickProcedure.execute(entity);
+		AscensionOnEffectActiveTickProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity);
 		return super.applyEffectTick(entity, amplifier);
 	}
 }

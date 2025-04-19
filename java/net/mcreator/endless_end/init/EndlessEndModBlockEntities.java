@@ -30,6 +30,22 @@ import net.mcreator.endless_end.block.entity.SculkTeethBlockEntity;
 import net.mcreator.endless_end.block.entity.PhasedEndoriteTilesBlockEntity;
 import net.mcreator.endless_end.block.entity.MoonGunkBlockEntity;
 import net.mcreator.endless_end.block.entity.IconoclastBlockEntity;
+import net.mcreator.endless_end.block.entity.EnderporterYellowTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterWhiteTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterRedTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterPurpleTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterPinkTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterOrangeTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterMagentaTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterLimeTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterLightGrayTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterLightBlueTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterGreenTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterDarkGrayTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterCyanTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterBrownTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterBlueTileEntity;
+import net.mcreator.endless_end.block.entity.EnderporterBlackTileEntity;
 import net.mcreator.endless_end.block.entity.BurrowingThornsBlockEntity;
 import net.mcreator.endless_end.EndlessEndMod;
 
@@ -52,6 +68,22 @@ public class EndlessEndModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SPIRALING_SAND = register("spiraling_sand", EndlessEndModBlocks.SPIRALING_SAND, SpiralingSandBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ICONOCLAST = register("iconoclast", EndlessEndModBlocks.ICONOCLAST, IconoclastBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> MOON_GUNK = register("moon_gunk", EndlessEndModBlocks.MOON_GUNK, MoonGunkBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_WHITE = register("enderporter_white", EndlessEndModBlocks.ENDERPORTER_WHITE, EnderporterWhiteTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_RED = register("enderporter_red", EndlessEndModBlocks.ENDERPORTER_RED, EnderporterRedTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_ORANGE = register("enderporter_orange", EndlessEndModBlocks.ENDERPORTER_ORANGE, EnderporterOrangeTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_YELLOW = register("enderporter_yellow", EndlessEndModBlocks.ENDERPORTER_YELLOW, EnderporterYellowTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_LIME = register("enderporter_lime", EndlessEndModBlocks.ENDERPORTER_LIME, EnderporterLimeTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_GREEN = register("enderporter_green", EndlessEndModBlocks.ENDERPORTER_GREEN, EnderporterGreenTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_CYAN = register("enderporter_cyan", EndlessEndModBlocks.ENDERPORTER_CYAN, EnderporterCyanTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_LIGHT_BLUE = register("enderporter_light_blue", EndlessEndModBlocks.ENDERPORTER_LIGHT_BLUE, EnderporterLightBlueTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_BLUE = register("enderporter_blue", EndlessEndModBlocks.ENDERPORTER_BLUE, EnderporterBlueTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_PURPLE = register("enderporter_purple", EndlessEndModBlocks.ENDERPORTER_PURPLE, EnderporterPurpleTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_MAGENTA = register("enderporter_magenta", EndlessEndModBlocks.ENDERPORTER_MAGENTA, EnderporterMagentaTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_PINK = register("enderporter_pink", EndlessEndModBlocks.ENDERPORTER_PINK, EnderporterPinkTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_BROWN = register("enderporter_brown", EndlessEndModBlocks.ENDERPORTER_BROWN, EnderporterBrownTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_LIGHT_GRAY = register("enderporter_light_gray", EndlessEndModBlocks.ENDERPORTER_LIGHT_GRAY, EnderporterLightGrayTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_DARK_GRAY = register("enderporter_dark_gray", EndlessEndModBlocks.ENDERPORTER_DARK_GRAY, EnderporterDarkGrayTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_BLACK = register("enderporter_black", EndlessEndModBlocks.ENDERPORTER_BLACK, EnderporterBlackTileEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -76,5 +108,6 @@ public class EndlessEndModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SPIRALING_SAND.get(), (blockEntity, side) -> ((SpiralingSandBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ICONOCLAST.get(), (blockEntity, side) -> ((IconoclastBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, MOON_GUNK.get(), (blockEntity, side) -> ((MoonGunkBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ENDERPORTER_WHITE.get(), (blockEntity, side) -> ((EnderporterWhiteTileEntity) blockEntity).getItemHandler());
 	}
 }

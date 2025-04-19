@@ -1,0 +1,189 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"grounded": {
+			"loop": true,
+			"animation_length": 3,
+			"bones": {
+				"claw4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.5": {
+							"vector": [0, 0, -10]
+						},
+						"3.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"claw3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.5": {
+							"vector": [0, 0, 10]
+						},
+						"3.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"claw2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.5": {
+							"vector": [10, 0, 0]
+						},
+						"3.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"claw1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [-10, 0, 0]
+						},
+						"1.5": {
+							"vector": [-10, 0, 0]
+						},
+						"3.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"polyp": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.5": {
+							"vector": [0, 0.3, 0]
+						},
+						"3.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"fly": {
+			"loop": true,
+			"animation_length": 14.2917,
+			"bones": {
+				"polyp": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"14.2917": {
+							"vector": [0, -360, 0]
+						}
+					},
+					"position": {
+						"vector": [0, "math.cos(query.anim_time * 50 )", 0]
+					}
+				},
+				"claw1": {
+					"rotation": {
+						"vector": ["(math.cos(query.anim_time * 50) * 8)+15", 0, 0]
+					}
+				},
+				"claw2": {
+					"rotation": {
+						"vector": ["-(math.cos(query.anim_time * 50) * 8)-15", 0, 0]
+					}
+				},
+				"claw3": {
+					"rotation": {
+						"vector": [0, 0, "-(math.cos(query.anim_time * 50) * 8)-15"]
+					},
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"claw4": {
+					"rotation": {
+						"vector": [0, 0, "(math.cos(query.anim_time * 50) * 16)+15"]
+					}
+				}
+			}
+		},
+		"aggro": {
+			"loop": true,
+			"animation_length": 14.2917,
+			"bones": {
+				"polyp": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"14.2917": {
+							"vector": [0, -1080, 0]
+						}
+					},
+					"position": {
+						"vector": [0, "math.cos(query.anim_time * 50 )*0.5", 0]
+					}
+				},
+				"claw1": {
+					"rotation": {
+						"vector": ["(math.cos(query.anim_time * 100) * 16)+60", 0, 0]
+					}
+				},
+				"claw2": {
+					"rotation": {
+						"vector": ["-(math.cos(query.anim_time * 100) * 16)-60", 0, 0]
+					}
+				},
+				"claw3": {
+					"rotation": {
+						"vector": [0, 0, "-(math.cos(query.anim_time * 100) * 16)-60"]
+					},
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"claw4": {
+					"rotation": {
+						"vector": [0, 0, "(math.cos(query.anim_time * 100) * 16)+60"]
+					}
+				}
+			}
+		},
+		"flap": {
+			"animation_length": 0.0833,
+			"bones": {
+				"claw1": {
+					"rotation": {
+						"vector": [67.5, 0, 0]
+					}
+				},
+				"claw2": {
+					"rotation": {
+						"vector": [-67.5, 0, 0]
+					}
+				},
+				"claw3": {
+					"rotation": {
+						"vector": [0, 0, -67.5]
+					}
+				},
+				"claw4": {
+					"rotation": {
+						"vector": [0, 0, 67.5]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

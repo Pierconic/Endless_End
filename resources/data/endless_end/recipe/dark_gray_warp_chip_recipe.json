@@ -1,15 +1,29 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "dyed_warp_chips",
+  "type": "minecraft:crafting_shaped",
+  "group": "warp_chips",
   "category": "equipment",
-  "ingredients": [
-    {
+  "pattern": [
+    " ab",
+    " cd",
+    "e  "
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:endorite_ingot"
+    },
+    "b": {
+      "item": "endless_end:bottled_starlight"
+    },
+    "c": {
+      "item": "endless_end:tune_rod"
+    },
+    "d": {
       "item": "minecraft:gray_dye"
     },
-    {
-      "item": "endless_end:warp_chip_white"
+    "e": {
+      "item": "minecraft:netherite_scrap"
     }
-  ],
+  },
   "result": {
     "id": "endless_end:warp_chip_dark_gray",
     "count": 1

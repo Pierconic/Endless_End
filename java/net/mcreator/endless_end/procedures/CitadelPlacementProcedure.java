@@ -54,16 +54,16 @@ public class CitadelPlacementProcedure {
 			}
 			EndlessEndModVariables.MapVariables.get(world).citadel_placed = true;
 			EndlessEndModVariables.MapVariables.get(world).syncData(world);
-			PillarPlacementProcedure.execute(world, (-42) - 8, (-1) - 8);
-			MediumPillarPlacementProcedure.execute(world, (-34) - 7, (-25) - 7);
-			SmolPillarPlacementProcedure.execute(world, (-13) - 5, (-40) - 5);
-			PillarPlacementProcedure.execute(world, 12 - 8, (-40) - 8);
-			MediumPillarPlacementProcedure.execute(world, 33 - 7, (-25) - 7);
-			SmolPillarPlacementProcedure.execute(world, 42 - 5, 0 - 5);
-			MediumPillarPlacementProcedure.execute(world, 33 - 7, 24 - 7);
-			PillarPlacementProcedure.execute(world, 12 - 8, 39 - 8);
-			MediumPillarPlacementProcedure.execute(world, (-13) - 7, 39 - 7);
-			SmolPillarPlacementProcedure.execute(world, (-34) - 7, 24 - 7);
+			PillarPlacementProcedure.execute(world, (-42) - 8, (-1) - 8, 0);
+			MediumPillarPlacementProcedure.execute(world, (-34) - 7, (-25) - 7, 1);
+			SmolPillarPlacementProcedure.execute(world, (-13) - 5, (-40) - 5, 0);
+			PillarPlacementProcedure.execute(world, 12 - 8, (-40) - 8, 1);
+			MediumPillarPlacementProcedure.execute(world, 33 - 7, (-25) - 7, 0);
+			SmolPillarPlacementProcedure.execute(world, 42 - 5, 0 - 5, 1);
+			MediumPillarPlacementProcedure.execute(world, 33 - 7, 24 - 7, 2);
+			PillarPlacementProcedure.execute(world, 12 - 8, 39 - 8, 2);
+			MediumPillarPlacementProcedure.execute(world, (-13) - 7, 39 - 7, 0);
+			SmolPillarPlacementProcedure.execute(world, (-34) - 7, 24 - 7, 2);
 		}
 	}
 }

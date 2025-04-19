@@ -36,11 +36,10 @@
       "endless_end:cyan_warp_chip_recipe",
       "endless_end:blue_warp_chip_recipe",
       "endless_end:light_blue_warp_chip_recipe",
-      "endless_end:purple_warp_chip_recipe",
       "endless_end:magenta_warp_chip_recipe",
       "endless_end:pink_warp_chip_recipe",
       "endless_end:brown_warp_chip_recipe",
-      "endless_end:gray_warp_chip_recipe",
+      "endless_end:deleted_mod_element",
       "endless_end:dark_gray_warp_chip_recipe",
       "endless_end:black_warp_chip_recipe",
       "endless_end:shulker_shell_recipe",
@@ -59,7 +58,8 @@
       "endless_end:brown_enderporter_recipe",
       "endless_end:gray_enderporter_recipe",
       "endless_end:dark_gray_enderporter_recipe",
-      "endless_end:black_enderporter_recipe"
+      "endless_end:black_enderporter_recipe",
+      "endless_end:white_warp_chip_recipe"
     ]
   }
 }

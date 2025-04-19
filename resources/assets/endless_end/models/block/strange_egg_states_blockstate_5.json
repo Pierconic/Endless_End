@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/strange_eggs_3",
+  "textures": {
+    "all": "endless_end:block/strange_eggs_slightly_cracked",
+    "particle": "endless_end:block/strange_egg",
+    "0": "endless_end:block/strange_eggs_slightly_cracked"
+  },
+  "render_type": "solid"
+}

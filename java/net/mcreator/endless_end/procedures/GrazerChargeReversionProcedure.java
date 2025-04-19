@@ -17,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.endless_end.entity.TrawlerEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
 
 import javax.annotation.Nullable;
@@ -37,16 +38,26 @@ public class GrazerChargeReversionProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (sourceentity instanceof GrazerEntity && sourceentity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(MobEffects.MOVEMENT_SPEED)) {
+		if ((sourceentity instanceof GrazerEntity || sourceentity instanceof TrawlerEntity) && sourceentity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(MobEffects.MOVEMENT_SPEED)) {
 			if (sourceentity instanceof LivingEntity _entity)
 				_entity.removeEffect(MobEffects.MOVEMENT_SPEED);
 			if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 80, 1, false, false));
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.shulker.hurt_closed")), SoundSource.NEUTRAL, 1, 1);
-				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.shulker.hurt_closed")), SoundSource.NEUTRAL, 1, 1, false);
+			if (sourceentity instanceof GrazerEntity) {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.shulker.hurt_closed")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.shulker.hurt_closed")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
+			} else {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:trawler_attack")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:trawler_attack")), SoundSource.NEUTRAL, 1, 1, false);
+					}
 				}
 			}
 			entity.setDeltaMovement(new Vec3((sourceentity.getLookAngle().x * 4.5), 0.25, (sourceentity.getLookAngle().z * 4.5)));

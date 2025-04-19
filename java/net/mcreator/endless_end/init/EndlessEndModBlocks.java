@@ -26,17 +26,22 @@ import net.mcreator.endless_end.block.VioletSepalFenceBlock;
 import net.mcreator.endless_end.block.VioletSepalButtonBlock;
 import net.mcreator.endless_end.block.VertabraeBlock;
 import net.mcreator.endless_end.block.TunerodStemBlock;
+import net.mcreator.endless_end.block.TunerodFlowerPotBlock;
+import net.mcreator.endless_end.block.TuneRodVaseBlock;
 import net.mcreator.endless_end.block.TuneBlockBlock;
+import net.mcreator.endless_end.block.TrebleBloomBlock;
 import net.mcreator.endless_end.block.TransceiverSendingOnBlock;
 import net.mcreator.endless_end.block.TransceiverSendingOffBlock;
 import net.mcreator.endless_end.block.TransceiverRecievingOnBlock;
 import net.mcreator.endless_end.block.TransceiverBlock;
 import net.mcreator.endless_end.block.TetherBlock;
+import net.mcreator.endless_end.block.SwirlingVinesBlock;
 import net.mcreator.endless_end.block.StrongStoneBlock;
 import net.mcreator.endless_end.block.StrippedVioletSepalWoodBlock;
 import net.mcreator.endless_end.block.StrippedVioletSepalLogBlock;
 import net.mcreator.endless_end.block.StrippedAzureSepalWoodBlock;
 import net.mcreator.endless_end.block.StrippedAzureSepalLogBlock;
+import net.mcreator.endless_end.block.StrangeEggsBlock;
 import net.mcreator.endless_end.block.SpitefulEyeBlock;
 import net.mcreator.endless_end.block.SpiralingSandBlock;
 import net.mcreator.endless_end.block.SoulBulbVaseBlock;
@@ -55,6 +60,7 @@ import net.mcreator.endless_end.block.MoonGunkBlock;
 import net.mcreator.endless_end.block.MolderingPurpurBlock;
 import net.mcreator.endless_end.block.LydianPetalsBlock;
 import net.mcreator.endless_end.block.IconoclastBlock;
+import net.mcreator.endless_end.block.GoldenSepalLeavesBlock;
 import net.mcreator.endless_end.block.EssenceBlock;
 import net.mcreator.endless_end.block.EndoriteTilesBlock;
 import net.mcreator.endless_end.block.EndoriteOreBlock;
@@ -93,6 +99,7 @@ import net.mcreator.endless_end.block.BurrowingThornsBlock;
 import net.mcreator.endless_end.block.BlueRoseVaseBlock;
 import net.mcreator.endless_end.block.BlueRoseFlowerPotBlock;
 import net.mcreator.endless_end.block.BlueRoseBlock;
+import net.mcreator.endless_end.block.BlossomingGoldenSepalLeavesBlock;
 import net.mcreator.endless_end.block.BloomingCanticleBlock;
 import net.mcreator.endless_end.block.AzureSepalWoodBlock;
 import net.mcreator.endless_end.block.AzureSepalStairsBlock;
@@ -123,22 +130,6 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> TRANSCEIVER_SENDING_OFF = REGISTRY.register("transceiver_sending_off", TransceiverSendingOffBlock::new);
 	public static final DeferredBlock<Block> TRANSCEIVER_SENDING_ON = REGISTRY.register("transceiver_sending_on", TransceiverSendingOnBlock::new);
 	public static final DeferredBlock<Block> TRANSCEIVER_RECIEVING_ON = REGISTRY.register("transceiver_recieving_on", TransceiverRecievingOnBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_WHITE = REGISTRY.register("enderporter_white", EnderporterWhiteBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_RED = REGISTRY.register("enderporter_red", EnderporterRedBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_ORANGE = REGISTRY.register("enderporter_orange", EnderporterOrangeBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_YELLOW = REGISTRY.register("enderporter_yellow", EnderporterYellowBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_LIME = REGISTRY.register("enderporter_lime", EnderporterLimeBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_GREEN = REGISTRY.register("enderporter_green", EnderporterGreenBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_CYAN = REGISTRY.register("enderporter_cyan", EnderporterCyanBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_LIGHT_BLUE = REGISTRY.register("enderporter_light_blue", EnderporterLightBlueBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_BLUE = REGISTRY.register("enderporter_blue", EnderporterBlueBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_PURPLE = REGISTRY.register("enderporter_purple", EnderporterPurpleBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_MAGENTA = REGISTRY.register("enderporter_magenta", EnderporterMagentaBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_PINK = REGISTRY.register("enderporter_pink", EnderporterPinkBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_BROWN = REGISTRY.register("enderporter_brown", EnderporterBrownBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_LIGHT_GRAY = REGISTRY.register("enderporter_light_gray", EnderporterLightGrayBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_DARK_GRAY = REGISTRY.register("enderporter_dark_gray", EnderporterDarkGrayBlock::new);
-	public static final DeferredBlock<Block> ENDERPORTER_BLACK = REGISTRY.register("enderporter_black", EnderporterBlackBlock::new);
 	public static final DeferredBlock<Block> ENDORITE_TILES = REGISTRY.register("endorite_tiles", EndoriteTilesBlock::new);
 	public static final DeferredBlock<Block> PHASED_ENDORITE_TILES = REGISTRY.register("phased_endorite_tiles", PhasedEndoriteTilesBlock::new);
 	public static final DeferredBlock<Block> CANTICLE = REGISTRY.register("canticle", CanticleBlock::new);
@@ -201,6 +192,29 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> ROOTED_ENDSTONE = REGISTRY.register("rooted_endstone", RootedEndstoneBlock::new);
 	public static final DeferredBlock<Block> CHORUS_ROOTS = REGISTRY.register("chorus_roots", ChorusRootsBlock::new);
 	public static final DeferredBlock<Block> CONVERTED_AMNESOCLAST = REGISTRY.register("converted_amnesoclast", ConvertedAmnesoclastBlock::new);
+	public static final DeferredBlock<Block> TUNE_ROD_VASE = REGISTRY.register("tune_rod_vase", TuneRodVaseBlock::new);
+	public static final DeferredBlock<Block> TUNEROD_FLOWER_POT = REGISTRY.register("tunerod_flower_pot", TunerodFlowerPotBlock::new);
+	public static final DeferredBlock<Block> STRANGE_EGGS = REGISTRY.register("strange_eggs", StrangeEggsBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_WHITE = REGISTRY.register("enderporter_white", EnderporterWhiteBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_RED = REGISTRY.register("enderporter_red", EnderporterRedBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_ORANGE = REGISTRY.register("enderporter_orange", EnderporterOrangeBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_YELLOW = REGISTRY.register("enderporter_yellow", EnderporterYellowBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_LIME = REGISTRY.register("enderporter_lime", EnderporterLimeBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_GREEN = REGISTRY.register("enderporter_green", EnderporterGreenBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_CYAN = REGISTRY.register("enderporter_cyan", EnderporterCyanBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_LIGHT_BLUE = REGISTRY.register("enderporter_light_blue", EnderporterLightBlueBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_BLUE = REGISTRY.register("enderporter_blue", EnderporterBlueBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_PURPLE = REGISTRY.register("enderporter_purple", EnderporterPurpleBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_MAGENTA = REGISTRY.register("enderporter_magenta", EnderporterMagentaBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_PINK = REGISTRY.register("enderporter_pink", EnderporterPinkBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_BROWN = REGISTRY.register("enderporter_brown", EnderporterBrownBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_LIGHT_GRAY = REGISTRY.register("enderporter_light_gray", EnderporterLightGrayBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_DARK_GRAY = REGISTRY.register("enderporter_dark_gray", EnderporterDarkGrayBlock::new);
+	public static final DeferredBlock<Block> ENDERPORTER_BLACK = REGISTRY.register("enderporter_black", EnderporterBlackBlock::new);
+	public static final DeferredBlock<Block> SWIRLING_VINES = REGISTRY.register("swirling_vines", SwirlingVinesBlock::new);
+	public static final DeferredBlock<Block> GOLDEN_SEPAL_LEAVES = REGISTRY.register("golden_sepal_leaves", GoldenSepalLeavesBlock::new);
+	public static final DeferredBlock<Block> BLOSSOMING_GOLDEN_SEPAL_LEAVES = REGISTRY.register("blossoming_golden_sepal_leaves", BlossomingGoldenSepalLeavesBlock::new);
+	public static final DeferredBlock<Block> TREBLE_BLOOM = REGISTRY.register("treble_bloom", TrebleBloomBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
@@ -210,6 +224,7 @@ public class EndlessEndModBlocks {
 		public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
 			SoulBulbFlowerPotBlock.blockColorLoad(event);
 			BlueRoseFlowerPotBlock.blockColorLoad(event);
+			TunerodFlowerPotBlock.blockColorLoad(event);
 		}
 	}
 }

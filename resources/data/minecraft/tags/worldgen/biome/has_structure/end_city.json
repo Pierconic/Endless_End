@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "endless_end:chorus_orchard"
+    "endless_end:inverted_barrens",
+    "endless_end:inverted_midlands",
+    "endless_end:inverted_orchard"
   ]
 }

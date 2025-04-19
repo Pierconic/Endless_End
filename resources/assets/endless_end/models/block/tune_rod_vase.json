@@ -1,0 +1,10 @@
+{
+  "parent": "endless_end:custom/tunerod_vase",
+  "textures": {
+    "all": "endless_end:block/tune_bulb",
+    "particle": "endless_end:block/porcelain_plain",
+    "1": "endless_end:block/flower_vase_canticle",
+    "2": "endless_end:block/tunerod_animated"
+  },
+  "render_type": "cutout"
+}
