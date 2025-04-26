@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/rot_cross",
+  "textures": {
+    "all": "endless_end:block/golden_sprouts",
+    "particle": "endless_end:block/golden_sprouts",
+    "0": "endless_end:block/golden_sprouts"
+  },
+  "render_type": "cutout_mipped"
+}

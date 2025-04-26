@@ -65,6 +65,7 @@ import net.mcreator.endless_end.item.BlastBerries3Item;
 import net.mcreator.endless_end.item.BlastBerries2Item;
 import net.mcreator.endless_end.item.BlastBerries1Item;
 import net.mcreator.endless_end.block.display.TetherDisplayItem;
+import net.mcreator.endless_end.block.display.PuffBlossomDisplayItem;
 import net.mcreator.endless_end.block.display.EnderporterYellowDisplayItem;
 import net.mcreator.endless_end.block.display.EnderporterWhiteDisplayItem;
 import net.mcreator.endless_end.block.display.EnderporterRedDisplayItem;
@@ -233,6 +234,10 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> BLAST_BERRIES_3 = REGISTRY.register("blast_berries_3", BlastBerries3Item::new);
 	public static final DeferredItem<Item> VIOLET_POLYP_SPAWN_EGG = REGISTRY.register("violet_polyp_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.VIOLET_POLYP, -6750055, -16724788, new Item.Properties()));
 	public static final DeferredItem<Item> TREBLE_BLOOM = block(EndlessEndModBlocks.TREBLE_BLOOM);
+	public static final DeferredItem<Item> GOLDEN_HUMUS = block(EndlessEndModBlocks.GOLDEN_HUMUS);
+	public static final DeferredItem<Item> GOLDEN_SPROUTS = block(EndlessEndModBlocks.GOLDEN_SPROUTS);
+	public static final DeferredItem<Item> GOLDEN_ROOTS = block(EndlessEndModBlocks.GOLDEN_ROOTS);
+	public static final DeferredItem<Item> PUFF_BLOSSOM = REGISTRY.register(EndlessEndModBlocks.PUFF_BLOSSOM.getId().getPath(), () -> new PuffBlossomDisplayItem(EndlessEndModBlocks.PUFF_BLOSSOM.get(), new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items

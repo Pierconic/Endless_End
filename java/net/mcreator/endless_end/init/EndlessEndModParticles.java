@@ -9,8 +9,11 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
+import net.mcreator.endless_end.client.particle.TrebleSeedParticle;
 import net.mcreator.endless_end.client.particle.StarSwirlParticle;
 import net.mcreator.endless_end.client.particle.StarSparkleParticle;
+import net.mcreator.endless_end.client.particle.PuffSporeParticle;
+import net.mcreator.endless_end.client.particle.PuffDownfallParticle;
 import net.mcreator.endless_end.client.particle.MoonSplatParticle;
 import net.mcreator.endless_end.client.particle.MoonBlobParticle;
 import net.mcreator.endless_end.client.particle.CanticleSporeParticle;
@@ -24,5 +27,8 @@ public class EndlessEndModParticles {
 		event.registerSpriteSet(EndlessEndModParticleTypes.CANTICLE_SPORE.get(), CanticleSporeParticle::provider);
 		event.registerSpriteSet(EndlessEndModParticleTypes.STAR_SPARKLE.get(), StarSparkleParticle::provider);
 		event.registerSpriteSet(EndlessEndModParticleTypes.STAR_SWIRL.get(), StarSwirlParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.TREBLE_SEED.get(), TrebleSeedParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.PUFF_SPORE.get(), PuffSporeParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.PUFF_DOWNFALL.get(), PuffDownfallParticle::provider);
 	}
 }

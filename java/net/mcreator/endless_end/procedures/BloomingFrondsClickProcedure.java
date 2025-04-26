@@ -6,24 +6,56 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.init.EndlessEndModItems;
 
 public class BloomingFrondsClickProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
-		if (entity == null)
+	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Direction direction) {
+		if (direction == null)
 			return;
 		if ((blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip1 ? blockstate.getValue(_getip1) : -1) == 0) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EndlessEndModItems.BLAST_BERRIES_1.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (direction == Direction.UP) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (x + 0.5), (y + 1.3), (z + 0.5), new ItemStack(EndlessEndModItems.BLAST_BERRIES_1.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			} else if (direction == Direction.DOWN) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (x + 0.5), (y - 0.3), (z + 0.5), new ItemStack(EndlessEndModItems.BLAST_BERRIES_1.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			} else if (direction == Direction.NORTH) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (x + 0.5), (y + 0.5), (z - 0.3), new ItemStack(EndlessEndModItems.BLAST_BERRIES_1.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			} else if (direction == Direction.SOUTH) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (x + 0.5), (y + 0.5), (z + 1.3), new ItemStack(EndlessEndModItems.BLAST_BERRIES_1.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			} else if (direction == Direction.WEST) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (x - 0.3), (y + 0.5), (z + 0.5), new ItemStack(EndlessEndModItems.BLAST_BERRIES_1.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			} else if (direction == Direction.EAST) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (x + 1.3), (y + 0.5), (z + 0.5), new ItemStack(EndlessEndModItems.BLAST_BERRIES_1.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {

@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "endless_end:block/golden_sprouts"
+    },
+    "facing=east": {
+      "model": "endless_end:block/golden_sprouts",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "endless_end:block/golden_sprouts",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "endless_end:block/golden_sprouts",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "endless_end:block/golden_sprouts",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "endless_end:block/golden_sprouts",
+      "x": 90
+    }
+  }
+}

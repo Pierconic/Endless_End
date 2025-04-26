@@ -31,9 +31,6 @@ public class AzureDownrootProcedure {
 					if ((world.getBlockState(BlockPos.containing(x + sx, y - sy, z + sx))).getBlock() == Blocks.END_STONE || (world.getBlockState(BlockPos.containing(x + sx, y - sy, z + sx))).getBlock() == EndlessEndModBlocks.COBBLED_ENDSTONE.get()
 							|| (world.getBlockState(BlockPos.containing(x + sx, y - sy, z + sx))).getBlock() == EndlessEndModBlocks.STRONG_STONE.get()) {
 						world.setBlock(BlockPos.containing(x + sx, y - sy, z + sx), EndlessEndModBlocks.ROOTED_ENDSTONE.get().defaultBlockState(), 3);
-						if (world.isEmptyBlock(BlockPos.containing(x + sx, (y - sy) - 1, z + sx))) {
-							SwirlingVineProcedure.execute(world, x + sx, y - sy, z + sx);
-						}
 					}
 				}
 				sy = sy + 1;

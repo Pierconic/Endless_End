@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "endless_end:chorus_midlands",
+    "endless_end:chorus_barrens",
+    "endless_end:inverted_barrens",
+    "endless_end:inverted_midlands",
+    "endless_end:inverted_orchard"
+  ],
+  "features": "endless_end:treble_shoot",
+  "step": "vegetal_decoration"
+}

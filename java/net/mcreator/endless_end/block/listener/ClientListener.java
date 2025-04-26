@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import net.mcreator.endless_end.init.EndlessEndModBlockEntities;
 import net.mcreator.endless_end.block.renderer.TetherTileRenderer;
+import net.mcreator.endless_end.block.renderer.PuffBlossomTileRenderer;
 import net.mcreator.endless_end.block.renderer.EnderporterYellowTileRenderer;
 import net.mcreator.endless_end.block.renderer.EnderporterWhiteTileRenderer;
 import net.mcreator.endless_end.block.renderer.EnderporterRedTileRenderer;
@@ -27,6 +28,7 @@ import net.mcreator.endless_end.block.renderer.EnderporterBrownTileRenderer;
 import net.mcreator.endless_end.block.renderer.EnderporterBlueTileRenderer;
 import net.mcreator.endless_end.block.renderer.EnderporterBlackTileRenderer;
 import net.mcreator.endless_end.block.entity.TetherTileEntity;
+import net.mcreator.endless_end.block.entity.PuffBlossomTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterYellowTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterWhiteTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterRedTileEntity;
@@ -67,5 +69,6 @@ public class ClientListener {
 		event.registerBlockEntityRenderer((BlockEntityType<EnderporterLightGrayTileEntity>) EndlessEndModBlockEntities.ENDERPORTER_LIGHT_GRAY.get(), context -> new EnderporterLightGrayTileRenderer());
 		event.registerBlockEntityRenderer((BlockEntityType<EnderporterDarkGrayTileEntity>) EndlessEndModBlockEntities.ENDERPORTER_DARK_GRAY.get(), context -> new EnderporterDarkGrayTileRenderer());
 		event.registerBlockEntityRenderer((BlockEntityType<EnderporterBlackTileEntity>) EndlessEndModBlockEntities.ENDERPORTER_BLACK.get(), context -> new EnderporterBlackTileRenderer());
+		event.registerBlockEntityRenderer((BlockEntityType<PuffBlossomTileEntity>) EndlessEndModBlockEntities.PUFF_BLOSSOM.get(), context -> new PuffBlossomTileRenderer());
 	}
 }

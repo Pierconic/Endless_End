@@ -22,20 +22,32 @@ public class SwirlingVineProcedure {
 		for (int index0 = 0; index0 < (int) limit; index0++) {
 			if (world.isEmptyBlock(BlockPos.containing(x, y - sy, z))) {
 				if (sy >= limit) {
-					world.setBlock(BlockPos.containing(x, y - sy, z), (new Object() {
-						public BlockState with(BlockState _bs, Direction newValue) {
-							Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty("facing");
-							if (_prop instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(newValue))
-								return _bs.setValue(_dp, newValue);
-							_prop = _bs.getBlock().getStateDefinition().getProperty("axis");
-							return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().contains(newValue.getAxis()) ? _bs.setValue(_ep, newValue.getAxis()) : _bs;
-						}
-					}.with((new Object() {
-						public BlockState with(BlockState _bs, String _property, int _newValue) {
-							Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
-							return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
-						}
-					}.with(EndlessEndModBlocks.SWIRLING_VINES.get().defaultBlockState(), "blockstate", 1)), Direction.DOWN)), 3);
+					if (world.getBlockState(BlockPos.containing(x, (y - sy) - 1, z)).canOcclude()) {
+						world.setBlock(BlockPos.containing(x, y - sy, z), (new Object() {
+							public BlockState with(BlockState _bs, Direction newValue) {
+								Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty("facing");
+								if (_prop instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(newValue))
+									return _bs.setValue(_dp, newValue);
+								_prop = _bs.getBlock().getStateDefinition().getProperty("axis");
+								return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().contains(newValue.getAxis()) ? _bs.setValue(_ep, newValue.getAxis()) : _bs;
+							}
+						}.with(EndlessEndModBlocks.SWIRLING_VINES.get().defaultBlockState(), Direction.DOWN)), 3);
+					} else {
+						world.setBlock(BlockPos.containing(x, y - sy, z), (new Object() {
+							public BlockState with(BlockState _bs, Direction newValue) {
+								Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty("facing");
+								if (_prop instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(newValue))
+									return _bs.setValue(_dp, newValue);
+								_prop = _bs.getBlock().getStateDefinition().getProperty("axis");
+								return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().contains(newValue.getAxis()) ? _bs.setValue(_ep, newValue.getAxis()) : _bs;
+							}
+						}.with((new Object() {
+							public BlockState with(BlockState _bs, String _property, int _newValue) {
+								Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
+								return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
+							}
+						}.with(EndlessEndModBlocks.SWIRLING_VINES.get().defaultBlockState(), "blockstate", 1)), Direction.DOWN)), 3);
+					}
 				} else {
 					world.setBlock(BlockPos.containing(x, y - sy, z), (new Object() {
 						public BlockState with(BlockState _bs, Direction newValue) {

@@ -82,6 +82,10 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().asItem());
 			tabData.accept(EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES.get().asItem());
 			tabData.accept(EndlessEndModBlocks.TREBLE_BLOOM.get().asItem());
+			tabData.accept(EndlessEndModBlocks.GOLDEN_HUMUS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.GOLDEN_SPROUTS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.GOLDEN_ROOTS.get().asItem());
+			tabData.accept(EndlessEndModBlocks.PUFF_BLOSSOM.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());

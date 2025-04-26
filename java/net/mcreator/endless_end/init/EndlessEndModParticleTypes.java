@@ -20,4 +20,7 @@ public class EndlessEndModParticleTypes {
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> CANTICLE_SPORE = REGISTRY.register("canticle_spore", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> STAR_SPARKLE = REGISTRY.register("star_sparkle", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> STAR_SWIRL = REGISTRY.register("star_swirl", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> TREBLE_SEED = REGISTRY.register("treble_seed", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> PUFF_SPORE = REGISTRY.register("puff_spore", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> PUFF_DOWNFALL = REGISTRY.register("puff_downfall", () -> new SimpleParticleType(false));
 }

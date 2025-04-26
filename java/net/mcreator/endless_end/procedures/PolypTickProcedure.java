@@ -71,7 +71,7 @@ public class PolypTickProcedure {
 				if (FlightHeightProcedure.execute(world, x, y, z) < 12 && (near_entity.isSprinting() || !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 3, 3, 3), e -> true).isEmpty() && near_entity.isShiftKeyDown()
 						|| !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty() && !near_entity.isShiftKeyDown())) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.LUCK, Mth.nextInt(RandomSource.create(), 70, 110), 1));
+						_entity.addEffect(new MobEffectInstance(MobEffects.LUCK, Mth.nextInt(RandomSource.create(), 70, 110), 1, false, false));
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.STAR_SPARKLE.get()), x, y, z, 8, 0.05, 0.05, 0.05, 0.05);
 					entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x() + Mth.nextDouble(RandomSource.create(), -0.2, 0.2)), (Mth.nextDouble(RandomSource.create(), 0.25, 0.4)),

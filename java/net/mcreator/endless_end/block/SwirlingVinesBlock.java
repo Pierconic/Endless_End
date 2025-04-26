@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.LevelAccessor;
@@ -78,12 +79,12 @@ public class SwirlingVinesBlock extends Block implements SimpleWaterloggedBlock 
 			};
 		}
 		return switch (state.getValue(FACING)) {
-			default -> box(1, 0, 1, 15, 16, 15);
-			case NORTH -> box(1, 0, 1, 15, 16, 15);
-			case EAST -> box(1, 0, 1, 15, 16, 15);
-			case WEST -> box(1, 0, 1, 15, 16, 15);
-			case UP -> box(1, 1, 0, 15, 15, 16);
-			case DOWN -> box(1, 1, 0, 15, 15, 16);
+			default -> box(1, 1, 0, 15, 15, 16);
+			case NORTH -> box(1, 1, 0, 15, 15, 16);
+			case EAST -> box(0, 1, 1, 16, 15, 15);
+			case WEST -> box(0, 1, 1, 16, 15, 15);
+			case UP -> box(1, 0, 1, 15, 16, 15);
+			case DOWN -> box(1, 0, 1, 15, 16, 15);
 		};
 	}
 
@@ -108,6 +109,17 @@ public class SwirlingVinesBlock extends Block implements SimpleWaterloggedBlock 
 	}
 
 	@Override
+	public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+		if (worldIn instanceof LevelAccessor world) {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return SwirlingNeighborBreakProcedure.execute(world, x, y, z, blockstate);
+		}
+		return super.canSurvive(blockstate, worldIn, pos);
+	}
+
+	@Override
 	public FluidState getFluidState(BlockState state) {
 		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
@@ -117,18 +129,12 @@ public class SwirlingVinesBlock extends Block implements SimpleWaterloggedBlock 
 		if (state.getValue(WATERLOGGED)) {
 			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
-		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
+		return !state.canSurvive(world, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, world, currentPos, facingPos);
 	}
 
 	@Override
 	public boolean isLadder(BlockState state, LevelReader world, BlockPos pos, LivingEntity entity) {
 		return true;
-	}
-
-	@Override
-	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
-		super.onPlace(blockstate, world, pos, oldState, moving);
-		SwirlingNeighborBreakProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
 	}
 
 	@Override

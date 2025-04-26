@@ -1,0 +1,7 @@
+
+{
+  "parent": "endless_end:displaysettings/puff_blossom.animation",
+  "textures": {
+    "particle": "endless_end:block/golden_humus_top"
+  }
+}

@@ -14,7 +14,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class SwirlingNeighborBreakProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
+	public static boolean execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
 		double oy = 0;
 		double oz = 0;
 		double ox = 0;
@@ -31,7 +31,7 @@ public class SwirlingNeighborBreakProcedure {
 			}
 		}.getDirection(blockstate)) == Direction.UP) {
 			oy = y - 1;
-			if (!((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get())) {
+			if (!((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get() || world.getBlockState(BlockPos.containing(x, y + 1, z)).canOcclude())) {
 				{
 					int _value = 1;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -58,7 +58,7 @@ public class SwirlingNeighborBreakProcedure {
 			}
 		}.getDirection(blockstate)) == Direction.DOWN) {
 			oy = y + 1;
-			if (!((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get())) {
+			if (!((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get() || world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude())) {
 				{
 					int _value = 1;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -85,7 +85,7 @@ public class SwirlingNeighborBreakProcedure {
 			}
 		}.getDirection(blockstate)) == Direction.WEST) {
 			ox = x + 1;
-			if (!((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get())) {
+			if (!((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get() || world.getBlockState(BlockPos.containing(x - 1, y, z)).canOcclude())) {
 				{
 					int _value = 1;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -112,7 +112,7 @@ public class SwirlingNeighborBreakProcedure {
 			}
 		}.getDirection(blockstate)) == Direction.EAST) {
 			ox = x - 1;
-			if (!((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get())) {
+			if (!((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get() || world.getBlockState(BlockPos.containing(x + 1, y, z)).canOcclude())) {
 				{
 					int _value = 1;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -139,7 +139,7 @@ public class SwirlingNeighborBreakProcedure {
 			}
 		}.getDirection(blockstate)) == Direction.NORTH) {
 			oz = z + 1;
-			if (!((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get())) {
+			if (!((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get() || world.getBlockState(BlockPos.containing(x, y, z - 1)).canOcclude())) {
 				{
 					int _value = 1;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -158,7 +158,7 @@ public class SwirlingNeighborBreakProcedure {
 			}
 		} else {
 			oz = z - 1;
-			if (!((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get())) {
+			if (!((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == EndlessEndModBlocks.SWIRLING_VINES.get() || world.getBlockState(BlockPos.containing(x, y, z + 1)).canOcclude())) {
 				{
 					int _value = 1;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -196,12 +196,14 @@ public class SwirlingNeighborBreakProcedure {
 					return Direction.fromAxisAndDirection(_bs.getValue(BlockStateProperties.HORIZONTAL_AXIS), Direction.AxisDirection.POSITIVE);
 				return Direction.NORTH;
 			}
-		}.getDirection(BlockPos.containing(x, y, z))) || world.getBlockState(BlockPos.containing(ox, oy, oz)).canOcclude())) {
+		}.getDirection(BlockPos.containing(ox, oy, oz))) || world.getBlockState(BlockPos.containing(ox, oy, oz)).canOcclude())) {
 			{
 				BlockPos _pos = BlockPos.containing(x, y, z);
 				Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 0.5, y + 0.5, z + 0.5), null);
 				world.destroyBlock(_pos, false);
 			}
+			return false;
 		}
+		return true;
 	}
 }

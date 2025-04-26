@@ -53,6 +53,7 @@ import net.mcreator.endless_end.block.SculkTeethBlock;
 import net.mcreator.endless_end.block.RottingEndStoneBlock;
 import net.mcreator.endless_end.block.RootedEndstoneBlock;
 import net.mcreator.endless_end.block.RefuseBlock;
+import net.mcreator.endless_end.block.PuffBlossomBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteTilesBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteMeshBlock;
 import net.mcreator.endless_end.block.MoonJellyBlockBlock;
@@ -60,7 +61,10 @@ import net.mcreator.endless_end.block.MoonGunkBlock;
 import net.mcreator.endless_end.block.MolderingPurpurBlock;
 import net.mcreator.endless_end.block.LydianPetalsBlock;
 import net.mcreator.endless_end.block.IconoclastBlock;
+import net.mcreator.endless_end.block.GoldenSproutsBlock;
 import net.mcreator.endless_end.block.GoldenSepalLeavesBlock;
+import net.mcreator.endless_end.block.GoldenRootsBlock;
+import net.mcreator.endless_end.block.GoldenHumusBlock;
 import net.mcreator.endless_end.block.EssenceBlock;
 import net.mcreator.endless_end.block.EndoriteTilesBlock;
 import net.mcreator.endless_end.block.EndoriteOreBlock;
@@ -215,6 +219,10 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> GOLDEN_SEPAL_LEAVES = REGISTRY.register("golden_sepal_leaves", GoldenSepalLeavesBlock::new);
 	public static final DeferredBlock<Block> BLOSSOMING_GOLDEN_SEPAL_LEAVES = REGISTRY.register("blossoming_golden_sepal_leaves", BlossomingGoldenSepalLeavesBlock::new);
 	public static final DeferredBlock<Block> TREBLE_BLOOM = REGISTRY.register("treble_bloom", TrebleBloomBlock::new);
+	public static final DeferredBlock<Block> GOLDEN_HUMUS = REGISTRY.register("golden_humus", GoldenHumusBlock::new);
+	public static final DeferredBlock<Block> GOLDEN_SPROUTS = REGISTRY.register("golden_sprouts", GoldenSproutsBlock::new);
+	public static final DeferredBlock<Block> GOLDEN_ROOTS = REGISTRY.register("golden_roots", GoldenRootsBlock::new);
+	public static final DeferredBlock<Block> PUFF_BLOSSOM = REGISTRY.register("puff_blossom", PuffBlossomBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

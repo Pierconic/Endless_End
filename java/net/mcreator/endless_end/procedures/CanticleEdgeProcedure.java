@@ -21,6 +21,7 @@ public class CanticleEdgeProcedure {
 		double sz = 0;
 		sx = -9;
 		found = false;
+		InversionTestProcedure.execute(world, x, z);
 		for (int index0 = 0; index0 < 18; index0++) {
 			sz = -9;
 			for (int index1 = 0; index1 < 18; index1++) {

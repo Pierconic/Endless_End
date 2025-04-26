@@ -120,7 +120,7 @@ public class BlossomingGoldenSepalLeavesBlock extends Block implements SimpleWat
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		BloomingFrondsClickProcedure.execute(world, x, y, z, blockstate, entity);
+		BloomingFrondsClickProcedure.execute(world, x, y, z, blockstate, direction);
 		return InteractionResult.SUCCESS;
 	}
 }

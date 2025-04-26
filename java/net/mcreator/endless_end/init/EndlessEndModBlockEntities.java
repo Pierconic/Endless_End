@@ -18,6 +18,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.mcreator.endless_end.block.entity.WardingEyesBlockEntity;
 import net.mcreator.endless_end.block.entity.TunerodStemBlockEntity;
 import net.mcreator.endless_end.block.entity.TuneBlockBlockEntity;
+import net.mcreator.endless_end.block.entity.TrebleBloomBlockEntity;
 import net.mcreator.endless_end.block.entity.TransceiverSendingOnBlockEntity;
 import net.mcreator.endless_end.block.entity.TransceiverSendingOffBlockEntity;
 import net.mcreator.endless_end.block.entity.TransceiverRecievingOnBlockEntity;
@@ -27,6 +28,7 @@ import net.mcreator.endless_end.block.entity.SpitefulEyeBlockEntity;
 import net.mcreator.endless_end.block.entity.SpiralingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SingingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SculkTeethBlockEntity;
+import net.mcreator.endless_end.block.entity.PuffBlossomTileEntity;
 import net.mcreator.endless_end.block.entity.PhasedEndoriteTilesBlockEntity;
 import net.mcreator.endless_end.block.entity.MoonGunkBlockEntity;
 import net.mcreator.endless_end.block.entity.IconoclastBlockEntity;
@@ -84,6 +86,8 @@ public class EndlessEndModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_LIGHT_GRAY = register("enderporter_light_gray", EndlessEndModBlocks.ENDERPORTER_LIGHT_GRAY, EnderporterLightGrayTileEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_DARK_GRAY = register("enderporter_dark_gray", EndlessEndModBlocks.ENDERPORTER_DARK_GRAY, EnderporterDarkGrayTileEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDERPORTER_BLACK = register("enderporter_black", EndlessEndModBlocks.ENDERPORTER_BLACK, EnderporterBlackTileEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TREBLE_BLOOM = register("treble_bloom", EndlessEndModBlocks.TREBLE_BLOOM, TrebleBloomBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> PUFF_BLOSSOM = register("puff_blossom", EndlessEndModBlocks.PUFF_BLOSSOM, PuffBlossomTileEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -108,6 +112,7 @@ public class EndlessEndModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SPIRALING_SAND.get(), (blockEntity, side) -> ((SpiralingSandBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ICONOCLAST.get(), (blockEntity, side) -> ((IconoclastBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, MOON_GUNK.get(), (blockEntity, side) -> ((MoonGunkBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TREBLE_BLOOM.get(), (blockEntity, side) -> ((TrebleBloomBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ENDERPORTER_WHITE.get(), (blockEntity, side) -> ((EnderporterWhiteTileEntity) blockEntity).getItemHandler());
 	}
 }

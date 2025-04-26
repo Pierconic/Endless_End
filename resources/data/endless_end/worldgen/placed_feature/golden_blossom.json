@@ -1,0 +1,11 @@
+{
+  "feature": "endless_end:golden_blossom",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -48,7 +48,7 @@ public class CitadelPlacementProcedure {
 			if (world instanceof ServerLevel _serverworld) {
 				StructureTemplate template = _serverworld.getStructureManager().getOrCreate(ResourceLocation.fromNamespaceAndPath("endless_end", "end_gazebo"));
 				if (template != null) {
-					template.placeInWorld(_serverworld, BlockPos.containing(98 - 5, 48 - 5, (-2) - 5), BlockPos.containing(98 - 5, 48 - 5, (-2) - 5),
+					template.placeInWorld(_serverworld, BlockPos.containing(98 - 5, 48 - 4, (-2) - 5), BlockPos.containing(98 - 5, 48 - 4, (-2) - 5),
 							new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
 				}
 			}
