@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/silk_spool_3",
+  "textures": {
+    "all": "endless_end:block/swing_silk_spool",
+    "particle": "endless_end:block/swing_silk_spool",
+    "0": "endless_end:block/swing_silk_spool"
+  },
+  "render_type": "solid"
+}

@@ -5,8 +5,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 public class StrangeEggsNeighborProcedure {
@@ -22,34 +20,43 @@ public class StrangeEggsNeighborProcedure {
 			}
 		}
 		if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("face") instanceof EnumProperty _getep12 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep12).toString() : "")
-				.equals("FLOOR") && !(world.getBlockState(BlockPos.containing(x, y - 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:lydian_placeable")))) {
+				.equals("FLOOR") && !world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()) {
 			StrangeEggsBreakProcedure.execute(world, x, y, z, blockstate);
 			{
 				BlockPos _pos = BlockPos.containing(x, y, z);
 				Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 0.5, y + 0.5, z + 0.5), null);
 				world.destroyBlock(_pos, false);
 			}
-		} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("face") instanceof EnumProperty _getep17 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep17).toString() : "")
-				.equals("CEILING") && !(world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:lydian_placeable")))) {
+		} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("face") instanceof EnumProperty _getep16 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep16).toString() : "")
+				.equals("CEILING") && !world.getBlockState(BlockPos.containing(x, y + 1, z)).canOcclude()) {
 			StrangeEggsBreakProcedure.execute(world, x, y, z, blockstate);
 			{
 				BlockPos _pos = BlockPos.containing(x, y, z);
 				Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 0.5, y + 0.5, z + 0.5), null);
 				world.destroyBlock(_pos, false);
 			}
-		} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("face") instanceof EnumProperty _getep22 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep22).toString() : "")
+		} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("face") instanceof EnumProperty _getep20 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep20).toString() : "")
 				.equals("WALL")) {
-			if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _getep24 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep24).toString() : "")
-					.equals("east") && !(world.getBlockState(BlockPos.containing(x - 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:lydian_placeable")))) {
+			if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _getep22 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep22).toString() : "")
+					.equals("east") && !world.getBlockState(BlockPos.containing(x - 1, y, z)).canOcclude()) {
 				StrangeEggsBreakProcedure.execute(world, x, y, z, blockstate);
 				{
 					BlockPos _pos = BlockPos.containing(x, y, z);
 					Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 0.5, y + 0.5, z + 0.5), null);
 					world.destroyBlock(_pos, false);
 				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _getep29
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep29).toString()
-					: "").equals("west") && !(world.getBlockState(BlockPos.containing(x + 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:lydian_placeable")))) {
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _getep26
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep26).toString()
+					: "").equals("west") && !world.getBlockState(BlockPos.containing(x + 1, y, z)).canOcclude()) {
+				StrangeEggsBreakProcedure.execute(world, x, y, z, blockstate);
+				{
+					BlockPos _pos = BlockPos.containing(x, y, z);
+					Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 0.5, y + 0.5, z + 0.5), null);
+					world.destroyBlock(_pos, false);
+				}
+			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _getep30
+					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep30).toString()
+					: "").equals("north") && !world.getBlockState(BlockPos.containing(x, y, z + 1)).canOcclude()) {
 				StrangeEggsBreakProcedure.execute(world, x, y, z, blockstate);
 				{
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -58,16 +65,7 @@ public class StrangeEggsNeighborProcedure {
 				}
 			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _getep34
 					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep34).toString()
-					: "").equals("north") && !(world.getBlockState(BlockPos.containing(x, y, z + 1))).is(BlockTags.create(ResourceLocation.parse("forge:lydian_placeable")))) {
-				StrangeEggsBreakProcedure.execute(world, x, y, z, blockstate);
-				{
-					BlockPos _pos = BlockPos.containing(x, y, z);
-					Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 0.5, y + 0.5, z + 0.5), null);
-					world.destroyBlock(_pos, false);
-				}
-			} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _getep39
-					? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep39).toString()
-					: "").equals("south") && !(world.getBlockState(BlockPos.containing(x, y, z - 1))).is(BlockTags.create(ResourceLocation.parse("forge:lydian_placeable")))) {
+					: "").equals("south") && !world.getBlockState(BlockPos.containing(x, y, z - 1)).canOcclude()) {
 				StrangeEggsBreakProcedure.execute(world, x, y, z, blockstate);
 				{
 					BlockPos _pos = BlockPos.containing(x, y, z);

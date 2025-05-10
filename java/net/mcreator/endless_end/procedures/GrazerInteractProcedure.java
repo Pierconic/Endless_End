@@ -53,62 +53,123 @@ public class GrazerInteractProcedure {
 			return;
 		double egg_time = 0;
 		if (entity instanceof GrazerEntity) {
-			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.SHEARS && (entity instanceof GrazerEntity _datEntI ? _datEntI.getEntityData().get(GrazerEntity.DATA_moss) : 0) == 1) {
-				if (sourceentity instanceof LivingEntity _entity)
-					_entity.swing(InteractionHand.MAIN_HAND, true);
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EndlessEndModBlocks.CANTICLE.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.mooshroom.shear")), SoundSource.NEUTRAL, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.mooshroom.shear")), SoundSource.NEUTRAL, 1, 1, false);
-					}
-				}
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.CANTICLE_SPORE.get()), x, y, z, 20, 0.2, 0.2, 0.2, 0.2);
-				if (entity instanceof GrazerEntity animatable)
-					animatable.setTexture("grazer_shell");
-				world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(EndlessEndModBlocks.CANTICLE.get().defaultBlockState()));
-				if (entity instanceof GrazerEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(GrazerEntity.DATA_moss, 0);
-				if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+			if (entity instanceof GrazerEntity _datEntL1 && _datEntL1.getEntityData().get(GrazerEntity.DATA_inverted)) {
+				if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.SHEARS && (entity instanceof GrazerEntity _datEntI ? _datEntI.getEntityData().get(GrazerEntity.DATA_moss) : 0) == 1) {
+					if (sourceentity instanceof LivingEntity _entity)
+						_entity.swing(InteractionHand.MAIN_HAND, true);
 					if (world instanceof ServerLevel _level) {
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).hurtAndBreak(2, _level, null, _stkprov -> {
-						});
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.mooshroom.shear")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.mooshroom.shear")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.PUFF_SPORE.get()), x, y, z, 20, 0.2, 0.2, 0.2, 0.2);
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell");
+					world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState()));
+					if (entity instanceof GrazerEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(GrazerEntity.DATA_moss, 0);
+					if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+						if (world instanceof ServerLevel _level) {
+							(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).hurtAndBreak(2, _level, null, _stkprov -> {
+							});
+						}
+					}
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.CHORUS_FRUIT) {
+					if (sourceentity instanceof LivingEntity _entity)
+						_entity.swing(InteractionHand.MAIN_HAND, true);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.composter.fill")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.composter.fill")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.brewing_stand.brew")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.brewing_stand.brew")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.COMPOSTER, x, y, z, 10, 0.5, 0.5, 0.5, 0.2);
+					if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
+					}
+					if (!(entity instanceof LivingEntity _livEnt24 && _livEnt24.hasEffect(EndlessEndModMobEffects.RADIANCE))) {
+						egg_time = Mth.nextInt(RandomSource.create(), 600, 1800);
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int) egg_time, 1, false, true));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.RADIANCE, (int) egg_time, 0, false, false));
 					}
 				}
-			} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.CHORUS_FRUIT) {
-				if (sourceentity instanceof LivingEntity _entity)
-					_entity.swing(InteractionHand.MAIN_HAND, true);
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.composter.fill")), SoundSource.NEUTRAL, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.composter.fill")), SoundSource.NEUTRAL, 1, 1, false);
+			} else {
+				if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.SHEARS && (entity instanceof GrazerEntity _datEntI ? _datEntI.getEntityData().get(GrazerEntity.DATA_moss) : 0) == 1) {
+					if (sourceentity instanceof LivingEntity _entity)
+						_entity.swing(InteractionHand.MAIN_HAND, true);
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EndlessEndModBlocks.CANTICLE.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
 					}
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.brewing_stand.brew")), SoundSource.NEUTRAL, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.brewing_stand.brew")), SoundSource.NEUTRAL, 1, 1, false);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.mooshroom.shear")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.mooshroom.shear")), SoundSource.NEUTRAL, 1, 1, false);
+						}
 					}
-				}
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.COMPOSTER, x, y, z, 10, 0.5, 0.5, 0.5, 0.2);
-				if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
-				}
-				if (!(entity instanceof LivingEntity _livEnt23 && _livEnt23.hasEffect(EndlessEndModMobEffects.RADIANCE))) {
-					egg_time = Mth.nextInt(RandomSource.create(), 600, 1800);
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int) egg_time, 1, false, true));
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.RADIANCE, (int) egg_time, 0, false, false));
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.CANTICLE_SPORE.get()), x, y, z, 20, 0.2, 0.2, 0.2, 0.2);
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell");
+					world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(EndlessEndModBlocks.CANTICLE.get().defaultBlockState()));
+					if (entity instanceof GrazerEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(GrazerEntity.DATA_moss, 0);
+					if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+						if (world instanceof ServerLevel _level) {
+							(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).hurtAndBreak(2, _level, null, _stkprov -> {
+							});
+						}
+					}
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.CHORUS_FRUIT) {
+					if (sourceentity instanceof LivingEntity _entity)
+						_entity.swing(InteractionHand.MAIN_HAND, true);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.composter.fill")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.composter.fill")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.brewing_stand.brew")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.brewing_stand.brew")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.COMPOSTER, x, y, z, 10, 0.5, 0.5, 0.5, 0.2);
+					if (!(sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
+					}
+					if (!(entity instanceof LivingEntity _livEnt50 && _livEnt50.hasEffect(EndlessEndModMobEffects.RADIANCE))) {
+						egg_time = Mth.nextInt(RandomSource.create(), 600, 1800);
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int) egg_time, 1, false, true));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.RADIANCE, (int) egg_time, 0, false, false));
+					}
 				}
 			}
 		} else if (entity instanceof TrawlerEntity) {

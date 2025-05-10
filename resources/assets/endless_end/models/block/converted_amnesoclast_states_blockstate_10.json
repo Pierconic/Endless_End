@@ -2,7 +2,7 @@
   "parent": "block/cube",
   "textures": {
     "down": "endless_end:block/amnesic_boards",
-    "up": "endless_end:block/amnesic_polish",
+    "up": "endless_end:block/amnesic_table_top",
     "north": "endless_end:block/amnesic_table",
     "east": "endless_end:block/amnesic_table",
     "south": "endless_end:block/amnesic_table",

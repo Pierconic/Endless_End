@@ -134,7 +134,8 @@ public class TrawlerTeleportProcedure {
 				if (entity instanceof TrawlerEntity animatable)
 					animatable.setTexture("trawler_shell_slightly_cracked");
 			}
-		} else if (!((entity instanceof TrawlerEntity animatable ? animatable.getTexture() : "null").equals("trawler_shell"))) {
+		} else if (!((entity instanceof TrawlerEntity animatable ? animatable.getTexture() : "null").equals("trawler_shell") || (entity instanceof TrawlerEntity animatable ? animatable.getTexture() : "null").equals("trawler_shell_canticle")
+				|| (entity instanceof TrawlerEntity animatable ? animatable.getTexture() : "null").equals("trawler_shell_lydian"))) {
 			if (entity instanceof TrawlerEntity animatable)
 				animatable.setTexture("trawler_shell");
 		}

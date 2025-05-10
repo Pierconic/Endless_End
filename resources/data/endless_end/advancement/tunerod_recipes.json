@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "endless_end:tunerod_stem"
+              "endless_end:tune_rod"
             ],
             "count": {
               "min": 1,
@@ -23,7 +23,8 @@
       "endless_end:tuneblock_recipe",
       "endless_end:tunerod_stick",
       "endless_end:violet_planks_alt_recipe",
-      "endless_end:magic_wand_recipe"
+      "endless_end:tuning_rod_recipe",
+      "endless_end:swing_shot_recipe"
     ]
   }
 }

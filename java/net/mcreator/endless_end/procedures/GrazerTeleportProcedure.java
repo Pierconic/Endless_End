@@ -44,7 +44,8 @@ public class GrazerTeleportProcedure {
 		boolean found = false;
 		found = false;
 		if (Math.random() < 0.0008 && entity.getDeltaMovement().x() == 0 && entity.getDeltaMovement().z() == 0
-				&& ((world.getBlockState(BlockPos.containing(x, y - 0.8, z))).getBlock() == EndlessEndModBlocks.CANTICLE.get() || (world.getBlockState(BlockPos.containing(x, y - 0.8, z))).getBlock() == EndlessEndModBlocks.BLOOMING_CANTICLE.get())) {
+				&& ((world.getBlockState(BlockPos.containing(x, y - 0.8, z))).getBlock() == EndlessEndModBlocks.CANTICLE.get() || (world.getBlockState(BlockPos.containing(x, y - 0.8, z))).getBlock() == EndlessEndModBlocks.BLOOMING_CANTICLE.get()
+						|| (world.getBlockState(BlockPos.containing(x, y - 0.8, z))).getBlock() == EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get())) {
 			if (entity instanceof GrazerEntity) {
 				((GrazerEntity) entity).setAnimation("graze");
 			}
@@ -70,21 +71,36 @@ public class GrazerTeleportProcedure {
 			}
 		}
 		if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.CONFUSION) ? _livEnt.getEffect(MobEffects.CONFUSION).getDuration() : 0) == 1) {
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) == (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
-				if (entity instanceof GrazerEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(GrazerEntity.DATA_moss, 1);
-				if (entity instanceof GrazerEntity animatable)
-					animatable.setTexture("grazer_shell_canticle");
-				world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(EndlessEndModBlocks.CANTICLE.get().defaultBlockState()));
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.CANTICLE_SPORE.get()), x, y, z, 20, 0.2, 0.2, 0.2, 0.2);
+			if (entity instanceof GrazerEntity _datEntL16 && _datEntL16.getEntityData().get(GrazerEntity.DATA_inverted)) {
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) == (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
+					if (entity instanceof GrazerEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(GrazerEntity.DATA_moss, 1);
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell_canticle_inv");
+					world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState()));
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.PUFF_SPORE.get()), x, y, z, 20, 0.2, 0.2, 0.2, 0.2);
+				} else {
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+				}
 			} else {
-				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) == (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
+					if (entity instanceof GrazerEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(GrazerEntity.DATA_moss, 1);
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell_canticle");
+					world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(EndlessEndModBlocks.CANTICLE.get().defaultBlockState()));
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.CANTICLE_SPORE.get()), x, y, z, 20, 0.2, 0.2, 0.2, 0.2);
+				} else {
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+				}
 			}
 		}
 		if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.UNLUCK) ? _livEnt.getEffect(MobEffects.UNLUCK).getDuration() : 0) == 1
-				&& (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity && !(entity instanceof LivingEntity _livEnt25 && _livEnt25.hasEffect(MobEffects.MOVEMENT_SPEED))) {
+				&& (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity && !(entity instanceof LivingEntity _livEnt36 && _livEnt36.hasEffect(MobEffects.MOVEMENT_SPEED))) {
 			while (attempts < 24 && !found) {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.PORTAL, x, y, z, 10, 0.2, 0.2, 0.2, 0.1);
@@ -129,26 +145,44 @@ public class GrazerTeleportProcedure {
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 			for (Entity entityiterator : _entfound) {
-				if (!(entityiterator == entity) && !(entityiterator instanceof LivingEntity _livEnt71 && _livEnt71.hasEffect(EndlessEndModMobEffects.FRAGRANCE)) && entityiterator instanceof LivingEntity _livEnt72
-						&& _livEnt72.hasEffect(EndlessEndModMobEffects.ODOR)) {
+				if (!(entityiterator == entity) && !(entityiterator instanceof LivingEntity _livEnt82 && _livEnt82.hasEffect(EndlessEndModMobEffects.FRAGRANCE)) && entityiterator instanceof LivingEntity _livEnt83
+						&& _livEnt83.hasEffect(EndlessEndModMobEffects.ODOR)) {
 					if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
 						_entity.setTarget(_ent);
 				}
 			}
 		}
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) != (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) < (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 0.4
-					&& !((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_cracked"))) {
+		if (entity instanceof GrazerEntity _datEntL86 && _datEntL86.getEntityData().get(GrazerEntity.DATA_inverted)) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) != (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) < (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 0.4
+						&& !((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_cracked_inv"))) {
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell_cracked_inv");
+				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) >= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 0.4
+						&& !((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_slightly_cracked_inv"))) {
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell_slightly_cracked_inv");
+				}
+			} else if (!((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_inv")
+					|| (entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_canticle_inv"))) {
 				if (entity instanceof GrazerEntity animatable)
-					animatable.setTexture("grazer_shell_cracked");
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) >= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 0.4
-					&& !((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_slightly_cracked"))) {
-				if (entity instanceof GrazerEntity animatable)
-					animatable.setTexture("grazer_shell_slightly_cracked");
+					animatable.setTexture("grazer_shell_inv");
 			}
-		} else if (!((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell"))) {
-			if (entity instanceof GrazerEntity animatable)
-				animatable.setTexture("grazer_shell");
+		} else {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) != (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) < (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 0.4
+						&& !((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_cracked"))) {
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell_cracked");
+				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) >= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 0.4
+						&& !((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_slightly_cracked"))) {
+					if (entity instanceof GrazerEntity animatable)
+						animatable.setTexture("grazer_shell_slightly_cracked");
+				}
+			} else if (!((entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell") || (entity instanceof GrazerEntity animatable ? animatable.getTexture() : "null").equals("grazer_shell_canticle"))) {
+				if (entity instanceof GrazerEntity animatable)
+					animatable.setTexture("grazer_shell");
+			}
 		}
 	}
 }

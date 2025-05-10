@@ -12,6 +12,8 @@
     "minecraft:azalea_leaves",
     "minecraft:flowering_azalea_leaves",
     "minecraft:cherry_leaves",
-    "endless_end:violet_sepal_leaves"
+    "endless_end:violet_sepal_leaves",
+    "endless_end:golden_sepal_leaves",
+    "endless_end:blossoming_golden_sepal_leaves"
   ]
 }

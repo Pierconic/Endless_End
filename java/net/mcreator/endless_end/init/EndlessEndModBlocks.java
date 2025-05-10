@@ -13,6 +13,7 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.endless_end.block.WeaverNestBlock;
 import net.mcreator.endless_end.block.WardingEyesBlock;
 import net.mcreator.endless_end.block.VioletSepalWoodBlock;
 import net.mcreator.endless_end.block.VioletSepalStairsBlock;
@@ -48,6 +49,7 @@ import net.mcreator.endless_end.block.SoulBulbVaseBlock;
 import net.mcreator.endless_end.block.SoulBulbFlowerPotBlock;
 import net.mcreator.endless_end.block.SoulBulbBlock;
 import net.mcreator.endless_end.block.SingingSandBlock;
+import net.mcreator.endless_end.block.SilkSpoolBlock;
 import net.mcreator.endless_end.block.SensingEndoriteCoreBlock;
 import net.mcreator.endless_end.block.SculkTeethBlock;
 import net.mcreator.endless_end.block.RottingEndStoneBlock;
@@ -99,6 +101,7 @@ import net.mcreator.endless_end.block.ChorusSproutsBlock;
 import net.mcreator.endless_end.block.ChorusRootsBlock;
 import net.mcreator.endless_end.block.ChiseledEndstoneBlock;
 import net.mcreator.endless_end.block.CanticleBlock;
+import net.mcreator.endless_end.block.CalcifiedEndstoneBlock;
 import net.mcreator.endless_end.block.BurrowingThornsBlock;
 import net.mcreator.endless_end.block.BlueRoseVaseBlock;
 import net.mcreator.endless_end.block.BlueRoseFlowerPotBlock;
@@ -223,6 +226,9 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> GOLDEN_SPROUTS = REGISTRY.register("golden_sprouts", GoldenSproutsBlock::new);
 	public static final DeferredBlock<Block> GOLDEN_ROOTS = REGISTRY.register("golden_roots", GoldenRootsBlock::new);
 	public static final DeferredBlock<Block> PUFF_BLOSSOM = REGISTRY.register("puff_blossom", PuffBlossomBlock::new);
+	public static final DeferredBlock<Block> CALCIFIED_ENDSTONE = REGISTRY.register("calcified_endstone", CalcifiedEndstoneBlock::new);
+	public static final DeferredBlock<Block> SILK_SPOOL = REGISTRY.register("silk_spool", SilkSpoolBlock::new);
+	public static final DeferredBlock<Block> WEAVER_NEST = REGISTRY.register("weaver_nest", WeaverNestBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

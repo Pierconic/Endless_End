@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "aba",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:swingsilk"
+    },
+    "b": {
+      "item": "endless_end:tune_rod"
+    }
+  },
+  "result": {
+    "id": "endless_end:silk_spool",
+    "count": 1
+  }
+}

@@ -17,7 +17,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.init.EndlessEndModParticleTypes;
 import net.mcreator.endless_end.init.EndlessEndModMobEffects;
-import net.mcreator.endless_end.entity.VioletPolypEntity;
+import net.mcreator.endless_end.entity.PolypEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -43,19 +43,19 @@ public class PolypTickProcedure {
 			}
 		}
 		if (!(!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) && world.getBlockState(BlockPos.containing(x, y - 0.1, z)).canOcclude()) {
-			if (entity instanceof VioletPolypEntity) {
-				((VioletPolypEntity) entity).setAnimation("grounded");
+			if (entity instanceof PolypEntity) {
+				((PolypEntity) entity).setAnimation("grounded");
 			}
-		} else if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && !(((VioletPolypEntity) entity).animationprocedure).equals("aggro")) {
-			if (entity instanceof VioletPolypEntity) {
-				((VioletPolypEntity) entity).setAnimation("aggro");
+		} else if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && !(((PolypEntity) entity).animationprocedure).equals("aggro")) {
+			if (entity instanceof PolypEntity) {
+				((PolypEntity) entity).setAnimation("aggro");
 			}
-		} else if (!(((VioletPolypEntity) entity).animationprocedure).equals("fly")) {
-			if (entity instanceof VioletPolypEntity) {
-				((VioletPolypEntity) entity).setAnimation("fly");
+		} else if (!(((PolypEntity) entity).animationprocedure).equals("fly")) {
+			if (entity instanceof PolypEntity) {
+				((PolypEntity) entity).setAnimation("fly");
 			}
 		}
-		if ((((VioletPolypEntity) entity).animationprocedure).equals("aggro")) {
+		if ((((PolypEntity) entity).animationprocedure).equals("aggro")) {
 			if (Math.random() < 0.4) {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles((SimpleParticleType) (EndlessEndModParticleTypes.STAR_SPARKLE.get()), x, y, z, Mth.nextInt(RandomSource.create(), 0, 1), 0.02, 0.02, 0.02, 0.01);

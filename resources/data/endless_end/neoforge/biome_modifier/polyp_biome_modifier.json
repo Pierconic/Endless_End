@@ -1,0 +1,17 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "endless_end:chorus_barrens",
+    "endless_end:chorus_midlands",
+    "endless_end:chorus_orchard",
+    "endless_end:inverted_barrens",
+    "endless_end:inverted_midlands",
+    "endless_end:inverted_orchard"
+  ],
+  "spawners": {
+    "type": "endless_end:polyp",
+    "weight": 15,
+    "minCount": 1,
+    "maxCount": 5
+  }
+}

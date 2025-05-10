@@ -13,7 +13,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class SimpleTuneshootProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, boolean vertical) {
+	public static void execute(LevelAccessor world, double x, double y, double z, boolean vertical, double lambda) {
 		String face = "";
 		double ox = 0;
 		double oy = 0;
@@ -26,7 +26,7 @@ public class SimpleTuneshootProcedure {
 						return _prop instanceof EnumProperty _ep && _ep.getValue(_newValue).isPresent() ? _bs.setValue(_ep, (Enum) _ep.getValue(_newValue).get()) : _bs;
 					}
 				}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "face", "floor")), 3);
-				SimpleTuneshootProcedure.execute(world, x, y, z, vertical);
+				SimpleTuneshootProcedure.execute(world, x, y, z, vertical, lambda);
 			} else if (world.getBlockState(BlockPos.containing(x + 1, y, z)).canOcclude()) {
 				world.setBlock(BlockPos.containing(x, y, z), (new Object() {
 					public BlockState with(BlockState _bs, String _property, String _newValue) {
@@ -47,7 +47,7 @@ public class SimpleTuneshootProcedure {
 						return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().contains(newValue.getAxis()) ? _bs.setValue(_ep, newValue.getAxis()) : _bs;
 					}
 				}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), Direction.WEST)), "blockstate", 0)), "face", "WALL")), 3);
-				SimpleTuneshootProcedure.execute(world, x, y, z, vertical);
+				SimpleTuneshootProcedure.execute(world, x, y, z, vertical, lambda);
 			} else if (world.getBlockState(BlockPos.containing(x - 1, y, z)).canOcclude()) {
 				world.setBlock(BlockPos.containing(x, y, z), (new Object() {
 					public BlockState with(BlockState _bs, String _property, String _newValue) {
@@ -68,7 +68,7 @@ public class SimpleTuneshootProcedure {
 						return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().contains(newValue.getAxis()) ? _bs.setValue(_ep, newValue.getAxis()) : _bs;
 					}
 				}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), Direction.EAST)), "blockstate", 0)), "face", "WALL")), 3);
-				SimpleTuneshootProcedure.execute(world, x, y, z, vertical);
+				SimpleTuneshootProcedure.execute(world, x, y, z, vertical, lambda);
 			} else if (world.getBlockState(BlockPos.containing(x, y, z + 1)).canOcclude()) {
 				world.setBlock(BlockPos.containing(x, y, z), (new Object() {
 					public BlockState with(BlockState _bs, String _property, String _newValue) {
@@ -89,7 +89,7 @@ public class SimpleTuneshootProcedure {
 						return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().contains(newValue.getAxis()) ? _bs.setValue(_ep, newValue.getAxis()) : _bs;
 					}
 				}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), Direction.NORTH)), "blockstate", 0)), "face", "WALL")), 3);
-				SimpleTuneshootProcedure.execute(world, x, y, z, vertical);
+				SimpleTuneshootProcedure.execute(world, x, y, z, vertical, lambda);
 			} else if (world.getBlockState(BlockPos.containing(x, y, z - 1)).canOcclude()) {
 				world.setBlock(BlockPos.containing(x, y, z), (new Object() {
 					public BlockState with(BlockState _bs, String _property, String _newValue) {
@@ -110,7 +110,7 @@ public class SimpleTuneshootProcedure {
 						return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().contains(newValue.getAxis()) ? _bs.setValue(_ep, newValue.getAxis()) : _bs;
 					}
 				}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), Direction.SOUTH)), "blockstate", 0)), "face", "WALL")), 3);
-				SimpleTuneshootProcedure.execute(world, x, y, z, vertical);
+				SimpleTuneshootProcedure.execute(world, x, y, z, vertical, lambda);
 			}
 		} else {
 			face = ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("face") instanceof EnumProperty _getep25 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getep25).toString() : "")
@@ -198,7 +198,7 @@ public class SimpleTuneshootProcedure {
 								return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 							}
 						}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 1)), "face", face)), 3);
-						SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical);
+						SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical, lambda);
 					}
 				} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip50
 						? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip50)
@@ -215,7 +215,7 @@ public class SimpleTuneshootProcedure {
 								return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 							}
 						}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 2)), "face", face)), 3);
-						SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical);
+						SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical, lambda);
 					}
 				} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip56
 						? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip56)
@@ -239,15 +239,16 @@ public class SimpleTuneshootProcedure {
 									return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 								}
 							}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 7)), "face", face)), 3);
-							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical);
-						} else if (Math.random() < 0.4
+							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical, lambda);
+						} else if ((Math.random() < 0.4
 								&& !(((world.getBlockState(BlockPos.containing(x, y - oy, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip66
 										? (world.getBlockState(BlockPos.containing(x, y - oy, z))).getValue(_getip66)
 										: -1) == 4)
 								|| Math.random() < 0.1
 								|| ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _getip68
 										? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip68)
-										: -1) >= 19) {
+										: -1) >= 19)
+								&& lambda > 0) {
 							world.setBlock(BlockPos.containing(x, y + oy, z), (new Object() {
 								public BlockState with(BlockState _bs, String _property, String _newValue) {
 									Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
@@ -259,7 +260,7 @@ public class SimpleTuneshootProcedure {
 									return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 								}
 							}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 5)), "face", face)), 3);
-							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical);
+							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical, lambda);
 						} else {
 							world.setBlock(BlockPos.containing(x, y + oy, z), (new Object() {
 								public BlockState with(BlockState _bs, String _property, String _newValue) {
@@ -272,7 +273,7 @@ public class SimpleTuneshootProcedure {
 									return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 								}
 							}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 2)), "face", face)), 3);
-							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical);
+							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical, lambda);
 						}
 					} else {
 						{
@@ -373,8 +374,8 @@ public class SimpleTuneshootProcedure {
 								if (_bs.getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 									world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 							}
-							SimpleTuneshootProcedure.execute(world, x - 1, y, z, vertical);
-							SimpleTuneshootProcedure.execute(world, x + 1, y, z, vertical);
+							SimpleTuneshootProcedure.execute(world, x - 1, y, z, vertical, lambda - 1);
+							SimpleTuneshootProcedure.execute(world, x + 1, y, z, vertical, lambda - 1);
 						}
 					} else {
 						if (world.isEmptyBlock(BlockPos.containing(x + 1, y + 0, z)) && world.isEmptyBlock(BlockPos.containing(x - 1, y + 0, z))) {
@@ -453,8 +454,8 @@ public class SimpleTuneshootProcedure {
 								if (_bs.getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 									world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 							}
-							SimpleTuneshootProcedure.execute(world, x, y, z + 1, vertical);
-							SimpleTuneshootProcedure.execute(world, x, y, z - 1, vertical);
+							SimpleTuneshootProcedure.execute(world, x, y, z + 1, vertical, lambda - 1);
+							SimpleTuneshootProcedure.execute(world, x, y, z - 1, vertical, lambda - 1);
 						}
 					}
 				} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip122
@@ -472,7 +473,7 @@ public class SimpleTuneshootProcedure {
 								return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 							}
 						}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 2)), "face", face)), 3);
-						SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical);
+						SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical, lambda);
 					}
 				} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip128
 						? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip128)
@@ -519,7 +520,7 @@ public class SimpleTuneshootProcedure {
 									return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
 								}
 							}.with(EndlessEndModBlocks.TUNEROD_STEM.get().defaultBlockState(), "blockstate", 7)), "face", face)), 3);
-							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical);
+							SimpleTuneshootProcedure.execute(world, x, y + oy, z, vertical, lambda);
 						}
 					}
 				}
@@ -564,7 +565,7 @@ public class SimpleTuneshootProcedure {
 										: Direction.NORTH;
 							}
 						}.getDirection((world.getBlockState(BlockPos.containing(x, y, z))))))), "blockstate", 1)), "face", face)), 3);
-						SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical);
+						SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical, lambda);
 					}
 				} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip155
 						? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip155)
@@ -599,7 +600,7 @@ public class SimpleTuneshootProcedure {
 										: Direction.NORTH;
 							}
 						}.getDirection((world.getBlockState(BlockPos.containing(x, y, z))))))), "blockstate", 2)), "face", face)), 3);
-						SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical);
+						SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical, lambda);
 					}
 				} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip164
 						? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip164)
@@ -637,7 +638,7 @@ public class SimpleTuneshootProcedure {
 											: Direction.NORTH;
 								}
 							}.getDirection((world.getBlockState(BlockPos.containing(x, y, z))))))), "blockstate", 2)), "face", face)), 3);
-							SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical);
+							SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical, lambda);
 						} else {
 							world.setBlock(BlockPos.containing(x + ox, y, z + oz), (new Object() {
 								public BlockState with(BlockState _bs, String _property, String _newValue) {
@@ -668,7 +669,7 @@ public class SimpleTuneshootProcedure {
 											: Direction.NORTH;
 								}
 							}.getDirection((world.getBlockState(BlockPos.containing(x, y, z))))))), "blockstate", 7)), "face", face)), 3);
-							SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical);
+							SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical, lambda);
 						}
 					} else {
 						{
@@ -755,7 +756,7 @@ public class SimpleTuneshootProcedure {
 											: Direction.NORTH;
 								}
 							}.getDirection((world.getBlockState(BlockPos.containing(x, y, z))))))), "blockstate", 7)), "face", face)), 3);
-							SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical);
+							SimpleTuneshootProcedure.execute(world, x + ox, y, z + oz, vertical, lambda);
 						}
 					} else {
 						{

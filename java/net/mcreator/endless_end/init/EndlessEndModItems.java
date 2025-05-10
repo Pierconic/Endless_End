@@ -20,6 +20,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.item.ItemProperties;
 
+import net.mcreator.endless_end.procedures.SwingShotPropertyValueProviderProcedure;
 import net.mcreator.endless_end.procedures.EyeballProviderProcedure;
 import net.mcreator.endless_end.procedures.EyeProximityProviderProcedure;
 import net.mcreator.endless_end.item.YearningEyeItem;
@@ -41,6 +42,8 @@ import net.mcreator.endless_end.item.WarpChipBlueItem;
 import net.mcreator.endless_end.item.WarpChipBlackItem;
 import net.mcreator.endless_end.item.TuneRodItem;
 import net.mcreator.endless_end.item.TransponderItem;
+import net.mcreator.endless_end.item.SwingsilkItem;
+import net.mcreator.endless_end.item.SwingShotItem;
 import net.mcreator.endless_end.item.StarFragmentItem;
 import net.mcreator.endless_end.item.SendingTransponderItem;
 import net.mcreator.endless_end.item.RawEndoriteItem;
@@ -225,19 +228,24 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> ENDERPORTER_DARK_GRAY = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_DARK_GRAY.getId().getPath(),
 			() -> new EnderporterDarkGrayDisplayItem(EndlessEndModBlocks.ENDERPORTER_DARK_GRAY.get(), new Item.Properties()));
 	public static final DeferredItem<Item> ENDERPORTER_BLACK = REGISTRY.register(EndlessEndModBlocks.ENDERPORTER_BLACK.getId().getPath(), () -> new EnderporterBlackDisplayItem(EndlessEndModBlocks.ENDERPORTER_BLACK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> MAGIC_WAND = REGISTRY.register("magic_wand", MagicWandItem::new);
 	public static final DeferredItem<Item> SWIRLING_VINES = block(EndlessEndModBlocks.SWIRLING_VINES);
 	public static final DeferredItem<Item> GOLDEN_SEPAL_LEAVES = block(EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES);
 	public static final DeferredItem<Item> BLOSSOMING_GOLDEN_SEPAL_LEAVES = block(EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES);
 	public static final DeferredItem<Item> BLAST_BERRIES_1 = REGISTRY.register("blast_berries_1", BlastBerries1Item::new);
 	public static final DeferredItem<Item> BLAST_BERRIES_2 = REGISTRY.register("blast_berries_2", BlastBerries2Item::new);
 	public static final DeferredItem<Item> BLAST_BERRIES_3 = REGISTRY.register("blast_berries_3", BlastBerries3Item::new);
-	public static final DeferredItem<Item> VIOLET_POLYP_SPAWN_EGG = REGISTRY.register("violet_polyp_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.VIOLET_POLYP, -6750055, -16724788, new Item.Properties()));
 	public static final DeferredItem<Item> TREBLE_BLOOM = block(EndlessEndModBlocks.TREBLE_BLOOM);
 	public static final DeferredItem<Item> GOLDEN_HUMUS = block(EndlessEndModBlocks.GOLDEN_HUMUS);
 	public static final DeferredItem<Item> GOLDEN_SPROUTS = block(EndlessEndModBlocks.GOLDEN_SPROUTS);
 	public static final DeferredItem<Item> GOLDEN_ROOTS = block(EndlessEndModBlocks.GOLDEN_ROOTS);
 	public static final DeferredItem<Item> PUFF_BLOSSOM = REGISTRY.register(EndlessEndModBlocks.PUFF_BLOSSOM.getId().getPath(), () -> new PuffBlossomDisplayItem(EndlessEndModBlocks.PUFF_BLOSSOM.get(), new Item.Properties()));
+	public static final DeferredItem<Item> SWINGSILK = REGISTRY.register("swingsilk", SwingsilkItem::new);
+	public static final DeferredItem<Item> CALCIFIED_ENDSTONE = block(EndlessEndModBlocks.CALCIFIED_ENDSTONE);
+	public static final DeferredItem<Item> SWING_SHOT = REGISTRY.register("swing_shot", SwingShotItem::new);
+	public static final DeferredItem<Item> MAGIC_WAND = REGISTRY.register("magic_wand", MagicWandItem::new);
+	public static final DeferredItem<Item> SILK_SPOOL = block(EndlessEndModBlocks.SILK_SPOOL);
+	public static final DeferredItem<Item> WEAVER_NEST = block(EndlessEndModBlocks.WEAVER_NEST);
+	public static final DeferredItem<Item> POLYP_SPAWN_EGG = REGISTRY.register("polyp_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.POLYP, -6750055, -16724788, new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -253,6 +261,7 @@ public class EndlessEndModItems {
 			event.enqueueWork(() -> {
 				ItemProperties.register(YEARNING_EYE.get(), ResourceLocation.parse("endless_end:yearning_eye_direction"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) EyeballProviderProcedure.execute(entity));
 				ItemProperties.register(YEARNING_EYE.get(), ResourceLocation.parse("endless_end:yearning_eye_proximity"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) EyeProximityProviderProcedure.execute(entity));
+				ItemProperties.register(SWING_SHOT.get(), ResourceLocation.parse("endless_end:swing_shot_attatched"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) SwingShotPropertyValueProviderProcedure.execute(entity));
 			});
 		}
 	}

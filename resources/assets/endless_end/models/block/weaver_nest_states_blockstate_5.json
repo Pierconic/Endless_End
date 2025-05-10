@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/weaver_nest_bottom",
+    "up": "endless_end:block/azure_log_top",
+    "north": "endless_end:block/weaver_nest_side_2",
+    "east": "endless_end:block/weaver_nest_side_2",
+    "south": "endless_end:block/weaver_nest_side_2",
+    "west": "endless_end:block/weaver_nest_side_2",
+    "particle": "endless_end:block/weaver_nest_bottom_occupied"
+  },
+  "render_type": "solid"
+}

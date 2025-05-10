@@ -23,4 +23,9 @@ public class EndlessEndModParticleTypes {
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> TREBLE_SEED = REGISTRY.register("treble_seed", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> PUFF_SPORE = REGISTRY.register("puff_spore", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> PUFF_DOWNFALL = REGISTRY.register("puff_downfall", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE = REGISTRY.register("swing_silk_string_particle", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE_SMALL = REGISTRY.register("swing_silk_string_particle_small", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE_BIG = REGISTRY.register("swing_silk_string_particle_big", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE_GIANT = REGISTRY.register("swing_silk_string_particle_giant", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE_TINY = REGISTRY.register("swing_silk_string_particle_tiny", () -> new SimpleParticleType(true));
 }

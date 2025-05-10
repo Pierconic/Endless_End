@@ -1,0 +1,30 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+  "parent": "endless_end:custom/swing_shot",
+  "textures": {
+    "0": "endless_end:block/swing_shot_entity_attatched",
+    "particle": "endless_end:item/swing_shot"
+  	}
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "endless_end:item/swing_shot_attatched"
+      },
+      "gui_light": "front"
+    },
+    "ground": {
+    	"parent": "item/generated",
+      "textures": {
+        "layer0": "endless_end:item/swing_shot_attatched"}
+    },
+    "fixed": {
+    	"parent": "item/generated",
+      "textures": {
+        "layer0": "endless_end:item/swing_shot_attatched"}
+    }
+  }
+}

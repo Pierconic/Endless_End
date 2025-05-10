@@ -32,16 +32,15 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.endless_end.procedures.StrangeEggsShotProcedure;
 import net.mcreator.endless_end.procedures.StrangeEggsNeighborProcedure;
-import net.mcreator.endless_end.procedures.StrangeEggsClickProcedure;
-import net.mcreator.endless_end.procedures.StrangeEggsBreakProcedure;
 import net.mcreator.endless_end.procedures.StrangeEggsAgeProcedure;
+import net.mcreator.endless_end.procedures.PlayerStrangeEggsBreakProcedure;
 
 public class StrangeEggsBlock extends Block implements SimpleWaterloggedBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 15);
@@ -275,26 +274,12 @@ public class StrangeEggsBlock extends Block implements SimpleWaterloggedBlock {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		StrangeEggsBreakProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
+		PlayerStrangeEggsBreakProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
 		return retval;
 	}
 
 	@Override
 	public void onProjectileHit(Level world, BlockState blockstate, BlockHitResult hit, Projectile entity) {
-		StrangeEggsBreakProcedure.execute(world, hit.getBlockPos().getX(), hit.getBlockPos().getY(), hit.getBlockPos().getZ(), blockstate);
-	}
-
-	@Override
-	public InteractionResult useWithoutItem(BlockState blockstate, Level world, BlockPos pos, Player entity, BlockHitResult hit) {
-		super.useWithoutItem(blockstate, world, pos, entity, hit);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		double hitX = hit.getLocation().x;
-		double hitY = hit.getLocation().y;
-		double hitZ = hit.getLocation().z;
-		Direction direction = hit.getDirection();
-		StrangeEggsClickProcedure.execute(world, x, y, z, entity);
-		return InteractionResult.SUCCESS;
+		StrangeEggsShotProcedure.execute(world, hit.getBlockPos().getX(), hit.getBlockPos().getY(), hit.getBlockPos().getZ(), blockstate);
 	}
 }

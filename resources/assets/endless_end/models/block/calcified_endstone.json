@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minecraft:block/end_stone",
+    "up": "minecraft:block/calcite",
+    "north": "endless_end:block/calcified_end_stone",
+    "east": "endless_end:block/calcified_end_stone",
+    "south": "endless_end:block/calcified_end_stone",
+    "west": "endless_end:block/calcified_end_stone",
+    "particle": "minecraft:block/end_stone"
+  },
+  "render_type": "solid"
+}

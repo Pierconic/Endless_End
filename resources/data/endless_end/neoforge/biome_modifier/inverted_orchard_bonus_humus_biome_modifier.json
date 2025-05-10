@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "endless_end:inverted_orchard",
+  "features": "endless_end:inverted_orchard_bonus_humus",
+  "step": "vegetal_decoration"
+}

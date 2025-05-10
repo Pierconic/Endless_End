@@ -1,0 +1,15 @@
+{
+  "feature": "endless_end:random_gold_roots",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 5
+    },
+    {
+      "type": "minecraft:in_square"
+    }
+  ]
+}

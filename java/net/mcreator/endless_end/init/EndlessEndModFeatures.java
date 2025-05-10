@@ -14,7 +14,11 @@ import net.mcreator.endless_end.world.features.VioletStemFeature;
 import net.mcreator.endless_end.world.features.TrebleShootFeature;
 import net.mcreator.endless_end.world.features.SubterraChorusBlobFeature;
 import net.mcreator.endless_end.world.features.SmallVioletStemFeature;
+import net.mcreator.endless_end.world.features.RandomGoldRootsFeature;
 import net.mcreator.endless_end.world.features.PoppedChorusBlobFeature;
+import net.mcreator.endless_end.world.features.InvertedOrchardBonusHumusFeature;
+import net.mcreator.endless_end.world.features.InvertedHumusFeatureFeature;
+import net.mcreator.endless_end.world.features.GoldenSpikeFeatureFeature;
 import net.mcreator.endless_end.world.features.GoldenBlossomFeature;
 import net.mcreator.endless_end.world.features.EndWasteRefuseFeature;
 import net.mcreator.endless_end.world.features.ChorusBlobFeature;
@@ -34,4 +38,8 @@ public class EndlessEndModFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<?>> POPPED_CHORUS_BLOB = REGISTRY.register("popped_chorus_blob", PoppedChorusBlobFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> GOLDEN_BLOSSOM = REGISTRY.register("golden_blossom", GoldenBlossomFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> TREBLE_SHOOT = REGISTRY.register("treble_shoot", TrebleShootFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> INVERTED_HUMUS_FEATURE = REGISTRY.register("inverted_humus_feature", InvertedHumusFeatureFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> GOLDEN_SPIKE_FEATURE = REGISTRY.register("golden_spike_feature", GoldenSpikeFeatureFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> INVERTED_ORCHARD_BONUS_HUMUS = REGISTRY.register("inverted_orchard_bonus_humus", InvertedOrchardBonusHumusFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> RANDOM_GOLD_ROOTS = REGISTRY.register("random_gold_roots", RandomGoldRootsFeature::new);
 }

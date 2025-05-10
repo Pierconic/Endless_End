@@ -10,6 +10,11 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
 import net.mcreator.endless_end.client.particle.TrebleSeedParticle;
+import net.mcreator.endless_end.client.particle.SwingSilkStringParticleTinyParticle;
+import net.mcreator.endless_end.client.particle.SwingSilkStringParticleSmallParticle;
+import net.mcreator.endless_end.client.particle.SwingSilkStringParticleParticle;
+import net.mcreator.endless_end.client.particle.SwingSilkStringParticleGiantParticle;
+import net.mcreator.endless_end.client.particle.SwingSilkStringParticleBigParticle;
 import net.mcreator.endless_end.client.particle.StarSwirlParticle;
 import net.mcreator.endless_end.client.particle.StarSparkleParticle;
 import net.mcreator.endless_end.client.particle.PuffSporeParticle;
@@ -30,5 +35,10 @@ public class EndlessEndModParticles {
 		event.registerSpriteSet(EndlessEndModParticleTypes.TREBLE_SEED.get(), TrebleSeedParticle::provider);
 		event.registerSpriteSet(EndlessEndModParticleTypes.PUFF_SPORE.get(), PuffSporeParticle::provider);
 		event.registerSpriteSet(EndlessEndModParticleTypes.PUFF_DOWNFALL.get(), PuffDownfallParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.SWING_SILK_STRING_PARTICLE.get(), SwingSilkStringParticleParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.SWING_SILK_STRING_PARTICLE_SMALL.get(), SwingSilkStringParticleSmallParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.SWING_SILK_STRING_PARTICLE_BIG.get(), SwingSilkStringParticleBigParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.SWING_SILK_STRING_PARTICLE_GIANT.get(), SwingSilkStringParticleGiantParticle::provider);
+		event.registerSpriteSet(EndlessEndModParticleTypes.SWING_SILK_STRING_PARTICLE_TINY.get(), SwingSilkStringParticleTinyParticle::provider);
 	}
 }

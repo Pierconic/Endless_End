@@ -1,43 +1,160 @@
 {
   "variants": {
-    "blockstate=0": {
+    "axis=x,blockstate=0": {
+      "model": "endless_end:block/converted_amnesoclast",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=0": {
       "model": "endless_end:block/converted_amnesoclast"
     },
-    "blockstate=1": {
+    "axis=z,blockstate=0": {
+      "model": "endless_end:block/converted_amnesoclast",
+      "x": 90
+    },
+    "axis=x,blockstate=1": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_0",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=1": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_0"
     },
-    "blockstate=2": {
+    "axis=z,blockstate=1": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_0",
+      "x": 90
+    },
+    "axis=x,blockstate=2": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_1",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=2": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_1"
     },
-    "blockstate=3": {
+    "axis=z,blockstate=2": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_1",
+      "x": 90
+    },
+    "axis=x,blockstate=3": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_2",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=3": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_2"
     },
-    "blockstate=4": {
+    "axis=z,blockstate=3": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_2",
+      "x": 90
+    },
+    "axis=x,blockstate=4": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_3",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=4": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_3"
     },
-    "blockstate=5": {
+    "axis=z,blockstate=4": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_3",
+      "x": 90
+    },
+    "axis=x,blockstate=5": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_4",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=5": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_4"
     },
-    "blockstate=6": {
+    "axis=z,blockstate=5": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_4",
+      "x": 90
+    },
+    "axis=x,blockstate=6": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_5",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=6": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_5"
     },
-    "blockstate=7": {
+    "axis=z,blockstate=6": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_5",
+      "x": 90
+    },
+    "axis=x,blockstate=7": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_6",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=7": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_6"
     },
-    "blockstate=8": {
+    "axis=z,blockstate=7": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_6",
+      "x": 90
+    },
+    "axis=x,blockstate=8": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_7",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=8": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_7"
     },
-    "blockstate=9": {
+    "axis=z,blockstate=8": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_7",
+      "x": 90
+    },
+    "axis=x,blockstate=9": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_8",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=9": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_8"
     },
-    "blockstate=10": {
+    "axis=z,blockstate=9": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_8",
+      "x": 90
+    },
+    "axis=x,blockstate=10": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_9",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=10": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_9"
     },
-    "blockstate=11": {
+    "axis=z,blockstate=10": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_9",
+      "x": 90
+    },
+    "axis=x,blockstate=11": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_10",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=11": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_10"
     },
-    "blockstate=12": {
+    "axis=z,blockstate=11": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_10",
+      "x": 90
+    },
+    "axis=x,blockstate=12": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_11",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=12": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_11"
+    },
+    "axis=z,blockstate=12": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_11",
+      "x": 90
     }
   }
 }

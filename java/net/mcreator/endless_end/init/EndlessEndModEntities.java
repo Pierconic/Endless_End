@@ -16,10 +16,13 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.registries.Registries;
 
-import net.mcreator.endless_end.entity.VioletPolypEntity;
+import net.mcreator.endless_end.entity.WeaverSpitEntity;
+import net.mcreator.endless_end.entity.WeaverEntity;
 import net.mcreator.endless_end.entity.TrawlerEntity;
+import net.mcreator.endless_end.entity.SwingsilkBallEntity;
+import net.mcreator.endless_end.entity.SwingshotBoltEntity;
+import net.mcreator.endless_end.entity.PolypEntity;
 import net.mcreator.endless_end.entity.MoonJellyBallEntity;
-import net.mcreator.endless_end.entity.MagicWardEntity;
 import net.mcreator.endless_end.entity.HollowEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
 import net.mcreator.endless_end.EndlessEndMod;
@@ -41,10 +44,20 @@ public class EndlessEndModEntities {
 			EntityType.Builder.<TrawlerEntity>of(TrawlerEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.sized(1.5f, 1.6f));
-	public static final DeferredHolder<EntityType<?>, EntityType<MagicWardEntity>> MAGIC_WARD = register("magic_ward",
-			EntityType.Builder.<MagicWardEntity>of(MagicWardEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(96).setUpdateInterval(3).fireImmune().sized(2.4f, 0f));
-	public static final DeferredHolder<EntityType<?>, EntityType<VioletPolypEntity>> VIOLET_POLYP = register("violet_polyp",
-			EntityType.Builder.<VioletPolypEntity>of(VioletPolypEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+	public static final DeferredHolder<EntityType<?>, EntityType<SwingsilkBallEntity>> SWINGSILK_BALL = register("swingsilk_ball",
+			EntityType.Builder.<SwingsilkBallEntity>of(SwingsilkBallEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+
+					.sized(1.3f, 1.3f));
+	public static final DeferredHolder<EntityType<?>, EntityType<SwingshotBoltEntity>> SWINGSHOT_BOLT = register("swingshot_bolt",
+			EntityType.Builder.<SwingshotBoltEntity>of(SwingshotBoltEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.25f, 0.25f));
+	public static final DeferredHolder<EntityType<?>, EntityType<WeaverEntity>> WEAVER = register("weaver",
+			EntityType.Builder.<WeaverEntity>of(WeaverEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+
+					.sized(0.6f, 0.6f));
+	public static final DeferredHolder<EntityType<?>, EntityType<WeaverSpitEntity>> WEAVER_SPIT = register("weaver_spit",
+			EntityType.Builder.<WeaverSpitEntity>of(WeaverSpitEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.4f, 0.4f));
+	public static final DeferredHolder<EntityType<?>, EntityType<PolypEntity>> POLYP = register("polyp",
+			EntityType.Builder.<PolypEntity>of(PolypEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.sized(0.4f, 0.4f));
 
@@ -59,8 +72,9 @@ public class EndlessEndModEntities {
 		GrazerEntity.init(event);
 		HollowEntity.init(event);
 		TrawlerEntity.init(event);
-		MagicWardEntity.init(event);
-		VioletPolypEntity.init(event);
+		SwingsilkBallEntity.init(event);
+		WeaverEntity.init(event);
+		PolypEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -68,7 +82,8 @@ public class EndlessEndModEntities {
 		event.put(GRAZER.get(), GrazerEntity.createAttributes().build());
 		event.put(HOLLOW.get(), HollowEntity.createAttributes().build());
 		event.put(TRAWLER.get(), TrawlerEntity.createAttributes().build());
-		event.put(MAGIC_WARD.get(), MagicWardEntity.createAttributes().build());
-		event.put(VIOLET_POLYP.get(), VioletPolypEntity.createAttributes().build());
+		event.put(SWINGSILK_BALL.get(), SwingsilkBallEntity.createAttributes().build());
+		event.put(WEAVER.get(), WeaverEntity.createAttributes().build());
+		event.put(POLYP.get(), PolypEntity.createAttributes().build());
 	}
 }

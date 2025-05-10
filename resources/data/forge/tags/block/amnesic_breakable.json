@@ -484,6 +484,11 @@
     "minecraft:brown_candle_cake",
     "minecraft:green_candle_cake",
     "minecraft:red_candle_cake",
-    "minecraft:black_candle_cake"
+    "minecraft:black_candle_cake",
+    "endless_end:swirling_vines",
+    "endless_end:treble_bloom",
+    "endless_end:golden_sprouts",
+    "endless_end:golden_roots",
+    "endless_end:puff_blossom"
   ]
 }

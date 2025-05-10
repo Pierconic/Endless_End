@@ -86,6 +86,8 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.GOLDEN_SPROUTS.get().asItem());
 			tabData.accept(EndlessEndModBlocks.GOLDEN_ROOTS.get().asItem());
 			tabData.accept(EndlessEndModBlocks.PUFF_BLOSSOM.get().asItem());
+			tabData.accept(EndlessEndModBlocks.CALCIFIED_ENDSTONE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.WEAVER_NEST.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());
@@ -120,6 +122,9 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.ELEGY.get());
 			tabData.accept(EndlessEndModItems.ELEVEN_REPAIRED.get());
 			tabData.accept(EndlessEndModItems.CHORUS.get());
+			tabData.accept(EndlessEndModItems.SWINGSILK.get());
+			tabData.accept(EndlessEndModItems.SWING_SHOT.get());
+			tabData.accept(EndlessEndModItems.MAGIC_WAND.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
 			tabData.accept(EndlessEndModItems.INSECT_FLESH.get());
 			tabData.accept(EndlessEndModItems.BOTTLED_STARLIGHT.get());
@@ -130,7 +135,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.GRAZER_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.TRAWLER_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.VIOLET_POLYP_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.POLYP_SPAWN_EGG.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.TETHER.get().asItem());
 			tabData.accept(EndlessEndModBlocks.SINGING_SAND.get().asItem());
@@ -151,8 +156,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.ENDERPORTER_LIGHT_GRAY.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDERPORTER_DARK_GRAY.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDERPORTER_BLACK.get().asItem());
-		} else if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {
-			tabData.accept(EndlessEndModItems.MAGIC_WAND.get());
+			tabData.accept(EndlessEndModBlocks.SILK_SPOOL.get().asItem());
 		}
 	}
 }

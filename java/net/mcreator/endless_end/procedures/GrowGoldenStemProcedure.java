@@ -50,6 +50,8 @@ public class GrowGoldenStemProcedure {
 					GrowGoldenStemProcedure.execute(world, x, y - sy1, z + sz * dr, lambda - 1);
 				} else if (Math.random() < 0.3) {
 					SwirlingVineProcedure.execute(world, x, y - sy1, z + sz * dr);
+				} else if (Math.random() < 0.05) {
+					world.setBlock(BlockPos.containing(x, (y - sy1) - 1, z + sz * dr), EndlessEndModBlocks.WEAVER_NEST.get().defaultBlockState(), 3);
 				}
 				sz = sz + 1;
 			}
@@ -73,6 +75,8 @@ public class GrowGoldenStemProcedure {
 					GrowGoldenStemProcedure.execute(world, x + sx * dr, y - sy1, z, lambda - 1);
 				} else if (Math.random() < 0.3) {
 					SwirlingVineProcedure.execute(world, x + sx * dr, y - sy1, z);
+				} else if (Math.random() < 0.05) {
+					world.setBlock(BlockPos.containing(x + sx * dr, (y - sy1) - 1, z), EndlessEndModBlocks.WEAVER_NEST.get().defaultBlockState(), 3);
 				}
 				sx = sx + 1;
 			}

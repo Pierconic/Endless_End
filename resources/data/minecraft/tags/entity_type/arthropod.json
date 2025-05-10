@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "endless_end:trawler",
-    "endless_end:grazer"
+    "endless_end:grazer",
+    "endless_end:polyp",
+    "endless_end:weaver"
   ]
 }

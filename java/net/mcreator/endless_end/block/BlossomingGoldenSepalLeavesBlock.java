@@ -34,6 +34,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.BloomingFrondsClickProcedure;
 import net.mcreator.endless_end.procedures.BlastBerryGrowthProcedure;
+import net.mcreator.endless_end.procedures.BerryAutoHarvestProcedure;
 
 public class BlossomingGoldenSepalLeavesBlock extends Block implements SimpleWaterloggedBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 3);
@@ -102,6 +103,12 @@ public class BlossomingGoldenSepalLeavesBlock extends Block implements SimpleWat
 	@Override
 	public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
 		return 12;
+	}
+
+	@Override
+	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		BerryAutoHarvestProcedure.execute();
 	}
 
 	@Override

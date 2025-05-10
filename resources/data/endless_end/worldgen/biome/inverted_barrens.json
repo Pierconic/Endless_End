@@ -17,7 +17,14 @@
     "water_fog_color": -6711040
   },
   "spawners": {
-    "monster": [],
+    "monster": [
+      {
+        "type": "endless_end:grazer",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      }
+    ],
     "creature": [],
     "ambient": [],
     "axolotls": [],
@@ -36,9 +43,7 @@
   },
   "features": [
     [],
-    [
-      "minecraft:lake_lava_underground"
-    ],
+    [],
     [],
     [],
     [],

@@ -13,6 +13,7 @@ import software.bernie.geckolib.animatable.GeoEntity;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.Items;
@@ -24,14 +25,17 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -41,21 +45,21 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 import net.mcreator.endless_end.procedures.GrazerTeleportProcedure;
+import net.mcreator.endless_end.procedures.GrazerInversionProcedure;
 import net.mcreator.endless_end.procedures.GrazerEntityIsHurtProcedure;
 import net.mcreator.endless_end.procedures.GrazerEntityDiesProcedure;
 import net.mcreator.endless_end.procedures.GrazerConditionProcedure;
 import net.mcreator.endless_end.procedures.ElytronPacifiedProcedure;
 import net.mcreator.endless_end.init.EndlessEndModEntities;
 
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
+import javax.annotation.Nullable;
 
 public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Integer> DATA_moss = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.INT);
-	 private static final EntityDataAccessor<Byte> DATA_climbing = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.BYTE);
+	public static final EntityDataAccessor<Boolean> DATA_inverted = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -68,19 +72,6 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 		setNoAi(false);
 	}
 
-	 @Override
-    protected PathNavigation createNavigation(Level world) {
-        return new WallClimberNavigation(this, world);
-    }
-
-     @Override
-    public void tick() {
-        super.tick();
-        if (!this.level().isClientSide) {
-            this.setClimbing(this.horizontalCollision);
-        }
-    }
-
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
@@ -88,7 +79,7 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 		builder.define(ANIMATION, "undefined");
 		builder.define(TEXTURE, "grazer_shell");
 		builder.define(DATA_moss, 0);
-        builder.define(DATA_climbing, (byte)0);
+		builder.define(DATA_inverted, false);
 	}
 
 	public void setTexture(String texture) {
@@ -98,26 +89,6 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	public String getTexture() {
 		return this.entityData.get(TEXTURE);
 	}
-
-	@Override
-    public boolean onClimbable() {
-        return this.isClimbing();
-    }
-
-    public boolean isClimbing() {
-        return (this.entityData.get(DATA_climbing) & 1) != 0;
-    }
-
-    public void setClimbing(boolean world) {
-        byte b0 = this.entityData.get(DATA_climbing);
-        if (world) {
-            b0 = (byte)(b0 | 1);
-        } else {
-            b0 = (byte)(b0 & -2);
-        }
-
-        this.entityData.set(DATA_climbing, b0);
-    }
 
 	@Override
 	protected void registerGoals() {
@@ -199,10 +170,18 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	}
 
 	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata);
+		GrazerInversionProcedure.execute(this.getY(), this);
+		return retval;
+	}
+
+	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
 		compound.putInt("Datamoss", this.entityData.get(DATA_moss));
+		compound.putBoolean("Datainverted", this.entityData.get(DATA_inverted));
 	}
 
 	@Override
@@ -212,6 +191,8 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 			this.setTexture(compound.getString("Texture"));
 		if (compound.contains("Datamoss"))
 			this.entityData.set(DATA_moss, compound.getInt("Datamoss"));
+		if (compound.contains("Datainverted"))
+			this.entityData.set(DATA_inverted, compound.getBoolean("Datainverted"));
 	}
 
 	@Override

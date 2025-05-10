@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "silk_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:swingsilk"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:swingsilk_craft",
+      "endless_end:swingsilk_string",
+      "endless_end:spool_recipe",
+      "endless_end:swing_shot_recipe"
+    ]
+  }
+}

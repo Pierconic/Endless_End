@@ -2211,5 +2211,166 @@
         "stream": false
       }
     ]
+  },
+  "swingshot.throw": {
+    "subtitle": "subtitles.swingshot.throw",
+    "sounds": [
+      {
+        "name": "endless_end:swingshot_throw_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_throw_1",
+        "stream": false
+      }
+    ]
+  },
+  "swingshot.hit": {
+    "subtitle": "subtitles.swingshot.hit",
+    "sounds": [
+      {
+        "name": "endless_end:swingshot_catch_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_catch_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_catch_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_catch_1",
+        "stream": false
+      }
+    ]
+  },
+  "swingshot.small.woosh": {
+    "subtitle": "subtitles.swingshot.small.woosh",
+    "sounds": [
+      {
+        "name": "endless_end:swingshot_small_woosh_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_small_woosh_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_small_woosh_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_small_woosh_1",
+        "stream": false
+      }
+    ]
+  },
+  "swingshot.medium.woosh": {
+    "subtitle": "subtitles.swingshot.medium.woosh",
+    "sounds": [
+      {
+        "name": "endless_end:swingshot_medium_woosh_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_medium_woosh_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_medium_woosh_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_medium_woosh_1",
+        "stream": false
+      }
+    ]
+  },
+  "swingshot.big.woosh": {
+    "subtitle": "subtitles.swingshot.big.woosh",
+    "sounds": [
+      {
+        "name": "endless_end:swingshot_big_woosh_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_big_woosh_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_big_woosh_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_big_woosh_1",
+        "stream": false
+      }
+    ]
+  },
+  "swingshot.cut": {
+    "subtitle": "subtitles.swingshot.cut",
+    "sounds": [
+      {
+        "name": "endless_end:swingshot_cut_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:swingshot_cut_1",
+        "stream": false
+      }
+    ]
+  },
+  "polyp.flutter": {
+    "subtitle": "subtitles.polyp.flutter",
+    "sounds": [
+      {
+        "name": "endless_end:polyp_flutter_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:polyp_flutter_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:polyp_flutter_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:polyp_flutter_1",
+        "stream": false
+      }
+    ]
+  },
+  "polyp.death": {
+    "subtitle": "subtitles.polyp.death",
+    "sounds": [
+      {
+        "name": "endless_end:polyp_death_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:polyp_death_1",
+        "stream": false
+      }
+    ]
+  },
+  "polyp.hurt": {
+    "subtitle": "subtitles.polyp.hurt",
+    "sounds": [
+      {
+        "name": "endless_end:polyp_hurt_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:polyp_hurt_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:polyp_hurt_1",
+        "stream": false
+      }
+    ]
   }
 }

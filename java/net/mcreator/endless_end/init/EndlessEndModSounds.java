@@ -170,4 +170,15 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLAST_BERRY_GIANT = REGISTRY.register("blast_berry.giant", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "blast_berry.giant")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLAST_LOOP = REGISTRY.register("blast_loop", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "blast_loop")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLAST_BERRY_TOOT = REGISTRY.register("blast_berry.toot", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "blast_berry.toot")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SWINGSHOT_THROW = REGISTRY.register("swingshot.throw", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "swingshot.throw")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SWINGSHOT_HIT = REGISTRY.register("swingshot.hit", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "swingshot.hit")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SWINGSHOT_SMALL_WOOSH = REGISTRY.register("swingshot.small.woosh",
+			() -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "swingshot.small.woosh")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SWINGSHOT_MEDIUM_WOOSH = REGISTRY.register("swingshot.medium.woosh",
+			() -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "swingshot.medium.woosh")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SWINGSHOT_BIG_WOOSH = REGISTRY.register("swingshot.big.woosh", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "swingshot.big.woosh")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SWINGSHOT_CUT = REGISTRY.register("swingshot.cut", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "swingshot.cut")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLYP_FLUTTER = REGISTRY.register("polyp.flutter", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "polyp.flutter")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLYP_DEATH = REGISTRY.register("polyp.death", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "polyp.death")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> POLYP_HURT = REGISTRY.register("polyp.hurt", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "polyp.hurt")));
 }

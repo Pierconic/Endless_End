@@ -162,6 +162,13 @@ public class EndlessEndModVariables {
 				clone.shock_frames = original.shock_frames;
 				clone.CorruptedHearts = original.CorruptedHearts;
 				clone.CurseType = original.CurseType;
+				clone.SwingsilkX = original.SwingsilkX;
+				clone.SwingsilkY = original.SwingsilkY;
+				clone.SwingsilkZ = original.SwingsilkZ;
+				clone.SwingsilkLinked = original.SwingsilkLinked;
+				clone.SwingsilkDistance = original.SwingsilkDistance;
+				clone.slimeNum = original.slimeNum;
+				clone.SwingsilkEntity = original.SwingsilkEntity;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -401,6 +408,13 @@ public class EndlessEndModVariables {
 		public double blast_x = 0;
 		public double blast_y = 0;
 		public double blast_z = 0;
+		public double SwingsilkX = 0;
+		public double SwingsilkY = 0;
+		public double SwingsilkZ = 0;
+		public boolean SwingsilkLinked = false;
+		public double SwingsilkDistance = 0;
+		public double slimeNum = 0;
+		public String SwingsilkEntity = "\"\"";
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -500,6 +514,13 @@ public class EndlessEndModVariables {
 			nbt.putDouble("blast_x", blast_x);
 			nbt.putDouble("blast_y", blast_y);
 			nbt.putDouble("blast_z", blast_z);
+			nbt.putDouble("SwingsilkX", SwingsilkX);
+			nbt.putDouble("SwingsilkY", SwingsilkY);
+			nbt.putDouble("SwingsilkZ", SwingsilkZ);
+			nbt.putBoolean("SwingsilkLinked", SwingsilkLinked);
+			nbt.putDouble("SwingsilkDistance", SwingsilkDistance);
+			nbt.putDouble("slimeNum", slimeNum);
+			nbt.putString("SwingsilkEntity", SwingsilkEntity);
 			return nbt;
 		}
 
@@ -600,6 +621,13 @@ public class EndlessEndModVariables {
 			blast_x = nbt.getDouble("blast_x");
 			blast_y = nbt.getDouble("blast_y");
 			blast_z = nbt.getDouble("blast_z");
+			SwingsilkX = nbt.getDouble("SwingsilkX");
+			SwingsilkY = nbt.getDouble("SwingsilkY");
+			SwingsilkZ = nbt.getDouble("SwingsilkZ");
+			SwingsilkLinked = nbt.getBoolean("SwingsilkLinked");
+			SwingsilkDistance = nbt.getDouble("SwingsilkDistance");
+			slimeNum = nbt.getDouble("slimeNum");
+			SwingsilkEntity = nbt.getString("SwingsilkEntity");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

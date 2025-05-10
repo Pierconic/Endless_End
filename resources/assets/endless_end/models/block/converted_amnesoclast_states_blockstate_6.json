@@ -1,7 +1,12 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "endless_end:block/amnesic_pillar",
+    "down": "endless_end:block/amnesic_pillar_top",
+    "up": "endless_end:block/amnesic_pillar_top",
+    "north": "endless_end:block/amnesic_pillar",
+    "east": "endless_end:block/amnesic_pillar",
+    "south": "endless_end:block/amnesic_pillar",
+    "west": "endless_end:block/amnesic_pillar",
     "particle": "endless_end:block/amnesic_stone"
   },
   "render_type": "solid"

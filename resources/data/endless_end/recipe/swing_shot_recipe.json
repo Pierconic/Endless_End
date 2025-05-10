@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " ab",
+    " c ",
+    "c  "
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:swingsilk"
+    },
+    "b": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "c": {
+      "item": "endless_end:tune_rod"
+    }
+  },
+  "result": {
+    "id": "endless_end:swing_shot",
+    "count": 1
+  }
+}

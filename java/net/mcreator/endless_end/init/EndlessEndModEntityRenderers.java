@@ -11,9 +11,12 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
-import net.mcreator.endless_end.client.renderer.VioletPolypRenderer;
+import net.mcreator.endless_end.client.renderer.WeaverSpitRenderer;
+import net.mcreator.endless_end.client.renderer.WeaverRenderer;
 import net.mcreator.endless_end.client.renderer.TrawlerRenderer;
-import net.mcreator.endless_end.client.renderer.MagicWardRenderer;
+import net.mcreator.endless_end.client.renderer.SwingsilkBallRenderer;
+import net.mcreator.endless_end.client.renderer.SwingshotBoltRenderer;
+import net.mcreator.endless_end.client.renderer.PolypRenderer;
 import net.mcreator.endless_end.client.renderer.HollowRenderer;
 import net.mcreator.endless_end.client.renderer.GrazerRenderer;
 
@@ -25,7 +28,10 @@ public class EndlessEndModEntityRenderers {
 		event.registerEntityRenderer(EndlessEndModEntities.HOLLOW.get(), HollowRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.MOON_JELLY_BALL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.TRAWLER.get(), TrawlerRenderer::new);
-		event.registerEntityRenderer(EndlessEndModEntities.MAGIC_WARD.get(), MagicWardRenderer::new);
-		event.registerEntityRenderer(EndlessEndModEntities.VIOLET_POLYP.get(), VioletPolypRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.SWINGSILK_BALL.get(), SwingsilkBallRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.SWINGSHOT_BOLT.get(), SwingshotBoltRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.WEAVER.get(), WeaverRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.WEAVER_SPIT.get(), WeaverSpitRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.POLYP.get(), PolypRenderer::new);
 	}
 }
