@@ -28,7 +28,11 @@
       "endless_end:azure_sepal_fence_recipe",
       "endless_end:azure_sepal_fence_gate_recipe",
       "endless_end:azure_sepal_pressure_plate_recipe",
-      "endless_end:azure_sepal_button_recipe"
+      "endless_end:azure_sepal_button_recipe",
+      "endless_end:stripped_azure_sepal_planks_recipe",
+      "endless_end:stripped_azure_wood_planks_recipe",
+      "endless_end:azure_trapdoor_recipe",
+      "endless_end:azure_door_recipe"
     ]
   }
 }

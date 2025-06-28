@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "endless_end:grim_slab",
     "endless_end:azure_sepal_slab",
     "endless_end:violet_sepal_slab"
   ]

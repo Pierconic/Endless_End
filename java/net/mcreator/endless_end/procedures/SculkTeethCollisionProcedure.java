@@ -27,10 +27,10 @@ public class SculkTeethCollisionProcedure {
 						return blockEntity.getPersistentData().getBoolean(tag);
 					return false;
 				}
-			}.getValue(world, BlockPos.containing(x, y, z), "triggered")) || !entity.onGround()) {
+			}.getValue(world, BlockPos.containing(x, y, z), "triggered"))) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(EndlessEndModMobEffects.CORRUPTION,
-							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) + 100), 0, false, false));
+							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) + 10), 0, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 1, false, false));
 				entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.MAGIC)), 4);

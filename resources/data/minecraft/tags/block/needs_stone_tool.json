@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
+    "endless_end:grim_door",
+    "endless_end:grim_trapdoor",
+    "endless_end:grim_fence_gate",
+    "endless_end:grim_stairs",
+    "endless_end:burrowing_spike",
+    "endless_end:grim_planks",
+    "endless_end:stripped_joint",
+    "endless_end:stripped_vertabrae",
+    "endless_end:joint",
     "endless_end:calcified_endstone",
     "endless_end:moldering_purpur",
     "endless_end:cobbled_endstone",

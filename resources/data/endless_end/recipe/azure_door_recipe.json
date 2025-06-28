@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_doors",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "endless_end:azure_sepal_planks"
+    },
+    {
+      "item": "endless_end:azure_sepal_planks"
+    },
+    {
+      "item": "endless_end:azure_sepal_planks"
+    },
+    {
+      "item": "endless_end:azure_sepal_planks"
+    },
+    {
+      "item": "endless_end:azure_sepal_planks"
+    },
+    {
+      "item": "endless_end:azure_sepal_planks"
+    }
+  ],
+  "result": {
+    "id": "endless_end:azure_door",
+    "count": 3
+  }
+}

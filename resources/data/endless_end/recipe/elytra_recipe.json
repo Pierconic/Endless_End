@@ -3,7 +3,7 @@
   "category": "equipment",
   "pattern": [
     "aba",
-    "a a",
+    "aca",
     "a a"
   ],
   "key": {
@@ -12,6 +12,9 @@
     },
     "b": {
       "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "minecraft:nether_star"
     }
   },
   "result": {

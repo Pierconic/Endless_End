@@ -1,0 +1,9 @@
+{
+  "parent": "block/door_top_left",
+  "textures": {
+    "particle": "endless_end:block/grim_door_bottom",
+    "bottom": "endless_end:block/grim_door_bottom",
+    "top": "endless_end:block/grim_door_top"
+  },
+  "render_type": "cutout_mipped"
+}

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "endless_end:flourite_lamp",
+    "endless_end:spreading_flourite",
+    "endless_end:flourite",
     "endless_end:calcified_endstone",
     "endless_end:golden_humus",
     "endless_end:enderporter_black",

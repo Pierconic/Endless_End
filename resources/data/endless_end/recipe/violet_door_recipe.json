@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_doors",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "endless_end:violet_sepal_planks"
+    },
+    {
+      "item": "endless_end:violet_sepal_planks"
+    },
+    {
+      "item": "endless_end:violet_sepal_planks"
+    },
+    {
+      "item": "endless_end:violet_sepal_planks"
+    },
+    {
+      "item": "endless_end:violet_sepal_planks"
+    },
+    {
+      "item": "endless_end:violet_sepal_planks"
+    }
+  ],
+  "result": {
+    "id": "endless_end:violet_door",
+    "count": 3
+  }
+}

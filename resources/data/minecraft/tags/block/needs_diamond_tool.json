@@ -1,11 +1,14 @@
 {
   "replace": false,
   "values": [
+    "endless_end:azure_door",
+    "endless_end:violet_door",
+    "endless_end:azure_trapdoor",
+    "endless_end:violet_trapdoor",
     "endless_end:weaver_nest",
     "endless_end:stripped_azure_sepal_wood",
     "endless_end:stripped_azure_sepal_log",
     "endless_end:azure_sepal_fence_gate",
-    "endless_end:azure_sepal_fence",
     "endless_end:azure_sepal_stairs",
     "endless_end:azure_sepal_planks",
     "endless_end:azure_sepal_wood",
@@ -13,7 +16,6 @@
     "endless_end:stripped_violet_sepal_wood",
     "endless_end:stripped_violet_sepal_log",
     "endless_end:violet_sepal_fence_gate",
-    "endless_end:violet_sepal_fence",
     "endless_end:violet_sepal_stairs",
     "endless_end:violet_sepal_planks",
     "endless_end:violet_sepal_log",

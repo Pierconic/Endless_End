@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/rot_cross",
+  "textures": {
+    "all": "endless_end:block/prong_middle",
+    "particle": "endless_end:block/prong_top",
+    "0": "endless_end:block/prong_middle"
+  },
+  "render_type": "cutout_mipped"
+}

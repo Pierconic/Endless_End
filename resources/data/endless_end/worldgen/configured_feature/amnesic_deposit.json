@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:netherrack_replace_blobs",
+  "type": "endless_end:amnesic_deposit",
   "config": {
     "target": {
       "Name": "minecraft:end_stone"

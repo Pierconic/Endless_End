@@ -46,8 +46,6 @@ public class TuneBlockPlayProcedure {
 				return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) _bs.getValue(_ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 			}
 		}.getDirection(blockstate)) == Direction.DOWN) {
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.NOTE, (x + 0.5), (y - 0.5), (z + 0.5), 1, 0.1, 0.1, 0.1, 0.1);
 			sy = 1;
 		} else if ((new Object() {
 			public Direction getDirection(BlockState _bs) {
@@ -58,8 +56,6 @@ public class TuneBlockPlayProcedure {
 				return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) _bs.getValue(_ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 			}
 		}.getDirection(blockstate)) == Direction.UP) {
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.NOTE, (x + 0.5), (y + 1.5), (z + 0.5), 1, 0.1, 0.1, 0.1, 0.1);
 			sy = -1;
 		} else if ((new Object() {
 			public Direction getDirection(BlockState _bs) {
@@ -70,8 +66,6 @@ public class TuneBlockPlayProcedure {
 				return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) _bs.getValue(_ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 			}
 		}.getDirection(blockstate)) == Direction.EAST) {
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.NOTE, (x + 1.5), (y + 0.5), (z + 0.5), 1, 0.1, 0.1, 0.1, 0.1);
 			sx = -1;
 		} else if ((new Object() {
 			public Direction getDirection(BlockState _bs) {
@@ -82,8 +76,6 @@ public class TuneBlockPlayProcedure {
 				return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) _bs.getValue(_ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 			}
 		}.getDirection(blockstate)) == Direction.WEST) {
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.NOTE, (x - 0.5), (y + 0.5), (z + 0.5), 1, 0.1, 0.1, 0.1, 0.1);
 			sx = 1;
 		} else if ((new Object() {
 			public Direction getDirection(BlockState _bs) {
@@ -94,8 +86,6 @@ public class TuneBlockPlayProcedure {
 				return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) _bs.getValue(_ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 			}
 		}.getDirection(blockstate)) == Direction.NORTH) {
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.NOTE, (x + 0.5), (y + 0.5), (z - 0.5), 1, 0.1, 0.1, 0.1, 0.1);
 			sz = 1;
 		} else if ((new Object() {
 			public Direction getDirection(BlockState _bs) {
@@ -106,8 +96,6 @@ public class TuneBlockPlayProcedure {
 				return _prop instanceof EnumProperty _ep && _ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) _bs.getValue(_ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 			}
 		}.getDirection(blockstate)) == Direction.SOUTH) {
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.NOTE, (x + 0.5), (y + 0.5), (z + 1.5), 1, 0.1, 0.1, 0.1, 0.1);
 			sz = -1;
 		}
 		volume = 1;
@@ -161,7 +149,7 @@ public class TuneBlockPlayProcedure {
 				}
 			}
 		}
-		status = ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip52 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip52) : -1) % 13;
+		status = ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip47 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip47) : -1) % 13;
 		if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_wooden")))) {
 			if (new Object() {
 				public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
@@ -853,5 +841,7 @@ public class TuneBlockPlayProcedure {
 				}
 			}
 		}
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.NOTE, ((x + 0.5) - sx), ((y + 0.5) - sy), ((z + 0.5) - sz), (int) Math.ceil(volume), 0.1, 0.1, 0.1, 0.1);
 	}
 }

@@ -84,7 +84,7 @@ public class BurrowingThornsOnTickUpdateProcedure {
 							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.break")), SoundSource.BLOCKS, (float) 0.5, 1, false);
 						}
 					}
-				} else if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:spikeable")))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
 					{
 						BlockPos _pos = BlockPos.containing(x, y + 1, z);
 						Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y + 1, z), null);
@@ -166,7 +166,7 @@ public class BurrowingThornsOnTickUpdateProcedure {
 							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.break")), SoundSource.BLOCKS, (float) 0.5, 1, false);
 						}
 					}
-				} else if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:spikeable")))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
 					{
 						BlockPos _pos = BlockPos.containing(x, y - 1, z);
 						Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y - 1, z), null);
@@ -251,7 +251,7 @@ public class BurrowingThornsOnTickUpdateProcedure {
 							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.break")), SoundSource.BLOCKS, (float) 0.5, 1, false);
 						}
 					}
-				} else if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:spikeable")))) {
+				} else if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
 					{
 						BlockPos _pos = BlockPos.containing(x - 1, y, z);
 						Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x - 1, y, z), null);
@@ -342,7 +342,7 @@ public class BurrowingThornsOnTickUpdateProcedure {
 							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.break")), SoundSource.BLOCKS, (float) 0.5, 1, false);
 						}
 					}
-				} else if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:spikeable")))) {
+				} else if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
 					{
 						BlockPos _pos = BlockPos.containing(x + 1, y, z);
 						Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 1, y, z), null);
@@ -433,7 +433,7 @@ public class BurrowingThornsOnTickUpdateProcedure {
 							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.break")), SoundSource.BLOCKS, (float) 0.5, 1, false);
 						}
 					}
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).is(BlockTags.create(ResourceLocation.parse("forge:spikeable")))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
 					{
 						BlockPos _pos = BlockPos.containing(x, y, z + 1);
 						Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y, z + 1), null);
@@ -524,7 +524,7 @@ public class BurrowingThornsOnTickUpdateProcedure {
 							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.break")), SoundSource.BLOCKS, (float) 0.5, 1, false);
 						}
 					}
-				} else if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).is(BlockTags.create(ResourceLocation.parse("forge:spikeable")))) {
+				} else if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
 					{
 						BlockPos _pos = BlockPos.containing(x, y, z - 1);
 						Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y, z - 1), null);
@@ -610,7 +610,14 @@ public class BurrowingThornsOnTickUpdateProcedure {
 						return blockEntity.getPersistentData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, BlockPos.containing(x, y, z), "Lifetime") < 0 && (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip144 ? blockstate.getValue(_getip144) : -1) == 0) {
+			}.getValue(world, BlockPos.containing(x, y, z), "Lifetime") < 0 && new Object() {
+				public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getPersistentData().getBoolean(tag);
+					return false;
+				}
+			}.getValue(world, BlockPos.containing(x, y, z), "spawned") && (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip145 ? blockstate.getValue(_getip145) : -1) == 0) {
 				world.setBlock(BlockPos.containing(x, y, z), Blocks.SCULK.defaultBlockState(), 3);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

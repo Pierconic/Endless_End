@@ -2372,5 +2372,85 @@
         "stream": false
       }
     ]
+  },
+  "crystal.hit.light": {
+    "subtitle": "subtitles.crystal.hit.light",
+    "sounds": [
+      {
+        "name": "endless_end:crystal_hit_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_1",
+        "stream": false
+      }
+    ]
+  },
+  "crystal.hit.medium": {
+    "subtitle": "subtitles.crystal.hit.medium",
+    "sounds": [
+      {
+        "name": "endless_end:crystal_hit_8",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_7",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_6",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_5",
+        "stream": false
+      }
+    ]
+  },
+  "crystal.hit.hard": {
+    "subtitle": "subtitles.crystal.hit.hard",
+    "sounds": [
+      {
+        "name": "endless_end:crystal_hit_12",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_11",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_10",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_hit_9",
+        "stream": false
+      }
+    ]
+  },
+  "crystal.fade": {
+    "subtitle": "subtitles.crystal.fade",
+    "sounds": [
+      {
+        "name": "endless_end:crystal_fade_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_fade_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:crystal_fade_1",
+        "stream": false
+      }
+    ]
   }
 }

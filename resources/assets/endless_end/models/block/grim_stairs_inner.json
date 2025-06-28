@@ -1,0 +1,10 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "particle": "endless_end:block/grim_planks",
+    "bottom": "endless_end:block/grim_planks",
+    "top": "endless_end:block/grim_planks",
+    "side": "endless_end:block/grim_planks"
+  },
+  "render_type": "solid"
+}

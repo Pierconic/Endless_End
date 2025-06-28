@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/flourite_top_pink",
+    "up": "endless_end:block/flourite_top_pink",
+    "north": "endless_end:block/flourite_pink",
+    "east": "endless_end:block/flourite_pink",
+    "south": "endless_end:block/flourite_pink",
+    "west": "endless_end:block/flourite_pink",
+    "particle": "endless_end:block/flourite_top_white"
+  },
+  "render_type": "solid"
+}

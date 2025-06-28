@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/prong_4",
+    "up": "endless_end:block/prong_4",
+    "north": "endless_end:block/prong_4",
+    "east": "endless_end:block/prong_4",
+    "south": "endless_end:block/prong_4",
+    "west": "endless_end:block/prong_4",
+    "particle": "endless_end:block/prong_1"
+  },
+  "render_type": "solid"
+}

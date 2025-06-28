@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:tune_rod"
+    },
+    "b": {
+      "item": "endless_end:flourite"
+    }
+  },
+  "result": {
+    "id": "endless_end:flourite_lamp",
+    "count": 1
+  }
+}

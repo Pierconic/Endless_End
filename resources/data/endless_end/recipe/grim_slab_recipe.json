@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_slab",
+  "category": "building",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:grim_planks"
+    }
+  },
+  "result": {
+    "id": "endless_end:grim_slab",
+    "count": 6
+  }
+}

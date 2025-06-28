@@ -1,0 +1,9 @@
+{
+  "parent": "block/door_top_left_open",
+  "textures": {
+    "particle": "endless_end:block/azure_door_bottom",
+    "bottom": "endless_end:block/azure_door_bottom",
+    "top": "endless_end:block/azure_door_top"
+  },
+  "render_type": "cutout"
+}

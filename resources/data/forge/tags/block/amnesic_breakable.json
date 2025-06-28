@@ -489,6 +489,8 @@
     "endless_end:treble_bloom",
     "endless_end:golden_sprouts",
     "endless_end:golden_roots",
-    "endless_end:puff_blossom"
+    "endless_end:puff_blossom",
+    "minecraft:sculk_vein",
+    "endless_end:tune_rod_vase"
   ]
 }

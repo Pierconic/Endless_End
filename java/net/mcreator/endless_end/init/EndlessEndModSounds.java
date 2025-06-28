@@ -181,4 +181,8 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLYP_FLUTTER = REGISTRY.register("polyp.flutter", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "polyp.flutter")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLYP_DEATH = REGISTRY.register("polyp.death", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "polyp.death")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> POLYP_HURT = REGISTRY.register("polyp.hurt", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "polyp.hurt")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTAL_HIT_LIGHT = REGISTRY.register("crystal.hit.light", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "crystal.hit.light")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTAL_HIT_MEDIUM = REGISTRY.register("crystal.hit.medium", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "crystal.hit.medium")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTAL_HIT_HARD = REGISTRY.register("crystal.hit.hard", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "crystal.hit.hard")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTAL_FADE = REGISTRY.register("crystal.fade", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "crystal.fade")));
 }

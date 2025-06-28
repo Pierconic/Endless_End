@@ -15,18 +15,18 @@ public class EndlessEndModEndBiomes {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:chorus_orchard")), 0.6d);
+			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:chorus_orchard")), 0.3d);
 			TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:chorus_orchard")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:chorus_midlands")), 1d);
 			TheEndBiomes.addBarrensBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:chorus_orchard")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:chorus_barrens")), 1d);
-			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:inverted_orchard")), 0.6d);
+			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:inverted_orchard")), 0.3d);
 			TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:inverted_orchard")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:inverted_midlands")), 1d);
 			TheEndBiomes.addBarrensBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:inverted_orchard")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:inverted_barrens")), 1d);
 			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), 1d);
 			TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), 1d);
 			TheEndBiomes.addBarrensBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), 1d);
-			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), 0.3d);
-			TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), 1d);
-			TheEndBiomes.addBarrensBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), 1d);
+			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), 1.8d);
+			TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor_midlands")), 1d);
+			TheEndBiomes.addBarrensBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor_barrens")), 1d);
 		});
 	}
 }

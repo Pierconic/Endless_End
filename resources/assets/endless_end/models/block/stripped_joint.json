@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/stripped_vertabrae",
+    "up": "endless_end:block/stripped_vertabrae",
+    "north": "endless_end:block/stripped_vertabrae",
+    "east": "endless_end:block/stripped_joint",
+    "south": "endless_end:block/stripped_vertabrae",
+    "west": "endless_end:block/stripped_joint",
+    "particle": "endless_end:block/stripped_vertabrae"
+  },
+  "render_type": "solid"
+}

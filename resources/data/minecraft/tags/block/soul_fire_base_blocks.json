@@ -9,6 +9,15 @@
     "minecraft:bedrock",
     "minecraft:spawner",
     "minecraft:trial_spawner",
-    "endless_end:adamant"
+    "endless_end:adamant",
+    "endless_end:vertabrae",
+    "endless_end:warding_eyes",
+    "endless_end:burrowing_thorns",
+    "endless_end:spiteful_eye",
+    "endless_end:joint",
+    "endless_end:stripped_vertabrae",
+    "endless_end:stripped_joint",
+    "endless_end:grim_planks",
+    "endless_end:soul_light"
   ]
 }

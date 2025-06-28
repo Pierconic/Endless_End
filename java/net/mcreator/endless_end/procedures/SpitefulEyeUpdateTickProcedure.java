@@ -4,10 +4,12 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -33,7 +35,7 @@ public class SpitefulEyeUpdateTickProcedure {
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(24 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 			for (Entity entityiterator : _entfound) {
-				if (entityiterator instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(EndlessEndModMobEffects.CORRUPTION) && !(entityiterator instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(EndlessEndModMobEffects.RADIANCE))) {
+				if (entityiterator instanceof Player && !(entityiterator instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(EndlessEndModMobEffects.RADIANCE))) {
 					found = true;
 					if (entityiterator.level()
 							.clip(new ClipContext(entityiterator.getEyePosition(1f), entityiterator.getEyePosition(1f).add(entityiterator.getViewVector(1f).scale(24)), ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, entityiterator)).getBlockPos()
@@ -90,7 +92,14 @@ public class SpitefulEyeUpdateTickProcedure {
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
 			} else {
-				if (!found) {
+				if (!found && new Object() {
+					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getPersistentData().getBoolean(tag);
+						return false;
+					}
+				}.getValue(world, BlockPos.containing(x, y, z), "spawned")) {
 					world.setBlock(BlockPos.containing(x, y, z), Blocks.SCULK.defaultBlockState(), 3);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {

@@ -1,5 +1,7 @@
 package net.mcreator.endless_end.procedures;
 
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -23,6 +25,15 @@ public class GenerateEvilEyesProcedure {
 		EndlessEndMod.queueServerWork(5, () -> {
 			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.SCULK) {
 				world.setBlock(BlockPos.containing(x, y, z), EndlessEndModBlocks.SPITEFUL_EYE.get().defaultBlockState(), 3);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null)
+						_blockEntity.getPersistentData().putBoolean("spawned", true);
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			}
 		});
 	}

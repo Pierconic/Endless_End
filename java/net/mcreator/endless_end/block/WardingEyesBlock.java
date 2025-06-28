@@ -23,7 +23,7 @@ import net.mcreator.endless_end.block.entity.WardingEyesBlockEntity;
 
 public class WardingEyesBlock extends Block implements EntityBlock {
 	public WardingEyesBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SCULK).strength(0.4f, 0.2f).lightLevel(s -> 2).requiresCorrectToolForDrops().randomTicks());
+		super(BlockBehaviour.Properties.of().sound(SoundType.SCULK_SENSOR).strength(0.4f, 0.2f).lightLevel(s -> 2).requiresCorrectToolForDrops().randomTicks());
 	}
 
 	@Override

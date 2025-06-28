@@ -29,7 +29,7 @@ public class BurrowingThornsBlock extends Block implements EntityBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 3);
 
 	public BurrowingThornsBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SCULK).strength(0.4f, 0.2f).lightLevel(s -> (new Object() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.SCULK_CATALYST).strength(0.4f, 0.2f).lightLevel(s -> (new Object() {
 			public int getLightLevel() {
 				if (s.getValue(BLOCKSTATE) == 1)
 					return 2;

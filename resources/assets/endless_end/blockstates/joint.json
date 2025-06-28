@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "face=floor,facing=north": {
+      "model": "endless_end:block/joint"
+    },
+    "face=floor,facing=east": {
+      "model": "endless_end:block/joint",
+      "y": 90
+    },
+    "face=floor,facing=south": {
+      "model": "endless_end:block/joint",
+      "y": 180
+    },
+    "face=floor,facing=west": {
+      "model": "endless_end:block/joint",
+      "y": 270
+    },
+    "face=wall,facing=north": {
+      "model": "endless_end:block/joint",
+      "x": 90
+    },
+    "face=wall,facing=east": {
+      "model": "endless_end:block/joint",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=south": {
+      "model": "endless_end:block/joint",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=west": {
+      "model": "endless_end:block/joint",
+      "x": 90,
+      "y": 270
+    },
+    "face=ceiling,facing=north": {
+      "model": "endless_end:block/joint",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=east": {
+      "model": "endless_end:block/joint",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=south": {
+      "model": "endless_end:block/joint",
+      "x": 180
+    },
+    "face=ceiling,facing=west": {
+      "model": "endless_end:block/joint",
+      "x": 180,
+      "y": 90
+    }
+  }
+}

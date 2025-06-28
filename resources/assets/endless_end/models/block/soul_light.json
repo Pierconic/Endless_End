@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/soul_bulb_base",
+    "up": "endless_end:block/soul_bulb_base",
+    "north": "endless_end:block/soul_bulb_side",
+    "east": "endless_end:block/soul_bulb_side",
+    "south": "endless_end:block/soul_bulb_side",
+    "west": "endless_end:block/soul_bulb_side",
+    "particle": "endless_end:block/soul_bulb_base"
+  },
+  "render_type": "solid"
+}

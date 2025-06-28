@@ -1,0 +1,9 @@
+{
+  "parent": "endless_end:custom/rot_crop",
+  "textures": {
+    "all": "endless_end:block/vertabrae_thorns",
+    "particle": "endless_end:block/vertabrae_thorns",
+    "0": "endless_end:block/vertabrae_thorns"
+  },
+  "render_type": "cutout_mipped"
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "endless_end:blocks/grim_door",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "endless_end:grim_door",
+          "conditions": [
+            {
+              "block": "endless_end:grim_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

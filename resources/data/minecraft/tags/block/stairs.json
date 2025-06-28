@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "endless_end:grim_stairs",
     "endless_end:azure_sepal_stairs",
     "endless_end:violet_sepal_stairs"
   ]

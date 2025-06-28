@@ -1,0 +1,15 @@
+{
+  "feature": "endless_end:soul_delta_spikes",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:count",
+      "count": 1
+    }
+  ]
+}

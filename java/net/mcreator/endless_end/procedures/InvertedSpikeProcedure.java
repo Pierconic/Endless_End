@@ -18,7 +18,8 @@ public class InvertedSpikeProcedure {
 		double root_threshold = 0;
 		double canopy_delay = 0;
 		double start_y = 0;
-		if (!world.canSeeSkyFromBelowWater(BlockPos.containing(x, 0, z))) {
+		if (VoidGenHeightProcedure.execute(world, x, z) < 64 && !world.canSeeSkyFromBelowWater(BlockPos.containing(x - 3, 0, z)) && !world.canSeeSkyFromBelowWater(BlockPos.containing(x + 3, 0, z))
+				&& !world.canSeeSkyFromBelowWater(BlockPos.containing(x, 0, z - 3)) && !world.canSeeSkyFromBelowWater(BlockPos.containing(x, 0, z + 3))) {
 			max_depth = Mth.nextInt(RandomSource.create(), 24, 48);
 			strip_threshold = Math.round(0.85 * max_depth);
 			root_threshold = Math.round(0.35 * max_depth);

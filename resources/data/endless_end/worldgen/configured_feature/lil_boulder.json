@@ -1,0 +1,127 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_1",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_2",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_3",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_4",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_5",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_6",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_7",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_8",
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      }
+    ]
+  }
+}

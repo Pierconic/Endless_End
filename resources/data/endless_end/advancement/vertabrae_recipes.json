@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "vertabrae_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endless_end:vertabrae"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:grim_wood_recipe",
+      "endless_end:grim_planks_recipe",
+      "endless_end:grim_planks_wood_recipe",
+      "endless_end:grim_stairs_recipe",
+      "endless_end:grim_slab_recipe",
+      "endless_end:grim_fence_recipe",
+      "endless_end:grim_fence_gate_recipe",
+      "endless_end:grim_pressure_plate_recipe",
+      "endless_end:grim_button_recipe",
+      "endless_end:stripped_grim_planks_recipe",
+      "endless_end:stripped_grim_wood_planks_recipe",
+      "endless_end:grim_trapdoor_recipe",
+      "endless_end:grim_door_recipe"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endless_end:block/grim_slab"
+    },
+    "type=top": {
+      "model": "endless_end:block/grim_slab_top"
+    },
+    "type=double": {
+      "model": "endless_end:block/grim_slab_full"
+    }
+  }
+}

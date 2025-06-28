@@ -26,7 +26,7 @@ public class VertabraeBlock extends Block {
 				.sound(new DeferredSoundType(1.0f, 1.0f, () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.break")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.bone_block.step")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.bone_block.place")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.bone_block.hit")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.sculk_catalyst.fall"))))
-				.strength(1.5f, 3f).requiresCorrectToolForDrops());
+				.strength(3f).requiresCorrectToolForDrops());
 		this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
 	}
 

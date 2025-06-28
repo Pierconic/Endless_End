@@ -28,7 +28,12 @@
       "endless_end:violet_sepal_fence_recipe",
       "endless_end:violet_sepal_fence_gate_recipe",
       "endless_end:violet_sepal_pressure_plate_recipe",
-      "endless_end:violet_sepal_button_recipe"
+      "endless_end:violet_sepal_button_recipe",
+      "endless_end:violet_planks_alt_recipe",
+      "endless_end:violet_sepal_stripped_planks_recipe",
+      "endless_end:violet_wood_stripped_planks_recipe",
+      "endless_end:violet_trapdoor_recipe",
+      "endless_end:violet_door_recipe"
     ]
   }
 }

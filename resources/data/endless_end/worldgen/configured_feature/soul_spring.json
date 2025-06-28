@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:spring_feature",
+  "config": {
+    "state": {
+      "Name": "endless_end:essence"
+    },
+    "valid_blocks": [
+      "endless_end:strong_stone",
+      "minecraft:end_stone"
+    ],
+    "rock_count": 5,
+    "hole_count": 0
+  }
+}

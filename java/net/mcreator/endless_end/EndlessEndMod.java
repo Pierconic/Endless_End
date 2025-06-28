@@ -18,6 +18,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.endless_end.world.features.StructureFeature;
 import net.mcreator.endless_end.network.EndlessEndModVariables;
 import net.mcreator.endless_end.init.EndlessEndModTabs;
 import net.mcreator.endless_end.init.EndlessEndModSounds;
@@ -58,7 +59,7 @@ public class EndlessEndMod {
 		EndlessEndModTabs.REGISTRY.register(modEventBus);
 		EndlessEndModVariables.ATTACHMENT_TYPES.register(modEventBus);
 		EndlessEndModFeatures.REGISTRY.register(modEventBus);
-
+		StructureFeature.REGISTRY.register(modEventBus);
 		EndlessEndModPotions.REGISTRY.register(modEventBus);
 		EndlessEndModMobEffects.REGISTRY.register(modEventBus);
 		EndlessEndModMenus.REGISTRY.register(modEventBus);

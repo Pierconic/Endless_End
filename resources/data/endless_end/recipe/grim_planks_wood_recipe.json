@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "endless_end:joint"
+    }
+  ],
+  "result": {
+    "id": "endless_end:grim_planks",
+    "count": 2
+  }
+}

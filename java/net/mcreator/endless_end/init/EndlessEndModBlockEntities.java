@@ -29,6 +29,7 @@ import net.mcreator.endless_end.block.entity.SpiralingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SingingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SilkSpoolBlockEntity;
 import net.mcreator.endless_end.block.entity.SculkTeethBlockEntity;
+import net.mcreator.endless_end.block.entity.SculkSpikeBlockEntity;
 import net.mcreator.endless_end.block.entity.PuffBlossomTileEntity;
 import net.mcreator.endless_end.block.entity.PhasedEndoriteTilesBlockEntity;
 import net.mcreator.endless_end.block.entity.MoonGunkBlockEntity;
@@ -50,6 +51,7 @@ import net.mcreator.endless_end.block.entity.EnderporterBrownTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterBlueTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterBlackTileEntity;
 import net.mcreator.endless_end.block.entity.BurrowingThornsBlockEntity;
+import net.mcreator.endless_end.block.entity.BurrowingSpikeBlockEntity;
 import net.mcreator.endless_end.EndlessEndMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -90,6 +92,8 @@ public class EndlessEndModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TREBLE_BLOOM = register("treble_bloom", EndlessEndModBlocks.TREBLE_BLOOM, TrebleBloomBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> PUFF_BLOSSOM = register("puff_blossom", EndlessEndModBlocks.PUFF_BLOSSOM, PuffBlossomTileEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SILK_SPOOL = register("silk_spool", EndlessEndModBlocks.SILK_SPOOL, SilkSpoolBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BURROWING_SPIKE = register("burrowing_spike", EndlessEndModBlocks.BURROWING_SPIKE, BurrowingSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SCULK_SPIKE = register("sculk_spike", EndlessEndModBlocks.SCULK_SPIKE, SculkSpikeBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -116,6 +120,8 @@ public class EndlessEndModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, MOON_GUNK.get(), (blockEntity, side) -> ((MoonGunkBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TREBLE_BLOOM.get(), (blockEntity, side) -> ((TrebleBloomBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SILK_SPOOL.get(), (blockEntity, side) -> ((SilkSpoolBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BURROWING_SPIKE.get(), (blockEntity, side) -> ((BurrowingSpikeBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SCULK_SPIKE.get(), (blockEntity, side) -> ((SculkSpikeBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ENDERPORTER_WHITE.get(), (blockEntity, side) -> ((EnderporterWhiteTileEntity) blockEntity).getItemHandler());
 	}
 }

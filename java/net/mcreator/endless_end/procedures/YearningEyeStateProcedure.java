@@ -94,7 +94,7 @@ public class YearningEyeStateProcedure {
 								}
 								return 0;
 							}
-						}.convert(position.substring((int) position.indexOf("[") + "[".length(), (int) position.indexOf(",")));
+						}.convert(position.substring((int) position.indexOf("[") + "[".length(), (int) position.indexOf(","))) + 70;
 						_vars.syncPlayerVariables(entity);
 					}
 					{
@@ -107,7 +107,7 @@ public class YearningEyeStateProcedure {
 								}
 								return 0;
 							}
-						}.convert(position.substring((int) position.indexOf(",") + ",".length(), (int) position.indexOf("]")));
+						}.convert(position.substring((int) position.indexOf(",") + ",".length(), (int) position.indexOf("]"))) + 70;
 						_vars.syncPlayerVariables(entity);
 					}
 				}

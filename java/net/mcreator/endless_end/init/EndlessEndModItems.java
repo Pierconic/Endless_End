@@ -16,6 +16,7 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -246,11 +247,39 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> SILK_SPOOL = block(EndlessEndModBlocks.SILK_SPOOL);
 	public static final DeferredItem<Item> WEAVER_NEST = block(EndlessEndModBlocks.WEAVER_NEST);
 	public static final DeferredItem<Item> POLYP_SPAWN_EGG = REGISTRY.register("polyp_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.POLYP, -6750055, -16724788, new Item.Properties()));
+	public static final DeferredItem<Item> JOINT = block(EndlessEndModBlocks.JOINT);
+	public static final DeferredItem<Item> STRIPPED_VERTABRAE = block(EndlessEndModBlocks.STRIPPED_VERTABRAE);
+	public static final DeferredItem<Item> STRIPPED_JOINT = block(EndlessEndModBlocks.STRIPPED_JOINT);
+	public static final DeferredItem<Item> GRIM_PLANKS = block(EndlessEndModBlocks.GRIM_PLANKS);
+	public static final DeferredItem<Item> GRIM_THORNS = block(EndlessEndModBlocks.GRIM_THORNS);
+	public static final DeferredItem<Item> SOUL_LIGHT = block(EndlessEndModBlocks.SOUL_LIGHT);
+	public static final DeferredItem<Item> BURROWING_SPIKE = block(EndlessEndModBlocks.BURROWING_SPIKE);
+	public static final DeferredItem<Item> SCULK_SPIKE = block(EndlessEndModBlocks.SCULK_SPIKE);
+	public static final DeferredItem<Item> GRIM_STONE = block(EndlessEndModBlocks.GRIM_STONE);
+	public static final DeferredItem<Item> GRIM_STAIRS = block(EndlessEndModBlocks.GRIM_STAIRS);
+	public static final DeferredItem<Item> GRIM_SLAB = block(EndlessEndModBlocks.GRIM_SLAB);
+	public static final DeferredItem<Item> GRIM_FENCE = block(EndlessEndModBlocks.GRIM_FENCE);
+	public static final DeferredItem<Item> GRIM_FENCE_GATE = block(EndlessEndModBlocks.GRIM_FENCE_GATE);
+	public static final DeferredItem<Item> GRIM_PRESSURE_PLATE = block(EndlessEndModBlocks.GRIM_PRESSURE_PLATE);
+	public static final DeferredItem<Item> GRIM_BUTTON = block(EndlessEndModBlocks.GRIM_BUTTON);
+	public static final DeferredItem<Item> GRIM_TRAPDOOR = block(EndlessEndModBlocks.GRIM_TRAPDOOR);
+	public static final DeferredItem<Item> VIOLET_TRAPDOOR = block(EndlessEndModBlocks.VIOLET_TRAPDOOR);
+	public static final DeferredItem<Item> AZURE_TRAPDOOR = block(EndlessEndModBlocks.AZURE_TRAPDOOR);
+	public static final DeferredItem<Item> VIOLET_DOOR = doubleBlock(EndlessEndModBlocks.VIOLET_DOOR);
+	public static final DeferredItem<Item> AZURE_DOOR = doubleBlock(EndlessEndModBlocks.AZURE_DOOR);
+	public static final DeferredItem<Item> GRIM_DOOR = doubleBlock(EndlessEndModBlocks.GRIM_DOOR);
+	public static final DeferredItem<Item> FLOURITE = block(EndlessEndModBlocks.FLOURITE);
+	public static final DeferredItem<Item> SPREADING_FLOURITE = block(EndlessEndModBlocks.SPREADING_FLOURITE);
+	public static final DeferredItem<Item> FLOURITE_LAMP = block(EndlessEndModBlocks.FLOURITE_LAMP);
 
 	// Start of user code block custom items
 	// End of user code block custom items
 	private static DeferredItem<Item> block(DeferredHolder<Block, Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+	}
+
+	private static DeferredItem<Item> doubleBlock(DeferredHolder<Block, Block> block) {
+		return REGISTRY.register(block.getId().getPath(), () -> new DoubleHighBlockItem(block.get(), new Item.Properties()));
 	}
 
 	@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

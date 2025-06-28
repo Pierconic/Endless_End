@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/flourite_top_cyan",
+    "up": "endless_end:block/flourite_top_cyan",
+    "north": "endless_end:block/flourite_cyan",
+    "east": "endless_end:block/flourite_cyan",
+    "south": "endless_end:block/flourite_cyan",
+    "west": "endless_end:block/flourite_cyan",
+    "particle": "endless_end:block/flourite_top_white"
+  },
+  "render_type": "solid"
+}

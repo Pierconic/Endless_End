@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "category": "building",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:stripped_violet_sepal_log"
+    }
+  },
+  "result": {
+    "id": "endless_end:violet_sepal_planks",
+    "count": 2
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_doors",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "endless_end:grim_planks"
+    },
+    {
+      "item": "endless_end:grim_planks"
+    },
+    {
+      "item": "endless_end:grim_planks"
+    },
+    {
+      "item": "endless_end:grim_planks"
+    },
+    {
+      "item": "endless_end:grim_planks"
+    },
+    {
+      "item": "endless_end:grim_planks"
+    }
+  ],
+  "result": {
+    "id": "endless_end:grim_door",
+    "count": 3
+  }
+}

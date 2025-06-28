@@ -13,6 +13,7 @@ import net.minecraft.core.registries.Registries;
 import net.mcreator.endless_end.world.features.VioletStemFeature;
 import net.mcreator.endless_end.world.features.TrebleShootFeature;
 import net.mcreator.endless_end.world.features.SubterraChorusBlobFeature;
+import net.mcreator.endless_end.world.features.SoulDeltaSpikesFeature;
 import net.mcreator.endless_end.world.features.SmallVioletStemFeature;
 import net.mcreator.endless_end.world.features.RandomGoldRootsFeature;
 import net.mcreator.endless_end.world.features.PoppedChorusBlobFeature;
@@ -23,11 +24,13 @@ import net.mcreator.endless_end.world.features.GoldenBlossomFeature;
 import net.mcreator.endless_end.world.features.EndWasteRefuseFeature;
 import net.mcreator.endless_end.world.features.ChorusBlobFeature;
 import net.mcreator.endless_end.world.features.CanticlePatchFeature;
+import net.mcreator.endless_end.world.features.AmnesicDepositFeature;
 import net.mcreator.endless_end.world.features.AmethystOreScatterFeature;
 import net.mcreator.endless_end.EndlessEndMod;
 
 public class EndlessEndModFeatures {
 	public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create(Registries.FEATURE, EndlessEndMod.MODID);
+	public static final DeferredHolder<Feature<?>, Feature<?>> AMNESIC_DEPOSIT = REGISTRY.register("amnesic_deposit", AmnesicDepositFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> AMETHYST_ORE_SCATTER = REGISTRY.register("amethyst_ore_scatter", AmethystOreScatterFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> END_WASTE_REFUSE = REGISTRY.register("end_waste_refuse", EndWasteRefuseFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> CANTICLE_PATCH = REGISTRY.register("canticle_patch", CanticlePatchFeature::new);
@@ -42,4 +45,5 @@ public class EndlessEndModFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<?>> GOLDEN_SPIKE_FEATURE = REGISTRY.register("golden_spike_feature", GoldenSpikeFeatureFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> INVERTED_ORCHARD_BONUS_HUMUS = REGISTRY.register("inverted_orchard_bonus_humus", InvertedOrchardBonusHumusFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> RANDOM_GOLD_ROOTS = REGISTRY.register("random_gold_roots", RandomGoldRootsFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> SOUL_DELTA_SPIKES = REGISTRY.register("soul_delta_spikes", SoulDeltaSpikesFeature::new);
 }

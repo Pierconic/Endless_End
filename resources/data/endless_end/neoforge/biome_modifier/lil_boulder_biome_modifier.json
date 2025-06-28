@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "end_highlands",
+    "end_midlands"
+  ],
+  "features": "endless_end:lil_boulder",
+  "step": "surface_structures"
+}

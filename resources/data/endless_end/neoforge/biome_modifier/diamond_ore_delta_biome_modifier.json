@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "endless_end:soul_arbor",
+    "endless_end:soul_arbor_barrens",
+    "endless_end:soul_arbor_midlands",
+    "endless_end:whispering_delta"
+  ],
+  "features": "endless_end:diamond_ore_delta",
+  "step": "underground_decoration"
+}

@@ -32,9 +32,12 @@ public class EssenceLeechProcedure {
 			}
 			if (entity instanceof Player && (entity instanceof Player _plr ? _plr.experienceLevel : 0) > 0) {
 				if (entity instanceof Player _player)
-					_player.giveExperiencePoints(-(1));
+					_player.giveExperiencePoints(-(3));
+				if (Math.random() < 0.1) {
+					entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.MAGIC)), 1);
+				}
 			} else {
-				entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.MAGIC)), 1);
+				entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.MAGIC)), 4);
 			}
 		}
 	}
