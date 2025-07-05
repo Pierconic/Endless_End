@@ -54,6 +54,7 @@ import net.mcreator.endless_end.block.SoulLightBlock;
 import net.mcreator.endless_end.block.SoulBulbVaseBlock;
 import net.mcreator.endless_end.block.SoulBulbFlowerPotBlock;
 import net.mcreator.endless_end.block.SoulBulbBlock;
+import net.mcreator.endless_end.block.SnareCrystalsBlock;
 import net.mcreator.endless_end.block.SingingSandBlock;
 import net.mcreator.endless_end.block.SilkSpoolBlock;
 import net.mcreator.endless_end.block.SensingEndoriteCoreBlock;
@@ -86,6 +87,7 @@ import net.mcreator.endless_end.block.GoldenSproutsBlock;
 import net.mcreator.endless_end.block.GoldenSepalLeavesBlock;
 import net.mcreator.endless_end.block.GoldenRootsBlock;
 import net.mcreator.endless_end.block.GoldenHumusBlock;
+import net.mcreator.endless_end.block.FlurryCrystalsBlock;
 import net.mcreator.endless_end.block.FlouriteLampBlock;
 import net.mcreator.endless_end.block.FlouriteBlock;
 import net.mcreator.endless_end.block.EssenceBlock;
@@ -277,6 +279,8 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> FLOURITE = REGISTRY.register("flourite", FlouriteBlock::new);
 	public static final DeferredBlock<Block> SPREADING_FLOURITE = REGISTRY.register("spreading_flourite", SpreadingFlouriteBlock::new);
 	public static final DeferredBlock<Block> FLOURITE_LAMP = REGISTRY.register("flourite_lamp", FlouriteLampBlock::new);
+	public static final DeferredBlock<Block> FLURRY_CRYSTALS = REGISTRY.register("flurry_crystals", FlurryCrystalsBlock::new);
+	public static final DeferredBlock<Block> SNARE_CRYSTALS = REGISTRY.register("snare_crystals", SnareCrystalsBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

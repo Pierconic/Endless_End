@@ -25,6 +25,8 @@ import net.mcreator.endless_end.entity.PolypEntity;
 import net.mcreator.endless_end.entity.MoonJellyBallEntity;
 import net.mcreator.endless_end.entity.HollowEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
+import net.mcreator.endless_end.entity.FlurryEntity;
+import net.mcreator.endless_end.entity.FlurryChargeBlastEntity;
 import net.mcreator.endless_end.EndlessEndMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -60,6 +62,12 @@ public class EndlessEndModEntities {
 			EntityType.Builder.<PolypEntity>of(PolypEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.sized(0.4f, 0.4f));
+	public static final DeferredHolder<EntityType<?>, EntityType<FlurryEntity>> FLURRY = register("flurry",
+			EntityType.Builder.<FlurryEntity>of(FlurryEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+
+					.sized(0.6f, 1f));
+	public static final DeferredHolder<EntityType<?>, EntityType<FlurryChargeBlastEntity>> FLURRY_CHARGE_BLAST = register("flurry_charge_blast",
+			EntityType.Builder.<FlurryChargeBlastEntity>of(FlurryChargeBlastEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -75,6 +83,7 @@ public class EndlessEndModEntities {
 		SwingsilkBallEntity.init(event);
 		WeaverEntity.init(event);
 		PolypEntity.init(event);
+		FlurryEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -85,5 +94,6 @@ public class EndlessEndModEntities {
 		event.put(SWINGSILK_BALL.get(), SwingsilkBallEntity.createAttributes().build());
 		event.put(WEAVER.get(), WeaverEntity.createAttributes().build());
 		event.put(POLYP.get(), PolypEntity.createAttributes().build());
+		event.put(FLURRY.get(), FlurryEntity.createAttributes().build());
 	}
 }

@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "endless_end:inverted_midlands",
+    "endless_end:inverted_orchard",
     "endless_end:whispering_delta"
   ]
 }

@@ -19,6 +19,7 @@ import net.mcreator.endless_end.client.renderer.SwingshotBoltRenderer;
 import net.mcreator.endless_end.client.renderer.PolypRenderer;
 import net.mcreator.endless_end.client.renderer.HollowRenderer;
 import net.mcreator.endless_end.client.renderer.GrazerRenderer;
+import net.mcreator.endless_end.client.renderer.FlurryRenderer;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EndlessEndModEntityRenderers {
@@ -33,5 +34,7 @@ public class EndlessEndModEntityRenderers {
 		event.registerEntityRenderer(EndlessEndModEntities.WEAVER.get(), WeaverRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.WEAVER_SPIT.get(), WeaverSpitRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.POLYP.get(), PolypRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.FLURRY.get(), FlurryRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.FLURRY_CHARGE_BLAST.get(), ThrownItemRenderer::new);
 	}
 }

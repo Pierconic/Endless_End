@@ -24,8 +24,10 @@ import net.mcreator.endless_end.block.entity.TransceiverSendingOffBlockEntity;
 import net.mcreator.endless_end.block.entity.TransceiverRecievingOnBlockEntity;
 import net.mcreator.endless_end.block.entity.TransceiverBlockEntity;
 import net.mcreator.endless_end.block.entity.TetherTileEntity;
+import net.mcreator.endless_end.block.entity.SpreadingFlouriteBlockEntity;
 import net.mcreator.endless_end.block.entity.SpitefulEyeBlockEntity;
 import net.mcreator.endless_end.block.entity.SpiralingSandBlockEntity;
+import net.mcreator.endless_end.block.entity.SnareCrystalsBlockEntity;
 import net.mcreator.endless_end.block.entity.SingingSandBlockEntity;
 import net.mcreator.endless_end.block.entity.SilkSpoolBlockEntity;
 import net.mcreator.endless_end.block.entity.SculkTeethBlockEntity;
@@ -34,6 +36,7 @@ import net.mcreator.endless_end.block.entity.PuffBlossomTileEntity;
 import net.mcreator.endless_end.block.entity.PhasedEndoriteTilesBlockEntity;
 import net.mcreator.endless_end.block.entity.MoonGunkBlockEntity;
 import net.mcreator.endless_end.block.entity.IconoclastBlockEntity;
+import net.mcreator.endless_end.block.entity.FlurryCrystalsBlockEntity;
 import net.mcreator.endless_end.block.entity.EnderporterYellowTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterWhiteTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterRedTileEntity;
@@ -94,6 +97,9 @@ public class EndlessEndModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SILK_SPOOL = register("silk_spool", EndlessEndModBlocks.SILK_SPOOL, SilkSpoolBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BURROWING_SPIKE = register("burrowing_spike", EndlessEndModBlocks.BURROWING_SPIKE, BurrowingSpikeBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SCULK_SPIKE = register("sculk_spike", EndlessEndModBlocks.SCULK_SPIKE, SculkSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SPREADING_FLOURITE = register("spreading_flourite", EndlessEndModBlocks.SPREADING_FLOURITE, SpreadingFlouriteBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> FLURRY_CRYSTALS = register("flurry_crystals", EndlessEndModBlocks.FLURRY_CRYSTALS, FlurryCrystalsBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SNARE_CRYSTALS = register("snare_crystals", EndlessEndModBlocks.SNARE_CRYSTALS, SnareCrystalsBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -122,6 +128,9 @@ public class EndlessEndModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SILK_SPOOL.get(), (blockEntity, side) -> ((SilkSpoolBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BURROWING_SPIKE.get(), (blockEntity, side) -> ((BurrowingSpikeBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SCULK_SPIKE.get(), (blockEntity, side) -> ((SculkSpikeBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SPREADING_FLOURITE.get(), (blockEntity, side) -> ((SpreadingFlouriteBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FLURRY_CRYSTALS.get(), (blockEntity, side) -> ((FlurryCrystalsBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SNARE_CRYSTALS.get(), (blockEntity, side) -> ((SnareCrystalsBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ENDERPORTER_WHITE.get(), (blockEntity, side) -> ((EnderporterWhiteTileEntity) blockEntity).getItemHandler());
 	}
 }

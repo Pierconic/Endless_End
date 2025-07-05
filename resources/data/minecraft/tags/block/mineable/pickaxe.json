@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "endless_end:snare_crystals",
+    "endless_end:flurry_crystals",
     "endless_end:flourite_lamp",
     "endless_end:spreading_flourite",
     "endless_end:flourite",

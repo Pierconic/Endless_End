@@ -2452,5 +2452,348 @@
         "stream": false
       }
     ]
+  },
+  "lead_copper_0": {
+    "subtitle": "subtitles.lead_copper_0",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_0",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_1": {
+    "subtitle": "subtitles.lead_copper_1",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_1",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_2": {
+    "subtitle": "subtitles.lead_copper_2",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_2",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_3": {
+    "subtitle": "subtitles.lead_copper_3",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_3",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_4": {
+    "subtitle": "subtitles.lead_copper_4",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_4",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_5": {
+    "subtitle": "subtitles.lead_copper_5",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_5",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_6": {
+    "subtitle": "subtitles.lead_copper_6",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_6",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_7": {
+    "subtitle": "subtitles.lead_copper_7",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_7",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_8": {
+    "subtitle": "subtitles.lead_copper_8",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_8",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_9": {
+    "subtitle": "subtitles.lead_copper_9",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_9",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_10": {
+    "subtitle": "subtitles.lead_copper_10",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_10",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_11": {
+    "subtitle": "subtitles.lead_copper_11",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_11",
+        "stream": false
+      }
+    ]
+  },
+  "lead_copper_12": {
+    "subtitle": "subtitles.lead_copper_12",
+    "sounds": [
+      {
+        "name": "endless_end:copper_lead_12",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_0": {
+    "subtitle": "subtitles.copper_loop_0",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_0",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_1": {
+    "subtitle": "subtitles.copper_loop_1",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_1",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_2": {
+    "subtitle": "subtitles.copper_loop_2",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_2",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_3": {
+    "subtitle": "subtitles.copper_loop_3",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_3",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_4": {
+    "subtitle": "subtitles.copper_loop_4",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_4",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_5": {
+    "subtitle": "subtitles.copper_loop_5",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_5",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_6": {
+    "subtitle": "subtitles.copper_loop_6",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_6",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_7": {
+    "subtitle": "subtitles.copper_loop_7",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_7",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_8": {
+    "subtitle": "subtitles.copper_loop_8",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_8",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_9": {
+    "subtitle": "subtitles.copper_loop_9",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_9",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_10": {
+    "subtitle": "subtitles.copper_loop_10",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_10",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_11": {
+    "subtitle": "subtitles.copper_loop_11",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_11",
+        "stream": false
+      }
+    ]
+  },
+  "copper_loop_12": {
+    "subtitle": "subtitles.copper_loop_12",
+    "sounds": [
+      {
+        "name": "endless_end:copper_loop_12",
+        "stream": false
+      }
+    ]
+  },
+  "inverted_ambient": {
+    "sounds": [
+      {
+        "name": "endless_end:inverted_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "inverted_additions": {
+    "sounds": [
+      {
+        "name": "endless_end:inverted_add_17",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_16",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_15",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_14",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_13",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_12",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_11",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_10",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_9",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_7",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_6",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_5",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_add_1",
+        "stream": false
+      }
+    ]
+  },
+  "inverted_mood": {
+    "subtitle": "subtitles.inverted_mood",
+    "sounds": [
+      {
+        "name": "endless_end:inverted_mood_7",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_mood_6",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_mood_5",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_mood_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_mood_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_mood_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:inverted_mood_1",
+        "stream": false
+      }
+    ]
   }
 }

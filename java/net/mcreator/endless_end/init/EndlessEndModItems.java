@@ -53,6 +53,8 @@ import net.mcreator.endless_end.item.MoonJellyItem;
 import net.mcreator.endless_end.item.MagicWandItem;
 import net.mcreator.endless_end.item.IntroItem;
 import net.mcreator.endless_end.item.InsectFleshItem;
+import net.mcreator.endless_end.item.FlurryRodItem;
+import net.mcreator.endless_end.item.FlurryChargeItem;
 import net.mcreator.endless_end.item.EssenceItem;
 import net.mcreator.endless_end.item.EndoriteIngotItem;
 import net.mcreator.endless_end.item.EmptyEyeItem;
@@ -271,6 +273,11 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> FLOURITE = block(EndlessEndModBlocks.FLOURITE);
 	public static final DeferredItem<Item> SPREADING_FLOURITE = block(EndlessEndModBlocks.SPREADING_FLOURITE);
 	public static final DeferredItem<Item> FLOURITE_LAMP = block(EndlessEndModBlocks.FLOURITE_LAMP);
+	public static final DeferredItem<Item> FLURRY_SPAWN_EGG = REGISTRY.register("flurry_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.FLURRY, -11508122, -3877935, new Item.Properties()));
+	public static final DeferredItem<Item> FLURRY_CHARGE = REGISTRY.register("flurry_charge", FlurryChargeItem::new);
+	public static final DeferredItem<Item> FLURRY_ROD = REGISTRY.register("flurry_rod", FlurryRodItem::new);
+	public static final DeferredItem<Item> FLURRY_CRYSTALS = block(EndlessEndModBlocks.FLURRY_CRYSTALS);
+	public static final DeferredItem<Item> SNARE_CRYSTALS = block(EndlessEndModBlocks.SNARE_CRYSTALS);
 
 	// Start of user code block custom items
 	// End of user code block custom items

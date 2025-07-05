@@ -3,6 +3,17 @@
   "temperature": 0,
   "downfall": 0.5,
   "effects": {
+    "ambient_sound": "endless_end:inverted_ambient",
+    "mood_sound": {
+      "sound": "endless_end:inverted_mood",
+      "tick_delay": 6000,
+      "offset": 8,
+      "block_search_extent": 2
+    },
+    "additions_sound": {
+      "sound": "endless_end:inverted_additions",
+      "tick_chance": 0.0111
+    },
     "particle": {
       "options": {
         "type": "white_ash"

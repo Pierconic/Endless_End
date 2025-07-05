@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "endless_end:whispering_delta",
+  "features": "endless_end:soul_spire",
+  "step": "surface_structures"
+}

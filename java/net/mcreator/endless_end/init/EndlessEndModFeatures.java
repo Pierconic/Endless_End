@@ -13,6 +13,7 @@ import net.minecraft.core.registries.Registries;
 import net.mcreator.endless_end.world.features.VioletStemFeature;
 import net.mcreator.endless_end.world.features.TrebleShootFeature;
 import net.mcreator.endless_end.world.features.SubterraChorusBlobFeature;
+import net.mcreator.endless_end.world.features.SoulSpireFeature;
 import net.mcreator.endless_end.world.features.SoulDeltaSpikesFeature;
 import net.mcreator.endless_end.world.features.SmallVioletStemFeature;
 import net.mcreator.endless_end.world.features.RandomGoldRootsFeature;
@@ -46,4 +47,5 @@ public class EndlessEndModFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<?>> INVERTED_ORCHARD_BONUS_HUMUS = REGISTRY.register("inverted_orchard_bonus_humus", InvertedOrchardBonusHumusFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> RANDOM_GOLD_ROOTS = REGISTRY.register("random_gold_roots", RandomGoldRootsFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> SOUL_DELTA_SPIKES = REGISTRY.register("soul_delta_spikes", SoulDeltaSpikesFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> SOUL_SPIRE = REGISTRY.register("soul_spire", SoulSpireFeature::new);
 }
