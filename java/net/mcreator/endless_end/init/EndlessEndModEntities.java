@@ -26,7 +26,7 @@ import net.mcreator.endless_end.entity.MoonJellyBallEntity;
 import net.mcreator.endless_end.entity.HollowEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
 import net.mcreator.endless_end.entity.FlurryEntity;
-import net.mcreator.endless_end.entity.FlurryChargeBlastEntity;
+import net.mcreator.endless_end.entity.FlurryChargeEntityEntity;
 import net.mcreator.endless_end.EndlessEndMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -66,8 +66,10 @@ public class EndlessEndModEntities {
 			EntityType.Builder.<FlurryEntity>of(FlurryEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
 					.sized(0.6f, 1f));
-	public static final DeferredHolder<EntityType<?>, EntityType<FlurryChargeBlastEntity>> FLURRY_CHARGE_BLAST = register("flurry_charge_blast",
-			EntityType.Builder.<FlurryChargeBlastEntity>of(FlurryChargeBlastEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final DeferredHolder<EntityType<?>, EntityType<FlurryChargeEntityEntity>> FLURRY_CHARGE_ENTITY = register("flurry_charge_entity",
+			EntityType.Builder.<FlurryChargeEntityEntity>of(FlurryChargeEntityEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+
+					.sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -84,6 +86,7 @@ public class EndlessEndModEntities {
 		WeaverEntity.init(event);
 		PolypEntity.init(event);
 		FlurryEntity.init(event);
+		FlurryChargeEntityEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -95,5 +98,6 @@ public class EndlessEndModEntities {
 		event.put(WEAVER.get(), WeaverEntity.createAttributes().build());
 		event.put(POLYP.get(), PolypEntity.createAttributes().build());
 		event.put(FLURRY.get(), FlurryEntity.createAttributes().build());
+		event.put(FLURRY_CHARGE_ENTITY.get(), FlurryChargeEntityEntity.createAttributes().build());
 	}
 }

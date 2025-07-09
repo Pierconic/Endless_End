@@ -48,7 +48,7 @@ public class SnareCrystalsBlock extends Block implements SimpleWaterloggedBlock,
 					return 2;
 				return 9;
 			}
-		}.getLightLevel())).requiresCorrectToolForDrops().noCollission().speedFactor(0.1f).jumpFactor(0.1f).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
+		}.getLightLevel())).requiresCorrectToolForDrops().noCollission().speedFactor(0.05f).jumpFactor(0.1f).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
 	}
 

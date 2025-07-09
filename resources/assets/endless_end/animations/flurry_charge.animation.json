@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"fly": {
+			"loop": true,
+			"animation_length": 1.875,
+			"bones": {
+				"bone": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time * 190) * 2", 0]
+					}
+				},
+				"bone2": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time * 190 + 70) * 1.2", 0]
+					}
+				},
+				"bone3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.875": {
+							"vector": [-360, 0, 360]
+						}
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time * 190) * 0.6", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

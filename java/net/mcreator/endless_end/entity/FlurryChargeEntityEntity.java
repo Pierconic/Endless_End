@@ -12,31 +12,20 @@ import software.bernie.geckolib.animatable.GeoEntity;
 
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.Difficulty;
-import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -46,25 +35,29 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.endless_end.procedures.FlurryTickProcedure;
-import net.mcreator.endless_end.procedures.FlurryDropProcedure;
-import net.mcreator.endless_end.init.EndlessEndModEntities;
+import net.mcreator.endless_end.procedures.FlurryChargeStrikeProcedure;
+import net.mcreator.endless_end.procedures.FlurryChargeReverseProcedure;
+import net.mcreator.endless_end.procedures.FlurryChargeFlyingProcedure;
 
-public class FlurryEntity extends Monster implements GeoEntity {
-	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<Integer> DATA_Charge = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
+public class FlurryChargeEntityEntity extends PathfinderMob implements GeoEntity {
+	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> DATA_Shooter = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_Oomf = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<String> DATA_Target = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_Inaccuracy = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
 	private long lastSwing;
 	public String animationprocedure = "empty";
 
-	public FlurryEntity(EntityType<FlurryEntity> type, Level world) {
+	public FlurryChargeEntityEntity(EntityType<FlurryChargeEntityEntity> type, Level world) {
 		super(type, world);
-		xpReward = 8;
+		xpReward = 0;
 		setNoAi(false);
+		setPersistenceRequired();
 		this.moveControl = new FlyingMoveControl(this, 10, true);
 	}
 
@@ -73,8 +66,11 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		super.defineSynchedData(builder);
 		builder.define(SHOOT, false);
 		builder.define(ANIMATION, "undefined");
-		builder.define(TEXTURE, "flurry_active");
-		builder.define(DATA_Charge, 0);
+		builder.define(TEXTURE, "flurry_charge_entity");
+		builder.define(DATA_Shooter, "none");
+		builder.define(DATA_Oomf, 300);
+		builder.define(DATA_Target, "none");
+		builder.define(DATA_Inaccuracy, 15);
 	}
 
 	public void setTexture(String texture) {
@@ -93,31 +89,22 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, (float) 16, 1, 1.2));
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Blaze.class, false, false));
-		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8, 20) {
-			@Override
-			protected Vec3 getPosition() {
-				RandomSource random = FlurryEntity.this.getRandom();
-				double dir_x = FlurryEntity.this.getX() + ((random.nextFloat() * 2 - 1) * 16);
-				double dir_y = FlurryEntity.this.getY() + ((random.nextFloat() * 2 - 1) * 16);
-				double dir_z = FlurryEntity.this.getZ() + ((random.nextFloat() * 2 - 1) * 16);
-				return new Vec3(dir_x, dir_y, dir_z);
-			}
-		});
-		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(6, new FloatGoal(this));
+
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.death"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.death"));
 	}
 
 	@Override
@@ -126,16 +113,26 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		FlurryChargeReverseProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
+		Entity immediatesourceentity = source.getDirectEntity();
+		return super.hurt(source, amount);
+	}
+
+	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		FlurryDropProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), source.getEntity());
+		FlurryChargeStrikeProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
-		compound.putInt("DataCharge", this.entityData.get(DATA_Charge));
+		compound.putString("DataShooter", this.entityData.get(DATA_Shooter));
+		compound.putInt("DataOomf", this.entityData.get(DATA_Oomf));
+		compound.putString("DataTarget", this.entityData.get(DATA_Target));
+		compound.putInt("DataInaccuracy", this.entityData.get(DATA_Inaccuracy));
 	}
 
 	@Override
@@ -143,20 +140,45 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
-		if (compound.contains("DataCharge"))
-			this.entityData.set(DATA_Charge, compound.getInt("DataCharge"));
+		if (compound.contains("DataShooter"))
+			this.entityData.set(DATA_Shooter, compound.getString("DataShooter"));
+		if (compound.contains("DataOomf"))
+			this.entityData.set(DATA_Oomf, compound.getInt("DataOomf"));
+		if (compound.contains("DataTarget"))
+			this.entityData.set(DATA_Target, compound.getString("DataTarget"));
+		if (compound.contains("DataInaccuracy"))
+			this.entityData.set(DATA_Inaccuracy, compound.getInt("DataInaccuracy"));
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		FlurryTickProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+		FlurryChargeFlyingProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
+	public void tick() {
+	    this.noPhysics = true;
+	    super.tick();
+	    this.noPhysics = false;
+	    this.setNoGravity(true);
+	 }
 
 	@Override
 	public EntityDimensions getDefaultDimensions(Pose pose) {
 		return super.getDefaultDimensions(pose).scale(1f);
+	}
+
+	@Override
+	public boolean isPushable() {
+		return false;
+	}
+
+	@Override
+	protected void doPush(Entity entityIn) {
+	}
+
+	@Override
+	protected void pushEntities() {
 	}
 
 	@Override
@@ -168,24 +190,23 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		super.setNoGravity(true);
 	}
 
+	@Override
 	public void aiStep() {
 		super.aiStep();
+		this.updateSwingTime();
 		this.setNoGravity(true);
 	}
 
 	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EndlessEndModEntities.FLURRY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)),
-				RegisterSpawnPlacementsEvent.Operation.REPLACE);
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 22);
-		builder = builder.add(Attributes.ARMOR, 2);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 24);
+		builder = builder.add(Attributes.MAX_HEALTH, 50);
+		builder = builder.add(Attributes.ARMOR, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		builder = builder.add(Attributes.FLYING_SPEED, 0.3);
 		return builder;
@@ -220,8 +241,8 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 20) {
-			this.remove(FlurryEntity.RemovalReason.KILLED);
+		if (this.deathTime == 2) {
+			this.remove(FlurryChargeEntityEntity.RemovalReason.KILLED);
 			this.dropExperience(this);
 		}
 	}

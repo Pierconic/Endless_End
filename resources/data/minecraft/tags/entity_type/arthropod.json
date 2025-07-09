@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "endless_end:trawler",
     "endless_end:polyp",
     "endless_end:weaver"
   ]

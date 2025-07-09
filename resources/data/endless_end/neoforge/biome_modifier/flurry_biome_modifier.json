@@ -1,12 +1,10 @@
 {
   "type": "neoforge:add_spawns",
-  "biomes": {
-    "type": "neoforge:any"
-  },
+  "biomes": "endless_end:whispering_delta",
   "spawners": {
     "type": "endless_end:flurry",
     "weight": 20,
-    "minCount": 4,
-    "maxCount": 4
+    "minCount": 1,
+    "maxCount": 3
   }
 }
