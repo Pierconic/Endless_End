@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.endless_end.entity.FlurryEntity;
 import net.mcreator.endless_end.entity.FlurryChargeEntityEntity;
 
 import java.util.List;
@@ -30,10 +31,14 @@ public class FlurryChargeFlyingProcedure {
 		double baseMult = 0;
 		double base_magnitude = 0;
 		double inaccuracy = 0;
-		if (y > 256) {
+		if (y > 256 || (entity instanceof FlurryChargeEntityEntity _datEntI ? _datEntI.getEntityData().get(FlurryChargeEntityEntity.DATA_LifeTicks) : 0) > 1200) {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.POOF, x, y, z, 10, 0.2, 0.2, 0.2, 0.1);
 			if (!entity.level().isClientSide())
 				entity.discard();
 		}
+		if (entity instanceof FlurryChargeEntityEntity _datEntSetI)
+			_datEntSetI.getEntityData().set(FlurryChargeEntityEntity.DATA_LifeTicks, (int) ((entity instanceof FlurryChargeEntityEntity _datEntI ? _datEntI.getEntityData().get(FlurryChargeEntityEntity.DATA_LifeTicks) : 0) + 1));
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.POOF, x, y, z, 1, 0.2, 0.2, 0.2, 0.1);
 		world.addParticle(ParticleTypes.FIREWORK, x, y, z, 0, 0, 0);
@@ -81,7 +86,8 @@ public class FlurryChargeFlyingProcedure {
 				for (Entity entityiterator : _entfound) {
 					magnitude = Math.sqrt(Math.pow(entityiterator.getX() - x, 2) + Math.pow(entityiterator.getY() - y, 2) + Math.pow(entityiterator.getZ() - z, 2));
 					if (entityiterator instanceof LivingEntity && !(entityiterator instanceof FlurryChargeEntityEntity)
-							&& !((entityiterator.getStringUUID()).equals(entity instanceof FlurryChargeEntityEntity _datEntS ? _datEntS.getEntityData().get(FlurryChargeEntityEntity.DATA_Shooter) : ""))) {
+							&& !((entityiterator.getStringUUID()).equals(entity instanceof FlurryChargeEntityEntity _datEntS ? _datEntS.getEntityData().get(FlurryChargeEntityEntity.DATA_Shooter) : ""))
+							&& !(entityiterator instanceof FlurryEntity && entity instanceof FlurryChargeEntityEntity _datEntL42 && _datEntL42.getEntityData().get(FlurryChargeEntityEntity.DATA_Natural))) {
 						if (magnitude < distance) {
 							if (entity instanceof FlurryChargeEntityEntity _datEntSetS)
 								_datEntSetS.getEntityData().set(FlurryChargeEntityEntity.DATA_Target, (entityiterator.getStringUUID()));
@@ -99,13 +105,15 @@ public class FlurryChargeFlyingProcedure {
 					(z_vec * (entity instanceof FlurryChargeEntityEntity _datEntI ? _datEntI.getEntityData().get(FlurryChargeEntityEntity.DATA_Oomf) : 0) * baseMult)));
 		}
 		strike = false;
-		{
-			final Vec3 _center = new Vec3(x, y, z);
-			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(0.5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-			for (Entity entityiterator : _entfound) {
-				if (entityiterator instanceof LivingEntity && !(entityiterator instanceof FlurryChargeEntityEntity)
-						&& !((entityiterator.getStringUUID()).equals(entity instanceof FlurryChargeEntityEntity _datEntS ? _datEntS.getEntityData().get(FlurryChargeEntityEntity.DATA_Shooter) : ""))) {
-					strike = true;
+		if ((entity instanceof FlurryChargeEntityEntity _datEntI ? _datEntI.getEntityData().get(FlurryChargeEntityEntity.DATA_LifeTicks) : 0) > 5) {
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(0.5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof LivingEntity && !(entityiterator instanceof FlurryChargeEntityEntity)
+							&& !((entityiterator.getStringUUID()).equals(entity instanceof FlurryChargeEntityEntity _datEntS ? _datEntS.getEntityData().get(FlurryChargeEntityEntity.DATA_Shooter) : ""))) {
+						strike = true;
+					}
 				}
 			}
 		}

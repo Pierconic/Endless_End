@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:flurry",
+    "endless_end:flurry_charge_entity",
+    "endless_end:hollow",
+    "endless_end:moon_jelly_ball",
+    "endless_end:swingshot_bolt",
+    "endless_end:swingsilk_ball",
+    "endless_end:weaver_spit",
+    "warden"
+  ]
+}

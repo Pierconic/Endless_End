@@ -7,8 +7,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
@@ -17,7 +19,7 @@ public class EssenceLeechProcedure {
 		if (entity == null)
 			return;
 		double armor = 0;
-		if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false) && entity instanceof LivingEntity) {
+		if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false) && !entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("forge:essence_immune"))) && entity instanceof LivingEntity) {
 			if (entity.getTicksFrozen() < 1800) {
 				entity.setTicksFrozen((int) (entity.getTicksFrozen() + 10));
 			}

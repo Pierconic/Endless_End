@@ -24,6 +24,8 @@ import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
@@ -32,8 +34,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.util.RandomSource;
@@ -47,6 +51,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.FlurryTickProcedure;
+import net.mcreator.endless_end.procedures.FlurryProximityCheckProcedure;
 import net.mcreator.endless_end.procedures.FlurryDropProcedure;
 import net.mcreator.endless_end.init.EndlessEndModEntities;
 
@@ -93,10 +98,39 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, (float) 16, 1, 1.2));
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Blaze.class, false, false));
-		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8, 20) {
+		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, (float) 32));
+		this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Blaze.class, (float) 32));
+		this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Player.class, (float) 6, 1, 1.2));
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, false) {
+			@Override
+			protected boolean canPerformAttack(LivingEntity entity) {
+				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			}
+
+			@Override
+			public boolean canUse() {
+				double x = FlurryEntity.this.getX();
+				double y = FlurryEntity.this.getY();
+				double z = FlurryEntity.this.getZ();
+				Entity entity = FlurryEntity.this;
+				Level world = FlurryEntity.this.level();
+				return super.canUse() && FlurryProximityCheckProcedure.execute(world, x, y, z);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = FlurryEntity.this.getX();
+				double y = FlurryEntity.this.getY();
+				double z = FlurryEntity.this.getZ();
+				Entity entity = FlurryEntity.this;
+				Level world = FlurryEntity.this.level();
+				return super.canContinueToUse() && FlurryProximityCheckProcedure.execute(world, x, y, z);
+			}
+
+		});
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Player.class, true, false));
+		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, Blaze.class, true, false));
+		this.goalSelector.addGoal(7, new RandomStrollGoal(this, 0.8, 20) {
 			@Override
 			protected Vec3 getPosition() {
 				RandomSource random = FlurryEntity.this.getRandom();
@@ -106,8 +140,8 @@ public class FlurryEntity extends Monster implements GeoEntity {
 				return new Vec3(dir_x, dir_y, dir_z);
 			}
 		});
-		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(6, new FloatGoal(this));
+		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(9, new FloatGoal(this));
 	}
 
 	@Override
@@ -184,7 +218,7 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
 		builder = builder.add(Attributes.MAX_HEALTH, 22);
 		builder = builder.add(Attributes.ARMOR, 2);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 24);
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		builder = builder.add(Attributes.FLYING_SPEED, 0.3);

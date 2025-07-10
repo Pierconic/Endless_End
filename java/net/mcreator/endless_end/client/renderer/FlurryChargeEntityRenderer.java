@@ -18,7 +18,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class FlurryChargeEntityRenderer extends GeoEntityRenderer<FlurryChargeEntityEntity> {
 	public FlurryChargeEntityRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new FlurryChargeEntityModel());
-		this.shadowRadius = 0f;
+		this.shadowRadius = 0.2f;
 	}
 
 	@Override

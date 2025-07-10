@@ -69,7 +69,7 @@ public class EndlessEndModEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<FlurryChargeEntityEntity>> FLURRY_CHARGE_ENTITY = register("flurry_charge_entity",
 			EntityType.Builder.<FlurryChargeEntityEntity>of(FlurryChargeEntityEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.8f, 0.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

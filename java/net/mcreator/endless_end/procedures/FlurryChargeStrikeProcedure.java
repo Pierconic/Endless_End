@@ -3,9 +3,14 @@ package net.mcreator.endless_end.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+
+import net.mcreator.endless_end.entity.FlurryEntity;
+import net.mcreator.endless_end.entity.FlurryChargeEntityEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -18,14 +23,35 @@ public class FlurryChargeStrikeProcedure {
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
+		String shooter = "";
+		Entity shooter_entity = null;
 		if (!entity.level().isClientSide())
 			entity.discard();
+		shooter = "none";
+		{
+			final Vec3 _center = new Vec3(x, y, z);
+			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(32 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+			for (Entity entityiterator : _entfound) {
+				if ((entityiterator.getStringUUID()).equals(entity instanceof FlurryChargeEntityEntity _datEntS ? _datEntS.getEntityData().get(FlurryChargeEntityEntity.DATA_Shooter) : "")) {
+					shooter = entityiterator.getStringUUID();
+					shooter_entity = entityiterator;
+				}
+			}
+		}
 		{
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 			for (Entity entityiterator : _entfound) {
-				entityiterator.hurt(new DamageSource(world.holderOrThrow(DamageTypes.MAGIC)), 4);
-				entityiterator.setTicksFrozen(200);
+				if (!((entityiterator.getStringUUID()).equals(entity instanceof FlurryChargeEntityEntity _datEntS ? _datEntS.getEntityData().get(FlurryChargeEntityEntity.DATA_Shooter) : ""))) {
+					if (entityiterator instanceof Mob && !("none").equals(shooter)) {
+						if (entityiterator instanceof Mob _entity && shooter_entity instanceof LivingEntity _ent)
+							_entity.setTarget(_ent);
+					}
+					entityiterator.hurt(new DamageSource(world.holderOrThrow(DamageTypes.MAGIC)), 6);
+					if (!(entity instanceof FlurryEntity)) {
+						entityiterator.setTicksFrozen(280);
+					}
+				}
 			}
 		}
 		sx = -1;

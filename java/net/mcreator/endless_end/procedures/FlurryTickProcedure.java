@@ -44,7 +44,8 @@ public class FlurryTickProcedure {
 		for (int index0 = 0; index0 < (int) Math.round(0.025 * (entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_Charge) : 0)); index0++) {
 			world.addParticle(ParticleTypes.POOF, (x + Mth.nextDouble(RandomSource.create(), -0.7, 0.7)), (y + Mth.nextDouble(RandomSource.create(), -0.2, 0.4)), (z + Mth.nextDouble(RandomSource.create(), -0.7, 0.7)), 0, 0.1, 0);
 		}
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 32, 32, 32), e -> true).isEmpty() || !world.getEntitiesOfClass(Blaze.class, AABB.ofSize(new Vec3(x, y, z), 32, 32, 32), e -> true).isEmpty()) {
+		if ((!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 32, 32, 32), e -> true).isEmpty() || !world.getEntitiesOfClass(Blaze.class, AABB.ofSize(new Vec3(x, y, z), 32, 32, 32), e -> true).isEmpty())
+				&& world.isEmptyBlock(BlockPos.containing(x, y, z))) {
 			if (entity instanceof FlurryEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(FlurryEntity.DATA_Charge, (int) ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_Charge) : 0) + 1));
 			found = false;
@@ -64,8 +65,8 @@ public class FlurryTickProcedure {
 				}
 			}
 			if (found) {
-				entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY() + 0.7), (target.getZ())));
 				if ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_Charge) : 0) > 160) {
+					entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY() + 0.7), (target.getZ())));
 					if (entity instanceof FlurryEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(FlurryEntity.DATA_Charge, 0);
 					if (world instanceof ServerLevel _level) {
@@ -96,6 +97,12 @@ public class FlurryTickProcedure {
 							}
 						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof FlurryChargeEntityEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(FlurryChargeEntityEntity.DATA_Oomf, 450);
+						if (((Entity) world.getEntitiesOfClass(FlurryChargeEntityEntity.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+							}
+						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof FlurryChargeEntityEntity _datEntSetL)
+							_datEntSetL.getEntityData().set(FlurryChargeEntityEntity.DATA_Natural, true);
 					}
 				}
 			}
