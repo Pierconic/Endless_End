@@ -52,7 +52,7 @@ public class RemnantScatterProcedure {
 											if (Math.random() < 0.5) {
 												world.setBlock(BlockPos.containing(x + sx, (y + sy) - sy2, z + sz), EndlessEndModBlocks.CONVERTED_AMNESOCLAST.get().defaultBlockState(), 3);
 												{
-													int _value = Mth.nextInt(RandomSource.create(), 0, 12);
+													int _value = Mth.nextInt(RandomSource.create(), 0, 13);
 													BlockPos _pos = BlockPos.containing(x + sx, (y + sy) - sy2, z + sz);
 													BlockState _bs = world.getBlockState(_pos);
 													if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
@@ -69,7 +69,7 @@ public class RemnantScatterProcedure {
 											if (Math.random() < 0.5) {
 												world.setBlock(BlockPos.containing(x + sx, y + sy + sy2, z + sz), EndlessEndModBlocks.CONVERTED_AMNESOCLAST.get().defaultBlockState(), 3);
 												{
-													int _value = Mth.nextInt(RandomSource.create(), 0, 12);
+													int _value = Mth.nextInt(RandomSource.create(), 0, 13);
 													BlockPos _pos = BlockPos.containing(x + sx, y + sy + sy2, z + sz);
 													BlockState _bs = world.getBlockState(_pos);
 													if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))

@@ -28,4 +28,6 @@ public class EndlessEndModParticleTypes {
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE_BIG = REGISTRY.register("swing_silk_string_particle_big", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE_GIANT = REGISTRY.register("swing_silk_string_particle_giant", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SWING_SILK_STRING_PARTICLE_TINY = REGISTRY.register("swing_silk_string_particle_tiny", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> ENDORITE_REPEL = REGISTRY.register("endorite_repel", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> VIOLET_PIP = REGISTRY.register("violet_pip", () -> new SimpleParticleType(false));
 }

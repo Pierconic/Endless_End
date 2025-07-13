@@ -11,10 +11,10 @@
       "item": "endless_end:elytron_shard"
     },
     "b": {
-      "item": "minecraft:netherite_ingot"
+      "item": "minecraft:nether_star"
     },
     "c": {
-      "item": "minecraft:nether_star"
+      "item": "minecraft:netherite_ingot"
     }
   },
   "result": {

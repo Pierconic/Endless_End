@@ -155,6 +155,18 @@
     "axis=z,blockstate=12": {
       "model": "endless_end:block/converted_amnesoclast_states_blockstate_11",
       "x": 90
+    },
+    "axis=x,blockstate=13": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_12",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,blockstate=13": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_12"
+    },
+    "axis=z,blockstate=13": {
+      "model": "endless_end:block/converted_amnesoclast_states_blockstate_12",
+      "x": 90
     }
   }
 }

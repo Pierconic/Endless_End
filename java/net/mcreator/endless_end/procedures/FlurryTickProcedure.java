@@ -38,6 +38,10 @@ public class FlurryTickProcedure {
 		double magnitude = 0;
 		double x_vec = 0;
 		double z_vec = 0;
+		if (!(!(world.getNearestPlayer(entity, 96) == null))) {
+			if (!entity.level().isClientSide())
+				entity.discard();
+		}
 		if (Math.random() < 0.1) {
 			world.addParticle(ParticleTypes.FIREWORK, (x + Mth.nextDouble(RandomSource.create(), -1, 1)), (y + Mth.nextDouble(RandomSource.create(), -1, 1)), (z + Mth.nextDouble(RandomSource.create(), -1, 1)), 0, (-0.1), 0);
 		}
@@ -46,15 +50,15 @@ public class FlurryTickProcedure {
 		}
 		if ((!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 32, 32, 32), e -> true).isEmpty() || !world.getEntitiesOfClass(Blaze.class, AABB.ofSize(new Vec3(x, y, z), 32, 32, 32), e -> true).isEmpty())
 				&& world.isEmptyBlock(BlockPos.containing(x, y, z))) {
-			if (entity instanceof FlurryEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(FlurryEntity.DATA_Charge, (int) ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_Charge) : 0) + 1));
 			found = false;
 			distance = 99;
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(32 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof Blaze || entityiterator instanceof Player) {
+					if (entityiterator instanceof Blaze || entityiterator instanceof Player && !(entityiterator instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+						if (entity instanceof FlurryEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(FlurryEntity.DATA_Charge, (int) ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_Charge) : 0) + 1));
 						magnitude = Math.sqrt(Math.pow(entityiterator.getX() - x, 2) + Math.pow(entityiterator.getY() - y, 2) + Math.pow(entityiterator.getZ() - z, 2));
 						if (magnitude < distance) {
 							target = entityiterator;

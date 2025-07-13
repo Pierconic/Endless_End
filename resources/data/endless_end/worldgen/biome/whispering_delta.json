@@ -3,6 +3,17 @@
   "temperature": 0,
   "downfall": 0.5,
   "effects": {
+    "ambient_sound": "ambient.basalt_deltas.loop",
+    "mood_sound": {
+      "sound": "ambient.basalt_deltas.mood",
+      "tick_delay": 6000,
+      "offset": 8,
+      "block_search_extent": 2
+    },
+    "additions_sound": {
+      "sound": "ambient.basalt_deltas.additions",
+      "tick_chance": 0.0111
+    },
     "particle": {
       "options": {
         "type": "white_ash"
@@ -17,7 +28,14 @@
     "water_fog_color": -16751002
   },
   "spawners": {
-    "monster": [],
+    "monster": [
+      {
+        "type": "enderman",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ],
     "creature": [],
     "ambient": [],
     "axolotls": [],

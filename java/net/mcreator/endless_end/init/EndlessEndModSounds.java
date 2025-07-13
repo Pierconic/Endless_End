@@ -214,4 +214,5 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> INVERTED_AMBIENT = REGISTRY.register("inverted_ambient", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "inverted_ambient")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> INVERTED_ADDITIONS = REGISTRY.register("inverted_additions", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "inverted_additions")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> INVERTED_MOOD = REGISTRY.register("inverted_mood", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "inverted_mood")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> ENDORITE_REPEL = REGISTRY.register("endorite.repel", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "endorite.repel")));
 }

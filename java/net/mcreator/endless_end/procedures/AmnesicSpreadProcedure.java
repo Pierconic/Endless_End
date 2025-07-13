@@ -131,6 +131,14 @@ public class AmnesicSpreadProcedure {
 			} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
 				world.setBlock(BlockPos.containing(x + sx, y + sy, z + sz), Blocks.AIR.defaultBlockState(), 3);
 				success = true;
+			} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_ore")))) {
+				world.setBlock(BlockPos.containing(x + sx, y + sy, z + sz), (new Object() {
+					public BlockState with(BlockState _bs, String _property, int _newValue) {
+						Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
+						return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
+					}
+				}.with(EndlessEndModBlocks.CONVERTED_AMNESOCLAST.get().defaultBlockState(), "blockstate", 13)), 3);
+				success = true;
 			} else if (!(world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_immune")))) {
 				world.setBlock(BlockPos.containing(x + sx, y + sy, z + sz), EndlessEndModBlocks.AMNESOCLAST.get().defaultBlockState(), 3);
 				success = true;

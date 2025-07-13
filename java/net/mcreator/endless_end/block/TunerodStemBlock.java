@@ -399,7 +399,10 @@ public class TunerodStemBlock extends Block implements SimpleWaterloggedBlock, E
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
-		return super.getStateForPlacement(context).setValue(FACE, faceForDirection(context.getNearestLookingDirection())).setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(AGE, 0).setValue(WATERLOGGED, flag);
+		if (context.getClickedFace().getAxis() == Direction.Axis.Y)
+			return super.getStateForPlacement(context).setValue(FACE, context.getClickedFace().getOpposite() == Direction.UP ? AttachFace.CEILING : AttachFace.FLOOR).setValue(FACING, context.getHorizontalDirection()).setValue(AGE, 0)
+					.setValue(WATERLOGGED, flag);
+		return super.getStateForPlacement(context).setValue(FACE, AttachFace.WALL).setValue(FACING, context.getClickedFace()).setValue(AGE, 0).setValue(WATERLOGGED, flag);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -408,13 +411,6 @@ public class TunerodStemBlock extends Block implements SimpleWaterloggedBlock, E
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
-	}
-
-	private AttachFace faceForDirection(Direction direction) {
-		if (direction.getAxis() == Direction.Axis.Y)
-			return direction == Direction.UP ? AttachFace.CEILING : AttachFace.FLOOR;
-		else
-			return AttachFace.WALL;
 	}
 
 	@Override

@@ -36,7 +36,7 @@ import net.mcreator.endless_end.procedures.AmnesicSpreadProcedure;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class ConvertedAmnesoclastBlock extends Block {
-	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 12);
+	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 13);
 	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 
 	public ConvertedAmnesoclastBlock() {
@@ -69,6 +69,8 @@ public class ConvertedAmnesoclastBlock extends Block {
 						if (s.getValue(BLOCKSTATE) == 11)
 							return 0;
 						if (s.getValue(BLOCKSTATE) == 12)
+							return 0;
+						if (s.getValue(BLOCKSTATE) == 13)
 							return 0;
 						return 0;
 					}

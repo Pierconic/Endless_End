@@ -13,7 +13,6 @@ import software.bernie.geckolib.animatable.GeoEntity;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -31,7 +30,6 @@ import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
@@ -39,7 +37,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.Difficulty;
 import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
@@ -53,13 +50,15 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.endless_end.procedures.FlurryTickProcedure;
 import net.mcreator.endless_end.procedures.FlurryProximityCheckProcedure;
 import net.mcreator.endless_end.procedures.FlurryDropProcedure;
-import net.mcreator.endless_end.init.EndlessEndModEntities;
 
 public class FlurryEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Integer> DATA_Charge = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_homeX = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_homeY = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_homeZ = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -80,6 +79,9 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		builder.define(ANIMATION, "undefined");
 		builder.define(TEXTURE, "flurry_active");
 		builder.define(DATA_Charge, 0);
+		builder.define(DATA_homeX, 0);
+		builder.define(DATA_homeY, 0);
+		builder.define(DATA_homeZ, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -162,7 +164,7 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		FlurryDropProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), source.getEntity());
+		FlurryDropProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
 	}
 
 	@Override
@@ -170,6 +172,9 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
 		compound.putInt("DataCharge", this.entityData.get(DATA_Charge));
+		compound.putInt("DatahomeX", this.entityData.get(DATA_homeX));
+		compound.putInt("DatahomeY", this.entityData.get(DATA_homeY));
+		compound.putInt("DatahomeZ", this.entityData.get(DATA_homeZ));
 	}
 
 	@Override
@@ -179,6 +184,12 @@ public class FlurryEntity extends Monster implements GeoEntity {
 			this.setTexture(compound.getString("Texture"));
 		if (compound.contains("DataCharge"))
 			this.entityData.set(DATA_Charge, compound.getInt("DataCharge"));
+		if (compound.contains("DatahomeX"))
+			this.entityData.set(DATA_homeX, compound.getInt("DatahomeX"));
+		if (compound.contains("DatahomeY"))
+			this.entityData.set(DATA_homeY, compound.getInt("DatahomeY"));
+		if (compound.contains("DatahomeZ"))
+			this.entityData.set(DATA_homeZ, compound.getInt("DatahomeZ"));
 	}
 
 	@Override
@@ -208,9 +219,6 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	}
 
 	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EndlessEndModEntities.FLURRY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)),
-				RegisterSpawnPlacementsEvent.Operation.REPLACE);
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

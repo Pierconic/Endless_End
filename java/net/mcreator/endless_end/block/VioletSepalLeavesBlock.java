@@ -1,6 +1,9 @@
 
 package net.mcreator.endless_end.block;
 
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -19,10 +22,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.Minecraft;
 
 import net.mcreator.endless_end.procedures.SepalStabilityProcedure;
+import net.mcreator.endless_end.procedures.SepalParticlesProcedure;
 
 public class VioletSepalLeavesBlock extends Block implements SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -81,5 +88,16 @@ public class VioletSepalLeavesBlock extends Block implements SimpleWaterloggedBl
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
 		SepalStabilityProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	@Override
+	public void animateTick(BlockState blockstate, Level world, BlockPos pos, RandomSource random) {
+		super.animateTick(blockstate, world, pos, random);
+		Player entity = Minecraft.getInstance().player;
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		SepalParticlesProcedure.execute(world, x, y, z);
 	}
 }

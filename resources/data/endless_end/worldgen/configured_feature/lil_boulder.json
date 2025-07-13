@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:simple_random_selector",
+  "type": "endless_end:lil_boulder",
   "config": {
     "features": [
       {
@@ -7,10 +7,11 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_1",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
               0
             ]
           }
@@ -22,10 +23,11 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_2",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
               0
             ]
           }
@@ -37,10 +39,11 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_3",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
               0
             ]
           }
@@ -52,10 +55,11 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_4",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
               0
             ]
           }
@@ -67,10 +71,11 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_5",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
               0
             ]
           }
@@ -82,10 +87,11 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_6",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
               0
             ]
           }
@@ -97,10 +103,11 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_7",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
               0
             ]
           }
@@ -112,10 +119,139 @@
           "type": "endless_end:structure_feature",
           "config": {
             "structure": "endless_end:lil_boulder_8",
+            "random_mirror": true,
             "ignored_blocks": "minecraft:air",
             "offset": [
               0,
-              -1,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_9",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_10",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_11",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_12",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_13",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_14",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_15",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:lil_boulder_16",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
               0
             ]
           }

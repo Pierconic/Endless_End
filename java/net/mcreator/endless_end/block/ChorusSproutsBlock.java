@@ -25,7 +25,7 @@ public class ChorusSproutsBlock extends FlowerBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return box(4, 0, 4, 12, 6, 12);
+		return box(2, 0, 2, 14, 3, 14);
 	}
 
 	@Override
@@ -33,7 +33,8 @@ public class ChorusSproutsBlock extends FlowerBlock {
 		return groundState.is(EndlessEndModBlocks.CANTICLE.get()) || groundState.is(EndlessEndModBlocks.ROTTING_END_STONE.get()) || groundState.is(EndlessEndModBlocks.BLOOMING_CANTICLE.get())
 				|| groundState.is(EndlessEndModBlocks.CHISELED_ENDSTONE.get()) || groundState.is(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get()) || groundState.is(EndlessEndModBlocks.ENDORITE_ORE.get())
 				|| groundState.is(EndlessEndModBlocks.END_IRON.get()) || groundState.is(EndlessEndModBlocks.END_AMETHYST.get()) || groundState.is(EndlessEndModBlocks.COBBLED_ENDSTONE.get()) || groundState.is(EndlessEndModBlocks.END_DIAMONDS.get())
-				|| groundState.is(EndlessEndModBlocks.ROOTED_ENDSTONE.get()) || groundState.is(Blocks.END_STONE) || groundState.is(Blocks.END_STONE_BRICKS) || groundState.is(EndlessEndModBlocks.REFUSE.get());
+				|| groundState.is(EndlessEndModBlocks.ROOTED_ENDSTONE.get()) || groundState.is(Blocks.END_STONE) || groundState.is(Blocks.END_STONE_BRICKS) || groundState.is(EndlessEndModBlocks.REFUSE.get())
+				|| groundState.is(EndlessEndModBlocks.CALCIFIED_ENDSTONE.get());
 	}
 
 	@Override

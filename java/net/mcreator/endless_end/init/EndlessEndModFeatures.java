@@ -18,11 +18,13 @@ import net.mcreator.endless_end.world.features.SoulDeltaSpikesFeature;
 import net.mcreator.endless_end.world.features.SmallVioletStemFeature;
 import net.mcreator.endless_end.world.features.RandomGoldRootsFeature;
 import net.mcreator.endless_end.world.features.PoppedChorusBlobFeature;
+import net.mcreator.endless_end.world.features.LilBoulderFeature;
 import net.mcreator.endless_end.world.features.InvertedOrchardBonusHumusFeature;
 import net.mcreator.endless_end.world.features.InvertedHumusFeatureFeature;
 import net.mcreator.endless_end.world.features.GoldenSpikeFeatureFeature;
 import net.mcreator.endless_end.world.features.GoldenBlossomFeature;
 import net.mcreator.endless_end.world.features.EndWasteRefuseFeature;
+import net.mcreator.endless_end.world.features.ElderBoulderFeature;
 import net.mcreator.endless_end.world.features.ChorusBlobFeature;
 import net.mcreator.endless_end.world.features.CanticlePatchFeature;
 import net.mcreator.endless_end.world.features.AmnesicDepositFeature;
@@ -47,5 +49,7 @@ public class EndlessEndModFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<?>> INVERTED_ORCHARD_BONUS_HUMUS = REGISTRY.register("inverted_orchard_bonus_humus", InvertedOrchardBonusHumusFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> RANDOM_GOLD_ROOTS = REGISTRY.register("random_gold_roots", RandomGoldRootsFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> SOUL_DELTA_SPIKES = REGISTRY.register("soul_delta_spikes", SoulDeltaSpikesFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> LIL_BOULDER = REGISTRY.register("lil_boulder", LilBoulderFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> SOUL_SPIRE = REGISTRY.register("soul_spire", SoulSpireFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> ELDER_BOULDER = REGISTRY.register("elder_boulder", ElderBoulderFeature::new);
 }

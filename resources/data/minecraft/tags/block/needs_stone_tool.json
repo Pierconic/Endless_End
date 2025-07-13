@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "endless_end:endorite_membrane",
     "endless_end:grim_door",
     "endless_end:grim_trapdoor",
     "endless_end:grim_fence_gate",

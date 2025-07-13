@@ -1,5 +1,6 @@
 package net.mcreator.endless_end.procedures;
 
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.util.RandomSource;
@@ -71,15 +72,15 @@ public class SoulPillarProcedure {
 			yOff = yOff + 1;
 		}
 		counter2 = 0;
-		SoulPillarTopperProcedure.execute(world, x, z, 1);
+		SoulPillarTopperProcedure.execute(world, x, y, z, 0.9);
 		localRad = initRad;
-		extraLocalRad = localRad;
+		extraLocalRad = initRad;
 		for (int index3 = 0; index3 < (int) localRad; index3++) {
 			counter2 = 0;
 			while (counter2 <= 360) {
-				x2 = 1 * extraLocalRad * Math.cos(counter2);
-				z2 = 1 * extraLocalRad * Math.sin(counter2);
-				SoulPillarTopperProcedure.execute(world, x + x2 + 0.5, z + z2 + 0.5, 0.5 * (localRad / extraLocalRad));
+				x2 = extraLocalRad * Math.cos(counter2);
+				z2 = extraLocalRad * Math.sin(counter2);
+				SoulPillarTopperProcedure.execute(world, x + x2 + 0.5, world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) (x + x2 + 0.5), (int) (z + z2 + 0.5)) - 1, z + z2 + 0.5, Math.abs(0.5 * (localRad / extraLocalRad)));
 				counter2 = counter2 + 1;
 			}
 			extraLocalRad = extraLocalRad - 1;

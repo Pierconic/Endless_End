@@ -14,12 +14,6 @@
       "sound": "endless_end:chorus_additions",
       "tick_chance": 0.0111
     },
-    "particle": {
-      "options": {
-        "type": "white_ash"
-      },
-      "probability": 0.005
-    },
     "foliage_color": -10092442,
     "grass_color": -10092442,
     "sky_color": -10092442,
@@ -28,20 +22,7 @@
     "water_fog_color": -3368449
   },
   "spawners": {
-    "monster": [
-      {
-        "type": "endless_end:grazer",
-        "weight": 20,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "endless_end:trawler",
-        "weight": 7,
-        "minCount": 1,
-        "maxCount": 1
-      }
-    ],
+    "monster": [],
     "creature": [],
     "ambient": [],
     "axolotls": [],

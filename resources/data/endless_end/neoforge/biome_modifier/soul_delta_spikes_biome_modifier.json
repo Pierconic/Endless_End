@@ -2,5 +2,5 @@
   "type": "neoforge:add_features",
   "biomes": "endless_end:whispering_delta",
   "features": "endless_end:soul_delta_spikes",
-  "step": "local_modifications"
+  "step": "top_layer_modification"
 }

@@ -41,7 +41,7 @@ public class PhasedEndoriteMeshBlock extends Block implements SimpleWaterloggedB
 				.sound(new DeferredSoundType(1.0f, 1.0f, () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endoritebreak")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.glass.step")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endoriteplace")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.amethyst_block.hit")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.glass.step"))))
-				.strength(6f, 12f).requiresCorrectToolForDrops().noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+				.strength(10f).requiresCorrectToolForDrops().noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
 	}
 

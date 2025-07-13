@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "endless_end:block/membrane_bottom_passable",
+    "up": "endless_end:block/membrane_top_passable",
+    "north": "endless_end:block/membrane_back_passable",
+    "east": "endless_end:block/membrane_side_passable_alt",
+    "south": "endless_end:block/membrane_front",
+    "west": "endless_end:block/membrane_side_passable",
+    "particle": "endless_end:block/membrane_bottom_passable"
+  },
+  "render_type": "translucent"
+}

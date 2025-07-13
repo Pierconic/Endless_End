@@ -36,7 +36,7 @@ public class EndoriteMeshBlock extends Block {
 				.sound(new DeferredSoundType(1.0f, 1.0f, () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endoritebreak")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.glass.step")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endoriteplace")), () -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.amethyst_block.hit")),
 						() -> BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.glass.step"))))
-				.strength(6f, 12f).lightLevel(s -> (new Object() {
+				.strength(20f).lightLevel(s -> (new Object() {
 					public int getLightLevel() {
 						if (s.getValue(BLOCKSTATE) == 1)
 							return 0;

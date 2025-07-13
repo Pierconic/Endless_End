@@ -205,6 +205,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.VIOLET_DOOR.get().asItem());
 			tabData.accept(EndlessEndModBlocks.AZURE_DOOR.get().asItem());
 			tabData.accept(EndlessEndModBlocks.GRIM_DOOR.get().asItem());
+			tabData.accept(EndlessEndModBlocks.ENDORITE_MEMBRANE.get().asItem());
 		}
 	}
 }

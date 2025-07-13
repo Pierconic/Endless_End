@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "id": "endless_end:star_fragment",
+    "count": 4
+  }
+}

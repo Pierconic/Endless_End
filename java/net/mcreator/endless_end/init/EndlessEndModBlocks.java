@@ -94,6 +94,7 @@ import net.mcreator.endless_end.block.EssenceBlock;
 import net.mcreator.endless_end.block.EndoriteTilesBlock;
 import net.mcreator.endless_end.block.EndoriteOreBlock;
 import net.mcreator.endless_end.block.EndoriteMeshBlock;
+import net.mcreator.endless_end.block.EndoriteMembraneBlock;
 import net.mcreator.endless_end.block.EndoriteCoreBlock;
 import net.mcreator.endless_end.block.EndoriteBlockBlock;
 import net.mcreator.endless_end.block.EnderporterYellowBlock;
@@ -281,6 +282,7 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> FLOURITE_LAMP = REGISTRY.register("flourite_lamp", FlouriteLampBlock::new);
 	public static final DeferredBlock<Block> FLURRY_CRYSTALS = REGISTRY.register("flurry_crystals", FlurryCrystalsBlock::new);
 	public static final DeferredBlock<Block> SNARE_CRYSTALS = REGISTRY.register("snare_crystals", SnareCrystalsBlock::new);
+	public static final DeferredBlock<Block> ENDORITE_MEMBRANE = REGISTRY.register("endorite_membrane", EndoriteMembraneBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

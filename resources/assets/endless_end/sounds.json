@@ -2795,5 +2795,26 @@
         "stream": false
       }
     ]
+  },
+  "endorite.repel": {
+    "subtitle": "subtitles.endorite.repel",
+    "sounds": [
+      {
+        "name": "endless_end:endorite_repel_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:endorite_repel_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:endorite_repel_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:endorite_repel_1",
+        "stream": false
+      }
+    ]
   }
 }

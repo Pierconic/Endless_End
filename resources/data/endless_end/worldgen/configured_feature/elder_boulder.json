@@ -1,0 +1,167 @@
+{
+  "type": "endless_end:elder_boulder",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_1",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_2",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_3",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_4",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_5",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_6",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_7",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_8",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_9",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "endless_end:structure_feature",
+          "config": {
+            "structure": "endless_end:elder_boulder_10",
+            "random_mirror": true,
+            "ignored_blocks": "minecraft:air",
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      }
+    ]
+  }
+}

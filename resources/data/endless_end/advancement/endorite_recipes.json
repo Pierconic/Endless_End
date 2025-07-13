@@ -25,7 +25,6 @@
       "endless_end:endorite_mesh_recipe",
       "endless_end:endorite_core_recipe",
       "endless_end:endorite_tiles_recipe",
-      "endless_end:endorite_membrane_recipe",
       "endless_end:ender_pearl_recipe",
       "endless_end:warp_chip_recipe",
       "endless_end:red_warp_chip_recipe",
@@ -59,7 +58,8 @@
       "endless_end:gray_enderporter_recipe",
       "endless_end:dark_gray_enderporter_recipe",
       "endless_end:black_enderporter_recipe",
-      "endless_end:white_warp_chip_recipe"
+      "endless_end:white_warp_chip_recipe",
+      "endless_end:endorite_membrane_recipe"
     ]
   }
 }

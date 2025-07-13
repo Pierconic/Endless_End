@@ -18,7 +18,7 @@ import net.mcreator.endless_end.procedures.ShiftyEndoriteProcedure;
 
 public class EndoriteOreBlock extends Block {
 	public EndoriteOreBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.SAND).sound(SoundType.STONE).strength(5f, 10f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.SAND).sound(SoundType.STONE).strength(12f, 10f).requiresCorrectToolForDrops());
 	}
 
 	@Override

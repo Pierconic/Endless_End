@@ -1,5 +1,5 @@
 {
-  "has_precipitation": false,
+  "has_precipitation": true,
   "temperature": 0,
   "downfall": 0.5,
   "effects": {
@@ -11,7 +11,7 @@
     },
     "foliage_color": -16764109,
     "grass_color": -16751002,
-    "sky_color": -16764109,
+    "sky_color": -16770020,
     "fog_color": -16764109,
     "water_color": -16764109,
     "water_fog_color": -16751002
@@ -36,7 +36,9 @@
   },
   "features": [
     [],
-    [],
+    [
+      "minecraft:lake_lava_underground"
+    ],
     [],
     [],
     [],

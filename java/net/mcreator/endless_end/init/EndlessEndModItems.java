@@ -278,6 +278,7 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> FLURRY_ROD = REGISTRY.register("flurry_rod", FlurryRodItem::new);
 	public static final DeferredItem<Item> FLURRY_CRYSTALS = block(EndlessEndModBlocks.FLURRY_CRYSTALS);
 	public static final DeferredItem<Item> SNARE_CRYSTALS = block(EndlessEndModBlocks.SNARE_CRYSTALS);
+	public static final DeferredItem<Item> ENDORITE_MEMBRANE = block(EndlessEndModBlocks.ENDORITE_MEMBRANE);
 
 	// Start of user code block custom items
 	// End of user code block custom items

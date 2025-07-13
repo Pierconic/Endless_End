@@ -16,12 +16,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.FlouriteStepProcedure;
 import net.mcreator.endless_end.procedures.FlouriteRedstoneProcedure;
 import net.mcreator.endless_end.procedures.FlouriteLightPulseProcedure;
 import net.mcreator.endless_end.procedures.FlouriteBrokenProcedure;
+import net.mcreator.endless_end.procedures.FlouriteAmbientSpawnProcedure;
 
 public class FlouriteBlock extends Block {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 15);
@@ -86,6 +89,12 @@ public class FlouriteBlock extends Block {
 		if (world.getBestNeighborSignal(pos) > 0) {
 			FlouriteRedstoneProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		}
+	}
+
+	@Override
+	public void randomTick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+		super.randomTick(blockstate, world, pos, random);
+		FlouriteAmbientSpawnProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
 	}
 
 	@Override
