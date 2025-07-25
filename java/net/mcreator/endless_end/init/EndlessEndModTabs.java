@@ -34,6 +34,8 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.DISC_FRAGMENT_CHORUS.get());
 			tabData.accept(EndlessEndModItems.FLURRY_CHARGE.get());
 			tabData.accept(EndlessEndModItems.FLURRY_ROD.get());
+			tabData.accept(EndlessEndModItems.STRANGE_KEY.get());
+			tabData.accept(EndlessEndModItems.WARPED_KEY.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.CHISELED_ENDSTONE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get().asItem());
@@ -111,6 +113,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.TRAWLER_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.POLYP_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.FLURRY_SPAWN_EGG.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.TETHER.get().asItem());
 			tabData.accept(EndlessEndModBlocks.SINGING_SAND.get().asItem());
@@ -187,6 +190,8 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.GRIM_STONE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.FLOURITE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.SPREADING_FLOURITE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.PHRYGIA.get().asItem());
+			tabData.accept(EndlessEndModBlocks.TALL_PHYRIGIA.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());

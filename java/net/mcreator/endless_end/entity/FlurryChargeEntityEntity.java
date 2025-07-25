@@ -49,6 +49,7 @@ public class FlurryChargeEntityEntity extends PathfinderMob implements GeoEntity
 	public static final EntityDataAccessor<Integer> DATA_Inaccuracy = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_Natural = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_LifeTicks = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Sparkle = SynchedEntityData.defineId(FlurryChargeEntityEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -75,6 +76,7 @@ public class FlurryChargeEntityEntity extends PathfinderMob implements GeoEntity
 		builder.define(DATA_Inaccuracy, 15);
 		builder.define(DATA_Natural, false);
 		builder.define(DATA_LifeTicks, 0);
+		builder.define(DATA_Sparkle, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -139,6 +141,7 @@ public class FlurryChargeEntityEntity extends PathfinderMob implements GeoEntity
 		compound.putInt("DataInaccuracy", this.entityData.get(DATA_Inaccuracy));
 		compound.putBoolean("DataNatural", this.entityData.get(DATA_Natural));
 		compound.putInt("DataLifeTicks", this.entityData.get(DATA_LifeTicks));
+		compound.putInt("DataSparkle", this.entityData.get(DATA_Sparkle));
 	}
 
 	@Override
@@ -158,6 +161,8 @@ public class FlurryChargeEntityEntity extends PathfinderMob implements GeoEntity
 			this.entityData.set(DATA_Natural, compound.getBoolean("DataNatural"));
 		if (compound.contains("DataLifeTicks"))
 			this.entityData.set(DATA_LifeTicks, compound.getInt("DataLifeTicks"));
+		if (compound.contains("DataSparkle"))
+			this.entityData.set(DATA_Sparkle, compound.getInt("DataSparkle"));
 	}
 
 	@Override

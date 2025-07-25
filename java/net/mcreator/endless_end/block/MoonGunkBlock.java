@@ -105,7 +105,7 @@ public class MoonGunkBlock extends Block implements SimpleWaterloggedBlock, Enti
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		MoonGunkLaunchProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
+		MoonGunkLaunchProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 	}
 
 	@Override

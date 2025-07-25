@@ -30,9 +30,9 @@ public class EndoriteTilesUpdateTickProcedure {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endoritephase")), SoundSource.NEUTRAL, (float) 0.5, (float) 0.8);
+					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endorite.collapse")), SoundSource.BLOCKS, (float) 0.5, (float) 0.8);
 				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endoritephase")), SoundSource.NEUTRAL, (float) 0.5, (float) 0.8, false);
+					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:endorite.collapse")), SoundSource.BLOCKS, (float) 0.5, (float) 0.8, false);
 				}
 			}
 		} else if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip6 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip6) : -1) != 0

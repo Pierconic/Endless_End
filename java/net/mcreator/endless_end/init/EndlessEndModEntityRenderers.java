@@ -17,6 +17,7 @@ import net.mcreator.endless_end.client.renderer.TrawlerRenderer;
 import net.mcreator.endless_end.client.renderer.SwingsilkBallRenderer;
 import net.mcreator.endless_end.client.renderer.SwingshotBoltRenderer;
 import net.mcreator.endless_end.client.renderer.PolypRenderer;
+import net.mcreator.endless_end.client.renderer.LoomerRenderer;
 import net.mcreator.endless_end.client.renderer.HollowRenderer;
 import net.mcreator.endless_end.client.renderer.GrazerRenderer;
 import net.mcreator.endless_end.client.renderer.FlurryRenderer;
@@ -37,5 +38,6 @@ public class EndlessEndModEntityRenderers {
 		event.registerEntityRenderer(EndlessEndModEntities.POLYP.get(), PolypRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.FLURRY.get(), FlurryRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.FLURRY_CHARGE_ENTITY.get(), FlurryChargeEntityRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.LOOMER.get(), LoomerRenderer::new);
 	}
 }

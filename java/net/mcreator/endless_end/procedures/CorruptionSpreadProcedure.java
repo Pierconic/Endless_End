@@ -26,25 +26,25 @@ public class CorruptionSpreadProcedure {
 		double teeth_chance = 0;
 		double spike_chance = 0;
 		if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
-			if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 12000) {
+			if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 9000) {
 				chance_modifier = 3.5;
 				time_modifier = 3;
 				spike_chance = 0.5;
 				eye_chance = 0.3;
 				teeth_chance = 1;
-			} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 7200) {
+			} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 6000) {
 				chance_modifier = 2.3;
 				time_modifier = 3;
 				spike_chance = 0.1;
 				eye_chance = 0.3;
 				teeth_chance = 0.5;
-			} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 4800) {
+			} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 3000) {
 				chance_modifier = 1.6;
 				time_modifier = 2;
 				spike_chance = 0;
 				eye_chance = 0.2;
 				teeth_chance = 0.4;
-			} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 2400) {
+			} else if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(EndlessEndModMobEffects.CORRUPTION) ? _livEnt.getEffect(EndlessEndModMobEffects.CORRUPTION).getDuration() : 0) > 1200) {
 				chance_modifier = 1;
 				time_modifier = 1;
 				spike_chance = 0;

@@ -39,18 +39,26 @@ public class AirBubbleProcedure {
 				if (!(world.getBlockState(BlockPos.containing(x + x2 + 0.5, y + yOff, z + z2 + 0.5))).is(BlockTags.create(ResourceLocation.parse("forge:bubble_immune")))) {
 					world.setBlock(BlockPos.containing(x + x2 + 0.5, y + yOff, z + z2 + 0.5), Blocks.AIR.defaultBlockState(), 3);
 				}
-				if ((world.getBlockState(BlockPos.containing(x + x2 + 0.5, (y + yOff) - 1, z + z2 + 0.5))).getBlock() == EndlessEndModBlocks.MOLDERING_PURPUR.get() && Math.random() < 0.3) {
-					world.setBlock(BlockPos.containing(x + x2 + 0.5, y + yOff, z + z2 + 0.5), (new Object() {
-						public BlockState with(BlockState _bs, String _property, int _newValue) {
-							Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
-							return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
+				if ((world.getBlockState(BlockPos.containing(x + x2 + 0.5, (y + yOff) - 1, z + z2 + 0.5))).getBlock() == EndlessEndModBlocks.MOLDERING_PURPUR.get() && Math.random() < 0.4) {
+					if (Math.random() < 0.3) {
+						if (Math.random() < 0.3) {
+							world.setBlock(BlockPos.containing(x + x2 + 0.5, y + yOff, z + z2 + 0.5), EndlessEndModBlocks.CHORUS_ROOTS.get().defaultBlockState(), 3);
+						} else {
+							world.setBlock(BlockPos.containing(x + x2 + 0.5, y + yOff, z + z2 + 0.5), EndlessEndModBlocks.CHORUS_SPROUTS.get().defaultBlockState(), 3);
 						}
-					}.with((new Object() {
-						public BlockState with(BlockState _bs, String _property, String _newValue) {
-							Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
-							return _prop instanceof EnumProperty _ep && _ep.getValue(_newValue).isPresent() ? _bs.setValue(_ep, (Enum) _ep.getValue(_newValue).get()) : _bs;
-						}
-					}.with(EndlessEndModBlocks.STRANGE_EGGS.get().defaultBlockState(), "face", "floor")), "blockstate", Mth.nextInt(RandomSource.create(), 1, 3))), 3);
+					} else {
+						world.setBlock(BlockPos.containing(x + x2 + 0.5, y + yOff, z + z2 + 0.5), (new Object() {
+							public BlockState with(BlockState _bs, String _property, int _newValue) {
+								Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
+								return _prop instanceof IntegerProperty _ip && _prop.getPossibleValues().contains(_newValue) ? _bs.setValue(_ip, _newValue) : _bs;
+							}
+						}.with((new Object() {
+							public BlockState with(BlockState _bs, String _property, String _newValue) {
+								Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);
+								return _prop instanceof EnumProperty _ep && _ep.getValue(_newValue).isPresent() ? _bs.setValue(_ep, (Enum) _ep.getValue(_newValue).get()) : _bs;
+							}
+						}.with(EndlessEndModBlocks.STRANGE_EGGS.get().defaultBlockState(), "face", "floor")), "blockstate", Mth.nextInt(RandomSource.create(), 1, 3))), 3);
+					}
 				}
 				{
 					final Vec3 _center = new Vec3(x, y, z);
@@ -62,9 +70,9 @@ public class AirBubbleProcedure {
 						}
 					}
 				}
-				counter2 = counter2 + 1;
+				counter2 = counter2 + 2;
 			}
-			counter = counter + 1;
+			counter = counter + 2;
 		}
 	}
 }

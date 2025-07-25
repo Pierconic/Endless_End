@@ -1,0 +1,149 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"drift": {
+			"loop": true,
+			"animation_length": 8,
+			"bones": {
+				"top": {
+					"rotation": [0, 0, 0]
+				},
+				"flap 4": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 135) * -7 - 10"]
+				},
+				"tendril 1": {
+					"rotation": ["math.sin(query.anim_time * 90) * -7", 0, "math.sin(query.anim_time * 90) * -7"]
+				},
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"8.0": [0, -360, 0]
+					}
+				},
+				"flap 1": {
+					"rotation": ["math.sin(query.anim_time * 135) * -7 - 10", 0, 0]
+				},
+				"flap2": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 135) * 7 + 10"]
+				},
+				"flap3": {
+					"rotation": ["math.sin(query.anim_time * 135) * 7 + 10", 0, 0]
+				},
+				"tendril 2": {
+					"rotation": ["math.sin(query.anim_time * 90) * 7", 0, "math.sin(query.anim_time * 90) * -7"]
+				},
+				"tendril 3": {
+					"rotation": ["math.sin(query.anim_time * 90) * -7", 0, "math.sin(query.anim_time * 90) * 7"]
+				},
+				"tendril 4": {
+					"rotation": ["math.sin(query.anim_time * 90) * 7", 0, "math.sin(query.anim_time * 90) * 7"]
+				},
+				"flap1": {
+					"rotation": ["math.sin(query.anim_time * 135) * -7 - 10", 0, 0]
+				},
+				"flap4": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 135) * -7 - 10"]
+				},
+				"tendril2": {
+					"rotation": ["math.sin(query.anim_time * 90) * 5 + 5", 0, "math.sin(query.anim_time * 90) * -5 - 5"]
+				},
+				"tendril4": {
+					"rotation": ["math.sin(query.anim_time * 90) * 5 + 5", 0, "math.sin(query.anim_time * 90) * 5 + 5"]
+				},
+				"tendril3": {
+					"rotation": ["math.sin(query.anim_time * 90) * -5 - 5", 0, "math.sin(query.anim_time * 90) * 5 + 5"]
+				},
+				"tendril1": {
+					"rotation": ["math.sin(query.anim_time * 90) * -5 - 5", 0, "math.sin(query.anim_time * 90) * -5 - 5"]
+				}
+			}
+		},
+		"death": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"top": {
+					"rotation": [0, 0, 0]
+				},
+				"flap 4": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 135) * -7 - 10"]
+				},
+				"tendril 1": {
+					"rotation": ["math.sin(query.anim_time * 90) * -7", 0, "math.sin(query.anim_time * 90) * -7"]
+				},
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, -360, 3]
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.2": [1, 1.6, 1],
+						"0.5": [1.3, 0.4, 1.3],
+						"0.9": [0.3, 0, 0.3]
+					}
+				},
+				"flap 1": {
+					"rotation": ["math.sin(query.anim_time * 135) * -7 - 10", 0, 0]
+				},
+				"flap2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3": [0, 0, 65]
+					}
+				},
+				"flap3": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3": [65, 0, 0]
+					}
+				},
+				"tendril 2": {
+					"rotation": ["math.sin(query.anim_time * 90) * 7", 0, "math.sin(query.anim_time * 90) * -7"]
+				},
+				"tendril 3": {
+					"rotation": ["math.sin(query.anim_time * 90) * -7", 0, "math.sin(query.anim_time * 90) * 7"]
+				},
+				"tendril 4": {
+					"rotation": ["math.sin(query.anim_time * 90) * 7", 0, "math.sin(query.anim_time * 90) * 7"]
+				},
+				"flap1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3": [-65, 0, 0]
+					}
+				},
+				"flap4": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3": [0, 0, -65]
+					}
+				},
+				"tendril2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.2": [18.88172, 6.71771, -18.88172]
+					}
+				},
+				"tendril4": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.2": [20, 0, 20]
+					}
+				},
+				"tendril3": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.2": [-18.88172, 6.71771, 18.88172]
+					}
+				},
+				"tendril1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.2": [-20, 0, -20]
+					}
+				}
+			}
+		}
+	}
+}

@@ -30,11 +30,10 @@ public class ChorusSproutsBlock extends FlowerBlock {
 
 	@Override
 	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-		return groundState.is(EndlessEndModBlocks.CANTICLE.get()) || groundState.is(EndlessEndModBlocks.ROTTING_END_STONE.get()) || groundState.is(EndlessEndModBlocks.BLOOMING_CANTICLE.get())
-				|| groundState.is(EndlessEndModBlocks.CHISELED_ENDSTONE.get()) || groundState.is(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get()) || groundState.is(EndlessEndModBlocks.ENDORITE_ORE.get())
-				|| groundState.is(EndlessEndModBlocks.END_IRON.get()) || groundState.is(EndlessEndModBlocks.END_AMETHYST.get()) || groundState.is(EndlessEndModBlocks.COBBLED_ENDSTONE.get()) || groundState.is(EndlessEndModBlocks.END_DIAMONDS.get())
-				|| groundState.is(EndlessEndModBlocks.ROOTED_ENDSTONE.get()) || groundState.is(Blocks.END_STONE) || groundState.is(Blocks.END_STONE_BRICKS) || groundState.is(EndlessEndModBlocks.REFUSE.get())
-				|| groundState.is(EndlessEndModBlocks.CALCIFIED_ENDSTONE.get());
+		return groundState.is(EndlessEndModBlocks.ROTTING_END_STONE.get()) || groundState.is(EndlessEndModBlocks.CHISELED_ENDSTONE.get()) || groundState.is(EndlessEndModBlocks.CRACKED_END_STONE_BRICKS.get())
+				|| groundState.is(EndlessEndModBlocks.ENDORITE_ORE.get()) || groundState.is(EndlessEndModBlocks.END_IRON.get()) || groundState.is(EndlessEndModBlocks.END_AMETHYST.get()) || groundState.is(EndlessEndModBlocks.COBBLED_ENDSTONE.get())
+				|| groundState.is(EndlessEndModBlocks.END_DIAMONDS.get()) || groundState.is(EndlessEndModBlocks.ROOTED_ENDSTONE.get()) || groundState.is(Blocks.END_STONE) || groundState.is(Blocks.END_STONE_BRICKS)
+				|| groundState.is(EndlessEndModBlocks.REFUSE.get()) || groundState.is(EndlessEndModBlocks.CALCIFIED_ENDSTONE.get()) || groundState.is(EndlessEndModBlocks.MOLDERING_PURPUR.get());
 	}
 
 	@Override

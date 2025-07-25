@@ -27,7 +27,7 @@ public class EndlessEndModSurfaceRules {
 		if (hasEndBiomes) {
 			if (chunkGenerator instanceof NoiseBasedChunkGenerator generator) {
 				NoiseGeneratorSettings noiseGeneratorSettings = generator.settings.value();
-				registerSurfaceRules(ResourceLocation.parse("endless_end:chorus_orchard"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:chorus_orchard"), noiseGeneratorSettings, EndlessEndModBlocks.CANTICLE.get().defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:chorus_midlands"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:chorus_barrens"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:inverted_orchard"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());

@@ -1,5 +1,7 @@
 package net.mcreator.endless_end.procedures;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -9,12 +11,16 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class CanticleEdgeProcedure {
-	public static boolean execute(LevelAccessor world, double x, double z) {
+	public static boolean execute(LevelAccessor world, double x, double y, double z) {
 		boolean found = false;
 		double sx = 0;
 		double sy = 0;
@@ -92,20 +98,27 @@ public class CanticleEdgeProcedure {
 									world.setBlock(_pos, _bs.setValue(_enumProp, (Enum) _enumProp.getValue(_value).get()), 3);
 							}
 						}
-					} else if (Math.random() < 0.005) {
-						{
-							BlockPos _bp = BlockPos.containing(x + sx, world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) (x + sx), (int) (z + sz)) - 0, z + sz);
-							BlockState _bs = EndlessEndModBlocks.CHORUS_ROOTS.get().defaultBlockState();
-							BlockState _bso = world.getBlockState(_bp);
-							for (Property<?> _propertyOld : _bso.getProperties()) {
-								Property _propertyNew = _bs.getBlock().getStateDefinition().getProperty(_propertyOld.getName());
-								if (_propertyNew != null && _bs.getValue(_propertyNew) != null)
-									try {
-										_bs = _bs.setValue(_propertyNew, _bso.getValue(_propertyOld));
-									} catch (Exception e) {
-									}
+					} else if (Math.random() < 0.01) {
+						if (Math.random() < 0.15) {
+							if (world instanceof ServerLevel _level)
+								_level.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3(x, (y + 3), z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"/place feature endless_end:tall_phyrigia ~ ~ ~");
+						} else {
+							{
+								BlockPos _bp = BlockPos.containing(x + sx, world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) (x + sx), (int) (z + sz)) - 0, z + sz);
+								BlockState _bs = EndlessEndModBlocks.PHRYGIA.get().defaultBlockState();
+								BlockState _bso = world.getBlockState(_bp);
+								for (Property<?> _propertyOld : _bso.getProperties()) {
+									Property _propertyNew = _bs.getBlock().getStateDefinition().getProperty(_propertyOld.getName());
+									if (_propertyNew != null && _bs.getValue(_propertyNew) != null)
+										try {
+											_bs = _bs.setValue(_propertyNew, _bso.getValue(_propertyOld));
+										} catch (Exception e) {
+										}
+								}
+								world.setBlock(_bp, _bs, 3);
 							}
-							world.setBlock(_bp, _bs, 3);
 						}
 					}
 				}

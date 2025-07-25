@@ -35,9 +35,9 @@ public class ChorusCoreProcedure {
 						}
 					}
 				}
-				counter2 = counter2 + 1;
+				counter2 = counter2 + 3;
 			}
-			counter = counter + 1;
+			counter = counter + 3;
 		}
 	}
 }

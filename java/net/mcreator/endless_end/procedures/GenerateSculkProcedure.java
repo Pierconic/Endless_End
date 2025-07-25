@@ -31,32 +31,32 @@ public class GenerateSculkProcedure {
 			if (Math.random() < 0.4) {
 				GenerateMoreSculkProcedure.execute(world, x, y + 1, z);
 			} else {
-				VeinPlacementProcedure.execute(world, x, y + 1, z);
+				VeinifyProcedure.execute(world, x, y + 1, z);
 			}
 			if (Math.random() < 0.4) {
 				GenerateMoreSculkProcedure.execute(world, x, y - 1, z);
 			} else {
-				VeinPlacementProcedure.execute(world, x, y - 1, z);
+				VeinifyProcedure.execute(world, x, y - 1, z);
 			}
 			if (Math.random() < 0.4) {
 				GenerateMoreSculkProcedure.execute(world, x, y, z - 1);
 			} else {
-				VeinPlacementProcedure.execute(world, x, y, z - 1);
+				VeinifyProcedure.execute(world, x, y, z - 1);
 			}
 			if (Math.random() < 0.4) {
 				GenerateMoreSculkProcedure.execute(world, x, y, z + 1);
 			} else {
-				VeinPlacementProcedure.execute(world, x, y, z + 1);
+				VeinifyProcedure.execute(world, x, y, z + 1);
 			}
 			if (Math.random() < 0.4) {
 				GenerateMoreSculkProcedure.execute(world, x + 1, y, z);
 			} else {
-				VeinPlacementProcedure.execute(world, x + 1, y, z);
+				VeinifyProcedure.execute(world, x + 1, y, z);
 			}
 			if (Math.random() < 0.4) {
 				GenerateMoreSculkProcedure.execute(world, x - 1, y, z);
 			} else {
-				VeinPlacementProcedure.execute(world, x - 1, y, z);
+				VeinifyProcedure.execute(world, x - 1, y, z);
 			}
 		});
 	}

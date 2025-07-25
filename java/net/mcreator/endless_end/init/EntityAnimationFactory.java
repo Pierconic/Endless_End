@@ -7,6 +7,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.mcreator.endless_end.entity.WeaverEntity;
 import net.mcreator.endless_end.entity.TrawlerEntity;
 import net.mcreator.endless_end.entity.PolypEntity;
+import net.mcreator.endless_end.entity.LoomerEntity;
 import net.mcreator.endless_end.entity.HollowEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
 import net.mcreator.endless_end.entity.FlurryEntity;
@@ -60,6 +61,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof FlurryChargeEntityEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof LoomerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

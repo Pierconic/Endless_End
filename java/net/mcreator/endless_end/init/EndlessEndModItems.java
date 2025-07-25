@@ -25,6 +25,7 @@ import net.mcreator.endless_end.procedures.SwingShotPropertyValueProviderProcedu
 import net.mcreator.endless_end.procedures.EyeballProviderProcedure;
 import net.mcreator.endless_end.procedures.EyeProximityProviderProcedure;
 import net.mcreator.endless_end.item.YearningEyeItem;
+import net.mcreator.endless_end.item.WarpedKeyItem;
 import net.mcreator.endless_end.item.WarpChipYellowItem;
 import net.mcreator.endless_end.item.WarpChipWhiteItem;
 import net.mcreator.endless_end.item.WarpChipRedItem;
@@ -45,6 +46,7 @@ import net.mcreator.endless_end.item.TuneRodItem;
 import net.mcreator.endless_end.item.TransponderItem;
 import net.mcreator.endless_end.item.SwingsilkItem;
 import net.mcreator.endless_end.item.SwingShotItem;
+import net.mcreator.endless_end.item.StrangeKeyItem;
 import net.mcreator.endless_end.item.StarFragmentItem;
 import net.mcreator.endless_end.item.SendingTransponderItem;
 import net.mcreator.endless_end.item.RawEndoriteItem;
@@ -279,6 +281,11 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> FLURRY_CRYSTALS = block(EndlessEndModBlocks.FLURRY_CRYSTALS);
 	public static final DeferredItem<Item> SNARE_CRYSTALS = block(EndlessEndModBlocks.SNARE_CRYSTALS);
 	public static final DeferredItem<Item> ENDORITE_MEMBRANE = block(EndlessEndModBlocks.ENDORITE_MEMBRANE);
+	public static final DeferredItem<Item> PHRYGIA = block(EndlessEndModBlocks.PHRYGIA);
+	public static final DeferredItem<Item> TALL_PHYRIGIA = doubleBlock(EndlessEndModBlocks.TALL_PHYRIGIA);
+	public static final DeferredItem<Item> LOOMER_SPAWN_EGG = REGISTRY.register("loomer_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.LOOMER, -6750055, -16751002, new Item.Properties()));
+	public static final DeferredItem<Item> STRANGE_KEY = REGISTRY.register("strange_key", StrangeKeyItem::new);
+	public static final DeferredItem<Item> WARPED_KEY = REGISTRY.register("warped_key", WarpedKeyItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

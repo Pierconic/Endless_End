@@ -38,6 +38,9 @@ public class FlurryTickProcedure {
 		double magnitude = 0;
 		double x_vec = 0;
 		double z_vec = 0;
+		double baseMult = 0;
+		double inaccuracy = 0;
+		double base_magnitude = 0;
 		if (!(!(world.getNearestPlayer(entity, 96) == null))) {
 			if (!entity.level().isClientSide())
 				entity.discard();
@@ -113,6 +116,20 @@ public class FlurryTickProcedure {
 		} else if ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_Charge) : 0) > 0) {
 			if (entity instanceof FlurryEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(FlurryEntity.DATA_Charge, (int) ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_Charge) : 0) - 1));
+		}
+		if ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_sparkle) : 0) <= 0) {
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry.glimmer")), SoundSource.NEUTRAL, (float) 0.7, 1);
+				} else {
+					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry.glimmer")), SoundSource.NEUTRAL, (float) 0.7, 1, false);
+				}
+			}
+			if (entity instanceof FlurryEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(FlurryEntity.DATA_sparkle, 45);
+		} else {
+			if (entity instanceof FlurryEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(FlurryEntity.DATA_sparkle, (int) ((entity instanceof FlurryEntity _datEntI ? _datEntI.getEntityData().get(FlurryEntity.DATA_sparkle) : 0) - 1));
 		}
 	}
 }

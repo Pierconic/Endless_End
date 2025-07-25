@@ -50,13 +50,17 @@ public class RemnantScatterProcedure {
 										sy2 = 1;
 										for (int index3 = 0; index3 < Mth.nextInt(RandomSource.create(), 1, 6); index3++) {
 											if (Math.random() < 0.5) {
-												world.setBlock(BlockPos.containing(x + sx, (y + sy) - sy2, z + sz), EndlessEndModBlocks.CONVERTED_AMNESOCLAST.get().defaultBlockState(), 3);
-												{
-													int _value = Mth.nextInt(RandomSource.create(), 0, 13);
-													BlockPos _pos = BlockPos.containing(x + sx, (y + sy) - sy2, z + sz);
-													BlockState _bs = world.getBlockState(_pos);
-													if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
-														world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+												if (Math.random() < 0.02) {
+													world.setBlock(BlockPos.containing(x + sx, (y + sy) - sy2, z + sz), EndlessEndModBlocks.DORMANT_ICONOCLAST.get().defaultBlockState(), 3);
+												} else {
+													world.setBlock(BlockPos.containing(x + sx, (y + sy) - sy2, z + sz), EndlessEndModBlocks.CONVERTED_AMNESOCLAST.get().defaultBlockState(), 3);
+													{
+														int _value = Mth.nextInt(RandomSource.create(), 0, 13);
+														BlockPos _pos = BlockPos.containing(x + sx, (y + sy) - sy2, z + sz);
+														BlockState _bs = world.getBlockState(_pos);
+														if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+															world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+													}
 												}
 											} else {
 												world.setBlock(BlockPos.containing(x + sx, (y + sy) - sy2, z + sz), EndlessEndModBlocks.AMNESOCLAST.get().defaultBlockState(), 3);
@@ -67,13 +71,17 @@ public class RemnantScatterProcedure {
 										sy2 = 1;
 										for (int index4 = 0; index4 < Mth.nextInt(RandomSource.create(), 1, 6); index4++) {
 											if (Math.random() < 0.5) {
-												world.setBlock(BlockPos.containing(x + sx, y + sy + sy2, z + sz), EndlessEndModBlocks.CONVERTED_AMNESOCLAST.get().defaultBlockState(), 3);
-												{
-													int _value = Mth.nextInt(RandomSource.create(), 0, 13);
-													BlockPos _pos = BlockPos.containing(x + sx, y + sy + sy2, z + sz);
-													BlockState _bs = world.getBlockState(_pos);
-													if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
-														world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+												if (Math.random() < 0.02) {
+													world.setBlock(BlockPos.containing(x + sx, y + sy + sy2, z + sz), EndlessEndModBlocks.DORMANT_ICONOCLAST.get().defaultBlockState(), 3);
+												} else {
+													world.setBlock(BlockPos.containing(x + sx, y + sy + sy2, z + sz), EndlessEndModBlocks.CONVERTED_AMNESOCLAST.get().defaultBlockState(), 3);
+													{
+														int _value = Mth.nextInt(RandomSource.create(), 0, 13);
+														BlockPos _pos = BlockPos.containing(x + sx, y + sy + sy2, z + sz);
+														BlockState _bs = world.getBlockState(_pos);
+														if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+															world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+													}
 												}
 											} else {
 												world.setBlock(BlockPos.containing(x + sx, y + sy + sy2, z + sz), EndlessEndModBlocks.AMNESOCLAST.get().defaultBlockState(), 3);

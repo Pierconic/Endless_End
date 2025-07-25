@@ -2816,5 +2816,123 @@
         "stream": false
       }
     ]
+  },
+  "flurry.death": {
+    "subtitle": "subtitles.flurry.death",
+    "sounds": [
+      {
+        "name": "endless_end:flurry_death_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_death_1",
+        "stream": false
+      }
+    ]
+  },
+  "flurry_charge.loop": {
+    "subtitle": "subtitles.flurry_charge.loop",
+    "sounds": [
+      {
+        "name": "endless_end:flurry_charge_loop_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_charge_loop_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_charge_loop_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_charge_loop_1",
+        "stream": false
+      }
+    ]
+  },
+  "flurry.glimmer": {
+    "subtitle": "subtitles.flurry.glimmer",
+    "sounds": [
+      {
+        "name": "endless_end:flurry_glimmer_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_glimmer_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_glimmer_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_glimmer_1",
+        "stream": false
+      }
+    ]
+  },
+  "flurry.hurt": {
+    "subtitle": "subtitles.flurry.hurt",
+    "sounds": [
+      {
+        "name": "endless_end:flurry_hit_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_hit_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_hit_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_hit_1",
+        "stream": false
+      }
+    ]
+  },
+  "flurry.breathe": {
+    "subtitle": "subtitles.flurry.breathe",
+    "sounds": [
+      {
+        "name": "endless_end:flurry_breathe_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_breathe_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_breathe_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_breathe_1",
+        "stream": false
+      }
+    ]
+  },
+  "endorite.collapse": {
+    "subtitle": "subtitles.endorite.collapse",
+    "sounds": [
+      {
+        "name": "endless_end:endorite_collapse_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:endorite_collapse_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:endorite_collapse_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:endorite_collapse_1",
+        "stream": false
+      }
+    ]
   }
 }

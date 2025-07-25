@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "endless_end:block/phyrigia",
+    "particle": "endless_end:block/phyrigia"
+  },
+  "render_type": "cutout"
+}

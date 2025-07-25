@@ -41,9 +41,9 @@ public class ChorusShellProcedure {
 				} else {
 					world.setBlock(BlockPos.containing(x + x2 + 0.5, y + yOff, z + z2 + 0.5), Blocks.END_STONE.defaultBlockState(), 3);
 				}
-				counter2 = counter2 + 1;
+				counter2 = counter2 + 3;
 			}
-			counter = counter + 1;
+			counter = counter + 3;
 		}
 	}
 }

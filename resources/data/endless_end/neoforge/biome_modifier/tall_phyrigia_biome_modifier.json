@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "endless_end:chorus_orchard",
+    "endless_end:chorus_barrens",
+    "endless_end:chorus_midlands"
+  ],
+  "features": "endless_end:tall_phyrigia",
+  "step": "vegetal_decoration"
+}

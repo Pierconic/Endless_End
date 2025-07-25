@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minecraft:block/end_stone",
+    "up": "endless_end:block/golden_hummus_top",
+    "north": "endless_end:block/reversed_golden_hummus",
+    "east": "endless_end:block/reversed_golden_hummus",
+    "south": "endless_end:block/reversed_golden_hummus",
+    "west": "endless_end:block/reversed_golden_hummus",
+    "particle": "endless_end:block/golden_humus_top"
+  },
+  "render_type": "solid"
+}

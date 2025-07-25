@@ -24,7 +24,7 @@ public class EndlessEndModEndBiomes {
 			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), 1d);
 			TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), 1d);
 			TheEndBiomes.addBarrensBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:whispering_delta")), 1d);
-			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), 1.8d);
+			TheEndBiomes.addHighlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), 2d);
 			TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor_midlands")), 1d);
 			TheEndBiomes.addBarrensBiome(ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor")), ResourceKey.create(Registries.BIOME, ResourceLocation.parse("endless_end:soul_arbor_barrens")), 1d);
 		});

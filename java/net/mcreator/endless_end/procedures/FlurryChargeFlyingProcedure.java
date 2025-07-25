@@ -3,9 +3,13 @@ package net.mcreator.endless_end.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
@@ -119,6 +123,20 @@ public class FlurryChargeFlyingProcedure {
 		}
 		if (strike || world.getBlockFloorHeight(BlockPos.containing(x, y, z)) > 0) {
 			FlurryChargeStrikeProcedure.execute(world, x, y, z, entity);
+		}
+		if ((entity instanceof FlurryChargeEntityEntity _datEntI ? _datEntI.getEntityData().get(FlurryChargeEntityEntity.DATA_Sparkle) : 0) <= 0) {
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry_charge.loop")), SoundSource.NEUTRAL, (float) 0.5, 1);
+				} else {
+					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry_charge.loop")), SoundSource.NEUTRAL, (float) 0.5, 1, false);
+				}
+			}
+			if (entity instanceof FlurryChargeEntityEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(FlurryChargeEntityEntity.DATA_Sparkle, 15);
+		} else {
+			if (entity instanceof FlurryChargeEntityEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(FlurryChargeEntityEntity.DATA_Sparkle, (int) ((entity instanceof FlurryChargeEntityEntity _datEntI ? _datEntI.getEntityData().get(FlurryChargeEntityEntity.DATA_Sparkle) : 0) - 1));
 		}
 	}
 }

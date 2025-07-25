@@ -1,7 +1,6 @@
 package net.mcreator.endless_end.procedures;
 
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -21,7 +20,7 @@ import net.mcreator.endless_end.init.EndlessEndModBlocks;
 import com.mojang.blaze3d.platform.InputConstants;
 
 public class MoonGunkLaunchProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		double repeats = 0;
@@ -61,7 +60,7 @@ public class MoonGunkLaunchProcedure {
 			}
 			world.addParticle((SimpleParticleType) (EndlessEndModParticleTypes.MOON_BLOB.get()), (entity.getX()), (entity.getY() + 0.5), (entity.getZ()), 0, 0.2, 0);
 			repeats = repeats + 1;
-			if (blockstate.getBlock() == EndlessEndModBlocks.MOON_GUNK.get() && entity instanceof LivingEntity) {
+			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EndlessEndModBlocks.MOON_GUNK.get() && entity instanceof LivingEntity) {
 				{
 					BlockPos _pos = BlockPos.containing(x, y, z);
 					Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x + 0.5, y, z + 0.5), null);

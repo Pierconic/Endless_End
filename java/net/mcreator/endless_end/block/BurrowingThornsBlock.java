@@ -16,12 +16,14 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.endless_end.procedures.UpdateThornsProcedure;
 import net.mcreator.endless_end.procedures.BurrowingThornsOnTickUpdateProcedure;
 import net.mcreator.endless_end.block.entity.BurrowingThornsBlockEntity;
 
@@ -69,6 +71,12 @@ public class BurrowingThornsBlock extends Block implements EntityBlock {
 		super.tick(blockstate, world, pos, random);
 		BurrowingThornsOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
 		world.scheduleTick(pos, this, 2);
+	}
+
+	@Override
+	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
+		super.stepOn(world, pos, blockstate, entity);
+		UpdateThornsProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

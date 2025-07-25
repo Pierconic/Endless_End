@@ -45,7 +45,7 @@ public class BoneSprawlProcedure {
 			axis = "z";
 		}
 		if (locked) {
-			if (!world.getBlockState(BlockPos.containing(x + ox, y + oy, z + oz)).canOcclude()) {
+			if (!world.getBlockState(BlockPos.containing(x + ox, y + oy, z + oz)).canOcclude() && lambda > 0) {
 				world.setBlock(BlockPos.containing(x + ox, y + oy, z + oz), (new Object() {
 					public BlockState with(BlockState _bs, String _property, String _newValue) {
 						Property<?> _prop = _bs.getBlock().getStateDefinition().getProperty(_property);

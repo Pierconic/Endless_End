@@ -18,7 +18,7 @@ public class CanticlePatchFeature extends DiskFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!CanticleEdgeProcedure.execute(world, x, z))
+		if (!CanticleEdgeProcedure.execute(world, x, y, z))
 			return false;
 		return super.place(context);
 	}

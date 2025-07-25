@@ -59,6 +59,7 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_homeX = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_homeY = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_homeZ = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_sparkle = SynchedEntityData.defineId(FlurryEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -82,6 +83,7 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		builder.define(DATA_homeX, 0);
 		builder.define(DATA_homeY, 0);
 		builder.define(DATA_homeZ, 0);
+		builder.define(DATA_sparkle, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -147,13 +149,18 @@ public class FlurryEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public SoundEvent getAmbientSound() {
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry.breathe"));
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.hurt"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.blaze.death"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry.death"));
 	}
 
 	@Override
@@ -175,6 +182,7 @@ public class FlurryEntity extends Monster implements GeoEntity {
 		compound.putInt("DatahomeX", this.entityData.get(DATA_homeX));
 		compound.putInt("DatahomeY", this.entityData.get(DATA_homeY));
 		compound.putInt("DatahomeZ", this.entityData.get(DATA_homeZ));
+		compound.putInt("Datasparkle", this.entityData.get(DATA_sparkle));
 	}
 
 	@Override
@@ -190,6 +198,8 @@ public class FlurryEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_homeY, compound.getInt("DatahomeY"));
 		if (compound.contains("DatahomeZ"))
 			this.entityData.set(DATA_homeZ, compound.getInt("DatahomeZ"));
+		if (compound.contains("Datasparkle"))
+			this.entityData.set(DATA_sparkle, compound.getInt("Datasparkle"));
 	}
 
 	@Override

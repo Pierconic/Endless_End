@@ -38,6 +38,7 @@ import net.mcreator.endless_end.block.TransceiverSendingOffBlock;
 import net.mcreator.endless_end.block.TransceiverRecievingOnBlock;
 import net.mcreator.endless_end.block.TransceiverBlock;
 import net.mcreator.endless_end.block.TetherBlock;
+import net.mcreator.endless_end.block.TallPhyrigiaBlock;
 import net.mcreator.endless_end.block.SwirlingVinesBlock;
 import net.mcreator.endless_end.block.StrongStoneBlock;
 import net.mcreator.endless_end.block.StrippedVioletSepalWoodBlock;
@@ -64,6 +65,7 @@ import net.mcreator.endless_end.block.RottingEndStoneBlock;
 import net.mcreator.endless_end.block.RootedEndstoneBlock;
 import net.mcreator.endless_end.block.RefuseBlock;
 import net.mcreator.endless_end.block.PuffBlossomBlock;
+import net.mcreator.endless_end.block.PhrygiaBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteTilesBlock;
 import net.mcreator.endless_end.block.PhasedEndoriteMeshBlock;
 import net.mcreator.endless_end.block.MoonJellyBlockBlock;
@@ -283,6 +285,8 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> FLURRY_CRYSTALS = REGISTRY.register("flurry_crystals", FlurryCrystalsBlock::new);
 	public static final DeferredBlock<Block> SNARE_CRYSTALS = REGISTRY.register("snare_crystals", SnareCrystalsBlock::new);
 	public static final DeferredBlock<Block> ENDORITE_MEMBRANE = REGISTRY.register("endorite_membrane", EndoriteMembraneBlock::new);
+	public static final DeferredBlock<Block> PHRYGIA = REGISTRY.register("phrygia", PhrygiaBlock::new);
+	public static final DeferredBlock<Block> TALL_PHYRIGIA = REGISTRY.register("tall_phyrigia", TallPhyrigiaBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

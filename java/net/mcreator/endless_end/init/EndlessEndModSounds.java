@@ -215,4 +215,10 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> INVERTED_ADDITIONS = REGISTRY.register("inverted_additions", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "inverted_additions")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> INVERTED_MOOD = REGISTRY.register("inverted_mood", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "inverted_mood")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> ENDORITE_REPEL = REGISTRY.register("endorite.repel", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "endorite.repel")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> FLURRY_DEATH = REGISTRY.register("flurry.death", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "flurry.death")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> FLURRY_CHARGE_LOOP = REGISTRY.register("flurry_charge.loop", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "flurry_charge.loop")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> FLURRY_GLIMMER = REGISTRY.register("flurry.glimmer", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "flurry.glimmer")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> FLURRY_HURT = REGISTRY.register("flurry.hurt", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "flurry.hurt")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> FLURRY_BREATHE = REGISTRY.register("flurry.breathe", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "flurry.breathe")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> ENDORITE_COLLAPSE = REGISTRY.register("endorite.collapse", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "endorite.collapse")));
 }
