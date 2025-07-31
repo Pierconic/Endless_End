@@ -28,6 +28,8 @@ public class OdorBoxCheckProcedure {
 							if (Math.random() < 0.2) {
 								WeaverEmergeNonRecProcedure.execute(world, x + sx, y + sy, z + sz, world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz)));
 							}
+						} else if (Math.random() < 0.1 && (world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).getBlock() == EndlessEndModBlocks.STRANGE_EGGS.get()) {
+							StrangeEggsAdvanceProcedure.execute(world, x + sx, y + sy, z + sz, true);
 						}
 						sz = sz + 1;
 					}

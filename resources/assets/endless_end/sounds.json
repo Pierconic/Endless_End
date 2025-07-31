@@ -2934,5 +2934,147 @@
         "stream": false
       }
     ]
+  },
+  "soul_arbor.ambient": {
+    "sounds": [
+      {
+        "name": "endless_end:soul_arbor_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "whispering_delta.ambient": {
+    "sounds": [
+      {
+        "name": "endless_end:whispering_delta_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "amalgam.hit": {
+    "subtitle": "subtitles.amalgam.hit",
+    "sounds": [
+      {
+        "name": "endless_end:amalgam_hit_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_hit_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_hit_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_hit_1",
+        "stream": false
+      }
+    ]
+  },
+  "amalgam.ambient": {
+    "subtitle": "subtitles.amalgam.ambient",
+    "sounds": [
+      {
+        "name": "endless_end:amalgam_ambient_6",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_ambient_5",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_ambient_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_ambient_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_ambient_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_ambient_1",
+        "stream": false
+      }
+    ]
+  },
+  "amalgam.death": {
+    "subtitle": "subtitles.amalgam.death",
+    "sounds": [
+      {
+        "name": "endless_end:amalgam_death_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_death_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_death_1",
+        "stream": false
+      }
+    ]
+  },
+  "strange_egg_crack": {
+    "subtitle": "subtitles.strange_egg_crack",
+    "sounds": [
+      {
+        "name": "endless_end:egg_hit_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:egg_hit_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:egg_hit_1",
+        "stream": false
+      }
+    ]
+  },
+  "strange_egg.hatch": {
+    "subtitle": "subtitles.strange_egg.hatch",
+    "sounds": [
+      {
+        "name": "endless_end:egg_hatch_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:egg_hatch_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:egg_hatch_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:egg_hatch_1",
+        "stream": false
+      }
+    ]
+  },
+  "loomer.death": {
+    "subtitle": "subtitles.loomer.death",
+    "sounds": [
+      {
+        "name": "endless_end:loomer_death_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:loomer_death_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:loomer_death_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:loomer_death_1",
+        "stream": false
+      }
+    ]
   }
 }

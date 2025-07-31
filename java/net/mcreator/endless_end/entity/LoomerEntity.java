@@ -249,7 +249,7 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.death"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loomer.death"));
 	}
 
 	@Override

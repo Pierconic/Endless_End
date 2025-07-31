@@ -12,6 +12,7 @@ import net.mcreator.endless_end.entity.HollowEntity;
 import net.mcreator.endless_end.entity.GrazerEntity;
 import net.mcreator.endless_end.entity.FlurryEntity;
 import net.mcreator.endless_end.entity.FlurryChargeEntityEntity;
+import net.mcreator.endless_end.entity.AmalgamEntity;
 
 @EventBusSubscriber
 public class EntityAnimationFactory {
@@ -68,6 +69,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof LoomerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof AmalgamEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

@@ -286,6 +286,7 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> LOOMER_SPAWN_EGG = REGISTRY.register("loomer_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.LOOMER, -6750055, -16751002, new Item.Properties()));
 	public static final DeferredItem<Item> STRANGE_KEY = REGISTRY.register("strange_key", StrangeKeyItem::new);
 	public static final DeferredItem<Item> WARPED_KEY = REGISTRY.register("warped_key", WarpedKeyItem::new);
+	public static final DeferredItem<Item> AMALGAM_SPAWN_EGG = REGISTRY.register("amalgam_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.AMALGAM, -3381505, -13210, new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items

@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.entity.model.FlurryModel;
 import net.mcreator.endless_end.entity.FlurryEntity;
@@ -25,6 +26,10 @@ public class FlurryRenderer extends GeoEntityRenderer<FlurryEntity> {
 	public RenderType getRenderType(FlurryEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
 		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
+
+	 protected int getBlockLightLevel(FlurryEntity entity, BlockPos pos) {
+        return 15;
+    }
 
 	@Override
 	public void preRender(PoseStack poseStack, FlurryEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int color) {

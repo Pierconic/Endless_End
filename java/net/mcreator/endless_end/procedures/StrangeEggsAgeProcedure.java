@@ -48,5 +48,8 @@ public class StrangeEggsAgeProcedure {
 				}
 			}
 		}
+		if (success) {
+			StrangeEggsAdvanceProcedure.execute(world, x, y, z, false);
+		}
 	}
 }

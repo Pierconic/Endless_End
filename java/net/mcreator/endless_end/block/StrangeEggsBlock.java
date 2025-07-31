@@ -32,6 +32,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
@@ -40,6 +41,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.endless_end.procedures.StrangeEggsShotProcedure;
 import net.mcreator.endless_end.procedures.StrangeEggsNeighborProcedure;
 import net.mcreator.endless_end.procedures.StrangeEggsAgeProcedure;
+import net.mcreator.endless_end.procedures.StrangeEggWalkProcedure;
 import net.mcreator.endless_end.procedures.PlayerStrangeEggsBreakProcedure;
 
 public class StrangeEggsBlock extends Block implements SimpleWaterloggedBlock {
@@ -276,6 +278,12 @@ public class StrangeEggsBlock extends Block implements SimpleWaterloggedBlock {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
 		PlayerStrangeEggsBreakProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
 		return retval;
+	}
+
+	@Override
+	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
+		super.stepOn(world, pos, blockstate, entity);
+		StrangeEggWalkProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 	}
 
 	@Override

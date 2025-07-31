@@ -3,6 +3,7 @@
   "temperature": 0,
   "downfall": 0.5,
   "effects": {
+    "ambient_sound": "endless_end:soul_arbor.ambient",
     "particle": {
       "options": {
         "type": "trial_spawner_detection_ominous"

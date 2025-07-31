@@ -1,0 +1,188 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"float": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"Core": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, -360, -360]
+						}
+					},
+					"scale": {
+						"vector": [
+							"math.sin(query.anim_time * 90) * 0.3  + 0.7",
+							"math.sin(query.anim_time * 90) * 0.3  + 0.7",
+							"math.sin(query.anim_time * 90) * 0.3  + 0.7"
+						]
+					}
+				},
+				"Shell": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, 360, 0]
+						}
+					},
+					"scale": {
+						"vector": ["math.sin(query.anim_time * 90) * 0.15  + 1", "math.sin(query.anim_time * 90) * 0.15  + 1", "math.sin(query.anim_time * 90) * 0.15  + 1"]
+					}
+				},
+				"VerticalRing": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [-720, 360, 0]
+						}
+					}
+				},
+				"HorizontalRing": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [720, 0, 0]
+						}
+					},
+					"scale": {
+						"vector": [1, "math.sin(query.anim_time * 90) * 0.15  + 1", "math.sin(query.anim_time * 90) * 0.15  + 1"]
+					}
+				},
+				"blaze": {
+					"scale": {
+						"vector": [
+							"math.sin(query.anim_time * 180) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 180) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 180) * 0.2  + 0.9"
+						]
+					}
+				},
+				"breeze2": {
+					"scale": {
+						"vector": [
+							"math.sin(query.anim_time * 45 + 100) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 45 + 100) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 45 + 100) * 0.2  + 0.9"
+						]
+					}
+				},
+				"breeze": {
+					"scale": {
+						"vector": [
+							"math.sin(query.anim_time * 45 + 0) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 45 + 0) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 45 + 0) * 0.2  + 0.9"
+						]
+					}
+				},
+				"blaze2": {
+					"scale": {
+						"vector": [
+							"math.sin(query.anim_time * 180 + 100) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 180 + 100) * 0.2  + 0.9",
+							"math.sin(query.anim_time * 180 + 100) * 0.2  + 0.9"
+						]
+					}
+				}
+			}
+		},
+		"death": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"Core": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.9167": {
+							"vector": [720, 720, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.9167": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"Shell": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.9167": {
+							"vector": [0, 360, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.4583": {
+							"vector": [2.4, 2.4, 2.4]
+						},
+						"0.9167": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"VerticalRing": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.7083": {
+							"vector": [-360, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.1667": {
+							"vector": [1.4, 1.4, 1.4]
+						},
+						"0.7083": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"HorizontalRing": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.7083": {
+							"vector": [360, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.1667": {
+							"vector": [1.4, 1.4, 1.4]
+						},
+						"0.7083": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

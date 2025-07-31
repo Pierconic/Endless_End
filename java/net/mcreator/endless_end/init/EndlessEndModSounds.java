@@ -221,4 +221,13 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> FLURRY_HURT = REGISTRY.register("flurry.hurt", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "flurry.hurt")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> FLURRY_BREATHE = REGISTRY.register("flurry.breathe", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "flurry.breathe")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> ENDORITE_COLLAPSE = REGISTRY.register("endorite.collapse", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "endorite.collapse")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> SOUL_ARBOR_AMBIENT = REGISTRY.register("soul_arbor.ambient", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "soul_arbor.ambient")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> WHISPERING_DELTA_AMBIENT = REGISTRY.register("whispering_delta.ambient",
+			() -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "whispering_delta.ambient")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> AMALGAM_HIT = REGISTRY.register("amalgam.hit", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "amalgam.hit")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> AMALGAM_AMBIENT = REGISTRY.register("amalgam.ambient", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "amalgam.ambient")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> AMALGAM_DEATH = REGISTRY.register("amalgam.death", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "amalgam.death")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> STRANGE_EGG_CRACK = REGISTRY.register("strange_egg_crack", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "strange_egg_crack")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> STRANGE_EGG_HATCH = REGISTRY.register("strange_egg.hatch", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "strange_egg.hatch")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> LOOMER_DEATH = REGISTRY.register("loomer.death", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "loomer.death")));
 }

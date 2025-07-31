@@ -1,6 +1,6 @@
 {
   "name": "endless_end:new_city_pillars",
-  "fallback": "minecraft:empty",
+  "fallback": "endless_end:new_city_central_toppers",
   "elements": [
     {
       "weight": 1,
@@ -18,6 +18,28 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "endless_end:new_city_topper_1",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_pillar_2",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_topper_2",
         "projection": "rigid",
         "processors": {
           "processors": []

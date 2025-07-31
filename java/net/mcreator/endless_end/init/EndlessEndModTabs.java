@@ -108,12 +108,6 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.BLAST_BERRIES_1.get());
 			tabData.accept(EndlessEndModItems.BLAST_BERRIES_2.get());
 			tabData.accept(EndlessEndModItems.BLAST_BERRIES_3.get());
-		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-			tabData.accept(EndlessEndModItems.GRAZER_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.TRAWLER_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.POLYP_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.FLURRY_SPAWN_EGG.get());
 		} else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.TETHER.get().asItem());
 			tabData.accept(EndlessEndModBlocks.SINGING_SAND.get().asItem());
@@ -211,6 +205,14 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.AZURE_DOOR.get().asItem());
 			tabData.accept(EndlessEndModBlocks.GRIM_DOOR.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MEMBRANE.get().asItem());
+		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+			tabData.accept(EndlessEndModItems.GRAZER_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.TRAWLER_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.POLYP_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.LOOMER_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.FLURRY_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.AMALGAM_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
 		}
 	}
 }
