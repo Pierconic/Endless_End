@@ -13,20 +13,23 @@ import software.bernie.geckolib.animatable.GeoEntity;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -37,7 +40,10 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.AmalgamTickProcedure;
+import net.mcreator.endless_end.procedures.AmalgamSpawnProcedure;
 import net.mcreator.endless_end.procedures.AmalgamImplosionProcedure;
+
+import javax.annotation.Nullable;
 
 public class AmalgamEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(AmalgamEntity.class, EntityDataSerializers.BOOLEAN);
@@ -45,6 +51,7 @@ public class AmalgamEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(AmalgamEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> DATA_spell = SynchedEntityData.defineId(AmalgamEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Integer> DATA_spell_progress = SynchedEntityData.defineId(AmalgamEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_loop_progress = SynchedEntityData.defineId(AmalgamEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -64,9 +71,10 @@ public class AmalgamEntity extends Monster implements GeoEntity {
 		super.defineSynchedData(builder);
 		builder.define(SHOOT, false);
 		builder.define(ANIMATION, "undefined");
-		builder.define(TEXTURE, "amalgam_texture");
+		builder.define(TEXTURE, "amalgam");
 		builder.define(DATA_spell, "none");
 		builder.define(DATA_spell_progress, 0);
+		builder.define(DATA_loop_progress, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -117,13 +125,9 @@ public class AmalgamEntity extends Monster implements GeoEntity {
 	public boolean hurt(DamageSource source, float amount) {
 		if (source.is(DamageTypes.IN_FIRE))
 			return false;
-		if (source.getDirectEntity() instanceof AbstractArrow)
-			return false;
 		if (source.is(DamageTypes.FALL))
 			return false;
 		if (source.is(DamageTypes.CACTUS))
-			return false;
-		if (source.is(DamageTypes.DROWN))
 			return false;
 		return super.hurt(source, amount);
 	}
@@ -134,11 +138,19 @@ public class AmalgamEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata);
+		AmalgamSpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		return retval;
+	}
+
+	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
 		compound.putString("Dataspell", this.entityData.get(DATA_spell));
 		compound.putInt("Dataspell_progress", this.entityData.get(DATA_spell_progress));
+		compound.putInt("Dataloop_progress", this.entityData.get(DATA_loop_progress));
 	}
 
 	@Override
@@ -150,6 +162,8 @@ public class AmalgamEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_spell, compound.getString("Dataspell"));
 		if (compound.contains("Dataspell_progress"))
 			this.entityData.set(DATA_spell_progress, compound.getInt("Dataspell_progress"));
+		if (compound.contains("Dataloop_progress"))
+			this.entityData.set(DATA_loop_progress, compound.getInt("Dataloop_progress"));
 	}
 
 	@Override
@@ -184,8 +198,8 @@ public class AmalgamEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 70);
-		builder = builder.add(Attributes.ARMOR, 0);
+		builder = builder.add(Attributes.MAX_HEALTH, 80);
+		builder = builder.add(Attributes.ARMOR, 2);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 32);
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);

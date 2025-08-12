@@ -27,5 +27,9 @@ public class AdamantBlockDestroyedProcedure {
 					_level.addFreshEntity(new ExperienceOrb(_level, (x + 0.5), (y + 0.5), (z + 0.5), 3));
 			}
 		}
+		WellDestructionProcedure.execute(world, x + 1, y, z);
+		WellDestructionProcedure.execute(world, x - 1, y, z);
+		WellDestructionProcedure.execute(world, x, y, z - 1);
+		WellDestructionProcedure.execute(world, x, y, z + 1);
 	}
 }

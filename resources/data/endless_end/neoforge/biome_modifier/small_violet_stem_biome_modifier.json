@@ -3,10 +3,7 @@
   "biomes": [
     "endless_end:chorus_orchard",
     "endless_end:chorus_midlands",
-    "endless_end:chorus_barrens",
-    "endless_end:inverted_barrens",
-    "endless_end:inverted_midlands",
-    "endless_end:inverted_orchard"
+    "endless_end:chorus_barrens"
   ],
   "features": "endless_end:small_violet_stem",
   "step": "vegetal_decoration"

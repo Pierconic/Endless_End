@@ -17,7 +17,7 @@ public class EndlessEndModGameRules {
 
 	@SubscribeEvent
 	public static void registerGameRules(FMLCommonSetupEvent event) {
-		ENDERPORTER_COST = GameRules.register("enderporterCost", GameRules.Category.MISC, GameRules.IntegerValue.create(48));
+		ENDERPORTER_COST = GameRules.register("enderporterCost", GameRules.Category.MISC, GameRules.IntegerValue.create(64));
 		ALLOW_GHOSTING = GameRules.register("allowGhosting", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
 	}
 }

@@ -32,7 +32,7 @@ public class FlurryChargeItem extends Item {
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
 		entity.startUsingItem(hand);
-		FlurryChargeFireProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
+		FlurryChargeFireProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
 		return ar;
 	}
 }

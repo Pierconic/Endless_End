@@ -25,7 +25,23 @@
       "endless_end:tether_recipe",
       "endless_end:intro_recipe",
       "endless_end:nether_star_break",
-      "endless_end:eleven_repair"
+      "endless_end:eleven_repair",
+      "endless_end:warp_chip_recipe",
+      "endless_end:red_warp_chip_recipe",
+      "endless_end:orange_warp_chip_recipe",
+      "endless_end:yellow_warp_chip_recipe",
+      "endless_end:lime_warp_chip_recipe",
+      "endless_end:green_warp_chip_recipe",
+      "endless_end:cyan_warp_chip_recipe",
+      "endless_end:light_blue_warp_chip_recipe",
+      "endless_end:blue_warp_chip_recipe",
+      "endless_end:pink_warp_chip_recipe",
+      "endless_end:magenta_warp_chip_recipe",
+      "endless_end:brown_warp_chip_recipe",
+      "endless_end:white_warp_chip_recipe",
+      "endless_end:light_gray_warp_chip_recipe",
+      "endless_end:dark_gray_warp_chip_recipe",
+      "endless_end:black_warp_chip_recipe"
     ]
   }
 }

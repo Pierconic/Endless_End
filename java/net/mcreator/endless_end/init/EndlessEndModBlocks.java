@@ -89,9 +89,11 @@ import net.mcreator.endless_end.block.GoldenSproutsBlock;
 import net.mcreator.endless_end.block.GoldenSepalLeavesBlock;
 import net.mcreator.endless_end.block.GoldenRootsBlock;
 import net.mcreator.endless_end.block.GoldenHumusBlock;
+import net.mcreator.endless_end.block.FlurrySpellBlock;
 import net.mcreator.endless_end.block.FlurryCrystalsBlock;
 import net.mcreator.endless_end.block.FlouriteLampBlock;
 import net.mcreator.endless_end.block.FlouriteBlock;
+import net.mcreator.endless_end.block.EssenceCauldronBlock;
 import net.mcreator.endless_end.block.EssenceBlock;
 import net.mcreator.endless_end.block.EndoriteTilesBlock;
 import net.mcreator.endless_end.block.EndoriteOreBlock;
@@ -130,11 +132,14 @@ import net.mcreator.endless_end.block.CanticleBlock;
 import net.mcreator.endless_end.block.CalcifiedEndstoneBlock;
 import net.mcreator.endless_end.block.BurrowingThornsBlock;
 import net.mcreator.endless_end.block.BurrowingSpikeBlock;
+import net.mcreator.endless_end.block.BreezeSpellExtentBlock;
+import net.mcreator.endless_end.block.BreezeSpellBlock;
 import net.mcreator.endless_end.block.BlueRoseVaseBlock;
 import net.mcreator.endless_end.block.BlueRoseFlowerPotBlock;
 import net.mcreator.endless_end.block.BlueRoseBlock;
 import net.mcreator.endless_end.block.BlossomingGoldenSepalLeavesBlock;
 import net.mcreator.endless_end.block.BloomingCanticleBlock;
+import net.mcreator.endless_end.block.BlazeSpellBlock;
 import net.mcreator.endless_end.block.AzureTrapdoorBlock;
 import net.mcreator.endless_end.block.AzureSepalWoodBlock;
 import net.mcreator.endless_end.block.AzureSepalStairsBlock;
@@ -287,6 +292,11 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> ENDORITE_MEMBRANE = REGISTRY.register("endorite_membrane", EndoriteMembraneBlock::new);
 	public static final DeferredBlock<Block> PHRYGIA = REGISTRY.register("phrygia", PhrygiaBlock::new);
 	public static final DeferredBlock<Block> TALL_PHYRIGIA = REGISTRY.register("tall_phyrigia", TallPhyrigiaBlock::new);
+	public static final DeferredBlock<Block> BLAZE_SPELL = REGISTRY.register("blaze_spell", BlazeSpellBlock::new);
+	public static final DeferredBlock<Block> BREEZE_SPELL = REGISTRY.register("breeze_spell", BreezeSpellBlock::new);
+	public static final DeferredBlock<Block> FLURRY_SPELL = REGISTRY.register("flurry_spell", FlurrySpellBlock::new);
+	public static final DeferredBlock<Block> BREEZE_SPELL_EXTENT = REGISTRY.register("breeze_spell_extent", BreezeSpellExtentBlock::new);
+	public static final DeferredBlock<Block> ESSENCE_CAULDRON = REGISTRY.register("essence_cauldron", EssenceCauldronBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

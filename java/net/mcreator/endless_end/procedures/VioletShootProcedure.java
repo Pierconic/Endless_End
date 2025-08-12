@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
@@ -22,7 +23,9 @@ public class VioletShootProcedure {
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(ResourceLocation.parse("endless_end:chorus_orchard"))) {
 			y_factor = 2;
 		}
-		world.setBlock(BlockPos.containing(x, y - 1, z), EndlessEndModBlocks.ROOTED_ENDSTONE.get().defaultBlockState(), 3);
+		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.END_STONE) {
+			world.setBlock(BlockPos.containing(x, y - 1, z), EndlessEndModBlocks.ROOTED_ENDSTONE.get().defaultBlockState(), 3);
+		}
 		for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), (int) (2 * y_factor), (int) (7 * y_factor)); index0++) {
 			world.setBlock(BlockPos.containing(x, y + sy, z), EndlessEndModBlocks.VIOLET_SEPAL_LOG.get().defaultBlockState(), 3);
 			sy = sy + 1;

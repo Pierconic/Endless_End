@@ -17,20 +17,20 @@ import java.util.List;
 import java.util.Comparator;
 
 public class DelayedPillarCrystalProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, double delay) {
-		if (entity == null)
-			return;
+	public static void execute(LevelAccessor world, double x, double y, double z, boolean push, double delay) {
 		EndlessEndMod.queueServerWork((int) delay, () -> {
 			if (world.isEmptyBlock(BlockPos.containing(x, y, z)) || (world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
-				{
-					final Vec3 _center = new Vec3((x + 0.5), (y + 0.5), (z + 0.5));
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(1 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-					for (Entity entityiterator : _entfound) {
-						{
-							Entity _ent = entityiterator;
-							_ent.teleportTo((entity.getX()), (1.1 + entity.getY()), (entity.getZ()));
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport((entity.getX()), (1.1 + entity.getY()), (entity.getZ()), _ent.getYRot(), _ent.getXRot());
+				if (push) {
+					{
+						final Vec3 _center = new Vec3((x + 0.5), (y + 0.5), (z + 0.5));
+						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(1 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+						for (Entity entityiterator : _entfound) {
+							{
+								Entity _ent = entityiterator;
+								_ent.teleportTo((entityiterator.getX()), (1.1 + entityiterator.getY()), (entityiterator.getZ()));
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport((entityiterator.getX()), (1.1 + entityiterator.getY()), (entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
+							}
 						}
 					}
 				}

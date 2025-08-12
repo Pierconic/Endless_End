@@ -1,5 +1,6 @@
 package net.mcreator.endless_end.procedures;
 
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -24,7 +25,9 @@ public class FlavorUpdateProcedure {
 				for (int index1 = 0; index1 < 12; index1++) {
 					sz = -6;
 					for (int index2 = 0; index2 < 12; index2++) {
-						if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("endless_end:flavor_tickable")))) {
+						if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).getBlock() == Blocks.COMMAND_BLOCK) {
+							CommandUpdateProcedure.execute(world, x + sx, y + sy, z + sz);
+						} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("endless_end:flavor_tickable")))) {
 							world.scheduleTick(BlockPos.containing(x + sx, y + sy, z + sz), world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz)).getBlock(), 0);
 						}
 						sz = sz + 1;

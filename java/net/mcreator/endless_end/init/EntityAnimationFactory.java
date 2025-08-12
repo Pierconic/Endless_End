@@ -6,6 +6,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 
 import net.mcreator.endless_end.entity.WeaverEntity;
 import net.mcreator.endless_end.entity.TrawlerEntity;
+import net.mcreator.endless_end.entity.SageEntity;
 import net.mcreator.endless_end.entity.PolypEntity;
 import net.mcreator.endless_end.entity.LoomerEntity;
 import net.mcreator.endless_end.entity.HollowEntity;
@@ -76,6 +77,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof AmalgamEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SageEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

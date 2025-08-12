@@ -19,6 +19,7 @@
     "endless_end:enderporter_light_gray",
     "endless_end:enderporter_dark_gray",
     "endless_end:enderporter_black",
-    "endless_end:endorite_membrane"
+    "endless_end:endorite_membrane",
+    "minecraft:vault"
   ]
 }

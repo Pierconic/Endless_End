@@ -36,6 +36,7 @@ import net.mcreator.endless_end.block.entity.PuffBlossomTileEntity;
 import net.mcreator.endless_end.block.entity.PhasedEndoriteTilesBlockEntity;
 import net.mcreator.endless_end.block.entity.MoonGunkBlockEntity;
 import net.mcreator.endless_end.block.entity.IconoclastBlockEntity;
+import net.mcreator.endless_end.block.entity.FlurrySpellBlockEntity;
 import net.mcreator.endless_end.block.entity.FlurryCrystalsBlockEntity;
 import net.mcreator.endless_end.block.entity.EnderporterYellowTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterWhiteTileEntity;
@@ -55,6 +56,9 @@ import net.mcreator.endless_end.block.entity.EnderporterBlueTileEntity;
 import net.mcreator.endless_end.block.entity.EnderporterBlackTileEntity;
 import net.mcreator.endless_end.block.entity.BurrowingThornsBlockEntity;
 import net.mcreator.endless_end.block.entity.BurrowingSpikeBlockEntity;
+import net.mcreator.endless_end.block.entity.BreezeSpellExtentBlockEntity;
+import net.mcreator.endless_end.block.entity.BreezeSpellBlockEntity;
+import net.mcreator.endless_end.block.entity.BlazeSpellBlockEntity;
 import net.mcreator.endless_end.EndlessEndMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -100,6 +104,10 @@ public class EndlessEndModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SPREADING_FLOURITE = register("spreading_flourite", EndlessEndModBlocks.SPREADING_FLOURITE, SpreadingFlouriteBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> FLURRY_CRYSTALS = register("flurry_crystals", EndlessEndModBlocks.FLURRY_CRYSTALS, FlurryCrystalsBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SNARE_CRYSTALS = register("snare_crystals", EndlessEndModBlocks.SNARE_CRYSTALS, SnareCrystalsBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BLAZE_SPELL = register("blaze_spell", EndlessEndModBlocks.BLAZE_SPELL, BlazeSpellBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BREEZE_SPELL = register("breeze_spell", EndlessEndModBlocks.BREEZE_SPELL, BreezeSpellBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> FLURRY_SPELL = register("flurry_spell", EndlessEndModBlocks.FLURRY_SPELL, FlurrySpellBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BREEZE_SPELL_EXTENT = register("breeze_spell_extent", EndlessEndModBlocks.BREEZE_SPELL_EXTENT, BreezeSpellExtentBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -131,6 +139,10 @@ public class EndlessEndModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SPREADING_FLOURITE.get(), (blockEntity, side) -> ((SpreadingFlouriteBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FLURRY_CRYSTALS.get(), (blockEntity, side) -> ((FlurryCrystalsBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SNARE_CRYSTALS.get(), (blockEntity, side) -> ((SnareCrystalsBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BLAZE_SPELL.get(), (blockEntity, side) -> ((BlazeSpellBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BREEZE_SPELL.get(), (blockEntity, side) -> ((BreezeSpellBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FLURRY_SPELL.get(), (blockEntity, side) -> ((FlurrySpellBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BREEZE_SPELL_EXTENT.get(), (blockEntity, side) -> ((BreezeSpellExtentBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ENDERPORTER_WHITE.get(), (blockEntity, side) -> ((EnderporterWhiteTileEntity) blockEntity).getItemHandler());
 	}
 }

@@ -38,7 +38,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:ender_pearl",
-          "weight": 3,
+          "weight": 2,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -80,7 +80,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:lingering_potion",
-          "weight": 1,
+          "weight": 2,
           "functions": [
             {
               "function": "minecraft:set_count",

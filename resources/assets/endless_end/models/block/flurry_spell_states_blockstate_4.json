@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/flurry_spell_6",
+    "particle": "endless_end:block/flurry_spell_1"
+  },
+  "render_type": "translucent"
+}

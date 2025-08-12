@@ -21,6 +21,7 @@ import net.mcreator.endless_end.entity.WeaverEntity;
 import net.mcreator.endless_end.entity.TrawlerEntity;
 import net.mcreator.endless_end.entity.SwingsilkBallEntity;
 import net.mcreator.endless_end.entity.SwingshotBoltEntity;
+import net.mcreator.endless_end.entity.SageEntity;
 import net.mcreator.endless_end.entity.PolypEntity;
 import net.mcreator.endless_end.entity.MoonJellyBallEntity;
 import net.mcreator.endless_end.entity.MiniFlavorNodeEntity;
@@ -81,6 +82,8 @@ public class EndlessEndModEntities {
 			EntityType.Builder.<MiniFlavorNodeEntity>of(MiniFlavorNodeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 0.6f));
 	public static final DeferredHolder<EntityType<?>, EntityType<AmalgamEntity>> AMALGAM = register("amalgam",
 			EntityType.Builder.<AmalgamEntity>of(AmalgamEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(3f, 3f));
+	public static final DeferredHolder<EntityType<?>, EntityType<SageEntity>> SAGE = register("sage",
+			EntityType.Builder.<SageEntity>of(SageEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -101,6 +104,7 @@ public class EndlessEndModEntities {
 		LoomerEntity.init(event);
 		MiniFlavorNodeEntity.init(event);
 		AmalgamEntity.init(event);
+		SageEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -116,5 +120,6 @@ public class EndlessEndModEntities {
 		event.put(LOOMER.get(), LoomerEntity.createAttributes().build());
 		event.put(MINI_FLAVOR_NODE.get(), MiniFlavorNodeEntity.createAttributes().build());
 		event.put(AMALGAM.get(), AmalgamEntity.createAttributes().build());
+		event.put(SAGE.get(), SageEntity.createAttributes().build());
 	}
 }

@@ -8,9 +8,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.entity.model.AmalgamModel;
 import net.mcreator.endless_end.entity.AmalgamEntity;
+
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -25,6 +27,10 @@ public class AmalgamRenderer extends GeoEntityRenderer<AmalgamEntity> {
 	public RenderType getRenderType(AmalgamEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
 		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
+
+	protected int getBlockLightLevel(AmalgamEntity entity, BlockPos pos) {
+        return 15;
+    }
 
 	@Override
 	public void preRender(PoseStack poseStack, AmalgamEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int color) {

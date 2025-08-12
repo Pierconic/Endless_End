@@ -30,12 +30,6 @@
   "spawners": {
     "monster": [
       {
-        "type": "endless_end:flurry",
-        "weight": 40,
-        "minCount": 1,
-        "maxCount": 4
-      },
-      {
         "type": "enderman",
         "weight": 10,
         "minCount": 2,

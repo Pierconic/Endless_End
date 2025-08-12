@@ -1,16 +1,19 @@
 package net.mcreator.endless_end.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class FlurryRodRightclickedProcedure {
@@ -64,49 +67,29 @@ public class FlurryRodRightclickedProcedure {
 			}
 		} else {
 			if (entity.getLookAngle().y > 0.9) {
-				for (int index3 = 0; index3 < Mth.nextInt(RandomSource.create(), 9, 13); index3++) {
-					DelayedPillarCrystalProcedure.execute(world, x + Offset * xAxis, (y + yOff) - 1, z + Offset * zAxis, entity, yOff * 2);
-					yOff = yOff + 1;
-				}
+				success = FlurryRodPillarProcedure.execute(world, x, y, z, true, Mth.nextInt(RandomSource.create(), 9, 13));
 			} else if (entity.getLookAngle().y < -0.9) {
-				localRad = Mth.nextInt(RandomSource.create(), 3, 5);
-				extraLocalRad = localRad;
-				for (int index4 = 0; index4 < (int) localRad; index4++) {
-					counter2 = 0;
-					while (counter2 <= 360) {
-						x2 = 1 * extraLocalRad * Math.cos(counter2);
-						z2 = 1 * extraLocalRad * Math.sin(counter2);
-						DelayedCrystalProcedure.execute(world, x + x2 + 0.5, (y + entity.getDeltaMovement().y() * 2) - 1, z + z2 + 0.5, extraLocalRad * 2);
-						success = true;
-						counter2 = counter2 + 1;
-					}
-					extraLocalRad = extraLocalRad - 1;
-				}
+				success = FlurryRodPlatformProcedure.execute(world, x, y, z, entity, Mth.nextInt(RandomSource.create(), 3, 5));
 			} else {
-				if ((entity.getDirection()) == Direction.NORTH) {
-					zAxis = -1;
-				} else if ((entity.getDirection()) == Direction.SOUTH) {
-					zAxis = 1;
-				} else if ((entity.getDirection()) == Direction.WEST) {
-					xAxis = -1;
+				success = FlurryRodBridgeProcedure.execute(world, x, y - 1, z, entity.getDirection(), Mth.nextInt(RandomSource.create(), 9, 13));
+			}
+		}
+		if (success) {
+			if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+				itemstack.shrink(1);
+			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.swing(InteractionHand.MAIN_HAND, true);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.FIREWORK, x, y, z, 18, 1, 1, 1, 0.1);
+		} else {
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry.hurt")), SoundSource.NEUTRAL, (float) 0.2, (float) 0.8);
 				} else {
-					xAxis = 1;
-				}
-				Offset = 1;
-				for (int index6 = 0; index6 < 13; index6++) {
-					if (world.isEmptyBlock(BlockPos.containing(x + Offset * xAxis, y + Offset * yAxis, z + Offset * zAxis))
-							|| (world.getBlockState(BlockPos.containing(x + Offset * xAxis, y + Offset * yAxis, z + Offset * zAxis))).is(BlockTags.create(ResourceLocation.parse("forge:amnesic_breakable")))) {
-						DelayedCrystalProcedure.execute(world, x + Offset * xAxis, y - 1, z + Offset * zAxis, Offset * 2);
-						success = true;
-					}
-					Offset = Offset + 1;
+					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:flurry.hurt")), SoundSource.NEUTRAL, (float) 0.2, (float) 0.8, false);
 				}
 			}
 		}
-		if (success && !(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
-			itemstack.shrink(1);
-		}
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.FIREWORK, x, y, z, 18, 1, 1, 1, 0.1);
 	}
 }

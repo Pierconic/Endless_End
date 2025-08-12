@@ -137,7 +137,7 @@ public class WarpChipEnergizeProcedure {
 			if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD && dimension == 0
 					|| (world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.NETHER && dimension == 1
 					|| (world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.END && dimension == 2) {
-				if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) >= Warpcost) {
+				if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) >= Warpcost || (entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
 					if (entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).Warpcooldown > 0) {
 						{
 							EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);

@@ -25,6 +25,7 @@ import net.mcreator.endless_end.world.features.InvertedOrchardBonusHumusFeature;
 import net.mcreator.endless_end.world.features.InvertedHumusFeatureFeature;
 import net.mcreator.endless_end.world.features.GoldenSpikeFeatureFeature;
 import net.mcreator.endless_end.world.features.GoldenBlossomFeature;
+import net.mcreator.endless_end.world.features.GiantVioletStemFeature;
 import net.mcreator.endless_end.world.features.EndWasteRefuseFeature;
 import net.mcreator.endless_end.world.features.ElderBoulderFeature;
 import net.mcreator.endless_end.world.features.ChorusBlobFeature;
@@ -58,4 +59,5 @@ public class EndlessEndModFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<?>> SCULK_CRATER = REGISTRY.register("sculk_crater", SculkCraterFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> BONE_SPRAWL_PLACEMENT = REGISTRY.register("bone_sprawl_placement", BoneSprawlPlacementFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> REVERSED_DELTA_SPIKES = REGISTRY.register("reversed_delta_spikes", ReversedDeltaSpikesFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> GIANT_VIOLET_STEM = REGISTRY.register("giant_violet_stem", GiantVioletStemFeature::new);
 }

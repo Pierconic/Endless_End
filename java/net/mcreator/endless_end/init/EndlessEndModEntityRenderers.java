@@ -16,6 +16,7 @@ import net.mcreator.endless_end.client.renderer.WeaverRenderer;
 import net.mcreator.endless_end.client.renderer.TrawlerRenderer;
 import net.mcreator.endless_end.client.renderer.SwingsilkBallRenderer;
 import net.mcreator.endless_end.client.renderer.SwingshotBoltRenderer;
+import net.mcreator.endless_end.client.renderer.SageRenderer;
 import net.mcreator.endless_end.client.renderer.PolypRenderer;
 import net.mcreator.endless_end.client.renderer.MiniFlavorNodeRenderer;
 import net.mcreator.endless_end.client.renderer.LoomerRenderer;
@@ -43,5 +44,6 @@ public class EndlessEndModEntityRenderers {
 		event.registerEntityRenderer(EndlessEndModEntities.LOOMER.get(), LoomerRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.MINI_FLAVOR_NODE.get(), MiniFlavorNodeRenderer::new);
 		event.registerEntityRenderer(EndlessEndModEntities.AMALGAM.get(), AmalgamRenderer::new);
+		event.registerEntityRenderer(EndlessEndModEntities.SAGE.get(), SageRenderer::new);
 	}
 }

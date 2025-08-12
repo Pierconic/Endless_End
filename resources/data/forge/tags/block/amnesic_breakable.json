@@ -345,7 +345,6 @@
     "minecraft:red_carpet",
     "minecraft:black_carpet",
     "minecraft:glass",
-    "minecraft:tinted_glass",
     "minecraft:white_stained_glass",
     "minecraft:orange_stained_glass",
     "minecraft:magenta_stained_glass",
@@ -491,6 +490,13 @@
     "endless_end:golden_roots",
     "endless_end:puff_blossom",
     "minecraft:sculk_vein",
-    "endless_end:tune_rod_vase"
+    "endless_end:tune_rod_vase",
+    "endless_end:soul_bulb_flower_pot",
+    "endless_end:moon_gunk",
+    "endless_end:tunerod_flower_pot",
+    "endless_end:strange_eggs",
+    "endless_end:grim_thorns",
+    "endless_end:grim_pressure_plate",
+    "endless_end:grim_button"
   ]
 }

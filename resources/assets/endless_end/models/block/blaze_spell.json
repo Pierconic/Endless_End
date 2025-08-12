@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/blaze_spell_1",
+    "particle": "endless_end:block/blaze_spell_1"
+  },
+  "render_type": "solid"
+}

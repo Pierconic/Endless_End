@@ -3076,5 +3076,137 @@
         "stream": false
       }
     ]
+  },
+  "amalgam.loop": {
+    "subtitle": "subtitles.amalgam.loop",
+    "sounds": [
+      {
+        "name": "endless_end:amalgam_loop",
+        "stream": false
+      }
+    ]
+  },
+  "breeze_spell.charge": {
+    "subtitle": "subtitles.breeze_spell.charge",
+    "sounds": [
+      {
+        "name": "endless_end:breeze_spell_charge",
+        "stream": false
+      }
+    ]
+  },
+  "breeze_spell.trigger": {
+    "subtitle": "subtitles.breeze_spell.trigger",
+    "sounds": [
+      {
+        "name": "endless_end:breeze_spell_trigger_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:breeze_spell_trigger_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:breeze_spell_trigger_1",
+        "stream": false
+      }
+    ]
+  },
+  "amalgam.spawn": {
+    "subtitle": "subtitles.amalgam.spawn",
+    "sounds": [
+      {
+        "name": "endless_end:amalgam_spawn_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_spawn_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:amalgam_spawn_1",
+        "stream": false
+      }
+    ]
+  },
+  "flurry_spell": {
+    "subtitle": "subtitles.flurry_spell",
+    "sounds": [
+      {
+        "name": "endless_end:flurry_spell_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_spell_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:flurry_spell_1",
+        "stream": false
+      }
+    ]
+  },
+  "sage.deflect": {
+    "subtitle": "subtitles.sage.deflect",
+    "sounds": [
+      {
+        "name": "endless_end:sage_deflect_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_deflect_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_deflect_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_deflect_1",
+        "stream": false
+      }
+    ]
+  },
+  "sage.hurt": {
+    "subtitle": "subtitles.sage.hurt",
+    "sounds": [
+      {
+        "name": "endless_end:sage_hurt_5",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_hurt_4",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_hurt_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_hurt_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_hurt_1",
+        "stream": false
+      }
+    ]
+  },
+  "sage.death": {
+    "subtitle": "subtitles.sage.death",
+    "sounds": [
+      {
+        "name": "endless_end:sage_death_3",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_death_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:sage_death_1",
+        "stream": false
+      }
+    ]
   }
 }

@@ -1,0 +1,14 @@
+{
+  "parent": "endless_end:custom/essence_cauldron_full",
+  "textures": {
+    "all": "endless_end:block/essence_cauldron_side",
+    "particle": "endless_end:block/essence_cauldron_side",
+    "1": "endless_end:block/essence_cauldron_inner",
+    "2": "endless_end:block/essence_cauldron_side",
+    "3": "endless_end:block/essence_cauldron_top",
+    "4": "endless_end:block/essence_still",
+    "5": "endless_end:block/essence_cauldron_bottom",
+    "missing": "endless_end:block/essence_cauldron_bottom"
+  },
+  "render_type": "cutout"
+}

@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "blockstate=0": {
       "model": "endless_end:block/adamant"
+    },
+    "blockstate=1": {
+      "model": "endless_end:block/adamant_states_blockstate_0"
     }
   }
 }

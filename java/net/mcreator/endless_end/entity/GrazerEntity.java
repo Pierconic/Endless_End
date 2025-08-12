@@ -10,6 +10,13 @@ import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.GeoEntity;
 
+//More climbing shit
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
+
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -61,6 +68,10 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_moss = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_inverted = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
+	//Climbing shit
+ 	private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(GrazerEntity.class, EntityDataSerializers.BYTE);
+
 	private boolean swinging;
 	private boolean lastloop;
 	private long lastSwing;
@@ -71,7 +82,12 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 		xpReward = 3;
 		setNoAi(false);
 	}
-
+	//Climber pathfinding
+	 @Override
+    protected PathNavigation createNavigation(Level world) {
+        return new WallClimberNavigation(this, world);
+    }
+	
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
@@ -80,7 +96,18 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 		builder.define(TEXTURE, "grazer_shell");
 		builder.define(DATA_moss, 0);
 		builder.define(DATA_inverted, false);
+		//Climbing flag
+		builder.define(DATA_FLAGS_ID, (byte)0);
 	}
+
+	//Check for climbing
+	@Override
+    public void tick() {
+        super.tick();
+        if (!this.level().isClientSide) {
+            this.setClimbing(this.horizontalCollision);
+        }
+    }
 
 	public void setTexture(String texture) {
 		this.entityData.set(TEXTURE, texture);
@@ -298,4 +325,25 @@ public class GrazerEntity extends PathfinderMob implements GeoEntity {
 	public AnimatableInstanceCache getAnimatableInstanceCache() {
 		return this.cache;
 	}
+//Climbing shit
+	@Override
+    public boolean onClimbable() {
+        return this.isClimbing();
+    }
+    
+	 public boolean isClimbing() {
+        return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
+    }
+
+    public void setClimbing(boolean p_33820_) {
+        byte b0 = this.entityData.get(DATA_FLAGS_ID);
+        if (p_33820_) {
+            b0 = (byte)(b0 | 1);
+        } else {
+            b0 = (byte)(b0 & -2);
+        }
+
+        this.entityData.set(DATA_FLAGS_ID, b0);
+    }
+	
 }

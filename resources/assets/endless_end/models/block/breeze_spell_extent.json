@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "endless_end:block/empty_block",
+    "particle": "endless_end:block/empty_block"
+  },
+  "render_type": "translucent"
+}

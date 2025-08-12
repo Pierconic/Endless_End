@@ -213,6 +213,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.FLURRY_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.AMALGAM_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.SAGE_SPAWN_EGG.get());
 		}
 	}
 }

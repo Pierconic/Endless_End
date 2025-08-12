@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:flurry",
+    "endless_end:flurry_charge_entity",
+    "shulker_bullet",
+    "shulker",
+    "breeze",
+    "breeze_wind_charge",
+    "blaze",
+    "endless_end:amalgam"
+  ]
+}

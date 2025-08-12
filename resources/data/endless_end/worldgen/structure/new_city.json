@@ -11,10 +11,6 @@
   },
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "biomes": [
-    "endless_end:chorus_midlands",
-    "endless_end:chorus_orchard",
-    "endless_end:inverted_midlands",
-    "endless_end:inverted_orchard",
     "end_highlands",
     "end_midlands"
   ],

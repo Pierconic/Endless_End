@@ -5,6 +5,7 @@ import org.checkerframework.checker.units.qual.s;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -14,6 +15,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
@@ -21,6 +23,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.FlouriteStepProcedure;
+import net.mcreator.endless_end.procedures.FlouriteShotProcedure;
 import net.mcreator.endless_end.procedures.FlouriteRedstoneProcedure;
 import net.mcreator.endless_end.procedures.FlouriteLightPulseProcedure;
 import net.mcreator.endless_end.procedures.FlouriteBrokenProcedure;
@@ -114,5 +117,10 @@ public class FlouriteBlock extends Block {
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
 		FlouriteStepProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
+	}
+
+	@Override
+	public void onProjectileHit(Level world, BlockState blockstate, BlockHitResult hit, Projectile entity) {
+		FlouriteShotProcedure.execute(world, hit.getBlockPos().getX(), hit.getBlockPos().getY(), hit.getBlockPos().getZ(), blockstate);
 	}
 }

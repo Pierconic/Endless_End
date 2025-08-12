@@ -5,6 +5,8 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.pathfinder.Target;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -21,7 +23,7 @@ import net.mcreator.endless_end.entity.FlurryChargeEntityEntity;
 import java.util.Comparator;
 
 public class FlurryChargeFireProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		Entity Target = null;
@@ -58,5 +60,8 @@ public class FlurryChargeFireProcedure {
 		}
 		if (entity instanceof LivingEntity _entity)
 			_entity.swing(InteractionHand.MAIN_HAND, true);
+		if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+			itemstack.shrink(1);
+		}
 	}
 }

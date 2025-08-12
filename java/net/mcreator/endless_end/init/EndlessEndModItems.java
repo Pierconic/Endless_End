@@ -287,6 +287,12 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> STRANGE_KEY = REGISTRY.register("strange_key", StrangeKeyItem::new);
 	public static final DeferredItem<Item> WARPED_KEY = REGISTRY.register("warped_key", WarpedKeyItem::new);
 	public static final DeferredItem<Item> AMALGAM_SPAWN_EGG = REGISTRY.register("amalgam_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.AMALGAM, -3381505, -13210, new Item.Properties()));
+	public static final DeferredItem<Item> BLAZE_SPELL = block(EndlessEndModBlocks.BLAZE_SPELL);
+	public static final DeferredItem<Item> BREEZE_SPELL = block(EndlessEndModBlocks.BREEZE_SPELL);
+	public static final DeferredItem<Item> FLURRY_SPELL = block(EndlessEndModBlocks.FLURRY_SPELL);
+	public static final DeferredItem<Item> BREEZE_SPELL_EXTENT = block(EndlessEndModBlocks.BREEZE_SPELL_EXTENT);
+	public static final DeferredItem<Item> SAGE_SPAWN_EGG = REGISTRY.register("sage_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.SAGE, -16751002, -3407617, new Item.Properties()));
+	public static final DeferredItem<Item> ESSENCE_CAULDRON = block(EndlessEndModBlocks.ESSENCE_CAULDRON);
 
 	// Start of user code block custom items
 	// End of user code block custom items
