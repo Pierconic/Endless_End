@@ -13,6 +13,7 @@ import net.mcreator.endless_end.client.model.Modelweaver_spit;
 import net.mcreator.endless_end.client.model.Modelward;
 import net.mcreator.endless_end.client.model.Modelswingsilk_ball;
 import net.mcreator.endless_end.client.model.Modelswing_shot_bolt;
+import net.mcreator.endless_end.client.model.Modelloomer_bolt;
 import net.mcreator.endless_end.client.model.Modelhookshot_ball;
 import net.mcreator.endless_end.client.model.Modelflavor_node;
 import net.mcreator.endless_end.client.model.Modelchain_link;
@@ -31,6 +32,7 @@ public class EndlessEndModModels {
 		event.registerLayerDefinition(Modelweaver_spit.LAYER_LOCATION, Modelweaver_spit::createBodyLayer);
 		event.registerLayerDefinition(Modelhookshot_ball.LAYER_LOCATION, Modelhookshot_ball::createBodyLayer);
 		event.registerLayerDefinition(Modelswing_shot_bolt.LAYER_LOCATION, Modelswing_shot_bolt::createBodyLayer);
+		event.registerLayerDefinition(Modelloomer_bolt.LAYER_LOCATION, Modelloomer_bolt::createBodyLayer);
 		event.registerLayerDefinition(Modelchain_ball.LAYER_LOCATION, Modelchain_ball::createBodyLayer);
 	}
 }

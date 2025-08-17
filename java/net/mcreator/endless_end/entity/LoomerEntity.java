@@ -13,23 +13,25 @@ import software.bernie.geckolib.animatable.GeoEntity;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
@@ -37,6 +39,7 @@ import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundEvent;
@@ -49,18 +52,23 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.LoomerSolidCondProcedure;
+import net.mcreator.endless_end.procedures.LoomerLatchCheckProcedure;
 import net.mcreator.endless_end.procedures.LoomerFlightProcedure;
-import net.mcreator.endless_end.procedures.LoomerFlightConditionProcedure;
+import net.mcreator.endless_end.procedures.LoomerDiesProcedure;
+import net.mcreator.endless_end.init.EndlessEndModEntities;
 
 import javax.annotation.Nullable;
 
 import java.util.EnumSet;
 
-public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoEntity {
+public class LoomerEntity extends Monster implements RangedAttackMob, GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(LoomerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(LoomerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(LoomerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Integer> DATA_awareness = SynchedEntityData.defineId(LoomerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_latched = SynchedEntityData.defineId(LoomerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_spiraling = SynchedEntityData.defineId(LoomerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_chase_ticks = SynchedEntityData.defineId(LoomerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -81,6 +89,9 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 		builder.define(ANIMATION, "undefined");
 		builder.define(TEXTURE, "loomer_shell");
 		builder.define(DATA_awareness, 0);
+		builder.define(DATA_latched, false);
+		builder.define(DATA_spiraling, false);
+		builder.define(DATA_chase_ticks, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -103,7 +114,7 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-		return LoomerSolidCondProcedure.execute();
+		return LoomerSolidCondProcedure.execute(entity);
 	}
 
 	@Override
@@ -114,16 +125,7 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new RandomStrollGoal(this, 0.5, 20) {
-			@Override
-			protected Vec3 getPosition() {
-				RandomSource random = LoomerEntity.this.getRandom();
-				double dir_x = LoomerEntity.this.getX() + ((random.nextFloat() * 2 - 1) * 16);
-				double dir_y = LoomerEntity.this.getY() + ((random.nextFloat() * 2 - 1) * 16);
-				double dir_z = LoomerEntity.this.getZ() + ((random.nextFloat() * 2 - 1) * 16);
-				return new Vec3(dir_x, dir_y, dir_z);
-			}
-
+		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, (float) 64) {
 			@Override
 			public boolean canUse() {
 				double x = LoomerEntity.this.getX();
@@ -131,7 +133,7 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 				double z = LoomerEntity.this.getZ();
 				Entity entity = LoomerEntity.this;
 				Level world = LoomerEntity.this.level();
-				return super.canUse() && LoomerFlightConditionProcedure.execute(world, x, y, z);
+				return super.canUse() && LoomerLatchCheckProcedure.execute(world, x, y, z, entity);
 			}
 
 			@Override
@@ -141,12 +143,42 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 				double z = LoomerEntity.this.getZ();
 				Entity entity = LoomerEntity.this;
 				Level world = LoomerEntity.this.level();
-				return super.canContinueToUse() && LoomerFlightConditionProcedure.execute(world, x, y, z);
+				return super.canContinueToUse() && LoomerLatchCheckProcedure.execute(world, x, y, z, entity);
+			}
+		});
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, false, false) {
+			@Override
+			public boolean canUse() {
+				double x = LoomerEntity.this.getX();
+				double y = LoomerEntity.this.getY();
+				double z = LoomerEntity.this.getZ();
+				Entity entity = LoomerEntity.this;
+				Level world = LoomerEntity.this.level();
+				return super.canUse() && LoomerLatchCheckProcedure.execute(world, x, y, z, entity);
 			}
 
+			@Override
+			public boolean canContinueToUse() {
+				double x = LoomerEntity.this.getX();
+				double y = LoomerEntity.this.getY();
+				double z = LoomerEntity.this.getZ();
+				Entity entity = LoomerEntity.this;
+				Level world = LoomerEntity.this.level();
+				return super.canContinueToUse() && LoomerLatchCheckProcedure.execute(world, x, y, z, entity);
+			}
 		});
-		this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
-		this.goalSelector.addGoal(1, new LoomerEntity.RangedAttackGoal(this, 1.25, 20, 32f) {
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.5, 20) {
+			@Override
+			protected Vec3 getPosition() {
+				RandomSource random = LoomerEntity.this.getRandom();
+				double dir_x = LoomerEntity.this.getX() + ((random.nextFloat() * 2 - 1) * 16);
+				double dir_y = LoomerEntity.this.getY() + ((random.nextFloat() * 2 - 1) * 16);
+				double dir_z = LoomerEntity.this.getZ() + ((random.nextFloat() * 2 - 1) * 16);
+				return new Vec3(dir_x, dir_y, dir_z);
+			}
+		});
+		this.goalSelector.addGoal(4, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new LoomerEntity.RangedAttackGoal(this, 1.25, 90, 10f) {
 			@Override
 			public boolean canContinueToUse() {
 				return this.canUse();
@@ -243,8 +275,18 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 	}
 
 	@Override
+	protected Vec3 getPassengerAttachmentPoint(Entity entity, EntityDimensions dimensions, float f) {
+		return super.getPassengerAttachmentPoint(entity, dimensions, f).add(0, 2f, 0);
+	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loomer.ambient"));
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.hurt"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("endless_end:loomer.hurt"));
 	}
 
 	@Override
@@ -259,9 +301,16 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
+		if (source.is(DamageTypes.IN_FIRE))
+			return false;
 		if (source.is(DamageTypes.FALL))
 			return false;
 		return super.hurt(source, amount);
+	}
+
+	@Override
+	public boolean fireImmune() {
+		return true;
 	}
 
 	@Override
@@ -269,6 +318,9 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
 		compound.putInt("Dataawareness", this.entityData.get(DATA_awareness));
+		compound.putBoolean("Datalatched", this.entityData.get(DATA_latched));
+		compound.putBoolean("Dataspiraling", this.entityData.get(DATA_spiraling));
+		compound.putInt("Datachase_ticks", this.entityData.get(DATA_chase_ticks));
 	}
 
 	@Override
@@ -278,6 +330,12 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 			this.setTexture(compound.getString("Texture"));
 		if (compound.contains("Dataawareness"))
 			this.entityData.set(DATA_awareness, compound.getInt("Dataawareness"));
+		if (compound.contains("Datalatched"))
+			this.entityData.set(DATA_latched, compound.getBoolean("Datalatched"));
+		if (compound.contains("Dataspiraling"))
+			this.entityData.set(DATA_spiraling, compound.getBoolean("Dataspiraling"));
+		if (compound.contains("Datachase_ticks"))
+			this.entityData.set(DATA_chase_ticks, compound.getInt("Datachase_ticks"));
 	}
 
 	@Override
@@ -294,12 +352,7 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 
 	@Override
 	public void performRangedAttack(LivingEntity target, float flval) {
-		Arrow entityarrow = new Arrow(this.level(), this, new ItemStack(Items.ARROW), null);
-		double d0 = target.getY() + target.getEyeHeight() - 1.1;
-		double d1 = target.getX() - this.getX();
-		double d3 = target.getZ() - this.getZ();
-		entityarrow.shoot(d1, d0 - entityarrow.getY() + Math.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 1.6F, 12.0F);
-		this.level().addFreshEntity(entityarrow);
+		LoomerBoltEntity.shoot(this, target);
 	}
 
 	@Override
@@ -311,23 +364,24 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 		super.setNoGravity(true);
 	}
 
-	@Override
 	public void aiStep() {
 		super.aiStep();
-		this.updateSwingTime();
 		this.setNoGravity(true);
 	}
 
 	public static void init(RegisterSpawnPlacementsEvent event) {
+		event.register(EndlessEndModEntities.LOOMER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)),
+				RegisterSpawnPlacementsEvent.Operation.REPLACE);
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 60);
+		builder = builder.add(Attributes.MAX_HEALTH, 80);
 		builder = builder.add(Attributes.ARMOR, 1);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 24);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 48);
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		builder = builder.add(Attributes.FLYING_SPEED, 0.3);
 		return builder;
@@ -365,9 +419,10 @@ public class LoomerEntity extends PathfinderMob implements RangedAttackMob, GeoE
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 20) {
+		if (this.deathTime == 36) {
 			this.remove(LoomerEntity.RemovalReason.KILLED);
 			this.dropExperience(this);
+			LoomerDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 		}
 	}
 

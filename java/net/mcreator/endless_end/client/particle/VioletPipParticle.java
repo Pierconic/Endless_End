@@ -55,7 +55,7 @@ public class VioletPipParticle extends TextureSheetParticle {
 	public void tick() {
 		super.tick();
 		if (!this.removed) {
-			this.setSprite(this.spriteSet.get((this.age / 15) % 5 + 1, 5));
+			this.setSprite(this.spriteSet.get((this.age / 15) % 8 + 1, 8));
 		}
 	}
 }

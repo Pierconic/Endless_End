@@ -45,6 +45,17 @@
           "processors": []
         }
       }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_tower_topper_3",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
     }
   ]
 }

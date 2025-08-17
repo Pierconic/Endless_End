@@ -8,17 +8,17 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:phantom_membrane"
+      "item": "endless_end:raw_endorite"
     },
     "b": {
       "item": "endless_end:endorite_ingot"
     },
     "c": {
-      "item": "minecraft:amethyst_shard"
+      "item": "minecraft:phantom_membrane"
     }
   },
   "result": {
     "id": "endless_end:endorite_tiles",
-    "count": 4
+    "count": 8
   }
 }

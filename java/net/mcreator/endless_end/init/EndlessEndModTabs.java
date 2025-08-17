@@ -209,11 +209,11 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.GRAZER_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.TRAWLER_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.POLYP_SPAWN_EGG.get());
-			tabData.accept(EndlessEndModItems.LOOMER_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.FLURRY_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.AMALGAM_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.SAGE_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.LOOMER_SPAWN_EGG.get());
 		}
 	}
 }

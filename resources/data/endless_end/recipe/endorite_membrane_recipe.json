@@ -4,17 +4,20 @@
   "pattern": [
     "aba",
     "aca",
-    "aba"
+    "ada"
   ],
   "key": {
     "a": {
       "item": "endless_end:endorite_ingot"
     },
     "b": {
-      "item": "minecraft:phantom_membrane"
+      "item": "endless_end:raw_endorite"
     },
     "c": {
       "item": "minecraft:amethyst_shard"
+    },
+    "d": {
+      "item": "minecraft:phantom_membrane"
     }
   },
   "result": {

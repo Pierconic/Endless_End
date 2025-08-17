@@ -18,7 +18,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class LoomerRenderer extends GeoEntityRenderer<LoomerEntity> {
 	public LoomerRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new LoomerModel());
-		this.shadowRadius = 0.5f;
+		this.shadowRadius = 3f;
 	}
 
 	@Override

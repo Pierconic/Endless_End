@@ -28,11 +28,6 @@ public class SwingsilkResetProcedure {
 		double distance = 0;
 		double dy = 0;
 		double dz = 0;
-		{
-			EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
-			_vars.SwingsilkLinked = false;
-			_vars.syncPlayerVariables(entity);
-		}
 		if ((world.getBlockState(
 				BlockPos.containing(entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).SwingsilkX, entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).SwingsilkY, entity.getData(EndlessEndModVariables.PLAYER_VARIABLES).SwingsilkZ)))
 				.getBlock() == EndlessEndModBlocks.SILK_SPOOL.get()) {
@@ -52,6 +47,11 @@ public class SwingsilkResetProcedure {
 		}
 		{
 			EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
+			_vars.SwingsilkLinked = false;
+			_vars.syncPlayerVariables(entity);
+		}
+		{
+			EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
 			_vars.SwingsilkX = 0;
 			_vars.syncPlayerVariables(entity);
 		}
@@ -63,6 +63,11 @@ public class SwingsilkResetProcedure {
 		{
 			EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
 			_vars.SwingsilkZ = 0;
+			_vars.syncPlayerVariables(entity);
+		}
+		{
+			EndlessEndModVariables.PlayerVariables _vars = entity.getData(EndlessEndModVariables.PLAYER_VARIABLES);
+			_vars.fowards_polarity = false;
 			_vars.syncPlayerVariables(entity);
 		}
 		{

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "endless_end:adamant",
+    "minecraft:smooth_quartz",
+    "minecraft:chiseled_quartz_block",
+    "minecraft:quartz_pillar",
+    "minecraft:quartz_block",
+    "minecraft:quartz_bricks",
+    "endless_end:flourite",
+    "endless_end:spreading_flourite",
+    "endless_end:flourite_lamp"
+  ]
+}

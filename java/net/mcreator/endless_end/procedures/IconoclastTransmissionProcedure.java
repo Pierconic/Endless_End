@@ -21,7 +21,7 @@ public class IconoclastTransmissionProcedure {
 			return;
 		double message_number = 0;
 		world.setBlock(BlockPos.containing(x, y, z), EndlessEndModBlocks.ICONOCLAST.get().defaultBlockState(), 3);
-		message_number = Mth.nextInt(RandomSource.create(), 1, 30);
+		message_number = Mth.nextInt(RandomSource.create(), 1, 64);
 		if (!world.isClientSide()) {
 			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);

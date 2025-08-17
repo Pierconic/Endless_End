@@ -14,7 +14,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "endless_end:new_city_topper_1",
@@ -36,10 +36,65 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "endless_end:new_city_topper_2",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_pillar_3",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_topper_3",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_pillar_4",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_topper_4",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "endless_end:new_city_pillar_5",
         "projection": "rigid",
         "processors": {
           "processors": []

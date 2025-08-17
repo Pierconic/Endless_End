@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "small_end_islands",
+    "endless_end:chorus_barrens",
+    "endless_end:inverted_barrens",
+    "end_barrens"
+  ],
+  "spawners": {
+    "type": "endless_end:loomer",
+    "weight": 5,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

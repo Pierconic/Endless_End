@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "endless_end:amnesoclast"
+    },
+    {
+      "tag": "minecraft:sculk_replaceable"
+    }
+  ],
+  "result": {
+    "id": "endless_end:amnesoclast",
+    "count": 2
+  }
+}

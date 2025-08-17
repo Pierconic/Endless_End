@@ -7,7 +7,7 @@
     "east": "endless_end:block/reversed_calcified_endstone",
     "south": "endless_end:block/reversed_calcified_endstone",
     "west": "endless_end:block/reversed_calcified_endstone",
-    "particle": "endless_end:block/calcified_end_stone"
+    "particle": "minecraft:block/end_stone"
   },
   "render_type": "solid"
 }
