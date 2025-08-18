@@ -20,6 +20,9 @@
     "minecraft:infested_stone_bricks",
     "minecraft:infested_mossy_stone_bricks",
     "minecraft:infested_cracked_stone_bricks",
-    "minecraft:infested_chiseled_stone_bricks"
+    "minecraft:infested_chiseled_stone_bricks",
+    "minecraft:coal_ore",
+    "minecraft:iron_ore",
+    "minecraft:redstone_ore"
   ]
 }

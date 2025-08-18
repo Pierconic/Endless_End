@@ -156,6 +156,16 @@ public class TuneBlockPlayProcedure {
 			TuneShinyProcedure.execute(world, x, y, z, status, volume);
 		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_brass")))) {
 			TuneBrassProcedure.execute(world, x, y, z, status, volume);
+		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_growl")))) {
+			TuneGrowlProcedure.execute(world, x, y, z, status, volume);
+		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_cold")))) {
+			TuneColdProcedure.execute(world, x, y, z, status, volume);
+		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_flute")))) {
+			TuneFluteProcedure.execute(world, x, y, z, status, volume);
+		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_warble")))) {
+			TuneWarbleProcedure.execute(world, x, y, z, status, volume);
+		} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).is(BlockTags.create(ResourceLocation.parse("forge:tune_square")))) {
+			TuneSquareProcedure.execute(world, x, y, z, status, volume);
 		} else {
 			TuneDefaultProcedure.execute(world, x, y, z, status, volume);
 		}
