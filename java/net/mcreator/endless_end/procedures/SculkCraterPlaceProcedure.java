@@ -3,7 +3,6 @@ package net.mcreator.endless_end.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.Entity;
@@ -11,6 +10,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+
+import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 import java.util.List;
 import java.util.Comparator;
@@ -49,7 +50,7 @@ public class SculkCraterPlaceProcedure {
 					}
 				}
 			}
-			world.setBlock(BlockPos.containing(x, world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z), z), Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x, world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z), z), EndlessEndModBlocks.COSMIC_DEBRIS.get().defaultBlockState(), 3);
 			return true;
 		}
 		return false;

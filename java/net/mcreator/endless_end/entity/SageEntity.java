@@ -14,7 +14,6 @@ import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -30,10 +29,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -43,8 +40,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.endless_end.procedures.SageTickProcedure;
+import net.mcreator.endless_end.procedures.SageDropProcedure;
 import net.mcreator.endless_end.procedures.SageCheckProcedure;
-import net.mcreator.endless_end.init.EndlessEndModItems;
 
 public class SageEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(SageEntity.class, EntityDataSerializers.BOOLEAN);
@@ -140,11 +137,6 @@ public class SageEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(5, new FloatGoal(this));
 	}
 
-	protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource source, boolean recentlyHitIn) {
-		super.dropCustomDeathLoot(serverLevel, source, recentlyHitIn);
-		this.spawnAtLocation(new ItemStack(EndlessEndModItems.ENDORITE_INGOT.get()));
-	}
-
 	@Override
 	public void playStepSound(BlockPos pos, BlockState blockIn) {
 		this.playSound(BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.iron_golem.step")), 0.15f, 1);
@@ -161,17 +153,9 @@ public class SageEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
-		if (source.is(DamageTypes.IN_FIRE))
-			return false;
-		if (source.is(DamageTypes.FALL))
-			return false;
-		return super.hurt(source, amount);
-	}
-
-	@Override
-	public boolean fireImmune() {
-		return true;
+	public void die(DamageSource source) {
+		super.die(source);
+		SageDropProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), source.getEntity());
 	}
 
 	@Override

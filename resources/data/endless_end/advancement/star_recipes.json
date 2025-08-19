@@ -41,7 +41,8 @@
       "endless_end:white_warp_chip_recipe",
       "endless_end:light_gray_warp_chip_recipe",
       "endless_end:dark_gray_warp_chip_recipe",
-      "endless_end:black_warp_chip_recipe"
+      "endless_end:black_warp_chip_recipe",
+      "endless_end:cosmic_block_recipe"
     ]
   }
 }

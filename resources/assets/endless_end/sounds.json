@@ -5131,5 +5131,18 @@
         "stream": false
       }
     ]
+  },
+  "star_fragment_burst": {
+    "subtitle": "subtitles.star_fragment_burst",
+    "sounds": [
+      {
+        "name": "endless_end:star_fragment_get_2",
+        "stream": false
+      },
+      {
+        "name": "endless_end:star_fragment_get_1",
+        "stream": false
+      }
+    ]
   }
 }

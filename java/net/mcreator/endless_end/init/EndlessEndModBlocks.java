@@ -125,6 +125,8 @@ import net.mcreator.endless_end.block.EndAmethystBlock;
 import net.mcreator.endless_end.block.DormantIconoclastBlock;
 import net.mcreator.endless_end.block.DissipatingEndoriteBlock;
 import net.mcreator.endless_end.block.CrackedEndStoneBricksBlock;
+import net.mcreator.endless_end.block.CosmicDebrisBlock;
+import net.mcreator.endless_end.block.CosmicBlockBlock;
 import net.mcreator.endless_end.block.ConvertedAmnesoclastBlock;
 import net.mcreator.endless_end.block.CobbledEndstoneBlock;
 import net.mcreator.endless_end.block.ChorusSproutsBlock;
@@ -301,6 +303,8 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> ESSENCE_CAULDRON = REGISTRY.register("essence_cauldron", EssenceCauldronBlock::new);
 	public static final DeferredBlock<Block> GRIM_STONE_DIAMOND_ORE = REGISTRY.register("grim_stone_diamond_ore", GrimStoneDiamondOreBlock::new);
 	public static final DeferredBlock<Block> INFESTED_GRIM_STONE = REGISTRY.register("infested_grim_stone", InfestedGrimStoneBlock::new);
+	public static final DeferredBlock<Block> COSMIC_DEBRIS = REGISTRY.register("cosmic_debris", CosmicDebrisBlock::new);
+	public static final DeferredBlock<Block> COSMIC_BLOCK = REGISTRY.register("cosmic_block", CosmicBlockBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

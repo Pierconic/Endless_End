@@ -296,6 +296,8 @@ public class EndlessEndModItems {
 	public static final DeferredItem<Item> GRIM_STONE_DIAMOND_ORE = block(EndlessEndModBlocks.GRIM_STONE_DIAMOND_ORE);
 	public static final DeferredItem<Item> SCULK_WORM_SPAWN_EGG = REGISTRY.register("sculk_worm_spawn_egg", () -> new DeferredSpawnEggItem(EndlessEndModEntities.SCULK_WORM, -16764109, -16737895, new Item.Properties()));
 	public static final DeferredItem<Item> INFESTED_GRIM_STONE = block(EndlessEndModBlocks.INFESTED_GRIM_STONE);
+	public static final DeferredItem<Item> COSMIC_DEBRIS = block(EndlessEndModBlocks.COSMIC_DEBRIS);
+	public static final DeferredItem<Item> COSMIC_BLOCK = block(EndlessEndModBlocks.COSMIC_BLOCK);
 
 	// Start of user code block custom items
 	// End of user code block custom items

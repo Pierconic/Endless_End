@@ -12,6 +12,7 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.endless_end.world.features.VioletStemFeature;
 import net.mcreator.endless_end.world.features.TrebleShootFeature;
+import net.mcreator.endless_end.world.features.SubterraSculkCystFeature;
 import net.mcreator.endless_end.world.features.SubterraChorusBlobFeature;
 import net.mcreator.endless_end.world.features.SoulSpireFeature;
 import net.mcreator.endless_end.world.features.SoulDeltaSpikesFeature;
@@ -70,4 +71,5 @@ public class EndlessEndModFeatures {
 	public static final DeferredHolder<Feature<?>, Feature<?>> SCULK_SPROUT_PLACEMENT = REGISTRY.register("sculk_sprout_placement", SculkSproutPlacementFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> GRIMSTONE_DEPOSIT = REGISTRY.register("grimstone_deposit", GrimstoneDepositFeature::new);
 	public static final DeferredHolder<Feature<?>, Feature<?>> SCULK_SINKHOLE_PLACEMENT = REGISTRY.register("sculk_sinkhole_placement", SculkSinkholePlacementFeature::new);
+	public static final DeferredHolder<Feature<?>, Feature<?>> SUBTERRA_SCULK_CYST = REGISTRY.register("subterra_sculk_cyst", SubterraSculkCystFeature::new);
 }

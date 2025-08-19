@@ -449,4 +449,5 @@ public class EndlessEndModSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> LOOP_SQUARE_13 = REGISTRY.register("loop_square_13", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "loop_square_13")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> LEAD_SQUARE_5 = REGISTRY.register("lead_square_5", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "lead_square_5")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> LOOP_SQUARE_5 = REGISTRY.register("loop_square_5", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "loop_square_5")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> STAR_FRAGMENT_BURST = REGISTRY.register("star_fragment_burst", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("endless_end", "star_fragment_burst")));
 }

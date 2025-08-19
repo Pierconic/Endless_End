@@ -81,7 +81,9 @@ public class EndlessEndModEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<AmalgamEntity>> AMALGAM = register("amalgam",
 			EntityType.Builder.<AmalgamEntity>of(AmalgamEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(3f, 3f));
 	public static final DeferredHolder<EntityType<?>, EntityType<SageEntity>> SAGE = register("sage",
-			EntityType.Builder.<SageEntity>of(SageEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<SageEntity>of(SageEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+
+					.sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<LoomerBoltEntity>> LOOMER_BOLT = register("loomer_bolt",
 			EntityType.Builder.<LoomerBoltEntity>of(LoomerBoltEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.3f, 0.3f));
 	public static final DeferredHolder<EntityType<?>, EntityType<LoomerEntity>> LOOMER = register("loomer",
