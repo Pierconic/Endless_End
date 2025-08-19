@@ -1,12 +1,12 @@
 {
-  "has_precipitation": true,
+  "has_precipitation": false,
   "temperature": 0,
   "downfall": 0.5,
   "effects": {
     "ambient_sound": "endless_end:soul_arbor.ambient",
     "particle": {
       "options": {
-        "type": "white_ash"
+        "type": "trial_spawner_detection_ominous"
       },
       "probability": 0.005
     },
@@ -37,9 +37,7 @@
   },
   "features": [
     [],
-    [
-      "minecraft:lake_lava_underground"
-    ],
+    [],
     [],
     [],
     [],
