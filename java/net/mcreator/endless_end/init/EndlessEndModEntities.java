@@ -21,6 +21,7 @@ import net.mcreator.endless_end.entity.WeaverEntity;
 import net.mcreator.endless_end.entity.TrawlerEntity;
 import net.mcreator.endless_end.entity.SwingsilkBallEntity;
 import net.mcreator.endless_end.entity.SwingshotBoltEntity;
+import net.mcreator.endless_end.entity.SculkWormEntity;
 import net.mcreator.endless_end.entity.SageEntity;
 import net.mcreator.endless_end.entity.PolypEntity;
 import net.mcreator.endless_end.entity.MoonJellyBallEntity;
@@ -85,6 +86,10 @@ public class EndlessEndModEntities {
 			EntityType.Builder.<LoomerBoltEntity>of(LoomerBoltEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.3f, 0.3f));
 	public static final DeferredHolder<EntityType<?>, EntityType<LoomerEntity>> LOOMER = register("loomer",
 			EntityType.Builder.<LoomerEntity>of(LoomerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(96).setUpdateInterval(3).fireImmune().sized(4f, 4f));
+	public static final DeferredHolder<EntityType<?>, EntityType<SculkWormEntity>> SCULK_WORM = register("sculk_worm",
+			EntityType.Builder.<SculkWormEntity>of(SculkWormEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+
+					.sized(0.3f, 0.4f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -106,6 +111,7 @@ public class EndlessEndModEntities {
 		AmalgamEntity.init(event);
 		SageEntity.init(event);
 		LoomerEntity.init(event);
+		SculkWormEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -122,5 +128,6 @@ public class EndlessEndModEntities {
 		event.put(AMALGAM.get(), AmalgamEntity.createAttributes().build());
 		event.put(SAGE.get(), SageEntity.createAttributes().build());
 		event.put(LOOMER.get(), LoomerEntity.createAttributes().build());
+		event.put(SCULK_WORM.get(), SculkWormEntity.createAttributes().build());
 	}
 }

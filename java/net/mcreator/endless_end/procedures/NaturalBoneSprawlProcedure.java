@@ -10,8 +10,11 @@ import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class NaturalBoneSprawlProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z) {
-		world.setBlock(BlockPos.containing(x, y, z), EndlessEndModBlocks.VERTABRAE.get().defaultBlockState(), 3);
-		BoneSprawlProcedure.execute(world, x, y, z, Direction.UP, false, Mth.nextInt(RandomSource.create(), 15, 25), 2);
-		return true;
+		if (y < 80) {
+			world.setBlock(BlockPos.containing(x, y, z), EndlessEndModBlocks.VERTABRAE.get().defaultBlockState(), 3);
+			BoneSprawlProcedure.execute(world, x, y, z, Direction.UP, false, Mth.nextInt(RandomSource.create(), 15, 25), 2);
+			return true;
+		}
+		return false;
 	}
 }

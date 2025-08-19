@@ -186,6 +186,8 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModBlocks.SPREADING_FLOURITE.get().asItem());
 			tabData.accept(EndlessEndModBlocks.PHRYGIA.get().asItem());
 			tabData.accept(EndlessEndModBlocks.TALL_PHYRIGIA.get().asItem());
+			tabData.accept(EndlessEndModBlocks.GRIM_STONE_DIAMOND_ORE.get().asItem());
+			tabData.accept(EndlessEndModBlocks.INFESTED_GRIM_STONE.get().asItem());
 		} else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			tabData.accept(EndlessEndModBlocks.ENDORITE_BLOCK.get().asItem());
 			tabData.accept(EndlessEndModBlocks.ENDORITE_MESH.get().asItem());
@@ -214,6 +216,7 @@ public class EndlessEndModTabs {
 			tabData.accept(EndlessEndModItems.HOLLOW_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.SAGE_SPAWN_EGG.get());
 			tabData.accept(EndlessEndModItems.LOOMER_SPAWN_EGG.get());
+			tabData.accept(EndlessEndModItems.SCULK_WORM_SPAWN_EGG.get());
 		}
 	}
 }

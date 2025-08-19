@@ -1,0 +1,12 @@
+{
+  "feature": "endless_end:sculk_delta",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 50
+    }
+  ]
+}

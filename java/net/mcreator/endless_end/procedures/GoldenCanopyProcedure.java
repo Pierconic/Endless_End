@@ -13,19 +13,19 @@ public class GoldenCanopyProcedure {
 		stored_rad = Mth.nextInt(RandomSource.create(), 1, 4);
 		rad_off = stored_rad;
 		for (int index0 = 0; index0 < (int) (rad_off * 4); index0++) {
-			BlockCircleProcedure.execute(world, x, y, z, EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, 0.005, rad_off, 1, 1);
-			BlockCircleProcedure.execute(world, x, y, z, EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, 1, rad_off, 1, 1);
+			BlockCircleProcedure.execute(world, x, y, z, EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, false, 0.005, rad_off, 1, 1);
+			BlockCircleProcedure.execute(world, x, y, z, EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, false, 1, rad_off, 1, 1);
 			rad_off = rad_off - 0.25;
 		}
 		rad_off = stored_rad - 1;
 		for (int index1 = 0; index1 < (int) (rad_off * 4); index1++) {
-			BlockCircleProcedure.execute(world, x, y - 1, z, EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, 0.005, rad_off, 1, 1);
-			BlockCircleProcedure.execute(world, x, y - 1, z, EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, 1, rad_off, 1, 1);
+			BlockCircleProcedure.execute(world, x, y - 1, z, EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, false, 0.005, rad_off, 1, 1);
+			BlockCircleProcedure.execute(world, x, y - 1, z, EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, false, 1, rad_off, 1, 1);
 			rad_off = rad_off - 0.25;
 		}
 		rad_off = stored_rad;
-		BlockCircleProcedure.execute(world, x, y + 1, z, EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, 0.005, rad_off, 1, 1);
-		BlockCircleProcedure.execute(world, x, y + 1, z, EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, 0.026, rad_off, 1, 1);
+		BlockCircleProcedure.execute(world, x, y + 1, z, EndlessEndModBlocks.BLOSSOMING_GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, false, 0.005, rad_off, 1, 1);
+		BlockCircleProcedure.execute(world, x, y + 1, z, EndlessEndModBlocks.GOLDEN_SEPAL_LEAVES.get().defaultBlockState(), false, false, 0.026, rad_off, 1, 1);
 		GoldenSepalFallProcedure.execute(world, x + 1, y - 2, z + 0, 8);
 		GoldenSepalFallProcedure.execute(world, x - 1, y - 2, z + 0, 8);
 		GoldenSepalFallProcedure.execute(world, x + 0, y - 2, z + 1, 8);

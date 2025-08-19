@@ -11,7 +11,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class GrowGoldenStemProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, double lambda) {
+	public static void execute(LevelAccessor world, double x, double y, double z, boolean subterra, double lambda) {
 		double sy1 = 0;
 		double sx = 0;
 		double sz = 0;
@@ -47,7 +47,7 @@ public class GrowGoldenStemProcedure {
 				}.with(EndlessEndModBlocks.AZURE_SEPAL_LOG.get().defaultBlockState(), "axis", "z")), 3);
 				if (Math.random() < 0.15 && lambda > 0 && !(world.getBlockState(BlockPos.containing(x, (y - sy1) - 1, (z + sz * dr) - 1)).canOcclude() || world.getBlockState(BlockPos.containing(x, (y - sy1) - 1, z + sz * dr + 1)).canOcclude()
 						|| world.getBlockState(BlockPos.containing(x - 1, (y - sy1) - 1, z + sz * dr)).canOcclude() || world.getBlockState(BlockPos.containing(x + 1, (y - sy1) - 1, z + sz * dr)).canOcclude())) {
-					GrowGoldenStemProcedure.execute(world, x, y - sy1, z + sz * dr, lambda - 1);
+					GrowGoldenStemProcedure.execute(world, x, y - sy1, z + sz * dr, subterra, lambda - 1);
 				} else if (Math.random() < 0.3) {
 					SwirlingVineProcedure.execute(world, x, y - sy1, z + sz * dr);
 				} else if (Math.random() < 0.05) {
@@ -72,7 +72,7 @@ public class GrowGoldenStemProcedure {
 				}.with(EndlessEndModBlocks.AZURE_SEPAL_LOG.get().defaultBlockState(), "axis", "x")), 3);
 				if (Math.random() < 0.15 && lambda > 0 && !(world.getBlockState(BlockPos.containing(x + sx * dr, (y - sy1) - 1, z - 1)).canOcclude() || world.getBlockState(BlockPos.containing(x + sx * dr, (y - sy1) - 1, z + 1)).canOcclude()
 						|| world.getBlockState(BlockPos.containing((x + sx * dr) - 1, (y - sy1) - 1, z)).canOcclude() || world.getBlockState(BlockPos.containing(x + sx * dr + 1, (y - sy1) - 1, z)).canOcclude())) {
-					GrowGoldenStemProcedure.execute(world, x + sx * dr, y - sy1, z, lambda - 1);
+					GrowGoldenStemProcedure.execute(world, x + sx * dr, y - sy1, z, subterra, lambda - 1);
 				} else if (Math.random() < 0.3) {
 					SwirlingVineProcedure.execute(world, x + sx * dr, y - sy1, z);
 				} else if (Math.random() < 0.05) {

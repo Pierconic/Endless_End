@@ -34,9 +34,9 @@ public class EndlessEndModSurfaceRules {
 				registerSurfaceRules(ResourceLocation.parse("endless_end:inverted_midlands"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:inverted_barrens"), noiseGeneratorSettings, Blocks.END_STONE.defaultBlockState(), Blocks.END_STONE.defaultBlockState());
 				registerSurfaceRules(ResourceLocation.parse("endless_end:whispering_delta"), noiseGeneratorSettings, EndlessEndModBlocks.CALCIFIED_ENDSTONE.get().defaultBlockState(), Blocks.END_STONE.defaultBlockState());
-				registerSurfaceRules(ResourceLocation.parse("endless_end:soul_arbor"), noiseGeneratorSettings, Blocks.SCULK.defaultBlockState(), EndlessEndModBlocks.GRIM_STONE.get().defaultBlockState());
-				registerSurfaceRules(ResourceLocation.parse("endless_end:soul_arbor_midlands"), noiseGeneratorSettings, Blocks.SCULK.defaultBlockState(), EndlessEndModBlocks.GRIM_STONE.get().defaultBlockState());
-				registerSurfaceRules(ResourceLocation.parse("endless_end:soul_arbor_barrens"), noiseGeneratorSettings, Blocks.SCULK.defaultBlockState(), EndlessEndModBlocks.GRIM_STONE.get().defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:soul_arbor"), noiseGeneratorSettings, Blocks.SMOOTH_BASALT.defaultBlockState(), EndlessEndModBlocks.GRIM_STONE.get().defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:soul_arbor_midlands"), noiseGeneratorSettings, Blocks.SMOOTH_BASALT.defaultBlockState(), EndlessEndModBlocks.GRIM_STONE.get().defaultBlockState());
+				registerSurfaceRules(ResourceLocation.parse("endless_end:soul_arbor_barrens"), noiseGeneratorSettings, Blocks.SMOOTH_BASALT.defaultBlockState(), EndlessEndModBlocks.GRIM_STONE.get().defaultBlockState());
 			}
 		}
 	}

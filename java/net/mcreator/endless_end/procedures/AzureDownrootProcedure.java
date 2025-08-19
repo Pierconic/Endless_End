@@ -9,7 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.endless_end.init.EndlessEndModBlocks;
 
 public class AzureDownrootProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z) {
+	public static void execute(LevelAccessor world, double x, double y, double z, boolean subterra) {
 		boolean finished = false;
 		double sy = 0;
 		double sx = 0;
@@ -21,7 +21,7 @@ public class AzureDownrootProcedure {
 			if (VoidAccessProcedure.execute(world, x, z, y - sy)) {
 				if (sy > 15) {
 					world.setBlock(BlockPos.containing(x, y - sy, z), EndlessEndModBlocks.AZURE_SEPAL_LOG.get().defaultBlockState(), 3);
-					GoldenStemCheckProcedure.execute(world, x, y - sy, z);
+					GoldenStemCheckProcedure.execute(world, x, y - sy, z, subterra);
 				}
 				finished = true;
 			} else {

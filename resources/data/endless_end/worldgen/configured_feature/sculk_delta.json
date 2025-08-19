@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:delta_feature",
+  "config": {
+    "contents": {
+      "Name": "minecraft:sculk"
+    },
+    "rim": {
+      "Name": "endless_end:grim_stone"
+    },
+    "size": {
+      "type": "uniform",
+      "min_inclusive": 4,
+      "max_inclusive": 9
+    },
+    "rim_size": {
+      "type": "uniform",
+      "min_inclusive": 1,
+      "max_inclusive": 4
+    }
+  }
+}

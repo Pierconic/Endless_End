@@ -73,9 +73,11 @@ import net.mcreator.endless_end.block.MoonGunkBlock;
 import net.mcreator.endless_end.block.MolderingPurpurBlock;
 import net.mcreator.endless_end.block.LydianPetalsBlock;
 import net.mcreator.endless_end.block.JointBlock;
+import net.mcreator.endless_end.block.InfestedGrimStoneBlock;
 import net.mcreator.endless_end.block.IconoclastBlock;
 import net.mcreator.endless_end.block.GrimTrapdoorBlock;
 import net.mcreator.endless_end.block.GrimThornsBlock;
+import net.mcreator.endless_end.block.GrimStoneDiamondOreBlock;
 import net.mcreator.endless_end.block.GrimStoneBlock;
 import net.mcreator.endless_end.block.GrimStairsBlock;
 import net.mcreator.endless_end.block.GrimSlabBlock;
@@ -297,6 +299,8 @@ public class EndlessEndModBlocks {
 	public static final DeferredBlock<Block> FLURRY_SPELL = REGISTRY.register("flurry_spell", FlurrySpellBlock::new);
 	public static final DeferredBlock<Block> BREEZE_SPELL_EXTENT = REGISTRY.register("breeze_spell_extent", BreezeSpellExtentBlock::new);
 	public static final DeferredBlock<Block> ESSENCE_CAULDRON = REGISTRY.register("essence_cauldron", EssenceCauldronBlock::new);
+	public static final DeferredBlock<Block> GRIM_STONE_DIAMOND_ORE = REGISTRY.register("grim_stone_diamond_ore", GrimStoneDiamondOreBlock::new);
+	public static final DeferredBlock<Block> INFESTED_GRIM_STONE = REGISTRY.register("infested_grim_stone", InfestedGrimStoneBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

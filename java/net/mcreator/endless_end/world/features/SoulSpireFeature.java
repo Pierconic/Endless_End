@@ -18,7 +18,7 @@ public class SoulSpireFeature extends NoOpFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!SoulSpirePlacementProcedure.execute(world, x, z))
+		if (!SoulSpirePlacementProcedure.execute(world, x, y, z))
 			return false;
 		return super.place(context);
 	}

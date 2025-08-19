@@ -1,7 +1,4 @@
 {
-  "replace": false,
-  "values": [
-    "endless_end:chorus_orchard",
-    "endless_end:whispering_delta"
-  ]
+	"replace": true,
+	"values": []
 }

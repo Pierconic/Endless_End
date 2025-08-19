@@ -26,7 +26,7 @@ public class ChorusStemCheckProcedure {
 			} else {
 				VioletShootProcedure.execute(world, x, y, z);
 			}
-			AzureDownrootProcedure.execute(world, x, y - 1, z);
+			AzureDownrootProcedure.execute(world, x, y - 1, z, false);
 		}
 		return false;
 	}

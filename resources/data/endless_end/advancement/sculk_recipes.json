@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "sculk_recipes_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:sculk"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "endless_end:burrowing_thorns_recipe",
+      "endless_end:burrowing_spike_recipe",
+      "endless_end:warding_eyes_recipe",
+      "endless_end:spiteful_eye_recipe",
+      "endless_end:catalyst_recipe",
+      "endless_end:screecher_recipe",
+      "endless_end:singing_sand_crafting"
+    ]
+  }
+}

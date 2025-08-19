@@ -11,7 +11,7 @@ public class ExecuteSphereProcedure {
 		while (counter <= 180) {
 			x2 = radw * radius * Math.cos(counter);
 			yOff = rady * radius * Math.sin(counter);
-			BlockCircleProcedure.execute(world, x, y + yOff, z, filler, replace, 1, x2, 1, 1);
+			BlockCircleProcedure.execute(world, x, y + yOff, z, filler, replace, false, 1, x2, 1, 1);
 			counter = counter + 1;
 		}
 	}

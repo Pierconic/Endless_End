@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sculk_junk",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cac"
+  ],
+  "key": {
+    "a": {
+      "item": "endless_end:vertabrae"
+    },
+    "b": {
+      "item": "endless_end:raw_endorite"
+    },
+    "c": {
+      "item": "minecraft:sculk"
+    }
+  },
+  "result": {
+    "id": "minecraft:sculk_shrieker",
+    "count": 1
+  }
+}

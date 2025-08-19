@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sculk_junk",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bab",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:sculk"
+    },
+    "b": {
+      "item": "endless_end:grim_thorns"
+    }
+  },
+  "result": {
+    "id": "endless_end:burrowing_thorns",
+    "count": 4
+  }
+}

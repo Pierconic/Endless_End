@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "endless_end:soul_arbor",
+    "endless_end:soul_arbor_midlands",
+    "endless_end:soul_arbor_barrens"
+  ],
+  "features": "endless_end:pitfall_placement",
+  "step": "vegetal_decoration"
+}

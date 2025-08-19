@@ -1,0 +1,16 @@
+{
+  "type": "endless_end:grimstone_deposit",
+  "config": {
+    "target": {
+      "Name": "minecraft:end_stone"
+    },
+    "state": {
+      "Name": "endless_end:grim_stone"
+    },
+    "radius": {
+      "type": "uniform",
+      "min_inclusive": 3,
+      "max_inclusive": 7
+    }
+  }
+}

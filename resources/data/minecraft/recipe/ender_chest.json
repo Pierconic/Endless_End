@@ -4,7 +4,7 @@
   "pattern": [
     "aba",
     "c c",
-    "ddd"
+    "ccc"
   ],
   "key": {
     "a": {
@@ -14,9 +14,6 @@
       "item": "minecraft:ender_eye"
     },
     "c": {
-      "item": "minecraft:gold_ingot"
-    },
-    "d": {
       "item": "minecraft:obsidian"
     }
   },

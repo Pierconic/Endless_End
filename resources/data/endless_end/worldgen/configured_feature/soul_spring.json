@@ -6,7 +6,8 @@
     },
     "valid_blocks": [
       "endless_end:strong_stone",
-      "minecraft:end_stone"
+      "minecraft:end_stone",
+      "endless_end:grim_stone"
     ],
     "rock_count": 5,
     "hole_count": 0

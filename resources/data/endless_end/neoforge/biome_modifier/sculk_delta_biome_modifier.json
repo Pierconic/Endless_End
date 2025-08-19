@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "endless_end:soul_arbor",
+    "endless_end:soul_arbor_barrens",
+    "endless_end:soul_arbor_midlands"
+  ],
+  "features": "endless_end:sculk_delta",
+  "step": "local_modifications"
+}
